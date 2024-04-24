@@ -1,0 +1,20 @@
+name: SkyblockPlugin
+version: '${version}'
+main: fr.ht06.skyblockplugin.SkyblockPlugin
+api-version: '1.20'
+author: ht06
+depend:
+  - WorldEdit
+  - WorldBorderAPI
+
+commands:
+  load:
+    description: load a schematic
+
+  createworld:
+
+  is:
+
+  test:
+
+
