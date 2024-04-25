@@ -7,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.player.PlayerItemBreakEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class PlayerListeners implements Listener {
@@ -21,6 +20,12 @@ public class PlayerListeners implements Listener {
         Player player = event.getPlayer();
 
         if (!player.hasPlayedBefore()){
+            main.hasIS.put(player, false);
+        }
+        if (player.hasPlayedBefore() && main.hasIS.get(player)){
+            main.hasIS.put(player, true);
+        }
+        else{
             main.hasIS.put(player, false);
         }
     }

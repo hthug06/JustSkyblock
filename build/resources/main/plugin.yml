@@ -1,5 +1,5 @@
 name: SkyblockPlugin
-version: '1.0'
+version: '1.0.1'
 main: fr.ht06.skyblockplugin.SkyblockPlugin
 api-version: '1.20'
 author: ht06
@@ -8,13 +8,18 @@ depend:
   - WorldBorderAPI
 
 commands:
-  load:
-    description: load a schematic
+  island:
+    aliases:
+      - is
+    description: Create an island or teleport the player to his own island
 
-  createworld:
-
-  is:
+  skyblockplugin:
+    aliases:
+      - sbpl
+    description: reload the config
+    permission: skyblockplugin.reload
 
   test:
+    description: fait chioer
 
 

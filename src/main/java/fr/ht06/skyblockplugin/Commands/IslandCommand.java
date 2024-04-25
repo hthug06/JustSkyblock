@@ -8,8 +8,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
 public class IslandCommand implements CommandExecutor {
@@ -24,6 +22,7 @@ public class IslandCommand implements CommandExecutor {
         Player player = (Player) commandSender;
 
         if (args.length == 0){
+            main.hasIS.putIfAbsent(player, false);
             if (!main.hasIS.get(player) || main.hasIS.get(player)== null){
                 IslandInventory gui = new IslandInventory();
                 player.openInventory(gui.getInventory());

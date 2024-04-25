@@ -1,1 +1,22 @@
 #test
+IS:
+  Plain:
+    Block: GRASS_BLOCK
+    Name: Test
+    Lore: WHYYY
+    Schematic: IslandPlain.schem
+    Slot: 0
+
+  AA:
+    Block: GRASS_BLOCK
+    Name: le1
+    Lore: WHYYY11
+    Schematic: island2.s
+    Slot: 1
+
+  PlaBBin:
+    Block: GRASS_BLOCK
+    Name: Test
+    Lore: WHYYY
+    Schematic: IslandPlain.schem
+    Slot: 2

@@ -1,17 +1,17 @@
 package fr.ht06.skyblockplugin.Inventory;
 
+import fr.ht06.skyblockplugin.SkyblockPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -25,12 +25,23 @@ public class IslandInventory implements InventoryHolder {
 
     private void init(){
         ItemStack item;
+        List<String> configIS = new ArrayList<>(SkyblockPlugin.getInstance().getConfig().getConfigurationSection("IS").getKeys(false));
 
-        item = createItem("§cIsland", Material.GRASS_BLOCK, Collections.singletonList(Component.text("Create an island").decoration(TextDecoration.ITALIC, false)));
-        inv.setItem(0, item);
+        for (String name: configIS){
+            List<String> configISchild = new ArrayList<>(SkyblockPlugin.getInstance().getConfig().getConfigurationSection("IS."+name).getKeys(false));
 
-        item = createItem("§cIsland", Material.SNOW_BLOCK, Collections.singletonList(Component.text("Create an island/ Snow Island").decoration(TextDecoration.ITALIC, false)));
-        inv.setItem(1, item);
+            Component lore = Component.text(String.valueOf(SkyblockPlugin.getInstance().getConfig().get("IS."+name+"."+configISchild.get(2))));
+
+            item = createItem(String.valueOf(SkyblockPlugin.getInstance().getConfig().get("IS."+name+"."+configISchild.get(1))),
+                    Material.getMaterial(String.valueOf(SkyblockPlugin.getInstance().getConfig().get("IS."+name+"."+configISchild.get(0)))),
+                    Collections.singletonList(lore.decoration(TextDecoration.ITALIC, false)));
+
+            inv.setItem(Integer.parseInt(String.valueOf(SkyblockPlugin.getInstance().getConfig().get("IS."+name+"."+configISchild.get(4)))), item);
+        }
+
+
+
+
 
     }
 

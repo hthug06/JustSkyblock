@@ -8,13 +8,18 @@ depend:
   - WorldBorderAPI
 
 commands:
-  load:
-    description: load a schematic
+  island:
+    aliases:
+      - is
+    description: Create an island or teleport the player to his own island
 
-  createworld:
-
-  is:
+  skyblockplugin:
+    aliases:
+      - sbpl
+    description: reload the config
+    permission: skyblockplugin.reload
 
   test:
+    description: fait chioer
 
 
