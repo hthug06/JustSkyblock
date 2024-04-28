@@ -1,0 +1,10 @@
+WARNING 1: This is the data file, it's stock data while the server is offline
+WARNING 2: Don't touch this file or everything can be corrupt
+Players:
+  ht06:
+    world: world_Skyblock
+    x: 1000.0
+    y: 70.0
+    z: 1000.0
+    pitch: 0.0
+    yaw: 0.0

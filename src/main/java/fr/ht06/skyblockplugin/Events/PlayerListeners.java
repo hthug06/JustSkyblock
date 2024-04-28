@@ -19,14 +19,16 @@ public class PlayerListeners implements Listener {
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
 
+        if (!main.hasIS.containsKey(player.getName())) main.hasIS.put(player.getName(), false);
+
         if (!player.hasPlayedBefore()){
-            main.hasIS.put(player, false);
+            main.hasIS.put(player.getName(), false);
         }
-        if (player.hasPlayedBefore() && main.hasIS.get(player)){
-            main.hasIS.put(player, true);
+        if (player.hasPlayedBefore() && main.hasIS.get(player.getName())){
+            main.hasIS.put(player.getName(), true);
         }
         else{
-            main.hasIS.put(player, false);
+            main.hasIS.put(player.getName(), false);
         }
     }
 
@@ -35,16 +37,16 @@ public class PlayerListeners implements Listener {
     public void onBreak(BlockBreakEvent event){
         Player player = event.getPlayer();
         if (!player.isOp()){
-            if (main.hasIS.get(player)==null || !main.hasIS.get(player)){
+            if (main.hasIS.get(player.getName())==null || !main.hasIS.get(player.getName())){
                 event.setCancelled(true);
                 return;
-            }            if (!contains(player.getLocation(), main.IScoor.get(player).clone().add(-50, -200, -50), main.IScoor.get(player).clone().add(50, 300, 50))
-                || main.hasIS.get(player) == null){
+            }            if (!contains(player.getLocation(), main.IScoor.get(player.getName()).clone().add(-50, -200, -50), main.IScoor.get(player).clone().add(50, 300, 50))
+                || main.hasIS.get(player.getName()) == null){
                 event.setCancelled(true);
             }
         }
         else{
-            if (main.hasIS.get(player)==null || !main.hasIS.get(player)) return;
+            if (main.hasIS.get(player.getName())==null || !main.hasIS.get(player.getName())) return;
         }
 
 
@@ -55,17 +57,17 @@ public class PlayerListeners implements Listener {
         Player player = event.getPlayer();
 
         if (!player.isOp()){
-            if (main.hasIS.get(player)==null || !main.hasIS.get(player)){
+            if (main.hasIS.get(player.getName())==null || !main.hasIS.get(player.getName())){
                 event.setCancelled(true);
                 return;
             }
-            if (!contains(player.getLocation(), main.IScoor.get(player).clone().add(-50, -200, -50), main.IScoor.get(player).clone().add(50, 300, 50))
-                    || main.hasIS.get(player) == null){
+            if (!contains(player.getLocation(), main.IScoor.get(player.getName()).clone().add(-50, -200, -50), main.IScoor.get(player).clone().add(50, 300, 50))
+                    || main.hasIS.get(player.getName()) == null){
                 event.setCancelled(true);
             }
         }
         else{
-            if (main.hasIS.get(player)==null || !main.hasIS.get(player)) return;
+            if (main.hasIS.get(player.getName())==null || !main.hasIS.get(player.getName())) return;
         }
     }
 

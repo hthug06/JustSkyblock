@@ -3,11 +3,15 @@ package fr.ht06.skyblockplugin;
 import com.github.yannicklamprecht.worldborder.api.WorldBorderApi;
 import fr.ht06.skyblockplugin.Commands.IslandCommand;
 import fr.ht06.skyblockplugin.Commands.skyblockpluginCommand;
+import fr.ht06.skyblockplugin.Config.DataConfig;
 import fr.ht06.skyblockplugin.Events.InventoryEvents;
 import fr.ht06.skyblockplugin.Events.PlayerListeners;
 import fr.ht06.skyblockplugin.TabCompleter.IslandCommandTab;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
+import org.bukkit.WorldCreator;
+import org.bukkit.WorldType;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,9 +23,9 @@ import java.util.Map;
 
 public final class SkyblockPlugin extends JavaPlugin {
 
-    public Map<Player, Boolean> hasIS = new HashMap<>();
+    public Map<String, Boolean> hasIS = new HashMap<>();
 
-    public Map<Player, Location> IScoor = new HashMap<>();
+    public Map<String, Location> IScoor = new HashMap<>();
     public List<List<Integer>> CoordsTaken = new ArrayList<>();
     public static WorldBorderApi worldBorderApi;
     public static SkyblockPlugin instance;
@@ -31,7 +35,15 @@ public final class SkyblockPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         instance =this;
+
+        //Creation du world_skyblock si il existe pas et le loader sinon
+        String settings = "{\"structures\":{\"structures\":{}},\"layers\":[{\"height\":9,\"block\":\"air\"},{\"height\":1,\"block\":\"air\"}],\"lakes\":false,\"features\":false,\"biome\":\"plains\"}";
+        WorldCreator worldcreator = new WorldCreator("world_Skyblock");
+        worldcreator.type(WorldType.FLAT).type(WorldType.FLAT).generatorSettings(settings).generateStructures(false);
+        worldcreator.createWorld();
+        new WorldCreator("world_Skyblock").createWorld();
 
         //Pour les worldBorder
         RegisteredServiceProvider<WorldBorderApi> worldBorderApiRegisteredServiceProvider = getServer().getServicesManager().getRegistration(WorldBorderApi.class);
@@ -79,12 +91,6 @@ public final class SkyblockPlugin extends JavaPlugin {
             i++;
         };
 
-        //System.out.println(islandList.seeallIsland());
-        //System.out.println(islandList.getIslandBySlot(1));
-
-        //System.out.println(verificationSlot);
-        //System.out.println(verificationName);
-
         //Dossier pour les schematic
         File dossier = new File(getServer().getPluginsFolder().getAbsoluteFile() + "/SkyblockPlugin/Schematic/");
 
@@ -92,11 +98,47 @@ public final class SkyblockPlugin extends JavaPlugin {
             dossier.mkdir();
         }
 
+        //reajout des gens dans la hashmap
+        DataConfig.setup();
+        for (String v: DataConfig.get().getConfigurationSection("Players").getKeys(false)){
+            System.out.println(v);
+            FileConfiguration dataconfig = DataConfig.get();
+            Location loc = new Location(Bukkit.getWorld("world_Skyblock"),
+                    dataconfig.getDouble("Players."+v+".x"),
+                    dataconfig.getDouble("Players."+v+".y"),
+                    dataconfig.getDouble("Players."+v+".z"),
+                    dataconfig.getInt("Players."+v+".pitch"),
+                    dataconfig.getInt("Players."+v+".yaw"));
+            IScoor.put(v, loc);
+            hasIS.put(v, true);
+        }
+
+        //On dégage le data.yml
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
+        file.delete();
+
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+
+        //DataConfig.get().addDefault("Message", "this is the default message");
+        DataConfig.setup();
+        DataConfig.get().addDefault("WARNING 1", "This is the data file, it's stock data while the server is offline");
+        DataConfig.get().addDefault("WARNING 2", "Don't touch this file or everything can be corrupt");
+        DataConfig.get().createSection("Players");
+        DataConfig.get().options().copyDefaults(true);
+        //DataConfig.get().createSection("Players");
+        DataConfig.save();
+
+        //List<String> configIS = new ArrayList<>(DataConfig.get().getConfigurationSection("Players").getKeys(false));
+
+        for (Map.Entry<String, Location> v: IScoor.entrySet()){
+            DataConfig.get().getConfigurationSection("Players").createSection(v.getKey(), v.getValue().serialize());
+        }
+
+        DataConfig.save();
+
     }
 
     public static SkyblockPlugin getInstance(){

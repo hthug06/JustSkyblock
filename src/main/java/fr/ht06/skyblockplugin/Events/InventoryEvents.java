@@ -5,8 +5,6 @@ import fr.ht06.skyblockplugin.LoadSchematic;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.WorldCreator;
-import org.bukkit.WorldType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -51,7 +49,7 @@ public class InventoryEvents implements Listener {
                 }
 
                 //Si le joueur n'a pas d'île
-                if (main.hasIS.containsKey(player) && !main.hasIS.get(player)) {
+                if (main.hasIS.containsKey(player.getName()) && !main.hasIS.get(player.getName())) {
                     //Si le monde skyblock existe
                     if (new File(main.getServer().getWorldContainer().getAbsolutePath() + "/world_Skyblock/").exists()) {
 
@@ -78,28 +76,23 @@ public class InventoryEvents implements Listener {
 
                         //new LoadSchematic(loc,"world_Skyblock", "islandPlain");
 
-
-                        new LoadSchematic(loc, loc.getWorld().getName(), island.get("Schematic"));
+                        //a régler
+                        new LoadSchematic(loc, "world_Skyblock", island.get("Schematic"));
 
                         player.closeInventory();
                         player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z));
 
-                        main.hasIS.put(player, true);
-                        main.IScoor.put(player, new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z));
+                        main.hasIS.put(player.getName(), true);
+                        main.IScoor.put(player.getName(), new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z));
                         SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                                main.IScoor.get(player).getX(), 0, main.IScoor.get(player).getZ()));
+                                main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));
 
                     }
 
-                    //Si le monde skyblock n'existe pas
+                    //Si le monde skyblock n'existe pas donc 1er joueur
                     else {
                         player.sendMessage("Vous êtes le premier joueur à créer une ile, MERCI");
                         player.sendMessage("Création du monde 'Skyblock'");
-
-                        String settings = "{\"structures\":{\"structures\":{}},\"layers\":[{\"height\":9,\"block\":\"air\"},{\"height\":1,\"block\":\"air\"}],\"lakes\":false,\"features\":false,\"biome\":\"plains\"}";
-                        WorldCreator worldcreator = new WorldCreator("world_Skyblock");
-                        worldcreator.type(WorldType.FLAT).type(WorldType.FLAT).generatorSettings(settings).generateStructures(false);
-                        worldcreator.createWorld();
 
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
                         //new LoadSchematic(loc,"world_Skyblock", "IslandPlain");
@@ -107,8 +100,8 @@ public class InventoryEvents implements Listener {
                         player.sendMessage("§aCréation de l'île");
 
                         player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
-                        main.hasIS.put(player, true);
-                        main.IScoor.put(player, new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
+                        main.hasIS.put(player.getName(), true);
+                        main.IScoor.put(player.getName(), new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
                         int x = 0;
                         int z = 0;
                         List<Integer> finale = new ArrayList<>();
@@ -117,7 +110,8 @@ public class InventoryEvents implements Listener {
                         main.CoordsTaken.add(finale);
 
                         SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                                main.IScoor.get(player).getX(), 0, main.IScoor.get(player).getZ()));
+                                main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));
+
                     }
                 }
 

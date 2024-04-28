@@ -22,16 +22,16 @@ public class IslandCommand implements CommandExecutor {
         Player player = (Player) commandSender;
 
         if (args.length == 0){
-            main.hasIS.putIfAbsent(player, false);
-            if (!main.hasIS.get(player) || main.hasIS.get(player)== null){
+            main.hasIS.putIfAbsent(player.getName(), false);
+            if (!main.hasIS.get(player.getName()) || main.hasIS.get(player.getName())== null){
                 IslandInventory gui = new IslandInventory();
                 player.openInventory(gui.getInventory());
             }
 
             else {
-                player.teleport(main.IScoor.get(player));
+                player.teleport(main.IScoor.get(player.getName()));
                 SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                        main.IScoor.get(player).getX(), 0, main.IScoor.get(player).getZ() ) );
+                        main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ() ) );
                 player.sendMessage("téléportation sur l'île");
             }
         }
@@ -46,7 +46,7 @@ public class IslandCommand implements CommandExecutor {
                 }
                 else {
                     player.sendMessage("Le spawn de l'ile a été changé");
-                    main.IScoor.put(player, player.getLocation());
+                    main.IScoor.put(player.getName(), player.getLocation());
                 }
 
 

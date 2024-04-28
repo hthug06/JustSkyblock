@@ -18,6 +18,7 @@ import org.bukkit.Location;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 import static org.bukkit.Bukkit.getLogger;
 import static org.bukkit.Bukkit.getServer;
@@ -39,17 +40,20 @@ public class LoadSchematic {
         }
 
 
-        try (ClipboardReader reader = format.getReader(new FileInputStream(new File(getServer().getPluginsFolder().getAbsoluteFile() + "/SkyblockPlugin/Schematic/"+fileName)));
-             EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(BukkitAdapter.adapt(Bukkit.getWorld("world_Skyblock")), -1)
-        ) {
-            Clipboard clipboard = reader.read();
+        try {
+            assert format != null;
+            try (ClipboardReader reader = format.getReader(new FileInputStream(new File(getServer().getPluginsFolder().getAbsoluteFile() + "/SkyblockPlugin/Schematic/"+fileName)));
+                     EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(BukkitAdapter.adapt(Objects.requireNonNull(Bukkit.getWorld("world_Skyblock"))), -1)
+            ) {
+                Clipboard clipboard = reader.read();
 
-            Operation operation = new ClipboardHolder(clipboard)
-                    .createPaste(editSession)
-                    .to(BlockVector3.at(Double.parseDouble(String.valueOf(location.getX())), Double.parseDouble(String.valueOf(location.getY())), Double.parseDouble(String.valueOf(location.getZ()))))
-                    .ignoreAirBlocks(false)
-                    .build();
-            Operations.complete(operation);
+                Operation operation = new ClipboardHolder(clipboard)
+                        .createPaste(editSession)
+                        .to(BlockVector3.at(Double.parseDouble(String.valueOf(location.getX())), Double.parseDouble(String.valueOf(location.getY())), Double.parseDouble(String.valueOf(location.getZ()))))
+                        .ignoreAirBlocks(false)
+                        .build();
+                Operations.complete(operation);
+            }
         } catch (IOException | WorldEditException e) {
             throw new RuntimeException(e);
         }

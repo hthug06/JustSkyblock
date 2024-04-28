@@ -1,3 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+../server/logs/
+../server/crash-reports/
