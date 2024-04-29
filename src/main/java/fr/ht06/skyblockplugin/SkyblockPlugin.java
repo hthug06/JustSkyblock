@@ -16,10 +16,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public final class SkyblockPlugin extends JavaPlugin {
 
@@ -35,7 +32,31 @@ public final class SkyblockPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        /*Integer  tttt = 1000;
+        List<Integer> integerList= new ArrayList<>();
+        integerList.add(tttt);
+        integerList.add(tttt);
+        CoordsTaken.add(integerList);
 
+         tttt = 2000;
+        integerList= new ArrayList<>();
+        integerList.add(tttt);
+        integerList.add(tttt);
+        CoordsTaken.add(integerList);
+        instance =this;
+
+        tttt = 3000;
+        integerList= new ArrayList<>();
+        integerList.add(tttt);
+        integerList.add(tttt);
+        CoordsTaken.add(integerList);
+        instance =this;
+
+        tttt = 4000;
+        integerList= new ArrayList<>();
+        integerList.add(tttt);
+        integerList.add(tttt);
+        CoordsTaken.add(integerList);*/
         instance =this;
 
         //Creation du world_skyblock si il existe pas et le loader sinon
@@ -55,7 +76,7 @@ public final class SkyblockPlugin extends JavaPlugin {
         worldBorderApi = worldBorderApiRegisteredServiceProvider.getProvider();
 
         getCommand("is").setExecutor(new IslandCommand(this));
-        getCommand("test").setExecutor(new Test(this));
+        //getCommand("test").setExecutor(new Test(this));
         getCommand("skyblockplugin").setExecutor(new skyblockpluginCommand(this));
         getCommand("is").setTabCompleter(new IslandCommandTab(this));
         getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
@@ -100,18 +121,24 @@ public final class SkyblockPlugin extends JavaPlugin {
 
         //reajout des gens dans la hashmap
         DataConfig.setup();
-        for (String v: DataConfig.get().getConfigurationSection("Players").getKeys(false)){
-            System.out.println(v);
-            FileConfiguration dataconfig = DataConfig.get();
-            Location loc = new Location(Bukkit.getWorld("world_Skyblock"),
-                    dataconfig.getDouble("Players."+v+".x"),
-                    dataconfig.getDouble("Players."+v+".y"),
-                    dataconfig.getDouble("Players."+v+".z"),
-                    dataconfig.getInt("Players."+v+".pitch"),
-                    dataconfig.getInt("Players."+v+".yaw"));
-            IScoor.put(v, loc);
-            hasIS.put(v, true);
+        if (DataConfig.get().contains("Players")) {
+            for (String v : DataConfig.get().getConfigurationSection("Players").getKeys(false)) {
+                System.out.println(v);
+                FileConfiguration dataconfig = DataConfig.get();
+                Location loc = new Location(Bukkit.getWorld("world_Skyblock"),
+                        dataconfig.getDouble("Players." + v + ".x"),
+                        dataconfig.getDouble("Players." + v + ".y"),
+                        dataconfig.getDouble("Players." + v + ".z"),
+                        dataconfig.getInt("Players." + v + ".pitch"),
+                        dataconfig.getInt("Players." + v + ".yaw"));
+                IScoor.put(v, loc);
+                hasIS.put(v, true);
+            }
         }
+        if (DataConfig.get().contains("Coordinates")) {
+            CoordsTaken = (List<List<Integer>>) DataConfig.get().get("Coordinates");
+        }
+
 
         //On dégage le data.yml
         File file = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
@@ -126,6 +153,7 @@ public final class SkyblockPlugin extends JavaPlugin {
         DataConfig.setup();
         DataConfig.get().addDefault("WARNING 1", "This is the data file, it's stock data while the server is offline");
         DataConfig.get().addDefault("WARNING 2", "Don't touch this file or everything can be corrupt");
+        DataConfig.get().addDefault("WARNING 3", "If you delete this file, every player data will be reset");
         DataConfig.get().createSection("Players");
         DataConfig.get().options().copyDefaults(true);
         //DataConfig.get().createSection("Players");
@@ -136,6 +164,13 @@ public final class SkyblockPlugin extends JavaPlugin {
         for (Map.Entry<String, Location> v: IScoor.entrySet()){
             DataConfig.get().getConfigurationSection("Players").createSection(v.getKey(), v.getValue().serialize());
         }
+
+
+        DataConfig.get().createSection("Coordinates");
+        DataConfig.get().set("Coordinates", CoordsTaken);
+
+        //System.out.println(st);
+
 
         DataConfig.save();
 

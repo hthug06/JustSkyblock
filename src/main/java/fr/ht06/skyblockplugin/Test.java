@@ -26,8 +26,8 @@ public class Test implements CommandExecutor {
         }
 
         if (strings.length == 1){
-            player.sendMessage(main.IScoor.toString());
-            player.sendMessage(main.hasIS.toString());
+            int[] a = {1,3};
+            player.sendMessage(String.valueOf(main.CoordsTaken));
             /*for (String v: DataConfig.get().getConfigurationSection("Players").getKeys(false)){
                 System.out.println(v);
                 FileConfiguration dataconfig = DataConfig.get();
