@@ -1,0 +1,58 @@
+# In the whole plugin, you can use the colorcode with the "&"
+# You can see more here: https://www.spigotmc.org/resources/colorcodes.32415/
+
+# everywhere, you can Put [PLAYER] for the name of the player
+
+# Spawn coordinate
+spawn:
+  world: world
+  x: 0.0
+  y: 63.0
+  z: 0.0
+  Yaw: 0.0
+  Pitch: 0.0
+
+# For the player first join
+on_first_join:
+  items:
+  - material: STONE
+    count: 1
+    name: My stone
+  - material: DIRT
+    count: 2
+    name: My dirt
+  messages:
+  - Welcome [PLAYER], on this server!
+  commands:
+  - msg [PLAYER] WELCOME !
+
+# Message send to the player with different action
+Message:
+  Setspawn: '&6Spawn Create'
+  TpToSpawn: '&6Teleported to Spawn...'
+  TpToSpawnbyAdmin: '&6Teleported to Spawn by an Admin...'
+
+# Custom permission
+Permission to tp player to spawn: hSpawn.SpawnOtherPlayer
+
+# For the list of every sound, go here : https://dev.bukkit.org/projects/justsound/pages/sound-list
+playsound on /spawn: true
+SoundName: ENTITY_PLAYER_LEVELUP
+
+# You can choose the join and quit message Here:
+Join: '&r[&a+&r] [PLAYER] join the server'
+Quit: '&r[&c-&r] [PLAYER] left the server'
+
+Spawn on join: false
+Spawn on death: true
+
+# If a player fall in the void, he can be tp to spawn
+Void to spawn: true
+
+
+test: test:16
+
+
+
+
+

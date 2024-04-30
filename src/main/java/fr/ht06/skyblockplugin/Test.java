@@ -25,6 +25,7 @@ public class Test implements CommandExecutor {
             }
         }
 
+
         if (strings.length == 1){
             int[] a = {1,3};
             player.sendMessage(String.valueOf(main.CoordsTaken));

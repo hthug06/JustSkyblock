@@ -16,14 +16,17 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class SkyblockPlugin extends JavaPlugin {
 
     public Map<String, Boolean> hasIS = new HashMap<>();
 
     public Map<String, Location> IScoor = new HashMap<>();
-    public List<List<Integer>> CoordsTaken = new ArrayList<>();
+    public Map<String, List<Integer>> CoordsTaken = new HashMap<>();
     public static WorldBorderApi worldBorderApi;
     public static SkyblockPlugin instance;
     public static String test ="ygvfshbk";
@@ -32,31 +35,6 @@ public final class SkyblockPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        /*Integer  tttt = 1000;
-        List<Integer> integerList= new ArrayList<>();
-        integerList.add(tttt);
-        integerList.add(tttt);
-        CoordsTaken.add(integerList);
-
-         tttt = 2000;
-        integerList= new ArrayList<>();
-        integerList.add(tttt);
-        integerList.add(tttt);
-        CoordsTaken.add(integerList);
-        instance =this;
-
-        tttt = 3000;
-        integerList= new ArrayList<>();
-        integerList.add(tttt);
-        integerList.add(tttt);
-        CoordsTaken.add(integerList);
-        instance =this;
-
-        tttt = 4000;
-        integerList= new ArrayList<>();
-        integerList.add(tttt);
-        integerList.add(tttt);
-        CoordsTaken.add(integerList);*/
         instance =this;
 
         //Creation du world_skyblock si il existe pas et le loader sinon
@@ -76,7 +54,7 @@ public final class SkyblockPlugin extends JavaPlugin {
         worldBorderApi = worldBorderApiRegisteredServiceProvider.getProvider();
 
         getCommand("is").setExecutor(new IslandCommand(this));
-        //getCommand("test").setExecutor(new Test(this));
+        getCommand("test").setExecutor(new Test(this));
         getCommand("skyblockplugin").setExecutor(new skyblockpluginCommand(this));
         getCommand("is").setTabCompleter(new IslandCommandTab(this));
         getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
@@ -136,7 +114,9 @@ public final class SkyblockPlugin extends JavaPlugin {
             }
         }
         if (DataConfig.get().contains("Coordinates")) {
-            CoordsTaken = (List<List<Integer>>) DataConfig.get().get("Coordinates");
+            for (String v : DataConfig.get().getConfigurationSection("Coordinates").getKeys(false)) {
+                CoordsTaken.put(v, (List<Integer>) DataConfig.get().get("Coordinates."+v));
+            }
         }
 
 
@@ -166,11 +146,7 @@ public final class SkyblockPlugin extends JavaPlugin {
         }
 
 
-        DataConfig.get().createSection("Coordinates");
-        DataConfig.get().set("Coordinates", CoordsTaken);
-
-        //System.out.println(st);
-
+        DataConfig.get().createSection("Coordinates", CoordsTaken);
 
         DataConfig.save();
 

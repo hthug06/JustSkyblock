@@ -1,82 +1,617 @@
-[13:00:48] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[13:00:49] [ServerMain/INFO]: Loaded 1174 recipes
-[13:00:50] [ServerMain/INFO]: Loaded 1271 advancements
-[13:00:50] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[13:00:50] [Server thread/INFO]: Loading properties
-[13:00:50] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[13:00:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:00:50] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:00:50] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[12:16:18] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:16:19] [ServerMain/INFO]: Loaded 1174 recipes
+[12:16:19] [ServerMain/INFO]: Loaded 1271 advancements
+[12:16:19] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[12:16:19] [Server thread/INFO]: Loading properties
+[12:16:19] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[12:16:19] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:16:19] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:16:19] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[13:00:50] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[13:00:51] [Server thread/INFO]: Default game type: SURVIVAL
-[13:00:51] [Server thread/INFO]: Generating keypair
-[13:00:51] [Server thread/INFO]: Starting Minecraft server on *:25565
-[13:00:51] [Server thread/INFO]: Using default channel type
-[13:00:51] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[13:00:51] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[13:00:51] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[13:00:51] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[13:00:51] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@16ff990b]
-[13:00:51] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.0.2
-[13:00:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:00:51] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[13:00:51] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[13:00:51] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[13:00:51] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[13:00:52] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[13:00:52] [Server thread/INFO]: Preparing level "world"
-[13:00:53] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[13:00:54] [Server thread/INFO]: Time elapsed: 776 ms
-[13:00:54] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[13:00:54] [Server thread/INFO]: Time elapsed: 16 ms
-[13:00:54] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[13:00:54] [Server thread/INFO]: Time elapsed: 25 ms
-[13:00:54] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.0.2
-[13:00:55] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[13:00:55] [Server thread/INFO]: Time elapsed: 78 ms
-[13:00:55] [Server thread/INFO]: Running delayed init tasks
-[13:00:55] [Server thread/INFO]: Done (5.202s)! For help, type "help"
-[13:00:55] [Server thread/INFO]: Timings Reset
-[13:05:18] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[13:05:19] [Server thread/INFO]: ht06 joined the game
-[13:05:19] [Server thread/INFO]: ht06[/127.0.0.1:51908] logged in with entity id 105 at ([world]-281.5, 69.0, 374.5)
-[13:05:23] [Server thread/INFO]: ht06 issued server command: /is
-[13:05:42] [Server thread/INFO]: ht06 lost connection: Disconnected
-[13:05:42] [Server thread/INFO]: ht06 left the game
-[13:15:28] [Server thread/INFO]: Stopping server
-[13:15:28] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.0.2
-[13:15:28] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[13:15:28] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[13:15:28] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[13:15:28] [Server thread/INFO]: Saving players
-[13:15:28] [Server thread/INFO]: Saving worlds
-[13:15:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saved 8 block chunks, 115 entity chunks, 0 poi chunks in world 'world' in 0,03s
-[13:15:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[13:15:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 20 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
-[13:15:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[13:15:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 10 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
-[13:15:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[13:15:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[13:15:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[13:15:29] [Server thread/INFO]: [ChunkHolderManager] Saved 1496 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,37s
-[13:15:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[13:15:29] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[13:15:29] [Server thread/INFO]: Flushing Chunk IO
-[13:15:29] [Server thread/INFO]: Closing Thread Pool
-[13:15:29] [Server thread/INFO]: Closing Server
+[12:16:19] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[12:16:20] [Server thread/INFO]: Default game type: SURVIVAL
+[12:16:20] [Server thread/INFO]: Generating keypair
+[12:16:20] [Server thread/INFO]: Starting Minecraft server on *:25565
+[12:16:20] [Server thread/INFO]: Using default channel type
+[12:16:20] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[12:16:20] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[12:16:20] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:16:20] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:16:20] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:16:20] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@664ba7fd]
+[12:16:20] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:16:20] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:16:20] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:16:20] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:16:20] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:16:20] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:16:20] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:16:20] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:16:21] [Server thread/INFO]: Preparing level "world"
+[12:16:22] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[12:16:22] [Server thread/INFO]: Time elapsed: 761 ms
+[12:16:22] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[12:16:22] [Server thread/INFO]: Time elapsed: 19 ms
+[12:16:22] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[12:16:22] [Server thread/INFO]: Time elapsed: 12 ms
+[12:16:22] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:16:22] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[12:16:22] [Server thread/INFO]: Time elapsed: 16 ms
+[12:16:23] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:16:23] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:16:23] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:16:23] [Server thread/INFO]: Running delayed init tasks
+[12:16:23] [Server thread/INFO]: Done (3.684s)! For help, type "help"
+[12:16:23] [Server thread/INFO]: Timings Reset
+[12:16:23] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[12:16:23] [Server thread/INFO]: [+] ht06 join the server
+[12:16:23] [Server thread/INFO]: ht06[/127.0.0.1:56134] logged in with entity id 103 at ([world]0.0, 63.0, 0.0)
+[12:16:29] [Server thread/INFO]: ht06 issued server command: /is
+[12:16:36] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:16:37] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:16:48] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:16:50] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:16:50] [Server thread/ERROR]: null
+org.bukkit.command.CommandException: Unhandled exception executing command 'is' in plugin SkyblockPlugin v1.1
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.command.BukkitCommandWrapper.run(BukkitCommandWrapper.java:64) ~[paper-1.20.4.jar:git-Paper-496]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.CommandQueueEntry.a(CommandQueueEntry.java:5) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:434) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:323) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performChatCommand(ServerGamePacketListenerImpl.java:2230) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2190) ~[?:?]
+	at net.minecraft.util.thread.BlockableEventLoop.lambda$submitAsync$0(BlockableEventLoop.java:59) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "org.bukkit.Location.clone()" because the return value of "java.util.Map.get(Object)" is null
+	at fr.ht06.skyblockplugin.Commands.IslandCommand.onCommand(IslandCommand.java:70) ~[SkyblockPlugin-1.1.jar:?]
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	... 29 more
+[12:18:14] [Server thread/INFO]: ht06 issued server command: /pl
+[12:18:15] [Server thread/INFO]: ht06 issued server command: /version SkyblockPlugin
+[12:19:43] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:19:43] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:19:43] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:19:43] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:19:43] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:19:43] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:19:43] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:19:43] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:19:43] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:19:43] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:19:44] [Server thread/INFO]: Loaded 1174 recipes
+[12:19:44] [Server thread/INFO]: Loaded 1271 advancements
+[12:19:44] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:19:44] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:19:44] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:19:44] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7c733c69]
+[12:19:44] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:19:44] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:19:44] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:19:44] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:19:44] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:19:44] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:19:44] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:19:44] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:19:44] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:19:45] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:19:45] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:19:45] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:19:45] [Server thread/INFO]: ht06: Reload complete.
+[12:19:45] [Server thread/INFO]: Timings Reset
+[12:19:47] [Server thread/INFO]: ht06 issued server command: /is de
+[12:19:49] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:19:49] [Server thread/ERROR]: null
+org.bukkit.command.CommandException: Unhandled exception executing command 'is' in plugin SkyblockPlugin v1.1
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.command.BukkitCommandWrapper.run(BukkitCommandWrapper.java:64) ~[paper-1.20.4.jar:git-Paper-496]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.CommandQueueEntry.a(CommandQueueEntry.java:5) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:434) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:323) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performChatCommand(ServerGamePacketListenerImpl.java:2230) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2190) ~[?:?]
+	at net.minecraft.util.thread.BlockableEventLoop.lambda$submitAsync$0(BlockableEventLoop.java:59) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "java.util.Map.get(Object)" is null
+	at fr.ht06.skyblockplugin.Commands.IslandCommand.onCommand(IslandCommand.java:59) ~[SkyblockPlugin-1.1.jar:?]
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	... 29 more
+[12:20:08] [Server thread/INFO]: ht06 lost connection: Disconnected
+[12:20:08] [Server thread/INFO]: [-] ht06 left the server
+[12:20:10] [User Authenticator #1/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[12:20:10] [Server thread/INFO]: [+] ht06 join the server
+[12:20:10] [Server thread/INFO]: ht06[/127.0.0.1:56268] logged in with entity id 605 at ([world]0.0, 63.0, 0.0)
+[12:20:12] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:21:12] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:21:12] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:21:12] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:21:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:21:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:21:12] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:21:12] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:21:12] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:21:12] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:21:12] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:21:12] [Server thread/INFO]: Loaded 1174 recipes
+[12:21:12] [Server thread/INFO]: Loaded 1271 advancements
+[12:21:12] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:21:12] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:21:12] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:21:13] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@66959965]
+[12:21:13] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:21:13] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:21:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:21:13] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:21:13] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:21:13] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:21:13] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:21:13] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:21:13] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:21:14] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:21:14] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:21:14] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:21:14] [Server thread/INFO]: ht06: Reload complete.
+[12:21:14] [Server thread/INFO]: Timings Reset
+[12:21:14] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:21:14] [Server thread/ERROR]: null
+org.bukkit.command.CommandException: Unhandled exception executing command 'is' in plugin SkyblockPlugin v1.1
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.command.BukkitCommandWrapper.run(BukkitCommandWrapper.java:64) ~[paper-1.20.4.jar:git-Paper-496]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.CommandQueueEntry.a(CommandQueueEntry.java:5) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:434) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[?:?]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:323) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performChatCommand(ServerGamePacketListenerImpl.java:2230) ~[?:?]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2190) ~[?:?]
+	at net.minecraft.util.thread.BlockableEventLoop.lambda$submitAsync$0(BlockableEventLoop.java:59) ~[?:?]
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Boolean.booleanValue()" because the return value of "java.util.Map.get(Object)" is null
+	at fr.ht06.skyblockplugin.Commands.IslandCommand.onCommand(IslandCommand.java:59) ~[SkyblockPlugin-1.1.jar:?]
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	... 29 more
+[12:21:36] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:21:36] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:21:36] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:21:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:21:36] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:21:36] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:21:36] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:21:36] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:21:36] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:21:36] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:21:36] [Server thread/INFO]: Loaded 1174 recipes
+[12:21:36] [Server thread/INFO]: Loaded 1271 advancements
+[12:21:37] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:21:37] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:21:37] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:21:37] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@50c08f17]
+[12:21:37] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:21:37] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:21:37] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:21:37] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:21:37] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:21:37] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:21:37] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:21:37] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:21:37] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:21:38] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:21:38] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:21:38] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:21:38] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:21:38] [Server thread/INFO]: ht06: Reload complete.
+[12:21:38] [Server thread/INFO]: Timings Reset
+[12:21:38] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:21:40] [Server thread/INFO]: ht06 lost connection: Disconnected
+[12:21:40] [Server thread/INFO]: [-] ht06 left the server
+[12:21:43] [User Authenticator #2/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[12:21:43] [Server thread/INFO]: [+] ht06 join the server
+[12:21:43] [Server thread/INFO]: ht06[/127.0.0.1:56340] logged in with entity id 799 at ([world]0.461033761036245, 63.0, 1.9775097327449278)
+[12:21:44] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:22:35] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:22:35] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:22:35] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:22:35] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:22:35] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:22:35] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:22:35] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:22:35] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:22:35] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:22:35] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:22:35] [Server thread/INFO]: Loaded 1174 recipes
+[12:22:35] [Server thread/INFO]: Loaded 1271 advancements
+[12:22:35] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:22:35] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:22:35] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:22:35] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@646334a5]
+[12:22:35] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:22:35] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:22:35] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:22:35] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:22:35] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:22:35] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:22:35] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:22:35] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:22:35] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:22:36] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:22:36] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:22:36] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:22:36] [Server thread/INFO]: ht06: Reload complete.
+[12:22:36] [Server thread/INFO]: Timings Reset
+[12:22:37] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:22:39] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:22:43] [Server thread/INFO]: ht06 issued server command: /is delete confirma
+[12:23:47] [Server thread/INFO]: ht06 issued server command: /deop ht06
+[12:23:47] [Server thread/INFO]: [ht06: Made ht06 no longer a server operator]
+[12:23:49] [Server thread/INFO]: ht06 issued server command: /help SkyblockPlugin
+[12:24:19] [Server thread/INFO]: Made ht06 a server operator
+[12:24:22] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:24:22] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:24:22] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:24:22] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:24:22] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:24:22] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:24:22] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:24:22] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:24:22] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:24:22] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:24:22] [Server thread/INFO]: Loaded 1174 recipes
+[12:24:22] [Server thread/INFO]: Loaded 1271 advancements
+[12:24:22] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:24:22] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:24:22] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:24:22] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@618b6724]
+[12:24:22] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:24:22] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:24:22] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:24:22] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:24:22] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:24:22] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:24:22] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:24:22] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:24:22] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:24:23] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:24:23] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:24:23] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:24:23] [Server thread/INFO]: ht06: Reload complete.
+[12:24:23] [Server thread/INFO]: Timings Reset
+[12:24:26] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:24:28] [Server thread/INFO]: ht06 issued server command: /is deletea
+[12:24:30] [Server thread/INFO]: ht06 issued server command: /is delete a
+[12:24:40] [Server thread/INFO]: ht06 issued server command: /is
+[12:24:51] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:24:52] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:25:50] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:25:50] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:25:50] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:25:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:25:50] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:25:50] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:25:50] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:25:50] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:25:50] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:25:50] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:25:50] [Server thread/INFO]: Loaded 1174 recipes
+[12:25:50] [Server thread/INFO]: Loaded 1271 advancements
+[12:25:50] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:25:50] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:25:50] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:25:50] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@44273dad]
+[12:25:50] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:25:50] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:25:50] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:25:50] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:25:50] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:25:50] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:25:51] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:25:51] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:25:51] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:25:51] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:25:51] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:25:51] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:25:51] [Server thread/INFO]: ht06: Reload complete.
+[12:25:51] [Server thread/INFO]: Timings Reset
+[12:25:52] [Server thread/INFO]: ht06 issued server command: /is
+[12:26:02] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:26:06] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:27:59] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:27:59] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:27:59] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:27:59] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:27:59] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:27:59] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:27:59] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:27:59] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:27:59] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:27:59] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:28:00] [Server thread/INFO]: Loaded 1174 recipes
+[12:28:00] [Server thread/INFO]: Loaded 1271 advancements
+[12:28:00] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:28:00] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:28:00] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:28:00] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@251101f5]
+[12:28:00] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:28:00] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:28:00] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:28:00] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:28:00] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:28:00] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:28:01] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:28:01] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:28:01] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:28:01] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:28:01] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:28:01] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:28:01] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[12:28:01] [Server thread/INFO]: ht06: Reload complete.
+[12:28:01] [Server thread/INFO]: Timings Reset
+[12:28:02] [Server thread/INFO]: ht06 issued server command: /is
+[12:28:07] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:28:09] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:28:26] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:28:26] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:28:26] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:28:26] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:28:26] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:28:26] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:28:26] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:28:26] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:28:26] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:28:26] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:28:26] [Server thread/INFO]: Loaded 1174 recipes
+[12:28:26] [Server thread/INFO]: Loaded 1271 advancements
+[12:28:26] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:28:26] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:28:26] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:28:26] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@25fed1ac]
+[12:28:26] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:28:26] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:28:26] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:28:26] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:28:26] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:28:26] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:28:26] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:28:26] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:28:27] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:28:27] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:28:27] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:28:27] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:28:27] [Server thread/INFO]: ht06: Reload complete.
+[12:28:27] [Server thread/INFO]: Timings Reset
+[12:28:28] [Server thread/INFO]: ht06 issued server command: /is
+[12:28:30] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:28:35] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:28:50] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:28:50] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:28:50] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:28:50] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:28:50] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:28:50] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:28:50] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:28:50] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:28:50] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:28:50] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:28:51] [Server thread/INFO]: Loaded 1174 recipes
+[12:28:51] [Server thread/INFO]: Loaded 1271 advancements
+[12:28:51] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:28:51] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:28:51] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:28:51] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@6b1d1d73]
+[12:28:51] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:28:51] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:28:51] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:28:51] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:28:51] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:28:51] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:28:51] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:28:51] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:28:51] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:28:52] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:28:52] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:28:52] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:28:52] [Server thread/INFO]: ht06: Reload complete.
+[12:28:52] [Server thread/INFO]: Timings Reset
+[12:28:52] [Server thread/INFO]: ht06 issued server command: /is
+[12:28:55] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:29:09] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:29:10] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:29:10] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:29:10] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:29:10] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:29:10] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:29:10] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:29:10] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:29:10] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:29:10] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:29:10] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:29:10] [Server thread/INFO]: Loaded 1174 recipes
+[12:29:10] [Server thread/INFO]: Loaded 1271 advancements
+[12:29:11] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:29:11] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:29:11] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:29:11] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3b87f4cf]
+[12:29:11] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:29:11] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:29:11] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:29:11] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:29:11] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:29:11] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:29:11] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:29:11] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:29:11] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:29:12] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:29:12] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:29:12] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:29:12] [Server thread/INFO]: ht06: Reload complete.
+[12:29:12] [Server thread/INFO]: Timings Reset
+[12:29:12] [Server thread/INFO]: ht06 issued server command: /is
+[12:29:14] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:29:16] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:30:45] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:30:45] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:30:45] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:30:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:30:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:30:45] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:30:45] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:30:45] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:30:45] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:30:45] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:30:45] [Server thread/INFO]: Loaded 1174 recipes
+[12:30:45] [Server thread/INFO]: Loaded 1271 advancements
+[12:30:46] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:30:46] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:30:46] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:30:47] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@e82ba1c]
+[12:30:47] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:30:47] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:30:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:30:47] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:30:47] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:30:47] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:30:47] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:30:47] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:30:47] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:30:49] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:30:49] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:30:49] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:30:49] [Server thread/INFO]: ht06: Reload complete.
+[12:30:49] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3469ms or 69 ticks behind
+[12:30:49] [Server thread/INFO]: Timings Reset
+[12:30:49] [Server thread/INFO]: ht06 issued server command: /is
+[12:30:52] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:30:53] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:31:22] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[12:31:22] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[12:31:22] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[12:31:22] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[12:31:22] [Server thread/INFO]: Using 4 threads for Netty based IO
+[12:31:22] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:31:22] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:31:22] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:31:22] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:31:22] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:31:22] [Server thread/INFO]: Loaded 1174 recipes
+[12:31:22] [Server thread/INFO]: Loaded 1271 advancements
+[12:31:22] [Server thread/ERROR]: [ModernPluginLoadingStrategy] Ambiguous plugin name 'SkyblockPlugin' for files 'plugins\SkyblockPlugin-1.1.jar' and 'plugins\SkyblockPlugin-1.0.2.jar' in 'plugins'
+[12:31:22] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[12:31:22] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[12:31:22] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@245eeb8b]
+[12:31:22] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1
+[12:31:22] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[12:31:22] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[12:31:22] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[12:31:22] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[12:31:22] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[12:31:22] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[12:31:22] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[12:31:22] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[12:31:23] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1
+[12:31:23] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[12:31:23] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[12:31:23] [Server thread/INFO]: ht06: Reload complete.
+[12:31:23] [Server thread/INFO]: Timings Reset
+[12:31:23] [Server thread/INFO]: ht06 issued server command: /is
+[12:31:27] [Server thread/INFO]: ht06 issued server command: /is delete
+[12:31:28] [Server thread/INFO]: ht06 issued server command: /is delete confirm
+[12:31:35] [Server thread/INFO]: ht06 issued server command: /stop
+[12:31:35] [Server thread/INFO]: [ht06: Stopping the server]
+[12:31:35] [Server thread/INFO]: Stopping server
+[12:31:35] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[12:31:36] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1
+[12:31:36] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[12:31:36] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[12:31:36] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[12:31:36] [Server thread/INFO]: Saving players
+[12:31:36] [Server thread/INFO]: ht06 lost connection: Server closed
+[12:31:36] [Server thread/INFO]: ht06 left the game
+[12:31:36] [Server thread/INFO]: Saving worlds
+[12:31:36] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saved 426 block chunks, 137 entity chunks, 0 poi chunks in world 'world' in 0,43s
+[12:31:36] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[12:31:36] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
+[12:31:36] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[12:31:36] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 10 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
+[12:31:36] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[12:31:36] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[12:31:36] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,00s
+[12:31:36] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[12:31:36] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[12:31:36] [Server thread/INFO]: Flushing Chunk IO
+[12:31:36] [Server thread/INFO]: Closing Thread Pool
+[12:31:36] [Server thread/INFO]: Closing Server

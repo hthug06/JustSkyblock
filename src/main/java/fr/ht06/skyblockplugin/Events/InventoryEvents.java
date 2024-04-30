@@ -65,8 +65,8 @@ public class InventoryEvents implements Listener {
                             z = z + coords[random.nextInt(0, 2)];
                             finale.add(x);
                             finale.add(z);
-                            if (!main.CoordsTaken.contains(finale)) {
-                                main.CoordsTaken.add(finale);
+                            if (!main.CoordsTaken.containsValue(finale)) {
+                                main.CoordsTaken.put(player.getName(), finale);
                                 loc = new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z);
                                 find = true;
                             } else {
@@ -107,7 +107,7 @@ public class InventoryEvents implements Listener {
                         List<Integer> finale = new ArrayList<>();
                         finale.add(x);
                         finale.add(z);
-                        main.CoordsTaken.add(finale);
+                        main.CoordsTaken.put(player.getName(), finale);
 
                         SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
                                 main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));

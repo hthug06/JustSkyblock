@@ -17,9 +17,22 @@ public class IslandCommandTab implements TabCompleter {
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
 
-        List<String> liste = new ArrayList<>();
-        liste.add("setspawn");
+        if (strings.length == 1){
+            List<String> listearg0 = new ArrayList<>();
+            listearg0.add("setspawn");
+            listearg0.add("delete");
 
-        return liste;
+            return listearg0;
+        }
+        /*if (strings.length == 2){
+            if (strings[0].equalsIgnoreCase("delete")){
+                List<String> listearg1 = new ArrayList<>();
+                listearg1.add("confirm");
+
+                return listearg1;
+            }
+        }*/
+
+        return List.of();
     }
 }
