@@ -50,10 +50,10 @@ public class InventoryEvents implements Listener {
 
                 //Si le joueur n'a pas d'île
                 if (main.hasIS.containsKey(player.getName()) && !main.hasIS.get(player.getName())) {
-                    //Si le monde skyblock existe
-                    if (new File(main.getServer().getWorldContainer().getAbsolutePath() + "/world_Skyblock/").exists()) {
+                    //Si quelqu'un a déjà une ile
+                    if (!main.hasIS.isEmpty()) {
 
-                        player.sendMessage("§aCréation de l'île");
+                        player.sendMessage("§aCreation of the Island");
                         //Pour que les joueur ai pas ls meme coordonnées (temporaire)
                         boolean find = false;
                         int x = 0;
@@ -89,15 +89,15 @@ public class InventoryEvents implements Listener {
 
                     }
 
-                    //Si le monde skyblock n'existe pas donc 1er joueur
+                    //Si personne n'a d'île donc 1er joueur
                     else {
-                        player.sendMessage("Vous êtes le premier joueur à créer une ile, MERCI");
-                        player.sendMessage("Création du monde 'Skyblock'");
+                        player.sendMessage("You are the first player to create an island, thank you!");
+                        player.sendMessage("Creation of the world 'Skyblock'");
 
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
                         //new LoadSchematic(loc,"world_Skyblock", "IslandPlain");
                         new LoadSchematic(loc, loc.getWorld().getName(), island.get("Schematic"));
-                        player.sendMessage("§aCréation de l'île");
+                        player.sendMessage("§aCreation of the Island");
 
                         player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
                         main.hasIS.put(player.getName(), true);

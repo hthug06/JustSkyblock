@@ -37,7 +37,7 @@ public class IslandCommand implements CommandExecutor {
                 player.teleport(main.IScoor.get(player.getName()));
                 SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
                         main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ() ) );
-                player.sendMessage("téléportation sur l'île");
+                player.sendMessage("§Teleportation to the Island");
             }
         }
 
@@ -47,10 +47,10 @@ public class IslandCommand implements CommandExecutor {
                 Location ploc = player.getLocation();
                 Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY()-1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
                 if (behindplayer.getBlock().getType().isAir()){
-                    player.sendMessage("§cChoissisez un endroit valide");
+                    player.sendMessage("§cSelect a valid spot for the spawn");
                 }
                 else {
-                    player.sendMessage("Le spawn de l'ile a été changé");
+                    player.sendMessage("Island spawn has change");
                     main.IScoor.put(player.getName(), player.getLocation());
                 }
             }
@@ -66,6 +66,7 @@ public class IslandCommand implements CommandExecutor {
                 }
 
             }
+
         }
 
         if (args.length == 2){
