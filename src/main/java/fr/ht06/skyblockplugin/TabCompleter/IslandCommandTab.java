@@ -1,9 +1,11 @@
 package fr.ht06.skyblockplugin.TabCompleter;
 
 import fr.ht06.skyblockplugin.SkyblockPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -21,17 +23,21 @@ public class IslandCommandTab implements TabCompleter {
             List<String> listearg0 = new ArrayList<>();
             listearg0.add("setspawn");
             listearg0.add("delete");
+            listearg0.add("visit");
+            listearg0.add("settings");
 
             return listearg0;
         }
-        /*if (strings.length == 2){
-            if (strings[0].equalsIgnoreCase("delete")){
+        if (strings.length == 2){
+            if (strings[0].equalsIgnoreCase("visit")){
                 List<String> listearg1 = new ArrayList<>();
-                listearg1.add("confirm");
 
+                for (Player p: Bukkit.getOnlinePlayers())
+                        listearg1.add(p.getName());
                 return listearg1;
             }
-        }*/
+        }
+
 
         return List.of();
     }

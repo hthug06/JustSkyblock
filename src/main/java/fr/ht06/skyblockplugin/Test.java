@@ -27,8 +27,14 @@ public class Test implements CommandExecutor {
 
 
         if (strings.length == 1){
-            int[] a = {1,3};
-            player.sendMessage(String.valueOf(main.CoordsTaken));
+            /*for (Map.Entry<String , Location> v : main.IScoor.entrySet()){
+                if  (IslandCommand.onIsland(player.getLocation(),v.getValue().clone().add(-50, -200, -50), v.getValue().clone().add(50, 300, 50))){
+                    player.sendMessage("you are on "+v.getKey()+"'s Island");
+                }
+            }*/
+            player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings));
+            player.sendMessage(String.valueOf(main.hasIS));
+
             /*for (String v: DataConfig.get().getConfigurationSection("Players").getKeys(false)){
                 System.out.println(v);
                 FileConfiguration dataconfig = DataConfig.get();

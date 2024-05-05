@@ -33,6 +33,7 @@ public class PlayerListeners implements Listener {
     }
 
 
+
     @EventHandler
     public void onBreak(BlockBreakEvent event){
         Player player = event.getPlayer();
@@ -40,7 +41,8 @@ public class PlayerListeners implements Listener {
             if (main.hasIS.get(player.getName())==null || !main.hasIS.get(player.getName())){
                 event.setCancelled(true);
                 return;
-            }            if (!contains(player.getLocation(), main.IScoor.get(player.getName()).clone().add(-50, -200, -50), main.IScoor.get(player.getName()).clone().add(50, 300, 50))
+            }
+            if (!contains(player.getLocation(), main.IScoor.get(player.getName()).clone().add(-50, -200, -50), main.IScoor.get(player.getName()).clone().add(50, 300, 50))
                 || main.hasIS.get(player.getName()) == null){
                 event.setCancelled(true);
             }

@@ -1,6 +1,7 @@
 package fr.ht06.skyblockplugin.Events;
 
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
+import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
 import fr.ht06.skyblockplugin.LoadSchematic;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import org.bukkit.Bukkit;
@@ -113,11 +114,34 @@ public class InventoryEvents implements Listener {
                                 main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));
 
                     }
+
+                    SkyblockPlugin.playerIslandSettings.put(player.getName(), SkyblockPlugin.ItemSettingBool);
+
                 }
 
 
                 //System.out.println(main.getServer().getWorldContainer().getAbsolutePath()+"/Skyblock/");
             }
+
+        }
+
+        if (event.getClickedInventory().getHolder() instanceof IslandSettingsInv){
+
+
+            event.setCancelled(true);
+            //if (event.getCurrentItem().isEmpty()) return;
+            if (SkyblockPlugin.playerIslandSettings.get(player.getName()).get(event.getCurrentItem().getType().name())){
+                    SkyblockPlugin.setFalse(event.getCurrentItem());
+                    SkyblockPlugin.playerIslandSettings.get(player.getName()).put(event.getCurrentItem().getType().name(), false);
+            }
+            else{
+                    SkyblockPlugin.setTrue(event.getCurrentItem());
+                    SkyblockPlugin.playerIslandSettings.get(player.getName()).put(event.getCurrentItem().getType().name(), true);
+
+            }
+            player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
+
+            player.updateInventory();
 
         }
 

@@ -7,11 +7,15 @@ import fr.ht06.skyblockplugin.Config.DataConfig;
 import fr.ht06.skyblockplugin.Events.InventoryEvents;
 import fr.ht06.skyblockplugin.Events.PlayerListeners;
 import fr.ht06.skyblockplugin.TabCompleter.IslandCommandTab;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,11 +35,17 @@ public final class SkyblockPlugin extends JavaPlugin {
     public static SkyblockPlugin instance;
     public static String test ="ygvfshbk";
     public static IslandList islandList;
+    public static Map<String, Map<String, Boolean>> playerIslandSettings = new HashMap<>();
+    public static Map<String, List<String>> onIsland = new HashMap<>();
+    public static Map<String, Boolean> ItemSettingBool = new HashMap<>();
+
 
 
     @Override
     public void onEnable() {
         instance =this;
+
+        addSettingsItem();
 
         //Creation du world_skyblock si il existe pas et le loader sinon
         String settings = "{\"structures\":{\"structures\":{}},\"layers\":[{\"height\":9,\"block\":\"air\"},{\"height\":1,\"block\":\"air\"}],\"lakes\":false,\"features\":false,\"biome\":\"plains\"}";
@@ -161,5 +171,32 @@ public final class SkyblockPlugin extends JavaPlugin {
         configFile.delete();
         saveDefaultConfig();
         reloadConfig();
+    }
+
+    public static ItemStack setTrue(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("True").color(TextColor.color(0x2FCC33)));
+        liste.add(Component.text("False").color(TextColor.color(0x898F86)));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
+    }
+
+    public static ItemStack setFalse(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("True").color(TextColor.color(0x898F86)));
+        liste.add(Component.text("False").color(TextColor.color(0xCC322A)));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
+    }
+
+    private void addSettingsItem(){
+        SkyblockPlugin.ItemSettingBool.put("OAK_DOOR", false);
+        SkyblockPlugin.ItemSettingBool.put("CHEST", false);
+        SkyblockPlugin.ItemSettingBool.put("OAK_PRESSURE_PLATE", false);
+        SkyblockPlugin.ItemSettingBool.put("OAK_BUTTON", false);
     }
 }

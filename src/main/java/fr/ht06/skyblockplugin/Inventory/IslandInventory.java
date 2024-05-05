@@ -39,10 +39,6 @@ public class IslandInventory implements InventoryHolder {
             inv.setItem(Integer.parseInt(String.valueOf(SkyblockPlugin.getInstance().getConfig().get("IS."+name+"."+configISchild.get(4)))), item);
         }
 
-
-
-
-
     }
 
     private ItemStack createItem(String name, Material material, List<Component> lore){
