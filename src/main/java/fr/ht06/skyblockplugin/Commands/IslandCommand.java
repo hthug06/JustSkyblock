@@ -2,13 +2,14 @@ package fr.ht06.skyblockplugin.Commands;
 
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
+import fr.ht06.skyblockplugin.IslandManager.Island;
+import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -21,6 +22,7 @@ public class IslandCommand implements CommandExecutor {
     public IslandCommand(SkyblockPlugin main) {
         this.main  = main;
     }
+    IslandManager islandManager = SkyblockPlugin.islandManager;
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
@@ -28,41 +30,45 @@ public class IslandCommand implements CommandExecutor {
         Player player = (Player) commandSender;
 
         if (args.length == 0){
-            main.hasIS.putIfAbsent(player.getName(), false);
-            if (!main.hasIS.get(player.getName()) || main.hasIS.get(player.getName())== null){
+            if (!islandManager.playerHasIsland(player.getName())){
                 IslandInventory gui = new IslandInventory();
                 player.openInventory(gui.getInventory());
-                SkyblockPlugin.playerIslandSettings.put(player.getName(), SkyblockPlugin.ItemSettingBool);
+
             }
 
             else {
-                player.teleport(main.IScoor.get(player.getName()));
+                Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
+                player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
                 SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                        main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ() ) );
+                        island.getIslandSpawn().getBlockX(),
+                        island.getIslandSpawn().getBlockY(),
+                        island.getIslandSpawn().getBlockZ()));
                 player.sendMessage("§aTeleportation to the Island");
             }
         }
 
         if (args.length == 1){
             if (args[0].equalsIgnoreCase("setspawn")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else {
+                    Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
                     //Si il n'y a rien en dessous
                     Location ploc = player.getLocation();
                     Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY() - 1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
                     if (behindplayer.getBlock().getType().isAir()) {
                         player.sendMessage("§cSelect a valid spot for the spawn");
-                    } else {
+                    }
+                    else {
                         player.sendMessage("Island spawn has changed");
-                        main.IScoor.put(player.getName(), player.getLocation());
+                        island.setIslandSpawn(player.getLocation());
                     }
                 }
             }
 
             if (args[0].equalsIgnoreCase("delete")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
@@ -78,7 +84,7 @@ public class IslandCommand implements CommandExecutor {
             }
 
             if (args[0].equalsIgnoreCase("settings")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
@@ -93,18 +99,20 @@ public class IslandCommand implements CommandExecutor {
         if (args.length == 2){
 
             if (args[0].equalsIgnoreCase("setspawn")){
-                if (!main.hasIS.containsKey(player.getName()) || !main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else {
+                    Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
                     //Si il n'y a rien en dessous
                     Location ploc = player.getLocation();
                     Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY() - 1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
                     if (behindplayer.getBlock().getType().isAir()) {
                         player.sendMessage("§cSelect a valid spot for the spawn");
-                    } else {
+                    }
+                    else {
                         player.sendMessage("Island spawn has changed");
-                        main.IScoor.put(player.getName(), player.getLocation());
+                        island.setIslandSpawn(player.getLocation());
                     }
                 }
             }
@@ -113,40 +121,15 @@ public class IslandCommand implements CommandExecutor {
 
             if (args[0].equalsIgnoreCase("delete")){
                 if (args[1].equalsIgnoreCase("confirm")) {
-                    if (!main.hasIS.containsKey(player.getName()) || !main.hasIS.get(player.getName())) {
+                    if (!islandManager.playerHasIsland(player.getName())){
                         player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                     }
                     else {
-                        Bukkit.dispatchCommand(player, "spawn");
-                        //y
-                        for (int i = -64; i < 320/*couche max à couche min*/; i++) {
-                            Location isLoc1 = main.IScoor.get(player.getName()).clone().add(-50, -200, -50);
-                            int x = isLoc1.getBlockX();
-                            int y = i;
-                            int z = isLoc1.getBlockZ();
-
-                            Location isLoc2 = main.IScoor.get(player.getName()).clone().add(50, 300, 50);
-                            int x2 = isLoc2.getBlockX();
-                            int y2 = i;
-                            int z2 = isLoc2.getBlockZ();
-                            //x
-                            for (int j = x; j < x2; j++) {
-                                //z
-                                for (int k = z; k < z2; k++) {
-                                    if (!Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), j, i, k)).getType().isAir())
-                                        Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), j, i, k)).setType(Material.AIR);
-                                }
-                            }
-                        }
-                        main.hasIS.put(player.getName(), false);
-                        main.IScoor.remove(player.getName());
-                        main.CoordsTaken.remove(player.getName());
-                        player.getInventory().clear();
-                        SkyblockPlugin.playerIslandSettings.remove(player.getName());
+                        SkyblockPlugin.deleteIsland(player);
                     }
                 }
                 else{
-                    if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                    if (!islandManager.playerHasIsland(player.getName())){
                         player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                     }
                     else{
@@ -158,10 +141,10 @@ public class IslandCommand implements CommandExecutor {
             }
 
             if (args[0].equalsIgnoreCase("visit")){
-                if (main.hasIS.containsKey(args[1]) && main.hasIS.get(args[1])){
-                    player.teleport(main.IScoor.get(args[1]));
+                if (islandManager.playerHasIsland(args[1])){
+                    player.teleport(islandManager.getIslandbyplayer(args[1]).getIslandSpawn());
                     player.sendMessage("§aTeleportation to "+args[1]+"'s Island");
-                    SkyblockPlugin.worldBorderApi.setBorder(player, 100, main.IScoor.get(args[1]));
+                    SkyblockPlugin.worldBorderApi.setBorder(player, 100, islandManager.getIslandbyplayer(args[1]).getIslandSpawn());
 
                 }
                 else{
@@ -170,21 +153,27 @@ public class IslandCommand implements CommandExecutor {
             }
 
             if (args[0].equalsIgnoreCase("setspawn")){
-                //Si il n'y a rien en dessous
-                Location ploc = player.getLocation();
-                Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY()-1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
-                if (behindplayer.getBlock().getType().isAir()){
-                    player.sendMessage("§cSelect a valid spot for the spawn");
+                if (!islandManager.playerHasIsland(player.getName())){
+                    player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else {
-                    player.sendMessage("Island spawn has changed");
-                    main.IScoor.put(player.getName(), player.getLocation());
+                    Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
+                    //Si il n'y a rien en dessous
+                    Location ploc = player.getLocation();
+                    Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY() - 1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
+                    if (behindplayer.getBlock().getType().isAir()) {
+                        player.sendMessage("§cSelect a valid spot for the spawn");
+                    }
+                    else {
+                        player.sendMessage("Island spawn has changed");
+                        island.setIslandSpawn(player.getLocation());
+                    }
                 }
             }
 
 
             if (args[0].equalsIgnoreCase("settings")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
@@ -196,28 +185,31 @@ public class IslandCommand implements CommandExecutor {
         }
         if (args.length > 2){
 
-            if (args[0].equalsIgnoreCase("setspawn")) {
-                if (!main.hasIS.containsKey(player.getName()) || !main.hasIS.get(player.getName())) {
+            if (args[0].equalsIgnoreCase("setspawn")){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
-                } else {
+                }
+                else {
+                    Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
                     //Si il n'y a rien en dessous
                     Location ploc = player.getLocation();
                     Location behindplayer = new Location(ploc.getWorld(), ploc.getX(), ploc.getY() - 1, ploc.getZ(), ploc.getYaw(), ploc.getPitch());
                     if (behindplayer.getBlock().getType().isAir()) {
                         player.sendMessage("§cSelect a valid spot for the spawn");
-                    } else {
+                    }
+                    else {
                         player.sendMessage("Island spawn has changed");
-                        main.IScoor.put(player.getName(), player.getLocation());
+                        island.setIslandSpawn(player.getLocation());
                     }
                 }
             }
 
             if (args[0].equalsIgnoreCase("visit")){
-                player.sendMessage("§cThis player doesn't have an island or doesn't exist.");
+                player.sendMessage("§c/visit <player>");
             }
 
             if (args[0].equalsIgnoreCase("delete")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
@@ -229,7 +221,7 @@ public class IslandCommand implements CommandExecutor {
             }
 
             if (args[0].equalsIgnoreCase("settings")){
-                if (!main.hasIS.containsKey(player.getName()) ||!main.hasIS.get(player.getName()) ){
+                if (!islandManager.playerHasIsland(player.getName())){
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{

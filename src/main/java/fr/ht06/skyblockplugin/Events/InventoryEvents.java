@@ -2,6 +2,8 @@ package fr.ht06.skyblockplugin.Events;
 
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
+import fr.ht06.skyblockplugin.IslandManager.Island;
+import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.LoadSchematic;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import org.bukkit.Bukkit;
@@ -24,6 +26,8 @@ public class InventoryEvents implements Listener {
     private Random random = new Random();
     private SkyblockPlugin main;
     private Integer[] coords = {1000, -1000};
+    IslandManager islandManager = SkyblockPlugin.islandManager;
+
 
     public InventoryEvents(SkyblockPlugin main) {
         this.main = main;
@@ -42,18 +46,17 @@ public class InventoryEvents implements Listener {
 
             if (event.getSlot()< SkyblockPlugin.getInstance().getConfig().getConfigurationSection("IS.").getKeys(false).size()){
 
-                Map<String, String> island = SkyblockPlugin.islandList.getIslandBySlot(event.getSlot());
-                if (!new File(getServer().getPluginsFolder().getAbsoluteFile() + "/SkyblockPlugin/Schematic/" + island.get("Schematic")).exists()){
-                    getLogger().severe("The file :'" + island.get("Schematic")+"' didn't exist");
+                Map<String, String> islandlist = SkyblockPlugin.islandList.getIslandBySlot(event.getSlot());
+                if (!new File(getServer().getPluginsFolder().getAbsoluteFile() + "/SkyblockPlugin/Schematic/" + islandlist.get("Schematic")).exists()){
+                    getLogger().severe("The file :'" + islandlist.get("Schematic")+"' didn't exist");
                     player.sendMessage("The schematic of the island didn't exist, please contact an administrator");
                     return;
                 }
 
                 //Si le joueur n'a pas d'île
-                if (main.hasIS.containsKey(player.getName()) && !main.hasIS.get(player.getName())) {
+                if (!islandManager.playerHasIsland(player.getName())) {
                     //Si quelqu'un a déjà une ile
-                    if (!main.hasIS.isEmpty()) {
-
+                    if (!islandManager.getAllIsland().isEmpty()) {
                         player.sendMessage("§aCreation of the Island");
                         //Pour que les joueur ai pas ls meme coordonnées (temporaire)
                         boolean find = false;
@@ -66,27 +69,33 @@ public class InventoryEvents implements Listener {
                             z = z + coords[random.nextInt(0, 2)];
                             finale.add(x);
                             finale.add(z);
-                            if (!main.CoordsTaken.containsValue(finale)) {
-                                main.CoordsTaken.put(player.getName(), finale);
+                            if (!islandManager.getAllCoordinate().containsValue(finale)) {
                                 loc = new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z);
+                                Island island = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
+                                islandManager.addIsland(island);
+                                //SkyblockPlugin.islandCoordinates.addCoordinates(islandManager.getIslandbyplayer(player.getName()).getIslandName(), finale);
+
                                 find = true;
                             } else {
                                 finale = new ArrayList<>();
                             }
+
+                            Island newIsland = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
+                            SkyblockPlugin.islandManager.addIsland(newIsland);
+
                         }
 
                         //new LoadSchematic(loc,"world_Skyblock", "islandPlain");
 
                         //a régler
-                        new LoadSchematic(loc, "world_Skyblock", island.get("Schematic"));
+                        new LoadSchematic(loc, "world_Skyblock", islandlist.get("Schematic"));
 
                         player.closeInventory();
-                        player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z));
+                        player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
 
-                        main.hasIS.put(player.getName(), true);
-                        main.IScoor.put(player.getName(), new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z));
-                        SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                                main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));
+                        SkyblockPlugin.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
+                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
+                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
 
                     }
 
@@ -97,25 +106,28 @@ public class InventoryEvents implements Listener {
 
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
                         //new LoadSchematic(loc,"world_Skyblock", "IslandPlain");
-                        new LoadSchematic(loc, loc.getWorld().getName(), island.get("Schematic"));
+                        new LoadSchematic(loc, loc.getWorld().getName(), islandlist.get("Schematic"));
                         player.sendMessage("§aCreation of the Island");
 
                         player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
-                        main.hasIS.put(player.getName(), true);
-                        main.IScoor.put(player.getName(), new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
                         int x = 0;
                         int z = 0;
                         List<Integer> finale = new ArrayList<>();
                         finale.add(x);
                         finale.add(z);
-                        main.CoordsTaken.put(player.getName(), finale);
 
-                        SkyblockPlugin.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                                main.IScoor.get(player.getName()).getX(), 0, main.IScoor.get(player.getName()).getZ()));
+                        Island island = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
+                        islandManager.addIsland(island);
+                        //SkyblockPlugin.islandCoordinates.addCoordinates(island.getIslandName(), island.getIslandCoordinates());
+
+
+                        SkyblockPlugin.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
+                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
+                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
 
                     }
 
-                    SkyblockPlugin.playerIslandSettings.put(player.getName(), SkyblockPlugin.ItemSettingBool);
+                    //SkyblockPlugin.playerIslandSettings.put(player.getName(), SkyblockPlugin.ItemSettingBool);
 
                 }
 
@@ -130,16 +142,16 @@ public class InventoryEvents implements Listener {
 
             event.setCancelled(true);
             //if (event.getCurrentItem().isEmpty()) return;
-            if (SkyblockPlugin.playerIslandSettings.get(player.getName()).get(event.getCurrentItem().getType().name())){
+            if (islandManager.getIslandbyplayer(player.getName()).getAllSettings().get(event.getCurrentItem().getType().name())){
                     SkyblockPlugin.setFalse(event.getCurrentItem());
-                    SkyblockPlugin.playerIslandSettings.get(player.getName()).put(event.getCurrentItem().getType().name(), false);
+                    islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), false);
             }
             else{
-                    SkyblockPlugin.setTrue(event.getCurrentItem());
-                    SkyblockPlugin.playerIslandSettings.get(player.getName()).put(event.getCurrentItem().getType().name(), true);
+                SkyblockPlugin.setTrue(event.getCurrentItem());
+                islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), true);
 
             }
-            player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
+            //player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
 
             player.updateInventory();
 

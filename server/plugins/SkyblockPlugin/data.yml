@@ -1,15 +1,18 @@
 WARNING 1: This is the data file, it's stock data while the server is offline
 WARNING 2: Don't touch this file or everything can be corrupt
 WARNING 3: If you delete this file, every player data will be reset
-Players:
-  fneris:
-    world: world_Skyblock
-    x: 0.0
-    y: 70.0
-    z: 0.0
-    pitch: 0.0
-    yaw: 0.0
-Coordinates:
-  fneris:
-  - 0
-  - 0
+Island:
+  ht06's Island:
+    LocationSpawn:
+      world: world_Skyblock
+      x: 0.0
+      y: 70.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
+    Owner: ht06
+    Players:
+    - ht06
+    Coordinates:
+    - 0
+    - 0

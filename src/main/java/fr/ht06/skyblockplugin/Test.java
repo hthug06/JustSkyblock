@@ -8,6 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Test implements CommandExecutor {
 
 
@@ -27,13 +30,22 @@ public class Test implements CommandExecutor {
 
 
         if (strings.length == 1){
+            List<Integer> list =new ArrayList<>();
+            list.add(1000);
+            list.add(1000);
+            player.sendMessage(SkyblockPlugin.islandManager.getIslandbyplayer(player.getName()).getAllSettings().toString());
+            //Island island=  new Island(player.getName()+"'s Island", player.getName(),list, new Location(Bukkit.getWorld("world"), 1000, 0, 1000));
+            //SkyblockPlugin.islandManager.addIsland(island);
+            //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.getAllIslandtoMap()));
+            //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.getIslandtoMap(player.getName()+"'s Island")));
+            //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.playerHasIsland(strings[0])));
             /*for (Map.Entry<String , Location> v : main.IScoor.entrySet()){
                 if  (IslandCommand.onIsland(player.getLocation(),v.getValue().clone().add(-50, -200, -50), v.getValue().clone().add(50, 300, 50))){
                     player.sendMessage("you are on "+v.getKey()+"'s Island");
                 }
             }*/
-            player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings));
-            player.sendMessage(String.valueOf(main.hasIS));
+            //player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings));
+            //player.sendMessage(String.valueOf(main.hasIS));
 
             /*for (String v: DataConfig.get().getConfigurationSection("Players").getKeys(false)){
                 System.out.println(v);
