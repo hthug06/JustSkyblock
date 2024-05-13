@@ -14,36 +14,29 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.util.*;
 
 public final class SkyblockPlugin extends JavaPlugin {
 
-    public Map<String, Boolean> hasIS = new HashMap<>();
 
-    public Map<String, Location> IScoor = new HashMap<>();
-    public Map<String, List<Integer>> CoordsTaken = new HashMap<>();
     public static WorldBorderApi worldBorderApi;
     public static SkyblockPlugin instance;
-    public static String test ="ygvfshbk";
     public static IslandListByYAML islandList;
-    public static Map<String, Map<String, Boolean>> playerIslandSettings = new HashMap<>();
-    public static Map<String, List<String>> onIsland = new HashMap<>();
-    public static Map<String, Boolean> ItemSettingBool = new HashMap<>();
-    public static Map<String, Component> itemSettingName = new HashMap<>();
     public static IslandManager islandManager;
 
 
     @Override
     public void onEnable() {
         instance =this;
-        addSettingsItem();
 
 
         islandManager = new IslandManager();
@@ -140,12 +133,6 @@ public final class SkyblockPlugin extends JavaPlugin {
                 islandManager.addIsland(island);
             }
         }
-        if (DataConfig.get().contains("Coordinates")) {
-            for (String v : DataConfig.get().getConfigurationSection("Coordinates").getKeys(false)) {
-                CoordsTaken.put(v, (List<Integer>) DataConfig.get().get("Coordinates."+v));
-            }
-        }
-
 
         //On dégage le data.yml
         File dataYML = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
@@ -203,8 +190,8 @@ public final class SkyblockPlugin extends JavaPlugin {
     public static ItemStack setTrue(ItemStack item) {
         ItemMeta itemMeta = item.getItemMeta();
         List<Component> liste = new ArrayList<>();
-        liste.add(Component.text("True").color(TextColor.color(0x2FCC33)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
-        liste.add(Component.text("False").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,false));
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x2FCC33)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        liste.add(Component.text("DISALLOW").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
         itemMeta.lore(liste);
         item.setItemMeta(itemMeta);
         return item;
@@ -213,22 +200,11 @@ public final class SkyblockPlugin extends JavaPlugin {
     public static ItemStack setFalse(ItemStack item) {
         ItemMeta itemMeta = item.getItemMeta();
         List<Component> liste = new ArrayList<>();
-        liste.add(Component.text("True").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,false));
-        liste.add(Component.text("False").color(TextColor.color(0xCC322A)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
+        liste.add(Component.text("DISALLOW").color(TextColor.color(0xCC322A)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
         itemMeta.lore(liste);
         item.setItemMeta(itemMeta);
         return item;
-    }
-
-    private void addSettingsItem() {
-        SkyblockPlugin.ItemSettingBool.put("OAK_DOOR", false);
-        SkyblockPlugin.ItemSettingBool.put("CHEST", false);
-        SkyblockPlugin.ItemSettingBool.put("OAK_PRESSURE_PLATE", false);
-        SkyblockPlugin.ItemSettingBool.put("OAK_BUTTON", false);
-        SkyblockPlugin.itemSettingName.put("OAK_DOOR", Component.text("Allow player to use doors").decoration(TextDecoration.ITALIC, false));
-        SkyblockPlugin.itemSettingName.put("CHEST", Component.text("Allow player to use chest").decoration(TextDecoration.ITALIC, false));
-        SkyblockPlugin.itemSettingName.put("OAK_PRESSURE_PLATE", Component.text("Allow player to use pressures plates").decoration(TextDecoration.ITALIC, false));
-        SkyblockPlugin.itemSettingName.put("OAK_BUTTON", Component.text("Allow player to use buttons").decoration(TextDecoration.ITALIC, false));
     }
 
 
@@ -250,6 +226,14 @@ public final class SkyblockPlugin extends JavaPlugin {
                 for (int z = z1; z < z2; z++) {
                     if (!Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).getType().isAir())
                         Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).setType(Material.AIR);
+
+                    if (x==0 && y== 70 && z== 0) {
+                        @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld("world_Skyblock"), x, y, z).getNearbyEntities(50, 400, 50);
+                        for (Entity e : livingEntity) {
+                            System.out.println(e);
+                            if (!e.equals(player)) e.remove();
+                        }
+                    }
                 }
             }
         }

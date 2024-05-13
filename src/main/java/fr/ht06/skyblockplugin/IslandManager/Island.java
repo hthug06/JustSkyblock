@@ -2,11 +2,7 @@ package fr.ht06.skyblockplugin.IslandManager;
 
 import org.bukkit.Location;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 
 
 public class Island {
@@ -15,7 +11,7 @@ public class Island {
     private List<Integer> islandCoordinates;
     private Location islandSpawn;
     private List<String> players = new ArrayList<>();
-    private Map<String , Boolean> allSettings = new HashMap<>();
+    private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<Object, Object> Island = new HashMap<>();
 
     public Island(String IslandName, String playerOwnerName, List<Integer> islandCoordinates, Location islandSpawn){
@@ -104,10 +100,35 @@ public class Island {
 
 
     private void createSettings(){
+        this.allSettings.put("OAK_FENCE_GATE", true);//0
         this.allSettings.put("OAK_DOOR", true);
         this.allSettings.put("OAK_TRAPDOOR", true);
         this.allSettings.put("OAK_PRESSURE_PLATE", true);
-        this.allSettings.put("CHEST", true);
         this.allSettings.put("OAK_BUTTON", true);
+        this.allSettings.put("LEVER", true);
+        this.allSettings.put("WHITE_BED", true);
+        this.allSettings.put("CHEST", true);
+        this.allSettings.put("SHULKER_BOX", true);
+        this.allSettings.put("CRAFTING_TABLE", true);
+        this.allSettings.put("STONECUTTER", true);//10
+        this.allSettings.put("CARTOGRAPHY_TABLE", true);
+        this.allSettings.put("SMITHING_TABLE", true);
+        this.allSettings.put("GRINDSTONE", true);
+        this.allSettings.put("FURNACE", true);
+        this.allSettings.put("SMOKER", true);
+        this.allSettings.put("BLAST_FURNACE", true);
+        this.allSettings.put("LOOM", true);
+        this.allSettings.put("ANVIL", true);
+        this.allSettings.put("CAMPFIRE", true);
+        this.allSettings.put("COMPOSTER", true);
+        this.allSettings.put("NOTE_BLOCK", true);
+        this.allSettings.put("JUKEBOX", true);
+        this.allSettings.put("ENCHANTING_TABLE", true);
+        this.allSettings.put("END_CRYSTAL", true);
+        this.allSettings.put("BREWING_STAND", true);
+        this.allSettings.put("CAULDRON", true);//26
+        this.allSettings.put("BELL", true);//Page 2  | 1
+        this.allSettings.put("BEACON", true);
+        this.allSettings.put("LODESTONE", true);
     }
 }

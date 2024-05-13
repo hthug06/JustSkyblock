@@ -1,5 +1,6 @@
 package fr.ht06.skyblockplugin;
 
+import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -8,12 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Test implements CommandExecutor {
 
-
+    IslandManager islandManager  = SkyblockPlugin.islandManager;
     SkyblockPlugin main;
     public Test(SkyblockPlugin main) {
         this.main = main;
@@ -30,10 +28,8 @@ public class Test implements CommandExecutor {
 
 
         if (strings.length == 1){
-            List<Integer> list =new ArrayList<>();
-            list.add(1000);
-            list.add(1000);
-            player.sendMessage(SkyblockPlugin.islandManager.getIslandbyplayer(player.getName()).getAllSettings().toString());
+            Location loc= new Location(Bukkit.getWorld("world_Skyblock"),islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 70, islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1));
+            //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
             //Island island=  new Island(player.getName()+"'s Island", player.getName(),list, new Location(Bukkit.getWorld("world"), 1000, 0, 1000));
             //SkyblockPlugin.islandManager.addIsland(island);
             //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.getAllIslandtoMap()));

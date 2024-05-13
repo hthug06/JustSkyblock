@@ -233,12 +233,4 @@ public class IslandCommand implements CommandExecutor {
 
         return true;
     }
-
-    public static boolean onIsland(Location loc, Location l1, Location l2) {
-        return loc.getBlockX() >= l1.getBlockX() && loc.getBlockX() <= l2.getBlockX()
-                && loc.getBlockY() >= l1.getBlockY() && loc.getBlockY() <= l2.getBlockY()
-                && loc.getBlockZ() >= l1.getBlockZ() && loc.getBlockZ() <= l2.getBlockZ();
-    }
-
-
 }

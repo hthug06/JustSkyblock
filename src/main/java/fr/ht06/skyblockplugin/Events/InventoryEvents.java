@@ -141,6 +141,7 @@ public class InventoryEvents implements Listener {
 
 
             event.setCancelled(true);
+            if (event.getSlot() >= islandManager.getIslandbyplayer(player.getName()).getAllSettings().size())return;  //permet de ne pas avoir d'erreurs quand on clique sur rien
             //if (event.getCurrentItem().isEmpty()) return;
             if (islandManager.getIslandbyplayer(player.getName()).getAllSettings().get(event.getCurrentItem().getType().name())){
                     SkyblockPlugin.setFalse(event.getCurrentItem());
