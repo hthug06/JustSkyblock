@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkyblockPlugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/SkyblockPlugin.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/git.JustSkyblock.SkyblockPlugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/git.JustSkyblock.SkyblockPlugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/git.JustSkyblock.SkyblockPlugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/git.JustSkyblock.SkyblockPlugin.test.iml" />
     </modules>
   </component>
 </project>

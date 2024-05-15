@@ -38,7 +38,7 @@ public class IslandSettingsInv2 implements InventoryHolder {
     private void init(Player player) {
         Island island = islandManager.getIslandbyplayer(player.getName());
         for (Map.Entry<String, Boolean> v : island.getAllSettings().entrySet()) {
-            if (v.getKey().equalsIgnoreCase("BEACON") && State.equals(false)) {
+            if (i == 28) {
                 State = true;
             }
             if (State.equals(true)) {
@@ -75,15 +75,9 @@ public class IslandSettingsInv2 implements InventoryHolder {
 
     private Map<String , String> settingsName(){
         Map<String , String> map = new HashMap<>();
-        map.put("OAK_FENCE_GATE", "Allow player to use fence gate");
-        map.put("OAK_DOOR", "Allow player to use Doors");
-        map.put("OAK_TRAPDOOR", "Allow player to use Trapdoors");
-        map.put("OAK_PRESSURE_PLATE", "Allow player to use activate pressure plate");
-        map.put("OAK_BUTTON", "Allow player to use button");
-        map.put("LEVER", "Allow player to use lever");
-        map.put("WHITE_BED", "Allow player to use bed");
-        map.put("CHEST", "Allow player to open chest");
-        map.put("SHULKER_BOX", "Allow player to open shulker box");
+        map.put("BELL", "allow visitor to ring the bells");
+        map.put("BEACON", "allow visitor to ring the bells");
+        map.put("LODESTONE", "allow visitor to ring the bells");
         return map;
     }
 

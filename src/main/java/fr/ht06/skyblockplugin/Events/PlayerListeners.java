@@ -87,7 +87,7 @@ public class PlayerListeners implements Listener {
         Island island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
         List<Material> listMat = new ArrayList<Material>();
         for (Map.Entry<String, Boolean> v : islandManager.getIslandbyplayer(player.getName()).getAllSettings().entrySet()){
-            if (!v.getKey().equals("END_CRYSTAL")) listMat.add(Material.getMaterial(v.getKey()));
+            listMat.add(Material.getMaterial(v.getKey()));
         }
         if (action.RIGHT_CLICK_AIR.isRightClick()) return;
         if (action.LEFT_CLICK_AIR.isLeftClick()) return;
@@ -101,7 +101,15 @@ public class PlayerListeners implements Listener {
             else if (event.getClickedBlock().getType().name().contains("BED") && !island.getAllSettings().get("WHITE_BED")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("SHULKER_BOX") && !island.getAllSettings().get("SHULKER_BOX")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("CAMPFIRE") && !island.getAllSettings().get("CAMPFIRE")) event.setCancelled(true);
-
+            else if (event.getClickedBlock().getType().equals(Material.BEACON)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.COMPOSTER)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.LODESTONE)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.BEE_NEST)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.BEEHIVE)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.CHISELED_BOOKSHELF)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().name().contains("SIGN")) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().name().contains("CAULDRON")) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().name().contains("REDSTONE")) event.setCancelled(true);
         }
     }
 

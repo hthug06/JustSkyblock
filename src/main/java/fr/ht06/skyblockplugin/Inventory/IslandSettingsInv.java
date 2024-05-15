@@ -35,8 +35,8 @@ public class IslandSettingsInv implements InventoryHolder {
     private void init(Player player){
         Island island = islandManager.getIslandbyplayer(player.getName());
         for (Map.Entry<String, Boolean> v: island.getAllSettings().entrySet()){
-            player.sendMessage(v.getKey());
-            if (v.getKey().equalsIgnoreCase("BELL")) break;
+            //player.sendMessage(v.getKey());
+            if (i == 27) break;
 
             item = createItem(getSettingsname(v.getKey()).decoration(TextDecoration.ITALIC, false).color(TextColor.color(0xBFC9CA)), Material.getMaterial(v.getKey()),null);
 
@@ -48,11 +48,9 @@ public class IslandSettingsInv implements InventoryHolder {
             }
             inv.setItem(i, item);
             i++;
-            if (i == 27){
-                item = createItem(Component.text("PAGE 2"), Material.ARROW, null);
-                inv.setItem(35, item);
-            }
         }
+        item = createItem(Component.text("PAGE 2"), Material.ARROW, null);
+        inv.setItem(35, item);
         //player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
 
     }
@@ -78,19 +76,20 @@ public class IslandSettingsInv implements InventoryHolder {
 
     private Map<String , String> settingsName(){
         Map<String , String> map = new HashMap<>();
-        map.put("OAK_FENCE_GATE", "Allow player to use fence gate");
-        map.put("OAK_DOOR", "Allow player to use Doors");
-        map.put("OAK_TRAPDOOR", "Allow player to use Trapdoors");
-        map.put("OAK_PRESSURE_PLATE", "Allow player to use activate pressure plate");
-        map.put("OAK_BUTTON", "Allow player to use button");
-        map.put("LEVER", "Allow player to use lever");
-        map.put("WHITE_BED", "Allow player to use bed");
-        map.put("CHEST", "Allow player to open chest");
-        map.put("SHULKER_BOX", "Allow player to open shulker box");
-        map.put("CRAFTING_TABLE", "Allow player to use crafting table");
-        map.put("STONECUTTER", "Allow player to use stonecutte");//10
-        map.put("CARTOGRAPHY_TABLE", "Allow player to use cartography table");
-        map.put("SMITHING_TABLE", "Allow player to use smithing table");
+        map.put("OAK_FENCE_GATE", "Allow visitor to use fence gate");
+        map.put("OAK_DOOR", "Allow visitor to use Doors");
+        map.put("OAK_TRAPDOOR", "Allow visitor to use Trapdoors");
+        map.put("OAK_PRESSURE_PLATE", "Allow visitor to use activate pressure plate");
+        map.put("OAK_BUTTON", "Allow visitor to use button");
+        map.put("LEVER", "Allow visitor to use lever");
+        map.put("WHITE_BED", "Allow visitor to use bed");
+        map.put("CHEST", "Allow visitor to open chest");
+        map.put("BARREL", "Allow visitor to open barrel");
+        map.put("SHULKER_BOX", "Allow visitor to open shulker box");
+        map.put("CRAFTING_TABLE", "Allow visitor to use crafting table");
+        map.put("STONECUTTER", "Allow visitor to use stonecutte");//10
+        map.put("CARTOGRAPHY_TABLE", "Allow visitor to use cartography table");
+        map.put("SMITHING_TABLE", "Allow visitor to use smithing table");
         map.put("GRINDSTONE", "Allows visitor to use grindstone");
         map.put("FURNACE", "Allows visitor to use furnace");
         map.put("SMOKER", "Allows visitor to use smoker");
@@ -98,13 +97,11 @@ public class IslandSettingsInv implements InventoryHolder {
         map.put("LOOM", "Allows visitor to use loom");
         map.put("ANVIL", "Allows visitor to use anvil");
         map.put("CAMPFIRE", "Allows visitor to use campfire");
-        map.put("COMPOSTER", "Allows visitor to use composter");
         map.put("NOTE_BLOCK", "Allows visitor to use note block and play music");
         map.put("JUKEBOX", "Allows visitor to use jukebox and use a disk");
         map.put("ENCHANTING_TABLE", "Allows visitor to use enchanting table");
-        map.put("END_CRYSTAL", "Allows visitor to use endcrystal?");
         map.put("BREWING_STAND", "Allows visitor to use brewing stand");
-        map.put("CAULDRON", "Allows visitor to use cauldron");//26
+        map.put("BELL", "Allows visitor to ring bells");
         return map;
     }
 

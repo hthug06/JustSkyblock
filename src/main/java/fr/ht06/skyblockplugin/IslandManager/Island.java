@@ -1,6 +1,7 @@
 package fr.ht06.skyblockplugin.IslandManager;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
 
 import java.util.*;
 
@@ -108,9 +109,10 @@ public class Island {
         this.allSettings.put("LEVER", true);
         this.allSettings.put("WHITE_BED", true);
         this.allSettings.put("CHEST", true);
+        this.allSettings.put("BARREL", true);
         this.allSettings.put("SHULKER_BOX", true);
-        this.allSettings.put("CRAFTING_TABLE", true);
-        this.allSettings.put("STONECUTTER", true);//10
+        this.allSettings.put("CRAFTING_TABLE", true);//10
+        this.allSettings.put("STONECUTTER", true);
         this.allSettings.put("CARTOGRAPHY_TABLE", true);
         this.allSettings.put("SMITHING_TABLE", true);
         this.allSettings.put("GRINDSTONE", true);
@@ -119,16 +121,11 @@ public class Island {
         this.allSettings.put("BLAST_FURNACE", true);
         this.allSettings.put("LOOM", true);
         this.allSettings.put("ANVIL", true);
-        this.allSettings.put("CAMPFIRE", true);
-        this.allSettings.put("COMPOSTER", true);
+        this.allSettings.put("CAMPFIRE", true);//20
         this.allSettings.put("NOTE_BLOCK", true);
         this.allSettings.put("JUKEBOX", true);
         this.allSettings.put("ENCHANTING_TABLE", true);
-        this.allSettings.put("END_CRYSTAL", true);
         this.allSettings.put("BREWING_STAND", true);
-        this.allSettings.put("CAULDRON", true);//26
-        this.allSettings.put("BELL", true);//Page 2  | 1
-        this.allSettings.put("BEACON", true);
-        this.allSettings.put("LODESTONE", true);
+        this.allSettings.put("BELL", true);//25
     }
 }
