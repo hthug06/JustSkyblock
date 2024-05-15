@@ -2,14 +2,12 @@ package fr.ht06.skyblockplugin.Events;
 
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
-import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv2;
 import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.LoadSchematic;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -142,15 +140,8 @@ public class InventoryEvents implements Listener {
         if (event.getClickedInventory().getHolder() instanceof IslandSettingsInv){
 
             event.setCancelled(true);
-            if (event.getCurrentItem().getType().equals(Material.ARROW)){
-                IslandSettingsInv2 gui = new IslandSettingsInv2(player);
-                player.openInventory(gui.getInventory());
-                player.updateInventory();
-                return;
-            }
-            else if (event.getSlot() >= islandManager.getIslandbyplayer(player.getName()).getAllSettings().size())return;  //permet de ne pas avoir d'erreurs quand on clique sur rien
 
-
+            if (event.getSlot() >= islandManager.getIslandbyplayer(player.getName()).getAllSettings().size())return;  //permet de ne pas avoir d'erreurs quand on clique sur rien
 
             //if (event.getCurrentItem().isEmpty()) return;
             if (islandManager.getIslandbyplayer(player.getName()).getAllSettings().get(event.getCurrentItem().getType().name())){
@@ -166,35 +157,6 @@ public class InventoryEvents implements Listener {
 
             player.updateInventory();
         }
-
-        if (event.getClickedInventory().getHolder() instanceof IslandSettingsInv2){
-            event.setCancelled(true);
-            if (event.getCurrentItem().getType().equals(Material.ARROW)){
-                IslandSettingsInv2 gui = new IslandSettingsInv2(player);
-                player.openInventory(gui.getInventory());
-                player.updateInventory();
-                return;
-            }
-            else if (event.getSlot() >= islandManager.getIslandbyplayer(player.getName()).getAllSettings().size())return;  //permet de ne pas avoir d'erreurs quand on clique sur rien
-
-
-
-            //if (event.getCurrentItem().isEmpty()) return;
-            if (islandManager.getIslandbyplayer(player.getName()).getAllSettings().get(event.getCurrentItem().getType().name())){
-                SkyblockPlugin.setFalse(event.getCurrentItem());
-                islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), false);
-            }
-            else{
-                SkyblockPlugin.setTrue(event.getCurrentItem());
-                islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), true);
-
-            }
-            //player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
-
-            player.updateInventory();
-        }
-
-
 
 
     }

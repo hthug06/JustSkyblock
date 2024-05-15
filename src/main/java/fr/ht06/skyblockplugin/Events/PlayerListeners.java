@@ -86,19 +86,29 @@ public class PlayerListeners implements Listener {
         Action action = event.getAction();
         Island island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
         List<Material> listMat = new ArrayList<Material>();
-        for (Map.Entry<String, Boolean> v : islandManager.getIslandbyplayer(player.getName()).getAllSettings().entrySet()){
+        for (Map.Entry<String, Boolean> v : island.getAllSettings().entrySet()){
             listMat.add(Material.getMaterial(v.getKey()));
         }
-        if (action.RIGHT_CLICK_AIR.isRightClick()) return;
-        if (action.LEFT_CLICK_AIR.isLeftClick()) return;
 
-         //if (player.isOp()) return; à mettre quand fini
+        if (player.getInventory().getItemInMainHand().getType().equals(Material.FLINT_AND_STEEL)) event.setCancelled(true);
+        if (player.getInventory().getItemInMainHand().getType().equals(Material.FIRE_CHARGE)) event.setCancelled(true);
+
+        if (player.isOp()) return;
         if (!player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) return;
         if (!onHisIsland(player)){
+            //permet d'enelver une erreur que j'ai pas vraiment compris
+            //en gros quand on clique comme un gogole dans tout les sens en interragissant avec un block ça met une erreur
+            try {
+                event.getClickedBlock().getType();
+            }catch (NullPointerException ignored){
+                return;
+            }
+
             if (listMat.contains(Objects.requireNonNull(event.getClickedBlock()).getType())){
                 if (!island.getAllSettings().get(event.getClickedBlock().getType().name())) event.setCancelled(true);
             }
             else if (event.getClickedBlock().getType().name().contains("BED") && !island.getAllSettings().get("WHITE_BED")) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().name().contains("BUTTON") && !island.getAllSettings().get("OAK_BUTTON")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("SHULKER_BOX") && !island.getAllSettings().get("SHULKER_BOX")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("CAMPFIRE") && !island.getAllSettings().get("CAMPFIRE")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().equals(Material.BEACON)) event.setCancelled(true);
@@ -107,6 +117,10 @@ public class PlayerListeners implements Listener {
             else if (event.getClickedBlock().getType().equals(Material.BEE_NEST)) event.setCancelled(true);
             else if (event.getClickedBlock().getType().equals(Material.BEEHIVE)) event.setCancelled(true);
             else if (event.getClickedBlock().getType().equals(Material.CHISELED_BOOKSHELF)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.COMPARATOR)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.REPEATER)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.DRAGON_EGG)) event.setCancelled(true);
+            else if (event.getClickedBlock().getType().equals(Material.RESPAWN_ANCHOR)) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("SIGN")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("CAULDRON")) event.setCancelled(true);
             else if (event.getClickedBlock().getType().name().contains("REDSTONE")) event.setCancelled(true);
@@ -164,6 +178,17 @@ public class PlayerListeners implements Listener {
             loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
             if (contains(player.getLocation(), loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
                 return is.getIslandName();
+            }
+        }
+        return null;
+    }
+
+    public static String getAnotherPlayerIsland_PlayerName(Player player) {
+        Location loc;
+        for (Island is : islandManager.getAllIsland()) {
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
+            if (contains(player.getLocation(), loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
+                return is.getPlayerOwnerName();
             }
         }
         return null;

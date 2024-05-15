@@ -1,74 +1,146 @@
-[11:08:20] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[11:08:37] [ServerMain/INFO]: Loaded 1174 recipes
-[11:08:37] [ServerMain/INFO]: Loaded 1271 advancements
-[11:08:38] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[11:08:38] [Server thread/INFO]: Loading properties
-[11:08:39] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[11:08:40] [Server thread/INFO]: Using 4 threads for Netty based IO
-[11:08:40] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[11:08:40] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[22:02:31] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[22:02:32] [ServerMain/INFO]: Loaded 1174 recipes
+[22:02:32] [ServerMain/INFO]: Loaded 1271 advancements
+[22:02:32] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[22:02:32] [Server thread/INFO]: Loading properties
+[22:02:32] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[22:02:33] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:02:33] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:02:33] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[11:08:41] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 1 worker threads, and gen parallelism of 1 threads
-[11:08:42] [Server thread/INFO]: Default game type: SURVIVAL
-[11:08:42] [Server thread/INFO]: Generating keypair
-[11:08:42] [Server thread/INFO]: Starting Minecraft server on *:25565
-[11:08:43] [Server thread/INFO]: Using default channel type
-[11:08:43] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[11:08:43] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[11:08:43] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[11:08:43] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[11:08:45] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@6b194b]
-[11:08:45] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
-[11:08:45] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[11:08:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[11:08:45] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[11:08:45] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[11:08:45] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[11:08:45] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[11:08:46] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[11:08:53] [Server thread/INFO]: Preparing level "world"
-[11:09:03] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[11:09:04] [Server thread/INFO]: Time elapsed: 1709 ms
-[11:09:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[11:09:04] [Server thread/INFO]: Time elapsed: 72 ms
-[11:09:04] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[11:09:04] [Server thread/INFO]: Time elapsed: 60 ms
-[11:09:05] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
-[11:09:05] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[11:09:06] [Server thread/INFO]: Time elapsed: 258 ms
-[11:09:06] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[11:09:06] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[11:09:06] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[11:09:07] [Server thread/INFO]: Running delayed init tasks
-[11:09:07] [Server thread/INFO]: Done (28.159s)! For help, type "help"
-[11:09:07] [Server thread/INFO]: Timings Reset
-[11:09:18] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3446ms or 68 ticks behind
-[11:09:43] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3499ms or 69 ticks behind
-[11:10:03] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3126ms or 62 ticks behind
-[11:10:42] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:10:56] [Server thread/INFO]: [+] ht06 join the server
-[11:10:56] [Server thread/INFO]: ht06[/127.0.0.1:58747] logged in with entity id 95 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:11:59] [Server thread/INFO]: ht06 issued server command: /is settings
-[11:12:00] [Server thread/ERROR]: null
-org.bukkit.command.CommandException: Unhandled exception executing command 'is' in plugin SkyblockPlugin v1.1.2
-	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:155) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at org.bukkit.craftbukkit.v1_20_R3.CraftServer.dispatchCommand(CraftServer.java:999) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.v1_20_R3.command.BukkitCommandWrapper.run(BukkitCommandWrapper.java:64) ~[paper-1.20.4.jar:git-Paper-496]
-	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.CommandQueueEntry.a(CommandQueueEntry.java:5) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:434) ~[?:?]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:336) ~[?:?]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:323) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.performChatCommand(ServerGamePacketListenerImpl.java:2230) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2190) ~[?:?]
-	at net.minecraft.util.thread.BlockableEventLoop.lambda$submitAsync$0(BlockableEventLoop.java:59) ~[?:?]
-	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+[22:02:33] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[22:02:33] [Server thread/INFO]: Default game type: SURVIVAL
+[22:02:33] [Server thread/INFO]: Generating keypair
+[22:02:33] [Server thread/INFO]: Starting Minecraft server on *:25565
+[22:02:33] [Server thread/INFO]: Using default channel type
+[22:02:33] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[22:02:33] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[22:02:33] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:02:33] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:02:34] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@56e4e190]
+[22:02:34] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:02:34] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:02:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:02:34] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:02:34] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:02:34] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:02:34] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:02:34] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:02:35] [Server thread/INFO]: Preparing level "world"
+[22:02:36] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[22:02:37] [Server thread/INFO]: Time elapsed: 840 ms
+[22:02:37] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[22:02:37] [Server thread/INFO]: Time elapsed: 28 ms
+[22:02:37] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[22:02:37] [Server thread/INFO]: Time elapsed: 13 ms
+[22:02:37] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:02:37] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[22:02:37] [Server thread/INFO]: Time elapsed: 15 ms
+[22:02:37] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:02:37] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:02:37] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[22:02:37] [Server thread/INFO]: Running delayed init tasks
+[22:02:37] [Server thread/INFO]: Done (4.473s)! For help, type "help"
+[22:02:37] [Server thread/INFO]: Timings Reset
+[22:03:36] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[22:03:36] [Server thread/INFO]: [+] ht06 join the server
+[22:03:36] [Server thread/INFO]: ht06[/127.0.0.1:53673] logged in with entity id 95 at ([world_Skyblock]8.573517957528136, 70.0, -6.181955245854662)
+[22:03:42] [User Authenticator #0/INFO]: UUID of player fneris is 388dd0b7-4aba-49f1-8bc5-9a1bd3d11b81
+[22:03:42] [Server thread/INFO]: [+] fneris join the server
+[22:03:42] [Server thread/INFO]: fneris[/127.0.0.1:53682] logged in with entity id 96 at ([world_Skyblock]7.036615638723655, 70.0, -5.365325306933826)
+[22:03:49] [Server thread/INFO]: fneris issued server command: /is settings
+[22:05:32] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:05:32] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:05:32] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:05:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:05:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:05:32] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:05:32] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:05:32] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:05:32] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:05:32] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:05:32] [Server thread/INFO]: Loaded 1174 recipes
+[22:05:32] [Server thread/INFO]: Loaded 1271 advancements
+[22:05:32] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:05:32] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:05:33] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3217d962]
+[22:05:33] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:05:33] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:05:33] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:05:33] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:05:33] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:05:33] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:05:33] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:05:33] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:05:33] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:05:33] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:05:33] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:05:33] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:05:33] [Server thread/INFO]: ht06: Reload complete.
+[22:05:33] [Server thread/INFO]: Timings Reset
+[22:05:38] [Server thread/INFO]: fneris issued server command: /is settings
+[22:05:42] [Server thread/INFO]: ht06 issued server command: /is settings
+[22:06:11] [Server thread/INFO]: fneris issued server command: /is settings
+[22:06:32] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:06:32] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:06:32] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:06:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:06:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:06:32] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:06:32] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:06:32] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:06:32] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:06:32] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:06:32] [Server thread/INFO]: Loaded 1174 recipes
+[22:06:32] [Server thread/INFO]: Loaded 1271 advancements
+[22:06:32] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:06:32] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:06:32] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@223e443d]
+[22:06:32] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:06:32] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:06:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:06:32] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:06:32] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:06:32] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:06:32] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:06:32] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:06:33] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:06:33] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:06:33] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:06:33] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:06:33] [Server thread/INFO]: ht06: Reload complete.
+[22:06:33] [Server thread/INFO]: Timings Reset
+[22:06:35] [Server thread/INFO]: ht06 issued server command: /is settings
+[22:06:39] [Server thread/INFO]: fneris issued server command: /is settings
+[22:06:52] [Server thread/INFO]: ht06 issued server command: /tick freeze
+[22:06:52] [Server thread/INFO]: [ht06: The game is frozen]
+[22:07:01] [Server thread/INFO]: ht06 issued server command: /tick sprint
+[22:07:04] [Server thread/INFO]: ht06 issued server command: /tick freeze
+[22:07:04] [Server thread/INFO]: [ht06: The game is frozen]
+[22:07:08] [Server thread/INFO]: ht06 issued server command: /tick unfreeze
+[22:07:08] [Server thread/INFO]: [ht06: The game runs normally]
+[22:07:12] [Server thread/INFO]: ht06 issued server command: /is settings
+[22:07:14] [Server thread/INFO]: fneris issued server command: /is settings
+[22:07:20] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:98) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor38.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
 	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
 	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
@@ -82,148 +154,557 @@ org.bukkit.command.CommandException: Unhandled exception executing command 'is' 
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
 	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-Caused by: java.lang.NullPointerException: Cannot invoke "net.kyori.adventure.text.Component.decoration(net.kyori.adventure.text.format.TextDecoration, boolean)" because the return value of "fr.ht06.skyblockplugin.Inventory.IslandSettingsInv.getSettingsname(String)" is null
-	at fr.ht06.skyblockplugin.Inventory.IslandSettingsInv.init(IslandSettingsInv.java:41) ~[SkyblockPlugin-1.1.2.jar:?]
-	at fr.ht06.skyblockplugin.Inventory.IslandSettingsInv.<init>(IslandSettingsInv.java:31) ~[SkyblockPlugin-1.1.2.jar:?]
-	at fr.ht06.skyblockplugin.Commands.IslandCommand.onCommand(IslandCommand.java:91) ~[SkyblockPlugin-1.1.2.jar:?]
-	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	... 29 more
-[11:12:44] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 6717ms or 134 ticks behind
-[11:12:53] [Server thread/INFO]: ht06 lost connection: Disconnected
-[11:13:02] [Server thread/INFO]: [-] ht06 left the server
-[11:13:04] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 5848ms or 116 ticks behind
-[11:14:34] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 5315ms or 106 ticks behind
-[11:15:17] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[11:15:17] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[11:15:18] [Server thread/INFO]: Using 4 threads for Netty based IO
-[11:15:18] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[11:15:31] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[11:15:36] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
-[11:15:36] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[11:15:41] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[11:15:41] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[11:15:53] [Server thread/INFO]: Loaded 1174 recipes
-[11:15:54] [Server thread/INFO]: Loaded 1271 advancements
-[11:16:04] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[11:16:04] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[11:16:18] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@12e32ff9]
-[11:16:18] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
-[11:16:18] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[11:16:18] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[11:16:18] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[11:16:18] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[11:16:18] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[11:16:18] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[11:16:18] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[11:16:19] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[11:16:25] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
-[11:16:25] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[11:16:25] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[11:16:25] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[11:16:26] [Server thread/INFO]: CONSOLE: Reload complete.
-[11:16:26] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 71342ms or 1426 ticks behind
-[11:16:26] [Server thread/INFO]: Timings Reset
-[11:16:38] [User Authenticator #1/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:16:41] [Server thread/INFO]: [+] ht06 join the server
-[11:16:41] [Server thread/INFO]: ht06[/127.0.0.1:58850] logged in with entity id 96 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:17:02] [Server thread/INFO]: ht06 issued server command: /is settings
-[11:17:45] [Server thread/INFO]: ht06 lost connection: Timed out
-[11:17:47] [Server thread/INFO]: [-] ht06 left the server
-[11:17:48] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2714ms or 54 ticks behind
-[11:18:50] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 5823ms or 116 ticks behind
-[11:19:26] [Server thread/INFO]: CONSOLE: Please note that this command is not supported and may cause issues when using some plugins.
-[11:19:26] [Server thread/INFO]: CONSOLE: If you encounter any issues please use the /stop command to restart your server.
-[11:19:27] [Server thread/INFO]: Using 4 threads for Netty based IO
-[11:19:27] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[11:19:31] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[11:19:31] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
-[11:19:31] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[11:19:32] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[11:19:33] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[11:19:35] [Server thread/INFO]: Loaded 1174 recipes
-[11:19:36] [Server thread/INFO]: Loaded 1271 advancements
-[11:19:41] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[11:19:41] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[11:19:47] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@29b5e08c]
-[11:19:47] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
-[11:19:47] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[11:19:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[11:19:48] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[11:19:48] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[11:19:48] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[11:19:49] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[11:19:49] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[11:19:50] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[11:19:57] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
-[11:19:57] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[11:19:57] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[11:19:57] [Server thread/INFO]: CONSOLE: Reload complete.
-[11:19:57] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 31424ms or 628 ticks behind
-[11:19:57] [Server thread/INFO]: Timings Reset
-[11:20:11] [User Authenticator #2/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:20:15] [Server thread/INFO]: [+] ht06 join the server
-[11:20:15] [Server thread/INFO]: ht06[/127.0.0.1:58901] logged in with entity id 97 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:20:35] [Server thread/INFO]: ht06 issued server command: /is settings
-[11:21:39] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2636ms or 52 ticks behind
-[11:23:19] [Server thread/INFO]: ht06 lost connection: Disconnected
-[11:23:23] [Server thread/INFO]: [-] ht06 left the server
-[11:23:23] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 4186ms or 83 ticks behind
-[11:24:14] [User Authenticator #3/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:24:18] [Server thread/INFO]: [+] ht06 join the server
-[11:24:18] [Server thread/INFO]: ht06[/127.0.0.1:58957] logged in with entity id 98 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:25:36] [Server thread/INFO]: ht06 lost connection: Timed out
-[11:25:37] [Server thread/INFO]: [-] ht06 left the server
-[11:26:53] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3507ms or 70 ticks behind
-[11:27:12] [User Authenticator #4/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:27:14] [Server thread/INFO]: [+] ht06 join the server
-[11:27:14] [Server thread/INFO]: ht06[/127.0.0.1:58998] logged in with entity id 99 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:27:29] [Server thread/INFO]: ht06 issued server command: /is settings
-[11:28:41] [Server thread/INFO]: ht06 lost connection: Timed out
-[11:28:43] [Server thread/INFO]: [-] ht06 left the server
-[11:28:59] [User Authenticator #5/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:29:01] [Server thread/INFO]: [+] ht06 join the server
-[11:29:02] [Server thread/INFO]: ht06[/127.0.0.1:59026] logged in with entity id 100 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:29:56] [Server thread/INFO]: ht06 lost connection: Disconnected
-[11:29:57] [Server thread/INFO]: [-] ht06 left the server
-[11:31:26] [User Authenticator #6/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[11:31:29] [Server thread/INFO]: [+] ht06 join the server
-[11:31:29] [Server thread/INFO]: ht06[/127.0.0.1:59059] logged in with entity id 101 at ([world_Skyblock]1.1936495917919328, 73.83196623260379, 6.169755769512419)
-[11:32:40] [Server thread/INFO]: ht06 lost connection: Timed out
-[11:32:43] [Server thread/INFO]: [-] ht06 left the server
-[11:32:43] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3074ms or 61 ticks behind
-[11:33:16] [Server thread/INFO]: Stopping server
-[11:33:16] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[11:33:16] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
-[11:33:17] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[11:33:23] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[11:33:24] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[11:33:24] [Server thread/INFO]: Saving players
-[11:33:24] [Server thread/INFO]: Saving worlds
-[11:33:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[11:33:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[11:33:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[11:33:25] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[11:33:27] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 49 entity chunks, 0 poi chunks in world 'world' in 1,48s
-[11:33:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[11:33:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,10s
-[11:33:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[11:33:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,06s
-[11:33:28] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[11:33:28] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[11:33:28] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[11:33:29] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,20s
-[11:33:29] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[11:33:29] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[11:33:29] [Server thread/INFO]: Flushing Chunk IO
-[11:33:29] [Server thread/INFO]: Closing Thread Pool
-[11:33:29] [Server thread/INFO]: Closing Server
+[22:07:22] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:98) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor38.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:07:42] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[22:08:23] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:98) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor38.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:08:23] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:98) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor38.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:11:44] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:11:44] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:11:44] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:11:44] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:11:44] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:11:44] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:11:44] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:11:44] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:11:44] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:11:44] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:11:45] [Server thread/INFO]: Loaded 1174 recipes
+[22:11:45] [Server thread/INFO]: Loaded 1271 advancements
+[22:11:45] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:11:45] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:11:45] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@5e594f66]
+[22:11:45] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:11:45] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:11:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:11:45] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:11:45] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:11:45] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:11:45] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:11:45] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:11:45] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:11:46] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:11:46] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:11:46] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:11:46] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[22:11:46] [Server thread/INFO]: ht06: Reload complete.
+[22:11:46] [Server thread/INFO]: Timings Reset
+[22:11:46] [Server thread/INFO]: ht06 issued server command: /is settings
+[22:12:02] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:12:02] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:12:02] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:12:02] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:12:02] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:12:02] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:12:02] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:12:02] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:12:02] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:12:02] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:12:02] [Server thread/INFO]: Loaded 1174 recipes
+[22:12:02] [Server thread/INFO]: Loaded 1271 advancements
+[22:12:02] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:12:02] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:12:03] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7356a1b8]
+[22:12:03] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:12:03] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:12:03] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:12:03] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:12:03] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:12:03] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:12:03] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:12:03] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:12:03] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:12:03] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:12:03] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:12:03] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:12:03] [Server thread/INFO]: ht06: Reload complete.
+[22:12:03] [Server thread/INFO]: Timings Reset
+[22:13:27] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:13:27] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:13:46] [Server thread/INFO]: Unknown command. Type "/help" for help.
+[22:14:19] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:14:19] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:14:20] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:14:20] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:99) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor70.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:16:32] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:16:32] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:16:32] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:16:32] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:16:32] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:16:32] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:16:32] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:16:32] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:16:32] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:16:32] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:16:32] [Server thread/INFO]: Loaded 1174 recipes
+[22:16:32] [Server thread/INFO]: Loaded 1271 advancements
+[22:16:32] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:16:32] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:16:32] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@1fff27d5]
+[22:16:32] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:16:32] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:16:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:16:32] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:16:32] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:16:32] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:16:32] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:16:32] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:16:32] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:16:33] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:16:33] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:16:33] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:16:33] [Server thread/INFO]: ht06: Reload complete.
+[22:16:33] [Server thread/INFO]: Timings Reset
+[22:16:37] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:16:37] [Server thread/WARN]: Nag author(s): '[ht06]' of 'SkyblockPlugin v1.1.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[22:16:37] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:105) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor86.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:16:38] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:16:38] [Server thread/ERROR]: Could not pass event PlayerInteractEvent to SkyblockPlugin v1.1.2
+java.lang.NullPointerException: null
+	at java.util.Objects.requireNonNull(Objects.java:209) ~[?:?]
+	at fr.ht06.skyblockplugin.Events.PlayerListeners.OnInteract(PlayerListeners.java:105) ~[SkyblockPlugin-1.1.2.jar:?]
+	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor86.execute(Unknown Source) ~[?:?]
+	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
+	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:594) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:550) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:545) ~[paper-1.20.4.jar:git-Paper-496]
+	at org.bukkit.craftbukkit.v1_20_R3.event.CraftEventFactory.callPlayerInteractEvent(CraftEventFactory.java:541) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleAnimate(ServerGamePacketListenerImpl.java:2509) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.handle(ServerboundSwingPacket.java:25) ~[?:?]
+	at net.minecraft.network.protocol.game.ServerboundSwingPacket.a(ServerboundSwingPacket.java:11) ~[?:?]
+	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:54) ~[?:?]
+	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:149) ~[?:?]
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[?:?]
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1465) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.d(MinecraftServer.java:194) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:123) ~[?:?]
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1442) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1365) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:133) ~[?:?]
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1343) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1232) ~[paper-1.20.4.jar:git-Paper-496]
+	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:319) ~[paper-1.20.4.jar:git-Paper-496]
+	at java.lang.Thread.run(Thread.java:840) ~[?:?]
+[22:17:04] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:17:04] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:17:04] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:17:04] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:17:04] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:17:04] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:17:04] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:17:04] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:17:04] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:17:04] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:17:04] [Server thread/INFO]: Loaded 1174 recipes
+[22:17:04] [Server thread/INFO]: Loaded 1271 advancements
+[22:17:04] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:17:04] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:17:04] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@52f5df58]
+[22:17:04] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:17:04] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:17:04] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:17:04] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:17:04] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:17:04] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:17:04] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:17:04] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:17:04] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:17:05] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:17:05] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:17:05] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:17:05] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[22:17:05] [Server thread/INFO]: ht06: Reload complete.
+[22:17:05] [Server thread/INFO]: Timings Reset
+[22:17:14] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:17:14] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:17:14] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:17:15] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:17:15] [Server thread/INFO]: [SkyblockPlugin] [STDOUT] lol wtfff
+[22:18:12] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[22:18:12] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[22:18:12] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[22:18:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[22:18:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[22:18:12] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:18:12] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:18:12] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:18:12] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:18:12] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:18:12] [Server thread/INFO]: Loaded 1174 recipes
+[22:18:12] [Server thread/INFO]: Loaded 1271 advancements
+[22:18:12] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[22:18:12] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[22:18:13] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3aaffbc]
+[22:18:13] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin v1.1.2
+[22:18:13] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[22:18:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[22:18:13] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[22:18:13] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[22:18:13] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[22:18:13] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[22:18:13] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[22:18:13] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[22:18:13] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin v1.1.2
+[22:18:13] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[22:18:13] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[22:18:14] [Server thread/INFO]: ht06: Reload complete.
+[22:18:14] [Server thread/INFO]: Timings Reset
+[22:19:23] [Server thread/INFO]: ht06 issued server command: /is settings
+[22:19:35] [Server thread/INFO]: fneris issued server command: /is delete
+[22:19:37] [Server thread/INFO]: fneris issued server command: /is delete confirm
+[22:19:40] [Server thread/INFO]: fneris issued server command: /is
+[22:20:20] [Server thread/INFO]: Stopping server
+[22:20:20] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[22:20:20] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin v1.1.2
+[22:20:20] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[22:20:20] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[22:20:20] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[22:20:20] [Server thread/INFO]: Saving players
+[22:20:20] [Server thread/INFO]: ht06 lost connection: Server closed
+[22:20:20] [Server thread/INFO]: ht06 left the game
+[22:20:20] [Server thread/INFO]: fneris lost connection: Server closed
+[22:20:21] [Server thread/INFO]: fneris left the game
+[22:20:21] [Server thread/INFO]: Saving worlds
+[22:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 49 entity chunks, 0 poi chunks in world 'world' in 0,01s
+[22:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[22:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
+[22:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
+[22:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:20:21] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[22:20:21] [Server thread/INFO]: [ChunkHolderManager] Saved 1 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,00s
+[22:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[22:20:21] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[22:20:21] [Server thread/INFO]: Flushing Chunk IO
+[22:20:21] [Server thread/INFO]: Closing Thread Pool
+[22:20:21] [Server thread/INFO]: Closing Server

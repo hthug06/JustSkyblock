@@ -29,7 +29,7 @@ public class Test implements CommandExecutor {
 
         if (strings.length == 1){
             Location loc= new Location(Bukkit.getWorld("world_Skyblock"),islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 70, islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1));
-            //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
+            player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
             //Island island=  new Island(player.getName()+"'s Island", player.getName(),list, new Location(Bukkit.getWorld("world"), 1000, 0, 1000));
             //SkyblockPlugin.islandManager.addIsland(island);
             //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.getAllIslandtoMap()));

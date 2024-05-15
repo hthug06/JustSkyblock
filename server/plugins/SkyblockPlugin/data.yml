@@ -16,3 +16,31 @@ Island:
     Coordinates:
     - 0
     - 0
+    Settings:
+      OAK_FENCE_GATE: false
+      OAK_DOOR: false
+      OAK_TRAPDOOR: false
+      OAK_PRESSURE_PLATE: false
+      OAK_BUTTON: false
+      LEVER: false
+      WHITE_BED: false
+      CHEST: false
+      BARREL: false
+      SHULKER_BOX: false
+      CRAFTING_TABLE: false
+      STONECUTTER: false
+      CARTOGRAPHY_TABLE: false
+      SMITHING_TABLE: false
+      GRINDSTONE: false
+      FURNACE: false
+      SMOKER: false
+      BLAST_FURNACE: false
+      LOOM: false
+      ANVIL: false
+      CAMPFIRE: false
+      NOTE_BLOCK: false
+      JUKEBOX: false
+      ENCHANTING_TABLE: false
+      BREWING_STAND: false
+      BELL: false
+      HOPPER: false

@@ -8,10 +8,9 @@ Actualy implement:
 - island
 - setspawn on island
 - delete the island
+- visit other player island
 
 to add:
-- island level
-- visit other player island
 - island level
 - island team
 - quest

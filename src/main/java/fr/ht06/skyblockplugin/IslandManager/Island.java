@@ -1,7 +1,6 @@
 package fr.ht06.skyblockplugin.IslandManager;
 
 import org.bukkit.Location;
-import org.bukkit.Material;
 
 import java.util.*;
 
@@ -127,5 +126,6 @@ public class Island {
         this.allSettings.put("ENCHANTING_TABLE", true);
         this.allSettings.put("BREWING_STAND", true);
         this.allSettings.put("BELL", true);//25
+        this.allSettings.put("HOPPER", true);//25
     }
 }

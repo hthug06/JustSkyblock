@@ -130,6 +130,11 @@ public final class SkyblockPlugin extends JavaPlugin {
                     }
                 }
 
+                @NotNull Map<String, Object> maps =  DataConfig.get().getConfigurationSection("Island."+v+".Settings").getValues(true);
+                for (Map.Entry<String, Object> m : maps.entrySet()){
+                    island.setSettings(m.getKey(), (Boolean) m.getValue());
+                }
+
                 islandManager.addIsland(island);
             }
         }
@@ -172,7 +177,10 @@ public final class SkyblockPlugin extends JavaPlugin {
 
             //les 2 coordonnée de l'île (en x et en z)
             DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Coordinates");
-            DataConfig.get().set("Island."+v.getIslandName()+".Coordinates", v.getIslandCoordinates());}
+            DataConfig.get().set("Island."+v.getIslandName()+".Coordinates", v.getIslandCoordinates());
+
+            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Settings", v.getAllSettings());
+        }
         DataConfig.save();
     }
 
@@ -229,9 +237,13 @@ public final class SkyblockPlugin extends JavaPlugin {
 
                     if (x==0 && y== 70 && z== 0) {
                         @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld("world_Skyblock"), x, y, z).getNearbyEntities(50, 400, 50);
+                        Player playertarget;
                         for (Entity e : livingEntity) {
-                            System.out.println(e);
-                            if (!e.equals(player)) e.remove();
+                            if (e instanceof Player) {
+                                playertarget = ((Player) e).getPlayer();
+                                Bukkit.dispatchCommand(playertarget,"spawn");
+                            }
+                            else e.remove();
                         }
                     }
                 }

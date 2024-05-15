@@ -27,7 +27,7 @@ public class IslandSettingsInv implements InventoryHolder {
 
     public IslandSettingsInv(Player player){
         Island island = islandManager.getIslandbyplayer(player.getName());
-        this.inv = SkyblockPlugin.getInstance().getServer().createInventory(this, 36, Component.text(island.getIslandName() + " Settings Page 1")); //création de l'inventaire
+        this.inv = SkyblockPlugin.getInstance().getServer().createInventory(this, 27, Component.text(island.getIslandName() + " Settings")); //création de l'inventaire
         init(player);//Pour mettre les item
     }
 
@@ -36,8 +36,6 @@ public class IslandSettingsInv implements InventoryHolder {
         Island island = islandManager.getIslandbyplayer(player.getName());
         for (Map.Entry<String, Boolean> v: island.getAllSettings().entrySet()){
             //player.sendMessage(v.getKey());
-            if (i == 27) break;
-
             item = createItem(getSettingsname(v.getKey()).decoration(TextDecoration.ITALIC, false).color(TextColor.color(0xBFC9CA)), Material.getMaterial(v.getKey()),null);
 
             if (v.getValue()){
@@ -49,8 +47,6 @@ public class IslandSettingsInv implements InventoryHolder {
             inv.setItem(i, item);
             i++;
         }
-        item = createItem(Component.text("PAGE 2"), Material.ARROW, null);
-        inv.setItem(35, item);
         //player.sendMessage(String.valueOf(SkyblockPlugin.playerIslandSettings.get(player.getName())));
 
     }
@@ -102,6 +98,7 @@ public class IslandSettingsInv implements InventoryHolder {
         map.put("ENCHANTING_TABLE", "Allows visitor to use enchanting table");
         map.put("BREWING_STAND", "Allows visitor to use brewing stand");
         map.put("BELL", "Allows visitor to ring bells");
+        map.put("HOPPER", "Allows visitor to open hopper");
         return map;
     }
 
