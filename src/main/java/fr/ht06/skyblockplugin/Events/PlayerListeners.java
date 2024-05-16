@@ -4,6 +4,8 @@ import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -27,6 +29,7 @@ public class PlayerListeners implements Listener {
     SkyblockPlugin main;
     static IslandManager islandManager = SkyblockPlugin.islandManager;
     Island island;
+    MiniMessage miniMessage = MiniMessage.miniMessage();
 
 
     public PlayerListeners(SkyblockPlugin main) {
@@ -36,6 +39,10 @@ public class PlayerListeners implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.0 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>NO MORE RESET! you can now play witouth fear!"));
+        player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
         if (islandManager.playerHasIsland(player.getName())) island = islandManager.getIslandbyplayer(player.getName()).getIsland();
     }
@@ -84,17 +91,32 @@ public class PlayerListeners implements Listener {
     public void OnInteract(PlayerInteractEvent event){
         Player player = event.getPlayer();
         Action action = event.getAction();
-        Island island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
+
+        //toute les sécurité
+
+        //si le joueur est OP/Admin/à la perm il bypass
+        if (player.isOp() || player.hasPermission("skyblockplugin.bypass")) return;
+
+        //si le joueur à une île ou n'en a pas
+        if(islandManager.playerHasIsland(player.getName())){
+            Island island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
+        } else {
+            event.setCancelled(true);
+            return;
+        }
+        //Si le joueur essaye de cramer l'ile avec briquet /firecharge
+        if (player.getInventory().getItemInMainHand().getType().equals(Material.FLINT_AND_STEEL)) event.setCancelled(true);
+        if (player.getInventory().getItemInMainHand().getType().equals(Material.FIRE_CHARGE)) event.setCancelled(true);
+
+        //Si le joueur n'est pas dans le monde des îles
+        if (!player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) return;
+
+
         List<Material> listMat = new ArrayList<Material>();
         for (Map.Entry<String, Boolean> v : island.getAllSettings().entrySet()){
             listMat.add(Material.getMaterial(v.getKey()));
         }
 
-        if (player.getInventory().getItemInMainHand().getType().equals(Material.FLINT_AND_STEEL)) event.setCancelled(true);
-        if (player.getInventory().getItemInMainHand().getType().equals(Material.FIRE_CHARGE)) event.setCancelled(true);
-
-        if (player.isOp()) return;
-        if (!player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) return;
         if (!onHisIsland(player)){
             //permet d'enelver une erreur que j'ai pas vraiment compris
             //en gros quand on clique comme un gogole dans tout les sens en interragissant avec un block ça met une erreur
@@ -142,7 +164,12 @@ public class PlayerListeners implements Listener {
     @EventHandler
     public void EntityDamageByEntity(EntityDamageByEntityEvent event){
         if (!(event.getDamager() instanceof Player)) return;
-        if(event.getEntityType() == EntityType.ENDER_CRYSTAL && onHisIsland((Player) event.getDamager())) {
+        else{
+            Player player = (Player) event.getDamager();
+            if (player.isOp() || player.hasPermission("skyblockplugin.bypass")) return;
+        }
+
+        if(event.getEntityType() == EntityType.ENDER_CRYSTAL && onHisIsland((Player) event.getDamager()) ) {
             event.setCancelled(false);
         }
         else if (event.getEntityType() == EntityType.ENDER_CRYSTAL && !onHisIsland((Player) event.getDamager())) {
