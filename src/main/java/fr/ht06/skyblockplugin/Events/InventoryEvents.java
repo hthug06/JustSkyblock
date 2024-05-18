@@ -1,5 +1,6 @@
 package fr.ht06.skyblockplugin.Events;
 
+import fr.ht06.skyblockplugin.Inventory.DeleteIslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
 import fr.ht06.skyblockplugin.IslandManager.Island;
@@ -63,8 +64,9 @@ public class InventoryEvents implements Listener {
                         int x = 0;
                         int z = 0;
                         List<Integer> finale = new ArrayList<>();
-                        Location loc = null;
-                        while (!find) {
+
+
+                        /*while (!find) {
                             x = x + coords[random.nextInt(0, 2)];
                             z = z + coords[random.nextInt(0, 2)];
                             finale.add(x);
@@ -83,7 +85,12 @@ public class InventoryEvents implements Listener {
                             Island newIsland = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
                             SkyblockPlugin.islandManager.addIsland(newIsland);
 
-                        }
+                        }*/
+                        List<Integer> coord = getIslandCoordinate(player);
+                        Location loc = new Location(Bukkit.getWorld("world_Skyblock"),coord.get(0), 70, coord.get(1));
+
+                        Island newIsland = new Island(player.getName()+"'s Island",player.getName(), coord, loc);
+                        SkyblockPlugin.islandManager.addIsland(newIsland);
 
                         //new LoadSchematic(loc,"world_Skyblock", "islandPlain");
 
@@ -158,8 +165,87 @@ public class InventoryEvents implements Listener {
             player.updateInventory();
         }
 
+        if (event.getClickedInventory().getHolder() instanceof DeleteIslandInventory){
+            event.setCancelled(true);
+            if (event.getSlot() ==  13){
+                SkyblockPlugin.deleteIsland(player);
+                player.closeInventory();
+            }
+        }
+
 
     }
+    public List<Integer> getIslandCoordinate(Player player) {
 
+        List<List<Integer>> liste = new ArrayList<>();
+        List<Integer> twoValue = new ArrayList<>();
+        int enHaut = 1;
+        int aDroite = 0;
+        int enBas = 1;
+        int aGauche = 0;
+        while (true){
+            for (int x = -enHaut * 1000; x <= enHaut * 1000; x += 1000) {
+                for (int z = -enHaut * 1000; z <= enHaut * 1000; z += 1000) {
+                    twoValue.add(x);
+                    twoValue.add(z);
+                    if (!liste.contains(twoValue) && !islandManager.IslandCoordinateTaken(twoValue)) {
+                        return twoValue;
+                    }
+                    else {
+                        liste.add(twoValue);
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                twoValue = new ArrayList<>();
+            }
+            enHaut += 1;
+            for (int x = -aDroite * 1000; x <= aDroite * 1000; x += 1000) {
+                for (int z = -aDroite * 1000; z <= aDroite * 1000; z += 1000) {
+                    twoValue.add(x);
+                    twoValue.add(z);
+                    if (!liste.contains(twoValue) && !islandManager.IslandCoordinateTaken(twoValue)) {
+                        return twoValue;
+                    }
+                    else {
+                        liste.add(twoValue);
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                twoValue = new ArrayList<>();
+            }
+            aDroite += 1;
+            for (int x = -enBas * 1000; x <= enBas * 1000; x += 1000) {
+                for (int z = -enBas * 1000; z <= enBas * 1000; z += 1000) {
+                    twoValue.add(x);
+                    twoValue.add(z);
+                    if (!liste.contains(twoValue) && !islandManager.IslandCoordinateTaken(twoValue)) {
+                        return twoValue;
+                    }
+                    else {
+                        liste.add(twoValue);
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                twoValue = new ArrayList<>();
+            }
+            enBas += 1;
+            for (int x = -aGauche * 1000; x <= aGauche * 1000; x += 1000) {
+                for (int z = -aGauche * 1000; z <= aGauche * 1000; z += 1000) {
+                    twoValue.add(x);
+                    twoValue.add(z);
+                    if (!liste.contains(twoValue) && !islandManager.IslandCoordinateTaken(twoValue)) {
+                        return twoValue;
+                    }
+                    else {
+                        liste.add(twoValue);
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                twoValue = new ArrayList<>();
+            }
+            aGauche += 1;
+
+        }
+    }
 
 }

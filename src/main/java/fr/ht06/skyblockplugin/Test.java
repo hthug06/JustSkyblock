@@ -1,6 +1,7 @@
 package fr.ht06.skyblockplugin;
 
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -9,9 +10,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Test implements CommandExecutor {
 
     IslandManager islandManager  = SkyblockPlugin.islandManager;
+    MiniMessage miniMessage  =  MiniMessage.miniMessage();
     SkyblockPlugin main;
     public Test(SkyblockPlugin main) {
         this.main = main;
@@ -29,7 +34,110 @@ public class Test implements CommandExecutor {
 
         if (strings.length == 1){
             Location loc= new Location(Bukkit.getWorld("world_Skyblock"),islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 70, islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1));
-            player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
+            //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
+            List<List<Integer>> liste = new ArrayList<>();
+            List<Integer> twoValue = new ArrayList<>();
+            int enHaut = 1;
+            int aDroite = 0;
+            int enBas = 1;
+            int aGauche = 0;
+            for (int i = 0; i<=2; i++){
+                player.sendMessage(miniMessage.deserialize("<b><i><color:red>"+i));
+                for (int x = -enHaut*1000; x<=enHaut*1000; x+=1000){
+                    for (int z = -enHaut*1000; z<=enHaut*1000; z+=1000){
+                        twoValue.add(x);
+                        twoValue.add(z);
+                        if (!liste.contains(twoValue)){
+                            player.sendMessage(twoValue.toString());
+                            liste.add(twoValue);
+                        }
+                        twoValue = new ArrayList<>();
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                enHaut+=1;
+                for (int x = -aDroite*1000; x<=aDroite*1000; x+=1000){
+                    for (int z = -aDroite*1000; z<=aDroite*1000; z+=1000){
+                        twoValue.add(x);
+                        twoValue.add(z);
+                        if (!liste.contains(twoValue)){
+                            player.sendMessage(twoValue.toString());
+                            liste.add(twoValue);
+                        }
+                        twoValue = new ArrayList<>();
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                aDroite+=1;
+                for (int x = -enBas*1000; x<=enBas*1000; x+=1000){
+                    for (int z = -enBas*1000; z<=enBas*1000; z+=1000){
+                        twoValue.add(x);
+                        twoValue.add(z);
+                        if (!liste.contains(twoValue)){
+                            player.sendMessage(twoValue.toString());
+                            liste.add(twoValue);
+                        }
+                        twoValue = new ArrayList<>();
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                enBas+=1;
+                for (int x = -aGauche*1000; x<=aGauche*1000; x+=1000){
+                    for (int z = -aGauche*1000; z<=aGauche*1000; z+=1000){
+                        twoValue.add(x);
+                        twoValue.add(z);
+                        if (!liste.contains(twoValue)){
+                            player.sendMessage(twoValue.toString());
+                            liste.add(twoValue);
+                        }
+                        twoValue = new ArrayList<>();
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                aGauche+=1;
+
+            }
+            player.sendMessage(liste.toString());
+            /*for (int i = 0; i<10001; i+=1000){//nombre d efoisd ou le code va aller en cercle
+                for (int j = 0; j<10001; j+=1000){
+                    twoValue.add(i);
+                    twoValue.add(j);
+                    if (!liste.contains(twoValue)){
+                        liste.add(twoValue);
+                        player.sendMessage(String.valueOf(i) +" "+ String.valueOf(j));
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                for (int j = 0; j>-10001; j-=1000){
+                    twoValue.add(i);
+                    twoValue.add(j);
+                    if (!liste.contains(twoValue)){
+                        liste.add(twoValue);
+                        player.sendMessage(String.valueOf(i) +" "+ String.valueOf(j));
+                    }
+                    twoValue = new ArrayList<>();
+                }
+            }
+            for (int i = 0; i>-10001; i-=1000){//nombre d efoisd ou le code va aller en cercle
+                for (int j = 0; j<10001; j+=1000){
+                    twoValue.add(i);
+                    twoValue.add(j);
+                    if (!liste.contains(twoValue)){
+                        liste.add(twoValue);
+                        player.sendMessage(String.valueOf(i) +" "+ String.valueOf(j));
+                    }
+                    twoValue = new ArrayList<>();
+                }
+                for (int j = 0; j>-10001; j-=1000){
+                    twoValue.add(i);
+                    twoValue.add(j);
+                    if (!liste.contains(twoValue)){
+                        liste.add(twoValue);
+                        player.sendMessage(String.valueOf(i) +" "+ String.valueOf(j));
+                    }
+                    twoValue = new ArrayList<>();
+                }
+            }*/
             //Island island=  new Island(player.getName()+"'s Island", player.getName(),list, new Location(Bukkit.getWorld("world"), 1000, 0, 1000));
             //SkyblockPlugin.islandManager.addIsland(island);
             //player.sendMessage(String.valueOf(SkyblockPlugin.islandManager.getAllIslandtoMap()));

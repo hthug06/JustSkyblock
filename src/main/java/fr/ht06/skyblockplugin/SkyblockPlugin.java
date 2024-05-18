@@ -38,7 +38,6 @@ public final class SkyblockPlugin extends JavaPlugin {
     public void onEnable() {
         instance =this;
 
-
         islandManager = new IslandManager();
 
         //Creation du world_skyblock si il existe pas et le loader sinon

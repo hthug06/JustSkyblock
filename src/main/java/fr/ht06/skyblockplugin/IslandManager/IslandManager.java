@@ -6,9 +6,14 @@ public class IslandManager {
 
     private List<Island> allIsland = new ArrayList<>();
     private Map<String, List<Integer>> allCoordinate = new HashMap<>();
+    private List<List<Integer>> ISCOOTaken = new ArrayList<>();
 
     public Map<String, List<Integer>> getAllCoordinate() {
         return allCoordinate;
+    }
+
+    public IslandManager(){
+
     }
 
     public void addAllCoordinate(Island island) {
@@ -93,6 +98,15 @@ public class IslandManager {
                 break;
             }
         }
+    }
+
+    public Boolean IslandCoordinateTaken(List<Integer> xz){
+        for (Island i : this.allIsland){
+            if (i.getIslandCoordinates().equals(xz)){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

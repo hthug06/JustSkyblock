@@ -1,12 +1,11 @@
 package fr.ht06.skyblockplugin.Commands;
 
+import fr.ht06.skyblockplugin.Inventory.DeleteIslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
 import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -35,7 +34,6 @@ public class IslandCommand implements CommandExecutor {
                 player.openInventory(gui.getInventory());
 
             }
-
             else {
                 Island island = islandManager.getIslandbyplayer(player.getName()).getIsland();
                 player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
@@ -72,9 +70,8 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
-                    player.sendMessage(Component.text("Are you sure you want to delete your island?").color(TextColor.color(0xE74C3C)));
-                    player.sendMessage(Component.text("You are going to lost all your progression.").color(TextColor.color(0xE74C3C)));
-                    player.sendMessage(Component.text("If you really want to delete your island, ").color(TextColor.color(0xE74C3C)).append(miniMessage.deserialize("<click:run_command:/is delete confirm>Click here.</click>").asComponent().color(TextColor.color(0x7B241C))));
+                    DeleteIslandInventory deleteIslandInventory = new  DeleteIslandInventory();
+                    player.openInventory(deleteIslandInventory.getInventory());
                 }
 
             }
@@ -90,6 +87,18 @@ public class IslandCommand implements CommandExecutor {
                 else{
                     IslandSettingsInv islandSettingsInv = new IslandSettingsInv(player);
                     player.openInventory(islandSettingsInv.getInventory());
+                }
+            }
+            if (args[0].equalsIgnoreCase("team")){
+                if (!islandManager.playerHasIsland(player.getName())){
+                    player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
+                    return true;
+                }
+                else{
+
+                }
+                player.sendMessage("ça va être les infos");
+                if (args[1].equalsIgnoreCase("add")){
                 }
             }
 
@@ -120,23 +129,12 @@ public class IslandCommand implements CommandExecutor {
 
 
             if (args[0].equalsIgnoreCase("delete")){
-                if (args[1].equalsIgnoreCase("confirm")) {
-                    if (!islandManager.playerHasIsland(player.getName())){
-                        player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
-                    }
-                    else {
-                        SkyblockPlugin.deleteIsland(player);
-                    }
+                if (!islandManager.playerHasIsland(player.getName())){
+                    player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
-                else{
-                    if (!islandManager.playerHasIsland(player.getName())){
-                        player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
-                    }
-                    else{
-                        player.sendMessage(Component.text("Are you sure you want to delete your island?").color(TextColor.color(0xE74C3C)));
-                        player.sendMessage(Component.text("You are going to lost all your progression.").color(TextColor.color(0xE74C3C)));
-                        player.sendMessage(Component.text("If you really want to delete your island, ").color(TextColor.color(0xE74C3C)).append(miniMessage.deserialize("<click:run_command:/is delete confirm>Click here.</click>").asComponent().color(TextColor.color(0x7B241C))));
-                    }
+                else {
+                    DeleteIslandInventory deleteIslandInventory = new  DeleteIslandInventory();
+                    player.openInventory(deleteIslandInventory.getInventory());
                 }
             }
 
@@ -213,9 +211,8 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage("§cYou don't have any island, use §7/is §cto create one.");
                 }
                 else{
-                    player.sendMessage(Component.text("Are you sure you want to delete your island?").color(TextColor.color(0xE74C3C)));
-                    player.sendMessage(Component.text("You are going to lost all your progression.").color(TextColor.color(0xE74C3C)));
-                    player.sendMessage(Component.text("If you really want to delete your island, ").color(TextColor.color(0xE74C3C)).append(miniMessage.deserialize("<click:run_command:/is delete confirm>Click here.</click>").asComponent().color(TextColor.color(0x7B241C))));
+                    DeleteIslandInventory deleteIslandInventory = new  DeleteIslandInventory();
+                    player.openInventory(deleteIslandInventory.getInventory());
                 }
 
             }

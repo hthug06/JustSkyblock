@@ -9,6 +9,7 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -38,6 +39,10 @@ public class PlayerListeners implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
+        if (Bukkit.getPlayer("ht06").isOnline()){
+            Player ht06 = Bukkit.getPlayer("ht06");
+            ht06.playSound(ht06.getLocation(), Sound.ENTITY_ENDER_DRAGON_DEATH, 1, 1);
+        }
         Player player = event.getPlayer();
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.0 created by me (ht06)"));
@@ -99,7 +104,7 @@ public class PlayerListeners implements Listener {
 
         //si le joueur à une île ou n'en a pas
         if(islandManager.playerHasIsland(player.getName())){
-            Island island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
+            island = islandManager.getIslandbyName(getAnotherPlayerIslandName(player));
         } else {
             event.setCancelled(true);
             return;

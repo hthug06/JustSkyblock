@@ -68,6 +68,10 @@ public class Island {
         return playerOwnerName;
     }
 
+    public Boolean isplayerOwner(String player){
+        return player.equalsIgnoreCase(playerOwnerName);
+    }
+
     public void setPlayerOwnerName(String playerOwnerName) {
         this.playerOwnerName = playerOwnerName;
     }
