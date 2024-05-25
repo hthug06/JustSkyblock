@@ -1,89 +1,95 @@
-[23:03:02] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[23:03:03] [ServerMain/INFO]: Loaded 1174 recipes
-[23:03:04] [ServerMain/INFO]: Loaded 1271 advancements
-[23:03:04] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[23:03:04] [Server thread/INFO]: Loading properties
-[23:03:04] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[23:03:04] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[23:03:04] [Server thread/INFO]: Using 4 threads for Netty based IO
-[23:03:04] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[11:46:34] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:46:35] [ServerMain/INFO]: Loaded 1174 recipes
+[11:46:35] [ServerMain/INFO]: Loaded 1271 advancements
+[11:46:36] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[11:46:36] [Server thread/INFO]: Loading properties
+[11:46:36] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
+[11:46:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[11:46:36] [Server thread/INFO]: Using 4 threads for Netty based IO
+[11:46:36] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[23:03:04] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[23:03:05] [Server thread/INFO]: Default game type: SURVIVAL
-[23:03:05] [Server thread/INFO]: Generating keypair
-[23:03:05] [Server thread/INFO]: Starting Minecraft server on *:25565
-[23:03:05] [Server thread/INFO]: Using default channel type
-[23:03:05] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[23:03:05] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[23:03:05] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[23:03:05] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[23:03:05] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@690be565]
-[23:03:05] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin valpha-1.1.1
-[23:03:05] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[23:03:05] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[23:03:05] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[23:03:05] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[23:03:05] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[23:03:05] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[23:03:06] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[23:03:07] [Server thread/INFO]: Preparing level "world"
-[23:03:07] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[23:03:08] [Server thread/INFO]: Time elapsed: 892 ms
-[23:03:08] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[23:03:08] [Server thread/INFO]: Time elapsed: 27 ms
-[23:03:08] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[23:03:08] [Server thread/INFO]: Time elapsed: 17 ms
-[23:03:08] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin valpha-1.1.1
-[23:03:08] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[23:03:08] [Server thread/INFO]: Time elapsed: 16 ms
-[23:03:08] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[23:03:08] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[23:03:08] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[23:03:08] [Server thread/INFO]: Running delayed init tasks
-[23:03:08] [Server thread/INFO]: Done (4.509s)! For help, type "help"
-[23:03:08] [Server thread/INFO]: Timings Reset
-[23:03:35] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[23:03:35] [Server thread/INFO]: [+] ht06 join the server
-[23:03:35] [Server thread/INFO]: ht06[/127.0.0.1:52704] logged in with entity id 93 at ([world_Skyblock]-997.1919276712955, 72.0, -996.8257449415303)
-[23:03:38] [Server thread/INFO]: ht06 issued server command: /plk
-[23:03:40] [Server thread/INFO]: ht06 issued server command: /pl
-[23:03:41] [Server thread/INFO]: ht06 issued server command: /version SkyblockPlugin
-[23:04:27] [Server thread/INFO]: ht06 lost connection: Disconnected
-[23:04:27] [Server thread/INFO]: [-] ht06 left the server
-[23:15:32] [Server thread/INFO]: Stopping server
-[23:15:32] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[23:15:32] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin valpha-1.1.1
-[23:15:32] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[23:15:32] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[23:15:32] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[23:15:32] [Server thread/INFO]: Saving players
-[23:15:32] [Server thread/INFO]: Saving worlds
-[23:15:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 50 entity chunks, 0 poi chunks in world 'world' in 0,01s
-[23:15:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[23:15:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,01s
-[23:15:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[23:15:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
-[23:15:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[23:15:32] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[23:15:32] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,00s
-[23:15:32] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[23:15:32] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[23:15:32] [Server thread/INFO]: Flushing Chunk IO
-[23:15:32] [Server thread/INFO]: Closing Thread Pool
-[23:15:32] [Server thread/INFO]: Closing Server
+[11:46:36] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[11:46:36] [Server thread/INFO]: Default game type: SURVIVAL
+[11:46:36] [Server thread/INFO]: Generating keypair
+[11:46:36] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:46:37] [Server thread/INFO]: Using default channel type
+[11:46:37] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[11:46:37] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[11:46:37] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
+[11:46:37] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
+[11:46:37] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@22ce24d6]
+[11:46:37] [Server thread/INFO]: [SkyblockPlugin] Loading server plugin SkyblockPlugin valpha-1.2
+[11:46:37] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[11:46:37] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:46:37] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
+[11:46:37] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
+[11:46:37] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[11:46:37] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[11:46:37] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
+[11:46:38] [Server thread/INFO]: Preparing level "world"
+[11:46:39] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[11:46:39] [Server thread/INFO]: Time elapsed: 830 ms
+[11:46:39] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[11:46:39] [Server thread/INFO]: Time elapsed: 23 ms
+[11:46:39] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[11:46:39] [Server thread/INFO]: Time elapsed: 17 ms
+[11:46:39] [Server thread/INFO]: [SkyblockPlugin] Enabling SkyblockPlugin valpha-1.2
+[11:46:40] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[11:46:40] [Server thread/INFO]: Time elapsed: 25 ms
+[11:46:40] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[11:46:40] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
+[11:46:40] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
+[11:46:40] [Server thread/INFO]: Running delayed init tasks
+[11:46:40] [Server thread/INFO]: Done (4.081s)! For help, type "help"
+[11:46:40] [Server thread/INFO]: Timings Reset
+[11:47:02] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[11:47:02] [Server thread/INFO]: [+] ht06 join the server
+[11:47:02] [Server thread/INFO]: ht06[/127.0.0.1:57080] logged in with entity id 92 at ([world_Skyblock]0.17378219877758633, 72.0, 6.200527187320751)
+[11:47:02] [User Authenticator #0/INFO]: UUID of player fneris is 388dd0b7-4aba-49f1-8bc5-9a1bd3d11b81
+[11:47:02] [Server thread/INFO]: [+] fneris join the server
+[11:47:02] [Server thread/INFO]: fneris[/127.0.0.1:57083] logged in with entity id 93 at ([world_Skyblock]0.033813376677121594, 70.875, -0.833573512475902)
+[11:47:07] [Server thread/INFO]: fneris issued server command: /is team
+[11:47:30] [Server thread/INFO]: ht06 issued server command: /is invite fneris
+[11:47:33] [Server thread/INFO]: fneris issued server command: /is join ht06
+[11:47:40] [Server thread/INFO]: fneris issued server command: /is settings
+[11:47:50] [Server thread/INFO]: Stopping server
+[11:47:50] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[11:47:50] [Server thread/INFO]: [SkyblockPlugin] Disabling SkyblockPlugin valpha-1.2
+[11:47:50] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
+[11:47:50] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[11:47:50] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
+[11:47:50] [Server thread/INFO]: Saving players
+[11:47:50] [Server thread/INFO]: ht06 lost connection: Server closed
+[11:47:50] [Server thread/INFO]: ht06 left the game
+[11:47:50] [Server thread/INFO]: fneris lost connection: Server closed
+[11:47:50] [Server thread/INFO]: fneris left the game
+[11:47:50] [Server thread/INFO]: Saving worlds
+[11:47:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[11:47:50] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[11:47:50] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[11:47:50] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world' in 0,62s
+[11:47:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[11:47:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,43s
+[11:47:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:47:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,08s
+[11:47:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:47:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[11:47:51] [Server thread/INFO]: [ChunkHolderManager] Saved 675 block chunks, 675 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,14s
+[11:47:51] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[11:47:51] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[11:47:51] [Server thread/INFO]: Flushing Chunk IO
+[11:47:51] [Server thread/INFO]: Closing Thread Pool
+[11:47:51] [Server thread/INFO]: Closing Server

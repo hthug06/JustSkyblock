@@ -1,23 +1,26 @@
 package fr.ht06.skyblockplugin.IslandManager;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.util.*;
 
 
 public class Island {
     private String IslandName;
-    private String playerOwnerName;
     private List<Integer> islandCoordinates;
     private Location islandSpawn;
-    private List<String> players = new ArrayList<>();
+    private String Owner;
+    private List<String> Moderator = new ArrayList<>();
+    private List<String> Member = new ArrayList<>();
+    //private List<Map<String/*Les joueur*/, String/*leur grade sur l'île*/>> players = new ArrayList<>();
+    //private List</*Liste de tout */Map<String/*Grade*/, List<String /*Joueur*/>>> players = new ArrayList<>();  // [{Owner=[ht06]}, {Mod=[sxg919, fneris]}, {Member=[Benny232, GCZ115, MeatEmy]}
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<Object, Object> Island = new HashMap<>();
 
-    public Island(String IslandName, String playerOwnerName, List<Integer> islandCoordinates, Location islandSpawn){
+    public Island(String IslandName, List<Integer> islandCoordinates, Location islandSpawn){
         this.IslandName = IslandName;
-        this.playerOwnerName = playerOwnerName;
-        this.players.add(playerOwnerName);
         this.islandCoordinates = islandCoordinates;
         this.islandSpawn = islandSpawn;
         this.createSettings();
@@ -64,37 +67,111 @@ public class Island {
         this.islandCoordinates = islandCoordinates;
     }
 
-    public String getPlayerOwnerName() {
-        return playerOwnerName;
+    public String getOwner() {
+        //il ne peut y avoir qu'un seul Owner
+        return Owner;
     }
 
-    public Boolean isplayerOwner(String player){
-        return player.equalsIgnoreCase(playerOwnerName);
+    public Boolean isOwner(String player){
+        return Owner.equalsIgnoreCase(player);
     }
 
-    public void setPlayerOwnerName(String playerOwnerName) {
-        this.playerOwnerName = playerOwnerName;
+    public void setOwner(String playerOwnerName) {
+        this.Owner = playerOwnerName;
     }
 
-    public List<String> getPlayers() {
-        return players;
+    public List<String> getAllModerators(){
+        return this.Moderator;
     }
 
-    public void addPlayers(String player) {
-        this.players.add(player);
+    public void setModerator(List<String> list){
+        this.Moderator = list;
     }
-    public void addPlayers(List<String> players) {
-        this.players.addAll(players);
+
+    public void addModerator(String playerName) {
+        this.Moderator.add(playerName);
+    }
+
+    public void removeModerator(String playerName){
+        this.Moderator.remove(playerName);
+    }
+
+    public Boolean isModerator(String playerName){
+        return this.Moderator.contains(playerName);
+    }
+
+    public List<String> getAllMembers(){
+        return this.Member;
+    }
+
+    public void setMember(List<String> list){
+        this.Member = list;
+    }
+
+    public void addMember(String playerName) {
+        this.Member.add(playerName);
+    }
+
+    public void removeMember(String playerName){
+        this.Member.remove(playerName);
+    }
+
+    public Boolean isMember(String playerName){
+        return this.Member.contains(playerName);
     }
 
     public Boolean isOnThisIsland(String playerName){
-        return this.players.contains(playerName);
+        return this.Owner.equalsIgnoreCase(playerName) || this.Moderator.contains(playerName) || this.Member.contains(playerName);
+    }
+
+    public void BroadcastLeave(Player player){
+        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        if (playerOwner != null && playerOwner.isOnline()) {
+            playerOwner.sendMessage(player.getName() + " leave the island");
+        }
+        for (String modo : Moderator){
+            Player playerModo = Bukkit.getPlayerExact(modo);
+            if (playerModo != null && playerModo.isOnline()) {
+                playerModo.sendMessage(player.getName() + " leave the island");
+            }
+        }
+        for (String member : Member){
+            Player playerMember = Bukkit.getPlayerExact(member);
+            if (playerMember != null && playerMember.isOnline()) {
+                playerMember.sendMessage(player.getName() + " leave the island");
+            }
+        }
+    }
+
+    public void BroadcastJoin(Player player) {
+        if (player != null && player.isOnline()) {
+            player.sendMessage("You join " + this.getIslandName());
+        }
+
+        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        if (playerOwner != null && playerOwner.isOnline()) {
+            playerOwner.sendMessage(player.getName() + " join the island");
+        }
+
+        for (String modo : Moderator){
+            Player playerModo = Bukkit.getPlayerExact(modo);
+            if (playerModo != null && playerModo.isOnline()) {
+                playerModo.sendMessage(player.getName() + " join the island");
+            }
+        }
+        for (String member : Member){
+            Player playerMember = Bukkit.getPlayerExact(member);
+            if (playerMember != null && playerMember.isOnline()) {
+                playerMember.sendMessage(player.getName() + " join the island");
+            }
+        }
     }
 
     public Map<Object, Object> IStoMap(){
         Island.put("Name", IslandName);
-        Island.put("Owner", playerOwnerName);
-        Island.put("Players", players);
+        Island.put("Owner", Owner);
+        Island.put("Moderator", getAllModerators());
+        Island.put("Member", getAllMembers());
         Island.put("Settings", allSettings);
         Island.put("IslandLoc", islandCoordinates);
         Island.put("IslandSpawn", islandSpawn);

@@ -105,7 +105,7 @@ public final class SkyblockPlugin extends JavaPlugin {
             dossier.mkdir();
         }
 
-        //reajout des gens dans la hashmap
+        //rajout des gens dans la hashmap
         DataConfig.setup();
         if (DataConfig.get().contains("Island")) {
             Island island;
@@ -118,27 +118,29 @@ public final class SkyblockPlugin extends JavaPlugin {
                         dataconfig.getInt("Island."+ v +".LocationSpawn.pitch"),
                         dataconfig.getInt("Island."+ v +".LocationSpawn.yaw"));
 
-                island = new Island(v, //nom de l'île
-                        (String) dataconfig.get("Island."+v+".Owner"),  //proprio de lîle OK
-                        (List<Integer>) dataconfig.get("Island."+v+".Coordinates"),  //les coo en x et z
-                        loc);   //spawn de l'île
+                //création de l'ile
+                island = new Island(v, (List<Integer>) dataconfig.get("Island."+v+".Coordinates"), loc);
 
-                for (String s : (List<String>) dataconfig.get("Island."+v+".Players")){
-                    if (!island.getPlayers().contains(s)){
-                        island.addPlayers(s);
-                    }
+                //les joueurs
+                island.setOwner((String) DataConfig.get().get("Island."+ v +".Players.Owner"));
+                if (DataConfig.get().contains("Island."+ v +".Players.Moderators")){
+                    island.setModerator((List<String>) DataConfig.get().getList("Island."+ v +".Players.Moderators"));
+                }
+                if (DataConfig.get().contains("Island."+ v +".Players.Members")){
+                    island.setMember((List<String>) DataConfig.get().getList("Island."+ v +".Players.Members"));
                 }
 
+                //les settings
                 @NotNull Map<String, Object> maps =  DataConfig.get().getConfigurationSection("Island."+v+".Settings").getValues(true);
                 for (Map.Entry<String, Object> m : maps.entrySet()){
                     island.setSettings(m.getKey(), (Boolean) m.getValue());
                 }
-
+                //ajout de l'île a l'island manager
                 islandManager.addIsland(island);
             }
         }
 
-        //On dégage le data.yml
+        //On dégage la data.yml
         File dataYML = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
         dataYML.delete();
 
@@ -161,18 +163,16 @@ public final class SkyblockPlugin extends JavaPlugin {
         //List<String> configIS = new ArrayList<>(DataConfig.get().getConfigurationSection("Players").getKeys(false));
 
         for (Island v: islandManager.getAllIsland()){
-            //la location du spawn
-            DataConfig.get().getConfigurationSection("Island")
-                    .createSection(v.getIslandName()).createSection("LocationSpawn", v.getIslandSpawn().serialize());
 
-            //le chef de l'ile
-            DataConfig.get().set("Island."+v.getIslandName()+".Owner", v.getPlayerOwnerName());
+            DataConfig.get().getConfigurationSection("Island").createSection(v.getIslandName());
 
             //les joueur de l'île
-            Map<String, List<String >> isPlayer = new HashMap<>();
-            isPlayer.put(v.getIslandName(), v.getPlayers());
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Players");
-            DataConfig.get().set("Island."+v.getIslandName()+".Players", v.getPlayers());
+            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Players").set("Owner", v.getOwner()); //le chef
+            if (!v.getAllModerators().isEmpty()) DataConfig.get().getConfigurationSection("Island."+v.getIslandName()+".Players").set("Moderators",v.getAllModerators()); //les modos
+            if (!v.getAllMembers().isEmpty()) DataConfig.get().getConfigurationSection("Island."+v.getIslandName()+".Players").set("Members",v.getAllMembers());  //les membres
+
+            //la location du spawn
+            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("LocationSpawn", v.getIslandSpawn().serialize());
 
             //les 2 coordonnée de l'île (en x et en z)
             DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Coordinates");
@@ -252,4 +252,5 @@ public final class SkyblockPlugin extends JavaPlugin {
         //SkyblockPlugin.islandCoordinates.deleteCoordinates(island.getIslandName());
         player.getInventory().clear();
     }
+
 }

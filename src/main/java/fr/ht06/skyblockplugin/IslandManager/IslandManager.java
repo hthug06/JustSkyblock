@@ -6,7 +6,7 @@ public class IslandManager {
 
     private List<Island> allIsland = new ArrayList<>();
     private Map<String, List<Integer>> allCoordinate = new HashMap<>();
-    private List<List<Integer>> ISCOOTaken = new ArrayList<>();
+    private Map<String, List<String>> invitation = new HashMap<>();
 
     public Map<String, List<Integer>> getAllCoordinate() {
         return allCoordinate;
@@ -108,5 +108,37 @@ public class IslandManager {
         }
         return false;
     }
+
+    public Boolean isInvitedByPlayer(String playerName, String Inviter){
+        if (this.invitation.containsKey(playerName)){
+            return this.invitation.get(playerName).contains(Inviter);
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    public void addPlayerInvitation(String playerName, String Inviter) {
+        invitation.computeIfAbsent(playerName, k -> new ArrayList<>()).add(Inviter);
+    }
+
+    public Boolean isInvitedby(String playerInvited, String invitedBy){
+        return this.invitation.containsKey(playerInvited) && this.invitation.get(playerInvited).contains(invitedBy);
+    }
+
+    public void removePlayerInvitation(String playerName, String Inviter){
+        if (this.invitation.containsKey(playerName) && this.invitation.get(playerName).contains(Inviter)) {
+            this.invitation.get(playerName).remove(Inviter);
+
+            if (this.invitation.get(playerName).isEmpty()) {
+                this.invitation.remove(playerName);
+            }
+        }
+
+    }
+
+
+
 
 }

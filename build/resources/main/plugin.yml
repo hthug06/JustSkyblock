@@ -1,5 +1,5 @@
 name: SkyblockPlugin
-version: 'alpha-1.1.1'
+version: 'alpha-1.2'
 main: fr.ht06.skyblockplugin.SkyblockPlugin
 api-version: '1.20'
 author: ht06

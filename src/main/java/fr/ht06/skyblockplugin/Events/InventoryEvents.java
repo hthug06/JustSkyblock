@@ -3,6 +3,7 @@ package fr.ht06.skyblockplugin.Events;
 import fr.ht06.skyblockplugin.Inventory.DeleteIslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
+import fr.ht06.skyblockplugin.Inventory.LeaveIslandInventory;
 import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.LoadSchematic;
@@ -89,7 +90,8 @@ public class InventoryEvents implements Listener {
                         List<Integer> coord = getIslandCoordinate(player);
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"),coord.get(0), 70, coord.get(1));
 
-                        Island newIsland = new Island(player.getName()+"'s Island",player.getName(), coord, loc);
+                        Island newIsland = new Island(player.getName()+"'s Island", coord, loc);
+                        newIsland.setOwner(player.getName());
                         SkyblockPlugin.islandManager.addIsland(newIsland);
 
                         //new LoadSchematic(loc,"world_Skyblock", "islandPlain");
@@ -123,7 +125,8 @@ public class InventoryEvents implements Listener {
                         finale.add(x);
                         finale.add(z);
 
-                        Island island = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
+                        Island island = new Island(player.getName()+"'s Island", finale, loc);
+                        island.setOwner(player.getName());
                         islandManager.addIsland(island);
                         //SkyblockPlugin.islandCoordinates.addCoordinates(island.getIslandName(), island.getIslandCoordinates());
 
@@ -170,6 +173,33 @@ public class InventoryEvents implements Listener {
             if (event.getSlot() ==  13){
                 SkyblockPlugin.deleteIsland(player);
                 player.closeInventory();
+            }
+        }
+
+        if (event.getClickedInventory().getHolder() instanceof LeaveIslandInventory){
+            event.setCancelled(true);
+            if (event.getSlot() ==  13){
+                Island island = islandManager.getIslandbyplayer(player.getName());
+                //si il est membre
+                if (islandManager.getIslandbyplayer(player.getName()).isMember(player.getName())){
+                    player.closeInventory();
+                    player.sendMessage("You leave " +  island.getIslandName());
+                    //On le dégage
+                    islandManager.getIslandbyplayer(player.getName()).removeMember(player.getName());
+                    //On broadcast que le joueur à quitté l'île
+                    island.BroadcastLeave(player);
+
+
+                }
+                else{  //S'il est modo
+                    player.closeInventory();
+                    player.sendMessage("You leave " + islandManager.getIslandbyplayer(player.getName()).getIslandName());
+                    //On le dégage
+                    islandManager.getIslandbyplayer(player.getName()).removeModerator(player.getName());
+                    //On broadcast qu'il a quitté
+                    island.BroadcastLeave(player);
+
+                }
             }
         }
 
