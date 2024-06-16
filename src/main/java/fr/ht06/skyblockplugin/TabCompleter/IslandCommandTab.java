@@ -1,5 +1,6 @@
 package fr.ht06.skyblockplugin.TabCompleter;
 
+import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import fr.ht06.skyblockplugin.SkyblockPlugin;
 import org.bukkit.Bukkit;
@@ -22,23 +23,70 @@ public class IslandCommandTab implements TabCompleter {
 
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-
+        Player player = (Player) commandSender;
         if (strings.length == 1){
             List<String> listearg0 = new ArrayList<>();
-            listearg0.add("setspawn");
-            listearg0.add("delete");
-            listearg0.add("visit");
-            listearg0.add("settings");
-            listearg0.add("invite");
-            listearg0.add("team");
-            listearg0.add("join");
-            listearg0.add("decline");
-            listearg0.add("leave");
-            listearg0.add("promote");
-            listearg0.add("demote");
-            listearg0.add("kick");
+            if (!islandManager.playerHasIsland(player.getName())){
+                listearg0.add("create");
+                listearg0.add("decline");
+                listearg0.add("join");
+                listearg0.add("visit");
 
-            return listearg0;
+                return listearg0;
+            }
+            else{
+                Island island = islandManager.getIslandbyplayer(player.getName());
+                if (island.isOwner(player.getName())){
+                    //listearg0.add("decline");
+                    listearg0.add("delete");
+                    listearg0.add("demote");
+                    listearg0.add("invite");
+                    //listearg0.add("join");
+                    listearg0.add("kick");
+                    //listearg0.add("leave");
+                    listearg0.add("promote");
+                    listearg0.add("setname");
+                    listearg0.add("setspawn");
+                    listearg0.add("settings");
+                    listearg0.add("team");
+                    listearg0.add("visit");
+
+                    return listearg0;
+                }
+                else if (island.isModerator(player.getName())){
+                    //listearg0.add("decline");
+                    //listearg0.add("delete");
+                    listearg0.add("demote");
+                    listearg0.add("invite");
+                    //listearg0.add("join");
+                    listearg0.add("kick");
+                    listearg0.add("leave");
+                    listearg0.add("promote");
+                    listearg0.add("setspawn");
+                    listearg0.add("settings");
+                    listearg0.add("team");
+                    listearg0.add("visit");
+
+                    return listearg0;
+                }
+                else if (island.isMember(player.getName())) {
+                    //listearg0.add("decline");
+                    //listearg0.add("delete");
+                    //listearg0.add("demote");
+                    //listearg0.add("invite");
+                    //listearg0.add("join");
+                    //listearg0.add("kick");
+                    listearg0.add("leave");
+                    //listearg0.add("promote");
+                    //listearg0.add("setspawn");
+                    //listearg0.add("settings");
+                    listearg0.add("team");
+                    listearg0.add("visit");
+
+                    return listearg0;
+                }
+
+            }
         }
         if (strings.length == 2){
             if (strings[0].equalsIgnoreCase("visit") || strings[0].equalsIgnoreCase("invite")){

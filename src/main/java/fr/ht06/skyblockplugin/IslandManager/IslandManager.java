@@ -1,5 +1,7 @@
 package fr.ht06.skyblockplugin.IslandManager;
 
+import org.bukkit.Bukkit;
+
 import java.util.*;
 
 public class IslandManager {
@@ -55,6 +57,15 @@ public class IslandManager {
     public Island getIslandbyplayer(String playerName){
         for (Island v: allIsland){
             if (v.isOnThisIsland(playerName)){
+                return v.getIsland();
+            }
+        }
+        return null;
+    }
+
+    public Island getIslandbyplayerUUID(UUID playerUUID){
+        for (Island v: allIsland){
+            if (v.isOnThisIsland(Bukkit.getPlayer(playerUUID).getName())){
                 return v.getIsland();
             }
         }

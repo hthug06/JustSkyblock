@@ -3,17 +3,16 @@ WARNING 2: Don't touch this file or everything can be corrupt
 WARNING 3: If you delete this file, every player data will be reset
 Island:
   ht06's Island:
+    Level: 658.0
     Players:
       Owner: ht06
-      Members:
-      - fneris
     LocationSpawn:
       world: world_Skyblock
-      x: 1.2373279737777871
-      y: 71.0
-      z: -1.5142488505525014
-      pitch: -61.0
-      yaw: 23.0
+      x: 0.0
+      y: 70.0
+      z: 0.0
+      pitch: 0.0
+      yaw: 0.0
     Coordinates:
     - 0
     - 0
@@ -25,7 +24,7 @@ Island:
       OAK_BUTTON: true
       LEVER: true
       WHITE_BED: true
-      CHEST: false
+      CHEST: true
       BARREL: true
       SHULKER_BOX: true
       CRAFTING_TABLE: true

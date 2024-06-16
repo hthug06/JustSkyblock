@@ -23,6 +23,10 @@ repositories {
         name = "eldonexus"
         url = uri("https://eldonexus.de/repository/maven-releases/")
     }
+    maven {
+        url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'
+    }
+
 }
 
 
@@ -31,6 +35,8 @@ dependencies {
     implementation 'com.sk89q.worldedit:worldedit-core:7.2.0'
     implementation 'com.sk89q.worldedit:worldedit-bukkit:7.2.0'
     compileOnly("com.github.yannicklamprecht.worldborderapi:api:1.170.0")
+    compileOnly 'me.clip:placeholderapi:2.11.6'
+
 
 }
 

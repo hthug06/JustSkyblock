@@ -1,19 +1,24 @@
 package fr.ht06.skyblockplugin;
 
 import com.github.yannicklamprecht.worldborder.api.WorldBorderApi;
+import fr.ht06.skyblockplugin.Commands.IsAdminCommand;
 import fr.ht06.skyblockplugin.Commands.IslandCommand;
 import fr.ht06.skyblockplugin.Commands.skyblockpluginCommand;
 import fr.ht06.skyblockplugin.Config.DataConfig;
+import fr.ht06.skyblockplugin.Config.IslandLevel;
 import fr.ht06.skyblockplugin.Events.InventoryEvents;
 import fr.ht06.skyblockplugin.Events.PlayerListeners;
 import fr.ht06.skyblockplugin.IslandManager.Island;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
+import fr.ht06.skyblockplugin.TabCompleter.IsadminCommandTab;
 import fr.ht06.skyblockplugin.TabCompleter.IslandCommandTab;
+import fr.ht06.skyblockplugin.placeholder.IslandLevelPlaceholder;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.*;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -32,6 +37,7 @@ public final class SkyblockPlugin extends JavaPlugin {
     public static SkyblockPlugin instance;
     public static IslandListByYAML islandList;
     public static IslandManager islandManager;
+    public static YamlConfiguration customConfig;
 
 
     @Override
@@ -60,10 +66,14 @@ public final class SkyblockPlugin extends JavaPlugin {
         getCommand("is").setExecutor(new IslandCommand(this));
         getCommand("test").setExecutor(new Test(this));
         getCommand("skyblockplugin").setExecutor(new skyblockpluginCommand(this));
+        getCommand("isadmin").setExecutor(new IsAdminCommand());
         getCommand("is").setTabCompleter(new IslandCommandTab(this));
+        getCommand("isadmin").setTabCompleter(new IsadminCommandTab());
         getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
         getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
         saveDefaultConfig();
+
+        registerPlaceholder();
 
         //Les iles depuis la config
         List<String> IS = new ArrayList<>(getConfig().getConfigurationSection("IS.").getKeys(false));
@@ -71,6 +81,10 @@ public final class SkyblockPlugin extends JavaPlugin {
         List<String> verificationName = new ArrayList<>();
         islandList = new IslandListByYAML();
         int i =0;
+
+        //Import du schematic
+        //saveResource("Schematic/IslandPlains.schem", false);
+
 
         //verification si les îles sont valide (vérifiactions des slots)
         for (String caractere: IS){
@@ -135,15 +149,22 @@ public final class SkyblockPlugin extends JavaPlugin {
                 for (Map.Entry<String, Object> m : maps.entrySet()){
                     island.setSettings(m.getKey(), (Boolean) m.getValue());
                 }
+
+                //le level de l'île
+                island.setLevel(dataconfig.getDouble("Island."+ v +".Level"));
+
                 //ajout de l'île a l'island manager
                 islandManager.addIsland(island);
             }
         }
 
         //On dégage la data.yml
-        File dataYML = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
+        File dataYML = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "data.yml");
         dataYML.delete();
 
+        //Pour les level
+        createLevelConfig();
+        IslandLevel.save();
     }
 
     @Override
@@ -165,6 +186,10 @@ public final class SkyblockPlugin extends JavaPlugin {
         for (Island v: islandManager.getAllIsland()){
 
             DataConfig.get().getConfigurationSection("Island").createSection(v.getIslandName());
+
+            //le Level
+            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).set("Level", v.getLevel()); //le chef
+
 
             //les joueur de l'île
             DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Players").set("Owner", v.getOwner()); //le chef
@@ -220,11 +245,11 @@ public final class SkyblockPlugin extends JavaPlugin {
         Bukkit.dispatchCommand(player, "spawn");
         //y
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = island.getIslandSpawn().clone().add(-50, -200, -50);
+            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().get(0), 70, island.getIslandCoordinates().get(1)).clone().add(-50, -200, -50);;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = island.getIslandSpawn().clone().add(50, 300, 50);
+            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().get(0), 70, island.getIslandCoordinates().get(1)).clone().add(50, 300, 50);;
             int x2 = isLoc2.getBlockX();
             int z2 = isLoc2.getBlockZ();
             //x
@@ -251,6 +276,19 @@ public final class SkyblockPlugin extends JavaPlugin {
         islandManager.deleteIsland(island.getIslandName());
         //SkyblockPlugin.islandCoordinates.deleteCoordinates(island.getIslandName());
         player.getInventory().clear();
+    }
+
+    public void createLevelConfig(){
+        //recup le dossier .yml dans les ressources
+        super.saveResource("level.yml", false /* don't replace the file on disk if it exists */);
+        //Pourvoir l'utiliser
+        customConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "level.yml"));
+        //Utiliser cette class pour simplifier
+        IslandLevel.setup();
+    }
+
+    private void registerPlaceholder(){
+        new IslandLevelPlaceholder().register();
     }
 
 }

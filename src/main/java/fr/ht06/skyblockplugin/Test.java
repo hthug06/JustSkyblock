@@ -1,13 +1,14 @@
 package fr.ht06.skyblockplugin;
 
+import fr.ht06.skyblockplugin.Config.IslandLevel;
 import fr.ht06.skyblockplugin.IslandManager.IslandManager;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class Test implements CommandExecutor {
@@ -23,16 +24,30 @@ public class Test implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         Player player = (Player) commandSender;
         if(strings.length == 0){
-            if (player.getLocation().getWorld().getName().equalsIgnoreCase("world_Skyblock")){
-                player.teleport(new Location(Bukkit.getWorld("world"), player.getX(), player.getY(), player.getZ()));
+            //if (player.getLocation().getWorld().getName().equalsIgnoreCase("world_Skyblock")){
+            //    player.teleport(new Location(Bukkit.getWorld("world"), player.getX(), player.getY(), player.getZ()));
+            //}
+            //SkyblockPlugin.customConfig.
+            //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
+            //player.sendMessage(String.valueOf(IslandLevel.get().getConfigurationSection("Material.Special").getKeys(false)));
+            for (String path : IslandLevel.get().getConfigurationSection("Material").getKeys(false)){
+                player.sendMessage(path);
             }
+            player.sendMessage(String.valueOf(IslandLevel.get().getConfigurationSection("Material." +  "Special").getKeys(false).contains(player.getInventory().getItemInMainHand().getType().name())));
+            //player.sendMessage(String.valueOf(IslandLevel.get().getList("Material.Special").contains(player.getInventory().getItemInMainHand().getType().name())));
+            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
+
         }
 
 
         if (strings.length == 1){
-            player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
-            player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));
-
+            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.DIRT")));
+            IslandLevel.get().set("Material.Block.DIRT", IslandLevel.get().getInt("Material.Block.DIRT") +1);
+            IslandLevel.save();
+            player.getInventory().addItem(new ItemStack(Material.POTTED_TORCHFLOWER, 1));
+            //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
+            //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
+            //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));
             //Location loc= new Location(Bukkit.getWorld("world_Skyblock"),islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 70, islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1));
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).IStoMap()));
             /*for (int i = 0; i<10001; i+=1000){//nombre d efoisd ou le code va aller en cercle

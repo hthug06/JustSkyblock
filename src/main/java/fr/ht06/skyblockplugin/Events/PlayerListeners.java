@@ -44,7 +44,7 @@ public class PlayerListeners implements Listener {
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>NO MORE RESET! you can now play witouth fear!"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
-        if (islandManager.playerHasIsland(player.getName())) island = islandManager.getIslandbyplayer(player.getName()).getIsland();
+        //if (islandManager.playerHasIsland(player.getName())) island = islandManager.getIslandbyplayer(player.getName()).getIsland();
     }
 
 

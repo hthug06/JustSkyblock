@@ -1,5 +1,6 @@
 package fr.ht06.skyblockplugin.Commands;
 
+import fr.ht06.skyblockplugin.Config.IslandLevel;
 import fr.ht06.skyblockplugin.Inventory.DeleteIslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandInventory;
 import fr.ht06.skyblockplugin.Inventory.IslandSettingsInv;
@@ -50,13 +51,30 @@ public class IslandCommand implements CommandExecutor {
             }
         }
         if (args.length>=1) {
+
+            if (args[0].equalsIgnoreCase("create")) {
+                if (!islandManager.playerHasIsland(player.getName())) {
+                    IslandInventory gui = new IslandInventory();
+                    player.openInventory(gui.getInventory());
+                    return true;
+                }
+                else{
+                    player.sendMessage("You already have an island");
+                }
+            }
+
             if (args[0].equalsIgnoreCase("setspawn")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                commandSetspawn(island, player);
+                if (!island.isMember(player.getName())) {
+                    commandSetspawn(island, player);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
             }
             if (args[0].equalsIgnoreCase("delete")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
@@ -64,18 +82,31 @@ public class IslandCommand implements CommandExecutor {
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                commandDelete(player);
+                if (island.isOwner(player.getName())) {
+                    commandDelete(player);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                    player.sendMessage("If you wan't to leave the island, do /island leave");
+                }
             }
             if (args[0].equalsIgnoreCase("visit")) {
                 commandVisit(args, player);
             }
+
             if (args[0].equalsIgnoreCase("settings")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                commandSettings(player);
+
+                if (!island.isMember(player.getName())) {
+                    commandSettings(player);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
             }
             if (args[0].equalsIgnoreCase("team")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
@@ -91,7 +122,12 @@ public class IslandCommand implements CommandExecutor {
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                commandInvite(args, island, player);
+                if (!island.isMember(player.getName())) {
+                    commandInvite(args, island, player);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
             }
 
             if (args[0].equalsIgnoreCase("join")) {
@@ -109,19 +145,7 @@ public class IslandCommand implements CommandExecutor {
                     return true;
                 }
 
-                if (args.length != 1){
-                    player.sendMessage("/is leave");
-                }
-                else {
-                    if (island.isOwner(player.getName())) {
-                        player.sendMessage("§cYou can't leave your island because your are the owner");
-                        player.sendMessage("§cPromote someone else to Owner and leave (/island promote <player>");
-                        player.sendMessage("§cOr delete the island (/island delete");
-                    } else {
-                        LeaveIslandInventory leaveIslandInventory = new LeaveIslandInventory(player);
-                        player.openInventory(leaveIslandInventory.getInventory());
-                    }
-                }
+                commandLeave(args, player, island);
             }
 
             if (args[0].equalsIgnoreCase("promote")){
@@ -130,8 +154,12 @@ public class IslandCommand implements CommandExecutor {
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-
-                commandPromote(args, player, island);
+                if (!island.isMember(player.getName())) {
+                    commandPromote(args, player, island);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
 
             }
 
@@ -141,8 +169,12 @@ public class IslandCommand implements CommandExecutor {
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-
-                commandDemote(args, player, island);
+                if (!island.isMember(player.getName())) {
+                    commandDemote(args, player, island);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
             }
 
             if (args[0].equalsIgnoreCase("Kick")){
@@ -151,13 +183,68 @@ public class IslandCommand implements CommandExecutor {
                     player.openInventory(gui.getInventory());
                     return true;
                 }
+                if (!island.isMember(player.getName())) {
+                    commandKick(args, player, island);
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
+            }
 
-                commandKick(args, player, island);
+            if (args[0].equalsIgnoreCase("setName")){
+                if (!islandManager.playerHasIsland(player.getName())) {
+                    IslandInventory gui = new IslandInventory();
+                    player.openInventory(gui.getInventory());
+                    return true;
+                }
+                if (island.isOwner(player.getName())) {
+                    StringBuilder stringBuilder = new StringBuilder();
+                    int nbr = 0;
+                    for (int i = 1; i<args.length; i++){
+                        if (i > 1 ){
+                            stringBuilder.append(" ");
+                        }
+                        stringBuilder.append(args[i]);
+                    }
+                    island.setIslandName(stringBuilder.toString());
+                    player.sendMessage("the island name is now : " + stringBuilder.toString());
+                }
+                else{
+                    player.sendMessage("You don't have the permission to do this");
+                }
+            }
+
+            if (args[0].equalsIgnoreCase("level")){
+                if (!islandManager.playerHasIsland(player.getName())) {
+                    IslandInventory gui = new IslandInventory();
+                    player.openInventory(gui.getInventory());
+                    return true;
+                }
+
+                double Level = IslandLevel.calculateIslandLevel(island);
+                island.setLevel(Level);
+                player.sendMessage("Your island is level " + Level);
             }
 
         }
         return true;
 
+    }
+
+    private void commandLeave(String[] args, Player player, Island island) {
+        if (args.length != 1){
+            player.sendMessage("/is leave");
+        }
+        else {
+            if (island.isOwner(player.getName())) {
+                player.sendMessage("§cYou can't leave your island because your are the owner");
+                player.sendMessage("§cPromote someone else to Owner and leave (/island promote <player>");
+                player.sendMessage("§cOr delete the island (/island delete");
+            } else {
+                LeaveIslandInventory leaveIslandInventory = new LeaveIslandInventory(player);
+                player.openInventory(leaveIslandInventory.getInventory());
+            }
+        }
     }
 
     private void commandDelete(Player player){
@@ -314,7 +401,7 @@ public class IslandCommand implements CommandExecutor {
                 if (island.isOnThisIsland(args[1])) {
                     //S'il est membre
                     if (island.isMember(args[1])) {
-                        player.sendMessage(args[1] + " is now modérator");
+                        player.sendMessage(args[1] + " is now moderator");
                         Player target = Bukkit.getPlayerExact(args[1]);
                         if (target != null && target.isOnline()) {
                             target.sendMessage("You've been promoted to moderator on this island");

@@ -14,8 +14,7 @@ public class Island {
     private String Owner;
     private List<String> Moderator = new ArrayList<>();
     private List<String> Member = new ArrayList<>();
-    //private List<Map<String/*Les joueur*/, String/*leur grade sur l'île*/>> players = new ArrayList<>();
-    //private List</*Liste de tout */Map<String/*Grade*/, List<String /*Joueur*/>>> players = new ArrayList<>();  // [{Owner=[ht06]}, {Mod=[sxg919, fneris]}, {Member=[Benny232, GCZ115, MeatEmy]}
+    private double level = 0;
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<Object, Object> Island = new HashMap<>();
 
@@ -118,6 +117,14 @@ public class Island {
 
     public Boolean isMember(String playerName){
         return this.Member.contains(playerName);
+    }
+
+    public double getLevel(){
+        return level;
+    }
+
+    public void setLevel(double level) {
+        this.level = level;
     }
 
     public Boolean isOnThisIsland(String playerName){

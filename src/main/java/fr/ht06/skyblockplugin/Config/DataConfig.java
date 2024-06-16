@@ -14,7 +14,7 @@ public class DataConfig {
 
     //Finds or generates the custom config file
     public static void setup(){
-        file = new File(Bukkit.getServer().getPluginManager().getPlugin("SkyblockPlugin").getDataFolder(), "data.yml");
+        file = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "data.yml");
 
         if (!file.exists()){
             try{
