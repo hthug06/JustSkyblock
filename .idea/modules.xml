@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JustSkyblock.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JustSkyblock.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JustSkyblock.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JustSkyblock.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkyblockPlugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/SkyblockPlugin.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/SkyblockPlugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/SkyblockPlugin.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/fr.ht06.SkyblockPlugin.main.iml" />

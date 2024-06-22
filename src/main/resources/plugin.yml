@@ -1,6 +1,6 @@
 name: JustSkyblock
 version: '${version}'
-main: fr.ht06.skyblockplugin.SkyblockPlugin
+main: fr.ht06.justskyblock.JustSkyblock
 api-version: '1.20'
 author: ht06
 depend:
@@ -15,15 +15,15 @@ commands:
     description: Create an island or teleport the player to his own island
 
   isadmin:
-    description: Everything related to administration of the SkyblockPlugin
+    description: Everything related to administration of the JustSkyblock
     permission: justskyblock.isadmin
     aliases:
       - islandadmin
       - isa
 
-  skyblockplugin:
+  justskyblock:
     aliases:
-      - sbpl
+      - js
     description: reload the config
     permission: justskyblock.reload
 

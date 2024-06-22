@@ -2,7 +2,31 @@
 IS:
   Plain:
     Block: GRASS_BLOCK
-    Name: Test
-    Lore: WHYYY
-    Schematic: IslandPlain.schem
+    Name: Base Island
+    Lore: A basic Plain Island with some basic ressources
+    Schematic: IslandPlains.schem
     Slot: 0
+  Desert:
+    Block: SAND
+    Name: Desert Island
+    Lore: An island in the desert
+    Schematic: IslandDesert.schem
+    Slot: 1
+  Mesa:
+    Block: TERRACOTTA
+    Name: Mesa Island
+    Lore: An island in a "Mesa Biome like"
+    Schematic: IslandMesa.schem
+    Slot: 2
+  Snow:
+    Block: SNOW_BLOCK
+    Name: Snow Island
+    Lore: An island in the cold
+    Schematic: IslandSnow.schem
+    Slot: 3
+  Basic:
+      Block: DIRT
+      Name: Basic Island
+      Lore: The basic skyblock Island
+      Schematic: BasicIsland.schem
+      Slot: 4

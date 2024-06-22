@@ -1,4 +1,4 @@
 #This plugin require PlaceholderAPI, you can download it Here : https://www.spigotmc.org/resources/placeholderapi.6245/
 #You can use (PLAYER) to get the name of the player
 
-Message: "[%justskyblock_level%  (PLAYER) " #(PLAYER)
+Message: "%justskyblock_level%  (PLAYER) " #(PLAYER)

@@ -59,6 +59,7 @@ players:
   disable-saving: false
 world-settings:
   default:
+    unload-frozen-chunks: false
     verbose: false
     below-zero-generation-in-existing-chunks: true
     view-distance: default

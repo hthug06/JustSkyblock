@@ -1,510 +1,497 @@
-[20:59:47] [ServerMain/ERROR]: [DirectoryProviderSource] Error loading plugin: zip END header not found
-java.util.zip.ZipException: zip END header not found
-	at java.util.zip.ZipFile$Source.findEND(ZipFile.java:1633) ~[?:?]
-	at java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1641) ~[?:?]
-	at java.util.zip.ZipFile$Source.<init>(ZipFile.java:1479) ~[?:?]
-	at java.util.zip.ZipFile$Source.get(ZipFile.java:1441) ~[?:?]
-	at java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:718) ~[?:?]
-	at java.util.zip.ZipFile.<init>(ZipFile.java:252) ~[?:?]
-	at java.util.zip.ZipFile.<init>(ZipFile.java:181) ~[?:?]
-	at java.util.jar.JarFile.<init>(JarFile.java:346) ~[?:?]
-	at io.papermc.paper.plugin.provider.source.FileProviderSource.registerProviders(FileProviderSource.java:60) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:47) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.registerProviders(DirectoryProviderSource.java:17) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(EntrypointUtil.java:15) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.PluginInitializerManager.load(PluginInitializerManager.java:101) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.Main.main(Main.java:120) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.craftbukkit.Main.main(Main.java:326) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[app:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[20:59:49] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[20:59:50] [ServerMain/INFO]: Loaded 1174 recipes
-[20:59:51] [ServerMain/INFO]: Loaded 1271 advancements
-[20:59:51] [Server thread/INFO]: Starting minecraft server version 1.20.4
-[20:59:51] [Server thread/INFO]: Loading properties
-[20:59:51] [Server thread/INFO]: This server is running Paper version git-Paper-496 (MC: 1.20.4) (Implementing API version 1.20.4-R0.1-SNAPSHOT) (Git: 7ac24a1 on ver/1.20.4)
-[20:59:51] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[20:59:51] [Server thread/INFO]: Using 4 threads for Netty based IO
-[20:59:51] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[23:09:08] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\worldborderapi-1.206.1.jar'...
+[23:09:08] [Paper Plugin Remapper Thread - 3/INFO]: [PluginRemapper] Remapping plugin 'plugins\worldedit-bukkit-7.3.3.jar'...
+[23:09:08] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\worldborderapi-1.206.1.jar' in 386ms.
+[23:09:09] [Paper Plugin Remapper Thread - 3/INFO]: [PluginRemapper] Done remapping plugin 'plugins\worldedit-bukkit-7.3.3.jar' in 1437ms.
+[23:09:12] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[23:09:13] [ServerMain/INFO]: Loaded 1175 recipes
+[23:09:13] [ServerMain/INFO]: Loaded 1276 advancements
+[23:09:13] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[23:09:13] [Server thread/INFO]: Loading properties
+[23:09:13] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[23:09:14] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:09:14] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:09:14] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[20:59:51] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[20:59:51] [Server thread/INFO]: Default game type: SURVIVAL
-[20:59:51] [Server thread/INFO]: Generating keypair
-[20:59:51] [Server thread/INFO]: Starting Minecraft server on *:25565
-[20:59:52] [Server thread/INFO]: Using default channel type
-[20:59:52] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[20:59:52] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[20:59:52] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[20:59:52] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[20:59:52] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2c01a01e]
-[20:59:52] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[20:59:52] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[20:59:52] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[20:59:52] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[20:59:52] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[20:59:52] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[20:59:52] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[20:59:53] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[20:59:53] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[20:59:53] [Server thread/INFO]: Preparing level "world"
-[20:59:54] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[20:59:54] [Server thread/INFO]: Time elapsed: 782 ms
-[20:59:54] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[20:59:55] [Server thread/INFO]: Time elapsed: 61 ms
-[20:59:55] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[20:59:55] [Server thread/INFO]: Time elapsed: 15 ms
-[20:59:55] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[20:59:55] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[20:59:55] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[20:59:55] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[20:59:55] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[20:59:55] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[20:59:55] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[20:59:55] [Server thread/INFO]: Running delayed init tasks
-[20:59:55] [Server thread/INFO]: Done (4.097s)! For help, type "help"
-[20:59:55] [Server thread/INFO]: Timings Reset
-[20:59:55] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[20:59:55] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:03:54] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[21:03:54] [Server thread/INFO]: [+] ht06 join the server
-[21:03:54] [Server thread/INFO]: ht06[/127.0.0.1:50538] logged in with entity id 93 at ([world]0.0, 63.0, 0.0)
-[21:03:56] [Async Chat Thread - #1/INFO]: [%justskyblock_level% ht06: t
-[21:04:07] [Async Chat Thread - #1/INFO]: [%justskyblock_level% ht06: t
-[21:04:08] [Server thread/INFO]: ht06 issued server command: /is
-[21:04:32] [Server thread/INFO]: ht06 issued server command: /pl
-[21:04:51] [Server thread/INFO]: ht06 issued server command: /version hSpawn
-[21:05:17] [Server thread/INFO]: ht06 issued server command: /reload confirm
-[21:05:17] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:05:17] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:05:17] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:05:17] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:05:17] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:05:17] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:05:17] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:05:17] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:05:17] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:05:17] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:05:17] [Server thread/INFO]: Loaded 1174 recipes
-[21:05:17] [Server thread/INFO]: Loaded 1271 advancements
-[21:05:18] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:05:18] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:05:18] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:05:18] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@72ceccc7]
-[21:05:18] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:05:18] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:05:18] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:05:18] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:05:18] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:05:18] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:05:18] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:05:18] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:05:18] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:05:19] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:05:19] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:05:19] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:05:19] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:05:19] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[21:05:19] [Server thread/INFO]: Time elapsed: 26 ms
-[21:05:19] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:05:19] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:05:19] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:05:19] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:05:19] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:05:19] [Server thread/WARN]: Nag author(s): '[ht06]' of 'hSpawn v1.5.2' about their usage of System.out/err.print. Please use your plugin's logger instead (JavaPlugin#getLogger).
-[21:05:19] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:05:19] [Server thread/INFO]: ht06: Reload complete.
-[21:05:19] [Server thread/INFO]: Timings Reset
-[21:05:19] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:05:19] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:05:29] [Async Chat Thread - #2/INFO]: [ht06 ht06: t
-[21:06:02] [Server thread/INFO]: ht06 issued server command: /is
-[21:06:31] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:06:31] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:06:31] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:06:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:06:31] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:06:31] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:06:31] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:06:31] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:06:31] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:06:31] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:06:31] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:06:31] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:06:31] [Server thread/INFO]: Loaded 1174 recipes
-[21:06:31] [Server thread/INFO]: Loaded 1271 advancements
-[21:06:31] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:06:31] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:06:32] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:06:32] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@60375297]
-[21:06:32] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:06:32] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:06:32] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:06:32] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:06:32] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:06:32] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:06:32] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:06:32] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:06:32] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:06:32] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:06:33] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:06:33] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:06:33] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:06:33] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:06:33] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:06:33] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:06:33] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:06:33] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:06:33] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:06:33] [Server thread/INFO]: ht06: Reload complete.
-[21:06:33] [Server thread/INFO]: Timings Reset
-[21:06:33] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:06:33] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:06:33] [Async Chat Thread - #4/INFO]: [ht06 ht06: t
-[21:06:35] [Server thread/INFO]: ht06 issued server command: /is
-[21:06:37] [Async Chat Thread - #4/INFO]: [ht06 ht06: t
-[21:06:47] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:06:47] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:06:47] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:06:47] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:06:47] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:06:47] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:06:47] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:06:47] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:06:47] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:06:47] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:06:47] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:06:47] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:06:47] [Server thread/INFO]: Loaded 1174 recipes
-[21:06:47] [Server thread/INFO]: Loaded 1271 advancements
-[21:06:47] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:06:47] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:06:47] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:06:48] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@64ffd10c]
-[21:06:48] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:06:48] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:06:48] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:06:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:06:48] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:06:48] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:06:48] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:06:48] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:06:48] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:06:48] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:06:48] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:06:48] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:06:48] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:06:48] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:06:48] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:06:48] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:06:48] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:06:48] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:06:48] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:06:48] [Server thread/INFO]: ht06: Reload complete.
-[21:06:48] [Server thread/INFO]: Timings Reset
-[21:06:48] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:06:48] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:06:49] [Async Chat Thread - #4/INFO]: [ht06 ht06: t
-[21:07:36] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:07:36] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:07:36] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:07:36] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:07:36] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:07:36] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:07:36] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:07:36] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:07:36] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:07:36] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:07:36] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:07:36] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:07:36] [Server thread/INFO]: Loaded 1174 recipes
-[21:07:36] [Server thread/INFO]: Loaded 1271 advancements
-[21:07:36] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:07:36] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:07:36] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:07:36] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@724734ed]
-[21:07:36] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:07:36] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:07:36] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:07:36] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:07:36] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:07:36] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:07:36] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:07:36] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:07:36] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:07:37] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:07:37] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:07:37] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:07:37] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:07:37] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:07:37] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:07:37] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:07:37] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:07:37] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:07:37] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:07:37] [Server thread/INFO]: ht06: Reload complete.
-[21:07:37] [Server thread/INFO]: Timings Reset
-[21:07:37] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:07:37] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:07:39] [Async Chat Thread - #4/ERROR]: Could not pass event AsyncChatEvent to JustChat v1.1
-java.lang.NullPointerException: Cannot invoke "fr.ht06.skyblockplugin.IslandManager.Island.getLevel()" because the return value of "fr.ht06.skyblockplugin.IslandManager.IslandManager.getIslandbyplayer(String)" is null
-	at fr.ht06.skyblockplugin.placeholder.IslandLevelPlaceholder.onRequest(IslandLevelPlaceholder.java:54) ~[SkyblockPlugin-alpha-1.2.jar:?]
-	at me.clip.placeholderapi.replacer.CharsReplacer.apply(CharsReplacer.java:119) ~[PlaceholderAPI-2.11.6.jar:?]
-	at me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(PlaceholderAPI.java:71) ~[PlaceholderAPI-2.11.6.jar:?]
-	at me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(PlaceholderAPI.java:99) ~[PlaceholderAPI-2.11.6.jar:?]
-	at fr.ht06.justchat.listeners.PlayerListener.playerPrefix(PlayerListener.java:84) ~[JustChat-1.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor96.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.adventure.ChatProcessor.post(ChatProcessor.java:378) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.adventure.ChatProcessor.processModern(ChatProcessor.java:151) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.adventure.ChatProcessor.process(ChatProcessor.java:115) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.chat(ServerGamePacketListenerImpl.java:2318) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.broadcastChatMessage(ServerGamePacketListenerImpl.java:2447) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChat$13(ServerGamePacketListenerImpl.java:2167) ~[?:?]
-	at net.minecraft.util.FutureChain.lambda$append$1(FutureChain.java:25) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
-	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[21:07:39] [Async Chat Thread - #4/INFO]: <ht06> t
-[21:08:47] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:08:47] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:08:47] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:08:47] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:08:47] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:08:47] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:08:47] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:08:47] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:08:47] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:08:47] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:08:47] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:08:47] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:08:47] [Server thread/INFO]: Loaded 1174 recipes
-[21:08:47] [Server thread/INFO]: Loaded 1271 advancements
-[21:08:48] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:08:48] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:08:48] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:08:48] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@1d18158f]
-[21:08:48] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:08:48] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:08:48] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:08:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:08:48] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:08:48] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:08:48] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:08:48] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:08:48] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:08:48] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:08:49] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:08:49] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:08:49] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:08:49] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:08:49] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:08:49] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:08:49] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:08:49] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:08:49] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:08:49] [Server thread/INFO]: ht06: Reload complete.
-[21:08:49] [Server thread/INFO]: Timings Reset
-[21:08:49] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:08:49] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:08:50] [Async Chat Thread - #6/INFO]: [%justskyblock_level% ht06: t
-[21:09:11] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:09:11] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:09:11] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:09:11] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:09:11] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:09:11] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:09:11] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:09:11] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:09:11] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:09:11] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:09:11] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:09:11] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:09:11] [Server thread/INFO]: Loaded 1174 recipes
-[21:09:11] [Server thread/INFO]: Loaded 1271 advancements
-[21:09:11] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:09:11] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:09:11] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:09:11] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@bd2c890]
-[21:09:11] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:09:11] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:09:11] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:09:11] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:09:11] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:09:11] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:09:11] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:09:11] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:09:11] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:09:11] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:09:12] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:09:12] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:09:12] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:09:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:09:12] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:09:12] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:09:12] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:09:12] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:09:12] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:09:12] [Server thread/INFO]: ht06: Reload complete.
-[21:09:12] [Server thread/INFO]: Timings Reset
-[21:09:12] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:09:12] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:09:12] [Async Chat Thread - #7/INFO]: [%justskyblock_level% ht06: t
-[21:09:37] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:09:37] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:09:37] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:09:37] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:09:37] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:09:37] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:09:37] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:09:37] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:09:37] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:09:37] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:09:37] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:09:37] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:09:37] [Server thread/INFO]: Loaded 1174 recipes
-[21:09:38] [Server thread/INFO]: Loaded 1271 advancements
-[21:09:38] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:09:38] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:09:38] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:09:38] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@96fed8a]
-[21:09:38] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:09:38] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:09:38] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:09:38] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:09:38] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:09:38] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:09:38] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:09:38] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:09:38] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:09:38] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:09:38] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:09:38] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:09:38] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:09:38] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:09:38] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:09:38] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:09:38] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:09:38] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:09:38] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:09:38] [Server thread/INFO]: ht06: Reload complete.
-[21:09:38] [Server thread/INFO]: Timings Reset
-[21:09:39] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:09:39] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:09:39] [Async Chat Thread - #6/INFO]: [%justskyblock_level% ht06: t
-[21:10:02] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[21:10:02] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[21:10:02] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[21:10:02] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[21:10:02] [Server thread/INFO]: Using 4 threads for Netty based IO
-[21:10:02] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:10:02] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:10:02] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:10:02] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:10:02] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:10:02] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:10:02] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:10:02] [Server thread/INFO]: Loaded 1174 recipes
-[21:10:02] [Server thread/INFO]: Loaded 1271 advancements
-[21:10:02] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[21:10:02] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.204.0
-[21:10:02] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.0+6678-55745ad
-[21:10:02] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@300e9129]
-[21:10:02] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.2
-[21:10:02] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[21:10:02] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[21:10:02] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[21:10:02] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.204.0
-[21:10:02] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.0+6678-55745ad
-[21:10:02] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[21:10:03] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[21:10:03] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
-[21:10:03] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R3.PaperweightAdapter as the Bukkit adapter
-[21:10:03] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[21:10:03] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[21:10:03] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.2
-[21:10:03] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[21:10:03] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[21:10:03] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[21:10:03] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[21:10:03] [Server thread/INFO]: [hSpawn] [STDOUT] [test, 16]
-[21:10:03] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[21:10:03] [Server thread/INFO]: ht06: Reload complete.
-[21:10:03] [Server thread/INFO]: Timings Reset
-[21:10:03] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[21:10:03] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[21:10:07] [Async Chat Thread - #6/ERROR]: Could not pass event AsyncChatEvent to JustChat v1.1
-java.lang.NullPointerException: Cannot invoke "fr.ht06.skyblockplugin.IslandManager.Island.getLevel()" because the return value of "fr.ht06.skyblockplugin.IslandManager.IslandManager.getIslandbyplayer(String)" is null
-	at fr.ht06.skyblockplugin.placeholder.IslandLevelPlaceholder.onPlaceholderRequest(IslandLevelPlaceholder.java:51) ~[SkyblockPlugin-alpha-1.2.jar:?]
-	at me.clip.placeholderapi.PlaceholderHook.onRequest(PlaceholderHook.java:32) ~[PlaceholderAPI-2.11.6.jar:?]
-	at me.clip.placeholderapi.replacer.CharsReplacer.apply(CharsReplacer.java:119) ~[PlaceholderAPI-2.11.6.jar:?]
-	at me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(PlaceholderAPI.java:71) ~[PlaceholderAPI-2.11.6.jar:?]
-	at me.clip.placeholderapi.PlaceholderAPI.setPlaceholders(PlaceholderAPI.java:99) ~[PlaceholderAPI-2.11.6.jar:?]
-	at fr.ht06.justchat.listeners.PlayerListener.playerPrefix(PlayerListener.java:84) ~[JustChat-1.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor184.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:77) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:git-Paper-496]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:126) ~[paper-1.20.4.jar:git-Paper-496]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:615) ~[paper-api-1.20.4-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.adventure.ChatProcessor.post(ChatProcessor.java:378) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.adventure.ChatProcessor.processModern(ChatProcessor.java:151) ~[paper-1.20.4.jar:git-Paper-496]
-	at io.papermc.paper.adventure.ChatProcessor.process(ChatProcessor.java:115) ~[paper-1.20.4.jar:git-Paper-496]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.chat(ServerGamePacketListenerImpl.java:2318) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.broadcastChatMessage(ServerGamePacketListenerImpl.java:2447) ~[?:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChat$13(ServerGamePacketListenerImpl.java:2167) ~[?:?]
-	at net.minecraft.util.FutureChain.lambda$append$1(FutureChain.java:25) ~[paper-1.20.4.jar:git-Paper-496]
-	at java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
-	at java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[?:?]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[?:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[21:10:07] [Async Chat Thread - #6/INFO]: <ht06> t
-[21:13:07] [Server thread/INFO]: ht06 lost connection: Disconnected
-[21:13:07] [Server thread/INFO]: [-] ht06 left the server
-[21:15:24] [Server thread/INFO]: Stopping server
-[21:15:24] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[21:15:24] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[21:15:24] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.2
-[21:15:24] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.0+6678-55745ad
-[21:15:24] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[21:15:24] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.204.0
-[21:15:24] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[21:15:24] [Server thread/INFO]: Saving players
-[21:15:24] [Server thread/INFO]: Saving worlds
-[21:15:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 74 entity chunks, 0 poi chunks in world 'world' in 0,01s
-[21:15:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[21:15:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 20 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
-[21:15:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21:15:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
-[21:15:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21:15:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[21:15:24] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,00s
-[21:15:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[21:15:24] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[21:15:24] [Server thread/INFO]: Flushing Chunk IO
-[21:15:24] [Server thread/INFO]: Closing Thread Pool
-[21:15:24] [Server thread/INFO]: Closing Server
+[23:09:14] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[23:09:15] [Server thread/INFO]: Default game type: SURVIVAL
+[23:09:15] [Server thread/INFO]: Generating keypair
+[23:09:15] [Server thread/INFO]: Starting Minecraft server on *:25565
+[23:09:15] [Server thread/INFO]: Using default channel type
+[23:09:15] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[23:09:15] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[23:09:15] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:09:15] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:09:15] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:09:16] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3a0c8007]
+[23:09:16] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:09:16] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:09:16] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:09:16] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:09:16] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:09:16] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:09:16] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:09:16] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:09:16] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:09:18] [Server thread/INFO]: Preparing level "world"
+[23:09:18] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[23:09:19] [Server thread/INFO]: Time elapsed: 722 ms
+[23:09:19] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[23:09:19] [Server thread/INFO]: Time elapsed: 239 ms
+[23:09:19] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[23:09:19] [Server thread/INFO]: Time elapsed: 155 ms
+[23:09:19] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:09:19] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:09:19] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:09:20] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[23:09:20] [Server thread/INFO]: Time elapsed: 73 ms
+[23:09:20] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:09:20] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:09:20] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:09:20] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:09:20] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:09:20] [Server thread/INFO]: Running delayed init tasks
+[23:09:20] [Server thread/INFO]: Done (6.325s)! For help, type "help"
+[23:09:20] [Server thread/INFO]: Timings Reset
+[23:09:20] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:09:20] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:09:30] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[23:09:31] [Server thread/INFO]: [+] ht06 join the server
+[23:09:31] [Server thread/INFO]: ht06[/127.0.0.1:57336] logged in with entity id 95 at ([world_Skyblock]0.822068599662256, 72.0, 5.561086516460233)
+[23:09:35] [Server thread/INFO]: ht06 issued server command: /is
+[23:09:42] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:10:22] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:10:22] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:10:22] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:10:22] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:10:22] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:10:22] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:10:22] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:10:22] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:10:22] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:10:22] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:10:22] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:10:22] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:10:22] [Server thread/INFO]: Loaded 1175 recipes
+[23:10:22] [Server thread/INFO]: Loaded 1276 advancements
+[23:10:22] [Paper Async Command Builder Thread Pool - 0/ERROR]: Caught previously unhandled exception :
+[23:10:22] [Paper Async Command Builder Thread Pool - 0/ERROR]: Paper Async Command Builder Thread Pool - 0
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[23:10:22] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:10:22] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 194ms.
+[23:10:22] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:10:22] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:10:22] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:10:23] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@5bf6af4f]
+[23:10:23] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:10:23] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:10:23] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:10:23] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:10:23] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:10:23] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:10:23] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:10:23] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:10:23] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:10:23] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:10:24] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:10:24] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:10:24] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:10:24] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:10:24] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:10:24] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:10:24] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:10:24] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:10:24] [Server thread/INFO]: ht06: Reload complete.
+[23:10:24] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2677ms or 53 ticks behind
+[23:10:24] [Server thread/INFO]: Timings Reset
+[23:10:24] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:10:24] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:10:25] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:10:45] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:10:45] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:10:45] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:10:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:10:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:10:45] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:10:45] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:10:45] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:10:45] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:10:45] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:10:45] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:10:45] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:10:46] [Server thread/INFO]: Loaded 1175 recipes
+[23:10:46] [Server thread/INFO]: Loaded 1276 advancements
+[23:10:46] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:10:46] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 122ms.
+[23:10:46] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:10:46] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:10:46] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:10:47] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@74427327]
+[23:10:47] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:10:47] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:10:47] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:10:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:10:47] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:10:47] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:10:47] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:10:47] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:10:47] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:10:47] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:10:47] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:10:47] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:10:47] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:10:47] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:10:47] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:10:47] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:10:47] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:10:48] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:10:48] [Server thread/INFO]: ht06: Reload complete.
+[23:10:48] [Server thread/INFO]: Timings Reset
+[23:10:48] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:10:48] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:10:48] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:11:25] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:11:25] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:11:25] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:11:25] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:11:25] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:11:25] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:11:25] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:11:25] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:11:25] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:11:25] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:11:25] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:11:25] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:11:25] [Server thread/INFO]: Loaded 1175 recipes
+[23:11:25] [Server thread/INFO]: Loaded 1276 advancements
+[23:11:25] [Paper Async Command Builder Thread Pool - 1/ERROR]: Caught previously unhandled exception :
+[23:11:25] [Paper Async Command Builder Thread Pool - 1/ERROR]: Paper Async Command Builder Thread Pool - 1
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[23:11:25] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:11:25] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 89ms.
+[23:11:25] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:11:25] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:11:25] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:11:26] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2513b459]
+[23:11:26] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:11:26] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:11:26] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:11:26] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:11:26] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:11:26] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:11:26] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:11:26] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:11:26] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:11:26] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:11:27] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:11:27] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:11:27] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:11:27] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:11:27] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:11:27] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:11:27] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:11:27] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:11:27] [Server thread/INFO]: ht06: Reload complete.
+[23:11:27] [Server thread/INFO]: Timings Reset
+[23:11:27] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:11:27] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:11:27] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:12:36] [Async Chat Thread - #2/INFO]: [6] ht06: t
+[23:14:06] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:14:39] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:14:39] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:14:39] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:14:39] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:14:39] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:14:39] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:14:39] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:14:39] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:14:39] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:14:39] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:14:39] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:14:39] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:14:39] [Server thread/INFO]: Loaded 1175 recipes
+[23:14:39] [Server thread/INFO]: Loaded 1276 advancements
+[23:14:40] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:14:40] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 69ms.
+[23:14:40] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:14:40] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:14:40] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:14:40] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2cb37b6a]
+[23:14:40] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:14:40] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:14:40] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:14:40] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:14:40] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:14:40] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:14:40] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:14:40] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:14:40] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:14:41] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:14:41] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:14:41] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:14:41] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:14:41] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:14:41] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:14:41] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:14:41] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:14:41] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:14:41] [Server thread/INFO]: ht06: Reload complete.
+[23:14:41] [Server thread/INFO]: Timings Reset
+[23:14:41] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:14:41] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:14:42] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:14:57] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:14:57] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:14:57] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:14:57] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:14:57] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:14:57] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:14:57] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:14:57] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:14:57] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:14:58] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:14:58] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:14:58] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:14:58] [Server thread/INFO]: Loaded 1175 recipes
+[23:14:58] [Server thread/INFO]: Loaded 1276 advancements
+[23:14:58] [Paper Async Command Builder Thread Pool - 3/ERROR]: Caught previously unhandled exception :
+[23:14:58] [Paper Async Command Builder Thread Pool - 3/ERROR]: Paper Async Command Builder Thread Pool - 3
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[23:14:58] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:14:58] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 66ms.
+[23:14:58] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:14:58] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:14:58] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:14:58] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@10438285]
+[23:14:58] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:14:58] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:14:58] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:14:58] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:14:58] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:14:58] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:14:58] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:14:59] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:14:59] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:14:59] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:14:59] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:14:59] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:14:59] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:14:59] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:14:59] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:14:59] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:14:59] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:14:59] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:14:59] [Server thread/INFO]: ht06: Reload complete.
+[23:14:59] [Server thread/INFO]: Timings Reset
+[23:14:59] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:14:59] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:15:00] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:17:27] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:17:27] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:17:27] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:17:27] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:17:27] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:17:27] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:17:27] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:17:27] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:17:27] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:17:27] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:17:27] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:17:27] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:17:27] [Server thread/INFO]: Loaded 1175 recipes
+[23:17:27] [Server thread/INFO]: Loaded 1276 advancements
+[23:17:27] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:17:27] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 76ms.
+[23:17:27] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:17:27] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:17:27] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:17:28] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7ae4b658]
+[23:17:28] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:17:28] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:17:28] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:17:28] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:17:28] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:17:28] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:17:28] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:17:28] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:17:28] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:17:28] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:17:28] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:17:29] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:17:29] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:17:29] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:17:29] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:17:29] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:17:29] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:17:29] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:17:29] [Server thread/INFO]: ht06: Reload complete.
+[23:17:29] [Server thread/INFO]: Timings Reset
+[23:17:29] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:17:29] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:17:29] [Server thread/INFO]: ht06 issued server command: /is info
+[23:17:33] [Server thread/INFO]: ht06 issued server command: /is info ht06
+[23:19:04] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:19:04] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:19:04] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:19:04] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:19:04] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:19:04] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:19:04] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:19:04] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:19:04] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:19:04] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:19:04] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:19:04] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:19:04] [Server thread/INFO]: Loaded 1175 recipes
+[23:19:04] [Server thread/INFO]: Loaded 1276 advancements
+[23:19:04] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:19:05] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 100ms.
+[23:19:05] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:19:05] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:19:05] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:19:05] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@3d8e3593]
+[23:19:05] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:19:05] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:19:05] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:19:05] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:19:05] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:19:05] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:19:05] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:19:05] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:19:05] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:19:05] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:19:06] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:19:06] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:19:06] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:19:06] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:19:06] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:19:06] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:19:06] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:19:06] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:19:06] [Server thread/INFO]: ht06: Reload complete.
+[23:19:06] [Server thread/INFO]: Timings Reset
+[23:19:06] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:19:06] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:19:07] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:19:47] [Server thread/INFO]: ht06 issued server command: /.s
+[23:19:49] [Server thread/INFO]: ht06 issued server command: /is
+[23:19:54] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:20:40] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[23:20:40] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[23:20:40] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[23:20:40] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[23:20:40] [Server thread/INFO]: Using 4 threads for Netty based IO
+[23:20:40] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:20:40] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:20:40] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:20:40] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:20:40] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:20:40] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:20:40] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:20:40] [Server thread/INFO]: Loaded 1175 recipes
+[23:20:40] [Server thread/INFO]: Loaded 1276 advancements
+[23:20:40] [Paper Async Command Builder Thread Pool - 6/ERROR]: Caught previously unhandled exception :
+[23:20:40] [Paper Async Command Builder Thread Pool - 6/ERROR]: Paper Async Command Builder Thread Pool - 6
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[23:20:40] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar'...
+[23:20:40] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.3.jar' in 88ms.
+[23:20:40] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[23:20:40] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[23:20:40] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[23:20:41] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@6a6e16ce]
+[23:20:41] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.3
+[23:20:41] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[23:20:41] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[23:20:41] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[23:20:41] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[23:20:41] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[23:20:41] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[23:20:41] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[23:20:41] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[23:20:41] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[23:20:42] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[23:20:42] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[23:20:42] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.3
+[23:20:42] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[23:20:42] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[23:20:42] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[23:20:42] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[23:20:42] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[23:20:42] [Server thread/INFO]: ht06: Reload complete.
+[23:20:42] [Server thread/INFO]: Timings Reset
+[23:20:42] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[23:20:42] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[23:20:42] [Server thread/INFO]: ht06 issued server command: /is delete
+[23:21:10] [Server thread/INFO]: Stopping server
+[23:21:10] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[23:21:10] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[23:21:10] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.3
+[23:21:10] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[23:21:10] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[23:21:10] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[23:21:10] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[23:21:10] [Server thread/INFO]: Saving players
+[23:21:10] [Server thread/INFO]: ht06 lost connection: Server closed
+[23:21:10] [Server thread/INFO]: ht06 left the game
+[23:21:10] [Server thread/INFO]: Saving worlds
+[23:21:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saved 217 block chunks, 259 entity chunks, 0 poi chunks in world 'world' in 0,23s
+[23:21:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[23:21:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
+[23:21:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[23:21:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
+[23:21:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[23:21:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[23:21:10] [Server thread/INFO]: [ChunkHolderManager] Saved 17 block chunks, 1 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,04s
+[23:21:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[23:21:10] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[23:21:10] [Server thread/INFO]: Flushing Chunk IO
+[23:21:10] [Server thread/INFO]: Closing Thread Pool
+[23:21:10] [Server thread/INFO]: Closing Server
