@@ -1,19 +1,21 @@
 package fr.ht06.justskyblock.Events;
 
-import fr.ht06.justskyblock.Inventory.DeleteIslandInventory;
-import fr.ht06.justskyblock.Inventory.IslandInventory;
-import fr.ht06.justskyblock.Inventory.IslandSettingsInv;
-import fr.ht06.justskyblock.Inventory.LeaveIslandInventory;
+import fr.ht06.justskyblock.Inventory.*;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.LoadSchematic;
 import fr.ht06.justskyblock.JustSkyblock;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -203,8 +205,18 @@ public class InventoryEvents implements Listener {
             }
         }
 
-
+        if (event.getClickedInventory().getHolder() instanceof IslandInfoInventory){//Vérification si c'estle bon inventaire
+            Inventory inv = event.getClickedInventory();
+            String islandName = PlainTextComponentSerializer.plainText().serialize(event.getView().title());
+            if (event.getSlot() == 12){
+                event.setCancelled(true);
+                player.teleport(islandManager.getIslandbyName(islandName).getIslandSpawn());
+                player.sendMessage(Component.text("Teleportation to " + islandManager.getIslandbyName(islandName).getIslandName(), TextColor.color(0x43D649)));
+            }
+            else event.setCancelled(true);
+        }
     }
+
     public List<Integer> getIslandCoordinate(Player player) {
 
         List<List<Integer>> liste = new ArrayList<>();

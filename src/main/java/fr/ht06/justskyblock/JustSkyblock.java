@@ -28,10 +28,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.time.LocalDateTime;
 import java.util.*;
 
 public final class JustSkyblock extends JavaPlugin {
 
+    //Color of the plugin : Green ->#52BE80   Blue -> #5499C7
 
     public static WorldBorderApi worldBorderApi;
     public static JustSkyblock instance;
@@ -153,6 +155,14 @@ public final class JustSkyblock extends JavaPlugin {
                 //le level de l'île
                 island.setLevel(dataconfig.getDouble("Island."+ v +".Level"));
 
+                //date
+                LocalDateTime Date = LocalDateTime.of(dataconfig.getInt("Island." + v + ".CreationDate.Year"),
+                        dataconfig.getInt("Island." + v + ".CreationDate.Month"),
+                        dataconfig.getInt("Island." + v + ".CreationDate.Day"),
+                        dataconfig.getInt("Island." + v + ".CreationDate.Hour"),
+                        dataconfig.getInt("Island." + v + ".CreationDate.Minute"));
+                island.setDate(Date);
+
                 //ajout de l'île a l'island manager
                 islandManager.addIsland(island);
             }
@@ -183,28 +193,39 @@ public final class JustSkyblock extends JavaPlugin {
 
         //List<String> configIS = new ArrayList<>(DataConfig.get().getConfigurationSection("Players").getKeys(false));
 
-        for (Island v: islandManager.getAllIsland()){
+        for (Island v: islandManager.getAllIsland()) {
 
             DataConfig.get().getConfigurationSection("Island").createSection(v.getIslandName());
 
             //le Level
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).set("Level", v.getLevel()); //le chef
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Level", v.getLevel()); //le chef
 
 
             //les joueur de l'île
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Players").set("Owner", v.getOwner()); //le chef
-            if (!v.getAllModerators().isEmpty()) DataConfig.get().getConfigurationSection("Island."+v.getIslandName()+".Players").set("Moderators",v.getAllModerators()); //les modos
-            if (!v.getAllMembers().isEmpty()) DataConfig.get().getConfigurationSection("Island."+v.getIslandName()+".Players").set("Members",v.getAllMembers());  //les membres
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Players").set("Owner", v.getOwner()); //le chef
+            if (!v.getAllModerators().isEmpty())
+                DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".Players").set("Moderators", v.getAllModerators()); //les modos
+            if (!v.getAllMembers().isEmpty())
+                DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".Players").set("Members", v.getAllMembers());  //les membres
 
             //la location du spawn
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("LocationSpawn", v.getIslandSpawn().serialize());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("LocationSpawn", v.getIslandSpawn().serialize());
 
             //les 2 coordonnée de l'île (en x et en z)
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Coordinates");
-            DataConfig.get().set("Island."+v.getIslandName()+".Coordinates", v.getIslandCoordinates());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Coordinates");
+            DataConfig.get().set("Island." + v.getIslandName() + ".Coordinates", v.getIslandCoordinates());
 
-            DataConfig.get().getConfigurationSection("Island."+v.getIslandName()).createSection("Settings", v.getAllSettings());
+            //Les settings
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Settings", v.getAllSettings());
+
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("CreationDate");
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Year", v.getDate().getYear());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Month", v.getDate().getMonth().getValue());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Day", v.getDate().getDayOfMonth());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Hour", v.getDate().getHour());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Minute", v.getDate().getMinute());
         }
+
         DataConfig.save();
     }
 

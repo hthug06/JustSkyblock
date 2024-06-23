@@ -50,7 +50,7 @@ public class IslandLevelPlaceholder extends PlaceholderExpansion {
                 //return player.getName();
                 if (islandManager.playerHasIsland(player.getName())){
                     Island island = islandManager.getIslandbyplayer(player.getName());
-                    return "["+String.valueOf(island.getLevel())+"]"; //String.valueOf(island.getLevel());
+                    return "["+ (int) island.getLevel() +"]"; //String.valueOf(island.getLevel());
 
                 }
 

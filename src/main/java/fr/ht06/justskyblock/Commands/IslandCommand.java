@@ -6,6 +6,10 @@ import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
 import fr.ht06.justskyblock.timerTask;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -211,22 +215,261 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("info")){
+            if (args[0].equalsIgnoreCase("help")){
+                    //pas d'île
+                    if (!islandManager.playerHasIsland(player.getName())){
+                        player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                .append(Component.text("Island Help (Page 1)", TextColor.color(0x5499C7)))
+                                .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
 
-                if (args.length == 2){
-                    if (islandManager.IslandExist(args[1])){
-                        IslandInfoInventory infoInventory = new IslandInfoInventory();
-                        player.openInventory(infoInventory.getInventory());
-                    }
-                    if (islandManager.playerHasIsland(args[1])){
-                        IslandInfoInventory infoInventory = new IslandInfoInventory();
-                        player.openInventory(infoInventory.getInventory());
-                    }
-                }
-                else{
-                    player.sendMessage("§c/island info <player> or /island info <island name>");
-                }
+                        player.sendMessage(Component.text("/island create: ", TextColor.color(0x5499C7))
+                                .clickEvent(ClickEvent.suggestCommand("/island create"))
+                                .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                .append(Component.text("Create the island of your dream ", TextColor.color(0x52BE80))));
 
+                        player.sendMessage(Component.text("/island decline <player>: ", TextColor.color(0x5499C7))
+                                .clickEvent(ClickEvent.suggestCommand("/island decline "))
+                                .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                .append(Component.text("Decline an island invitation ", TextColor.color(0x52BE80))));
+
+                        player.sendMessage(Component.text("/island help: ", TextColor.color(0x5499C7))
+                                .clickEvent(ClickEvent.suggestCommand("/island help"))
+                                .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                .append(Component.text("All that can help you about Skyblock commands ", TextColor.color(0x52BE80))));
+
+                        player.sendMessage(Component.text("/island join <player>: ", TextColor.color(0x5499C7))
+                                .clickEvent(ClickEvent.suggestCommand("/island join "))
+                                .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                .append(Component.text("Join an island by accepting an invitation", TextColor.color(0x52BE80))));
+
+                        player.sendMessage(Component.text("/island visit <player>: ", TextColor.color(0x5499C7))
+                                .clickEvent(ClickEvent.suggestCommand("/island visit "))
+                                .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                .append(Component.text("Visit another player's island", TextColor.color(0x52BE80))));
+
+
+                        player.sendMessage(Component.text("     ----------------------", TextColor.color(0x52BE80))
+                                //.append(Component.text(/*">>"*/"--", TextColor.color(0x5499C7))
+                                        //.hoverEvent(HoverEvent.showText(Component.text("go to page 2", TextColor.color(0x5499C7))))
+                                        //.clickEvent(ClickEvent.runCommand("/is help 2")))
+                                .append(Component.text("------", TextColor.color(0x52BE80))));
+                    }
+                    //à une ile
+                    else{
+                        //est membre
+                        if (island.isMember(player.getName())){
+                            player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                    .append(Component.text("Island Help (Page 1)", TextColor.color(0x5499C7)))
+                                    .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                            player.sendMessage(Component.text("/island help: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island help"))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("All that can help you about Skyblock commands ", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island leave "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island team: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island team "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("See your island team", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island visit "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Visit another player's island", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("     ---------------------", TextColor.color(0x52BE80))
+                                    //.append(Component.text(/*">>"*/"--", TextColor.color(0x5499C7))
+                                            //.hoverEvent(HoverEvent.showText(Component.text("go to page 2", TextColor.color(0x5499C7))))
+                                            //.clickEvent(ClickEvent.runCommand("/is help 2")))
+                                    .append(Component.text("-------", TextColor.color(0x52BE80))));
+                        }
+                        //MOD
+                        else if (island.isModerator(player.getName())) {
+
+                            if (args.length == 1 || args[1].equalsIgnoreCase("1")){
+
+                            player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                    .append(Component.text("Island Help (Page 1)", TextColor.color(0x5499C7)))
+                                    .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                            player.sendMessage(Component.text("/island demote: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island demote "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Demote a member of your island", TextColor.color(0x52BE80))));
+
+
+                            player.sendMessage(Component.text("/island help: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island help"))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("All that can help you about Skyblock commands ", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island invite: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island invite "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Invite a player to join your island", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island kick: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island kick "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Kick a member of your island", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island leave "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island level: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island level "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Update the level of your island", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island promote: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island promote  "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Promote a player of the island", TextColor.color(0x52BE80))));
+
+                            player.sendMessage(Component.text("/island setspawn: ", TextColor.color(0x5499C7))
+                                    .clickEvent(ClickEvent.suggestCommand("/island setspawn "))
+                                    .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                    .append(Component.text("Change the spawn of the island", TextColor.color(0x52BE80))));
+
+
+                            player.sendMessage(Component.text("     --------------------- ", TextColor.color(0x52BE80))
+                                    .append(Component.text(">>", TextColor.color(0x5499C7))
+                                            .hoverEvent(HoverEvent.showText(Component.text("go to page 2", TextColor.color(0x5499C7))))
+                                            .clickEvent(ClickEvent.runCommand("/is help 2")))
+                                    .append(Component.text(" -----", TextColor.color(0x52BE80))));
+
+                            }
+                            //PAGE 2
+                            else if (args[1].equalsIgnoreCase("2")){
+                                player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                        .append(Component.text("Island Help (Page 2)", TextColor.color(0x5499C7)))
+                                        .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                                player.sendMessage(Component.text("/island team: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island team "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("See your island team", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island visit "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Visit another player's island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island settings: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island settings "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Change the settings of the island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                        .append(Component.text("<<", TextColor.color(0x5499C7))
+                                                .hoverEvent(HoverEvent.showText(Component.text("go to page 1", TextColor.color(0x5499C7))))
+                                                .clickEvent(ClickEvent.runCommand("/is help 1")))
+                                        .append(Component.text(" ---------------------", TextColor.color(0x52BE80))));
+                            } else player.performCommand("island help");
+
+
+                        }
+                        else if (island.isOwner(player.getName())){
+                            //PAGE 1
+                            if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
+
+                                player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                        .append(Component.text("Island Help (Page 1)", TextColor.color(0x5499C7)))
+                                        .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                                player.sendMessage(Component.text("/island delete: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island delete "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Delete you island (Be careful)", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island demote: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island demote "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Demote a member of your island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island help: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island help"))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("All that can help you about Skyblock commands ", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island invite: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island invite "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Invite a player to join your island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island visit "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Kick a member of your island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island leave "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island level: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island level "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Update the level of your island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island promote: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island promote "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Promote a player of the island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("     -------------------- ", TextColor.color(0x52BE80))
+                                        .append(Component.text(">>", TextColor.color(0x5499C7))
+                                                .hoverEvent(HoverEvent.showText(Component.text("go to page 2", TextColor.color(0x5499C7))))
+                                                .clickEvent(ClickEvent.runCommand("/is help 2")))
+                                        .append(Component.text(" ------", TextColor.color(0x52BE80))));
+
+                            }
+                            else if (args[1].equalsIgnoreCase("2")){
+
+                                player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                        .append(Component.text("Island Help (Page 2)", TextColor.color(0x5499C7)))
+                                        .append(Component.text(" ------", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                                player.sendMessage(Component.text("/island setspawn: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island setspawn "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Change the spawn of the island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island settings: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island settings "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Change the settings of the island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island team: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island team "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("See your island team", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island visit "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Visit another player's island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("/island setname: ", TextColor.color(0x5499C7))
+                                        .clickEvent(ClickEvent.suggestCommand("/island setname "))
+                                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                                        .append(Component.text("Change the name of the island", TextColor.color(0x52BE80))));
+
+                                player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
+                                        .append(Component.text("<<", TextColor.color(0x5499C7))
+                                                .hoverEvent(HoverEvent.showText(Component.text("go to page 1", TextColor.color(0x5499C7))))
+                                                .clickEvent(ClickEvent.runCommand("/is help 1")))
+                                        .append(Component.text(" ---------------------", TextColor.color(0x52BE80))));
+                            } else player.performCommand("island help");
+                        }
+                    }
             }
 
         }
@@ -242,7 +485,7 @@ public class IslandCommand implements CommandExecutor {
             if (island.isOwner(player.getName())) {
                 player.sendMessage("§cYou can't leave your island because your are the owner");
                 player.sendMessage("§cPromote someone else to Owner and leave (/island promote <player>");
-                player.sendMessage("§cOr delete the island (/island delete");
+                player.sendMessage("§cOr delete the island (/island delete)");
             } else {
                 LeaveIslandInventory leaveIslandInventory = new LeaveIslandInventory(player);
                 player.openInventory(leaveIslandInventory.getInventory());
@@ -290,6 +533,46 @@ public class IslandCommand implements CommandExecutor {
 
     private void commandTeam(String[] args, Player player, Island island){
         if (args.length == 1) {
+            player.sendMessage("--- " + islandManager.getIslandbyplayer(player.getName()).getIslandName() + " ---");
+            player.sendMessage("Players :");
+            Player target1 = Bukkit.getPlayerExact(island.getOwner());
+            if (target1 == null || !target1.isOnline()){
+                player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §c●");
+            }
+            else{
+                player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §a●");
+            }
+
+            for (String moderator : island.getAllModerators()) {
+
+                Player target = Bukkit.getPlayerExact(moderator);
+                if (target == null || !target.isOnline()){
+                    player.sendMessage(" - Moderator " + moderator + " §c●");
+                }
+                else{
+                    player.sendMessage(" - Moderator " + moderator + " §a●");
+                }
+
+            }
+            for (String member : island.getAllMembers()) {
+
+                Player target = Bukkit.getPlayerExact(member);
+                if (target == null || !target.isOnline()){
+                    player.sendMessage(" - Member " + member + " §c●");
+                }
+                else{
+                    player.sendMessage(" - Member " + member + " §a●");
+                }
+            }
+        }
+
+        if (args.length == 2) {
+
+            if (!islandManager.playerHasIsland(args[2])) {
+                player.sendMessage("this player doesn't have an island");
+                return;
+            }
+            island = islandManager.getIslandbyplayer(args[2]);
             player.sendMessage("--- " + islandManager.getIslandbyplayer(player.getName()).getIslandName() + " ---");
             player.sendMessage("Players :");
             Player target1 = Bukkit.getPlayerExact(island.getOwner());

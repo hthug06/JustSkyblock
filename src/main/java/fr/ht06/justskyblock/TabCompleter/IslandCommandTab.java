@@ -29,6 +29,7 @@ public class IslandCommandTab implements TabCompleter {
             if (!islandManager.playerHasIsland(player.getName())){
                 listearg0.add("create");
                 listearg0.add("decline");
+                listearg0.add("help");
                 listearg0.add("join");
                 listearg0.add("visit");
 
@@ -40,6 +41,7 @@ public class IslandCommandTab implements TabCompleter {
                     //listearg0.add("decline");
                     listearg0.add("delete");
                     listearg0.add("demote");
+                    listearg0.add("help");
                     listearg0.add("invite");
                     //listearg0.add("join");
                     listearg0.add("kick");
@@ -58,6 +60,7 @@ public class IslandCommandTab implements TabCompleter {
                     //listearg0.add("decline");
                     //listearg0.add("delete");
                     listearg0.add("demote");
+                    listearg0.add("help");
                     listearg0.add("invite");
                     //listearg0.add("join");
                     listearg0.add("kick");
@@ -75,6 +78,7 @@ public class IslandCommandTab implements TabCompleter {
                     //listearg0.add("decline");
                     //listearg0.add("delete");
                     //listearg0.add("demote");
+                    listearg0.add("help");
                     //listearg0.add("invite");
                     //listearg0.add("join");
                     //listearg0.add("kick");

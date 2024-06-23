@@ -2,6 +2,11 @@ package fr.ht06.justskyblock;
 
 import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -41,10 +46,19 @@ public class Test implements CommandExecutor {
 
 
         if (strings.length == 1){
-            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.DIRT")));
-            IslandLevel.get().set("Material.Block.DIRT", IslandLevel.get().getInt("Material.Block.DIRT") +1);
-            IslandLevel.save();
-            player.getInventory().addItem(new ItemStack(Material.POTTED_TORCHFLOWER, 1));
+            TextComponent comp = Component.text()
+                    .append(player.name())
+                    .append(Component.text("'s Inventory"))
+                    .color(NamedTextColor.GREEN)
+                    .hoverEvent(HoverEvent.showText(Component.text()
+                            .append(Component.text("Click to view "))
+                            .append(player.name().color(NamedTextColor.AQUA))
+                            .append(Component.text("'s Inventory"))
+                            .color(NamedTextColor.GRAY)
+                    ))
+                    .clickEvent(ClickEvent.runCommand("/mycommand foo " + player.getUniqueId() + " something"))
+                    .build();
+            player.sendMessage(comp);
             //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));

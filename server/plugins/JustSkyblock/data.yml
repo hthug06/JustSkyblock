@@ -3,9 +3,11 @@ WARNING 2: Don't touch this file or everything can be corrupt
 WARNING 3: If you delete this file, every player data will be reset
 Island:
   ht06's Island:
-    Level: 0
+    Level: 10.1
     Players:
       Owner: ht06
+      Members:
+      - fneris
     LocationSpawn:
       world: world_Skyblock
       x: 0.0
@@ -44,3 +46,9 @@ Island:
       BREWING_STAND: true
       BELL: true
       HOPPER: true
+    CreationDate:
+      Year: 2024
+      Month: 6
+      Day: 23
+      Hour: 17
+      Minute: 42

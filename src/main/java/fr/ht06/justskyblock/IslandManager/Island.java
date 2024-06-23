@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 
@@ -15,6 +16,8 @@ public class Island {
     private List<String> Moderator = new ArrayList<>();
     private List<String> Member = new ArrayList<>();
     private double level = 0;
+    private LocalDateTime Date;
+    private Date aujourdhui;
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<Object, Object> Island = new HashMap<>();
 
@@ -22,6 +25,8 @@ public class Island {
         this.IslandName = IslandName;
         this.islandCoordinates = islandCoordinates;
         this.islandSpawn = islandSpawn;
+        Date = LocalDateTime.now();
+        aujourdhui = new Date();
         this.createSettings();
     }
 
@@ -119,12 +124,24 @@ public class Island {
         return this.Member.contains(playerName);
     }
 
-    public int getLevel(){
-        return (int)level;
+    public double getLevel(){
+        return level;
     }
 
     public void setLevel(double level) {
         this.level = level;
+    }
+
+    public LocalDateTime getDate(){
+        return Date;
+    }
+
+    public String getDateToString(){
+        return Date.getDayOfMonth() +  "/" + Date.getMonth().getValue() + "/" + Date.getYear() + " " + Date.getHour()+":"+Date.getMinute();
+    }
+
+    public void setDate(LocalDateTime date) {
+        Date = date;
     }
 
     public Boolean isOnThisIsland(String playerName){
