@@ -3,7 +3,6 @@ package fr.ht06.justskyblock.Events;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
-import io.papermc.paper.event.player.PlayerPickItemEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -130,10 +129,10 @@ public class PlayerListeners implements Listener {
 
             for (Item item : event.getItems()) {
 
-                //For Farming Quest
+                //For Farming
                 if (island.getCropsCounter().containsKey(capitalizeFirstAndAfterUnderscore(item.getItemStack().getType().name()))) {
                     org.bukkit.block.data.Ageable ageable = (org.bukkit.block.data.Ageable) event.getBlockState().getBlockData();
-                    //Check for block like sugar cane and cactus
+                    //Check for block like sugar can and cactus
                     if (age15.contains(event.getBlockState().getType()) ){
                         Location location = event.getBlockState().getLocation();
 
@@ -180,10 +179,33 @@ public class PlayerListeners implements Listener {
                             island.getCropsCounter().replace(fKey, island.getCropsCounter().get(fKey) + item.getItemStack().getAmount());
                         }
                     }
+                    return;
                 }
 
-                //For Mining Quest
+                String name;
+                //For Mining
+                name = capitalizeFirstAndAfterUnderscore(event.getBlockState().getType().name().replace("LAPIS", "Lapis_lazuli").replace("_ORE", "")).replace("Lazuli", "lazuli");
+                if (island.getMineralCounter().containsKey(name)){
+                    if (JustSkyblock.placeByPlayer.contains(event.getBlockState().getLocation())){
+                        JustSkyblock.placeByPlayer.remove(event.getBlockState().getLocation());
+                    }
+                    else {
+                        //player.sendMessage(String.valueOf(JustSkyblock.placeByPlayer.contains(event.getBlockState().getLocation())));
+                        island.getMineralCounter().replace(name, island.getMineralCounter().get(name) + item.getItemStack().getAmount());
+                    }
+                }
 
+                //For Wood Cutting
+                name = capitalizeFirstAndAfterUnderscore(event.getBlockState().getType().name().replace("_LOG", "").replace("_STEM", ""));
+                player.sendMessage(name);
+                if (island.getLumberCounter().containsKey(name)){
+                    if (JustSkyblock.placeByPlayer.contains(event.getBlockState().getLocation())){
+                        JustSkyblock.placeByPlayer.remove(event.getBlockState().getLocation());
+                    }
+                    else {
+                        island.getLumberCounter().replace(name, island.getLumberCounter().get(name) + item.getItemStack().getAmount());
+                    }
+                }
             }
 
         }

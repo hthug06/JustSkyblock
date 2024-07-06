@@ -671,6 +671,11 @@ public class IslandCommand implements CommandExecutor {
                         .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
                         .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
 
+                player.sendMessage(Component.text("/island quest: ", TextColor.color(0x5499C7))
+                        .clickEvent(ClickEvent.suggestCommand("/island quest "))
+                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                        .append(Component.text("Open the quest menu", TextColor.color(0x52BE80))));
+
                 player.sendMessage(Component.text("/island team: ", TextColor.color(0x5499C7))
                         .clickEvent(ClickEvent.suggestCommand("/island team "))
                         .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
@@ -727,16 +732,15 @@ public class IslandCommand implements CommandExecutor {
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
                             .append(Component.text("Update the level of your island", TextColor.color(0x52BE80))));
 
+                    player.sendMessage(Component.text("/island quest: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island quest "))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Open the quest menu", TextColor.color(0x52BE80))));
+
                     player.sendMessage(Component.text("/island promote: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island promote  "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
                             .append(Component.text("Promote a player of the island", TextColor.color(0x52BE80))));
-
-                    player.sendMessage(Component.text("/island setspawn: ", TextColor.color(0x5499C7))
-                            .clickEvent(ClickEvent.suggestCommand("/island setspawn "))
-                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
-                            .append(Component.text("Change the spawn of the island", TextColor.color(0x52BE80))));
-
 
                     player.sendMessage(Component.text("     --------------------- ", TextColor.color(0x52BE80))
                             .append(Component.text(">>", TextColor.color(0x5499C7))
@@ -750,6 +754,11 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
                             .append(Component.text("Island Help (Page 2)", TextColor.color(0x5499C7)))
                             .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                    player.sendMessage(Component.text("/island setspawn: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island setspawn "))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Change the spawn of the island", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island team: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island team "))
@@ -835,6 +844,16 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
                             .append(Component.text("Island Help (Page 2)", TextColor.color(0x5499C7)))
                             .append(Component.text(" ------", TextColor.color(0x52BE80))));  // --- Help Island ---
+
+                    player.sendMessage(Component.text("/island quest: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island quest "))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Open the quest menu", TextColor.color(0x52BE80))));
+
+                    player.sendMessage(Component.text("/island rankup: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island rankup "))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Open the rankup menu", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island setspawn: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island setspawn "))
