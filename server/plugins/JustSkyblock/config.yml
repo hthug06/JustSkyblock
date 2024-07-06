@@ -25,8 +25,12 @@ IS:
     Schematic: IslandSnow.schem
     Slot: 3
   Basic:
-      Block: DIRT
-      Name: Basic Island
-      Lore: The basic skyblock Island
-      Schematic: BasicIsland.schem
-      Slot: 4
+    Block: DIRT
+    Name: Basic Island
+    Lore: The basic skyblock Island
+    Schematic: BasicIsland.schem
+    Slot: 4
+
+CustomGenerator:
+  Enable: false  #true or false
+  #For now you can obtain all basic ore (not the deepslate and the nether one)

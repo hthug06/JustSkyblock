@@ -12,9 +12,6 @@ public class IslandManager {
         return allCoordinate;
     }
 
-    public IslandManager(){
-
-    }
 
     public void addAllCoordinate(Island island) {
         this.allCoordinate.put(island.getIslandName(), island.getIslandCoordinates());

@@ -45,20 +45,8 @@ public class Test implements CommandExecutor {
         }
 
 
-        if (strings.length == 1){
-            TextComponent comp = Component.text()
-                    .append(player.name())
-                    .append(Component.text("'s Inventory"))
-                    .color(NamedTextColor.GREEN)
-                    .hoverEvent(HoverEvent.showText(Component.text()
-                            .append(Component.text("Click to view "))
-                            .append(player.name().color(NamedTextColor.AQUA))
-                            .append(Component.text("'s Inventory"))
-                            .color(NamedTextColor.GRAY)
-                    ))
-                    .clickEvent(ClickEvent.runCommand("/mycommand foo " + player.getUniqueId() + " something"))
-                    .build();
-            player.sendMessage(comp);
+        if (strings.length >= 1){
+            player.sendMessage(String.valueOf(JustSkyblock.placeByPlayer));
             //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));

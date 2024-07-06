@@ -1,21 +1,23 @@
 package fr.ht06.justskyblock.Events;
 
 import fr.ht06.justskyblock.Inventory.*;
+import fr.ht06.justskyblock.Inventory.RankupInventory;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.LoadSchematic;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -214,6 +216,50 @@ public class InventoryEvents implements Listener {
                 player.sendMessage(Component.text("Teleportation to " + islandManager.getIslandbyName(islandName).getIslandName(), TextColor.color(0x43D649)));
             }
             else event.setCancelled(true);
+        }
+
+        if (event.getClickedInventory().getHolder() instanceof RankupInventory){
+            //player.sendMessage("invnvv");
+            event.setCancelled(true);
+
+            Island island = islandManager.getIslandbyplayer(player.getName());
+
+            RankupInventory rankupInventory = new RankupInventory(player, islandManager.getIslandbyplayer(player.getName()));
+            Map<Material, Integer>itemFromTier = rankupInventory.getTierItem(islandManager.getIslandbyplayer(player.getName()).getRank());
+
+            if (event.getSlot() == 22 && event.getInventory().getItem(22).getType().equals(Material.REDSTONE_BLOCK)){
+                player.closeInventory();
+                player.sendMessage(Component.text("You don't have the required item to rankup", TextColor.color(0xC0392B)));
+            }
+            else if (event.getSlot() == 22 && event.getInventory().getItem(22).getType().equals(Material.DIAMOND_BLOCK)){
+                int i = 0;
+
+                for (ItemStack item: player.getInventory().getStorageContents()){
+                    //player.sendMessage(itemFromTier.toString());
+                    if (item != null) {
+                        if (itemFromTier.containsKey(item.getType())){
+                            if (itemFromTier.get(item.getType()) > 64 || itemFromTier.get(item.getType()) > item.getAmount()){
+                                itemFromTier.put(item.getType(),itemFromTier.get(item.getType()) - item.getAmount());
+                                player.getInventory().getItem(i).setAmount(0);
+                            }
+                            else if (itemFromTier.get(item.getType()) <= item.getAmount()){
+                                player.getInventory().getItem(i).setAmount(item.getAmount() - itemFromTier.get(item.getType()));
+                                itemFromTier.remove(item.getType());
+
+                            }
+                        }
+                    }
+                    i++;
+                }
+                player.closeInventory();
+                islandManager.getIslandbyplayer(player.getName()).setRank(islandManager.getIslandbyplayer(player.getName()).getRank()+1);
+                islandManager.getIslandbyplayer(player.getName()).BroadcastMessage("The island is now rank " + island.getRank());
+            }
+
+            if (event.getSlot() == 40){
+                player.closeInventory();
+                player.openInventory(rankupInventory.getInventory());
+            }
         }
     }
 

@@ -16,9 +16,19 @@ public class Island {
     private List<String> Moderator = new ArrayList<>();
     private List<String> Member = new ArrayList<>();
     private double level = 0;
+    private int size = 20;
+    private int rank = 0;
+    private boolean talisman = false;
     private LocalDateTime Date;
     private Date aujourdhui;
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
+    private Map<String, Boolean> farmingQuest = new HashMap<>();
+    private Map<String, Integer> cropsCounter = new HashMap<>();
+    private Map<String, Boolean> miningQuest = new HashMap<>();
+    private Map<String, Integer> mineralCounter = new HashMap<>();
+    private Map<String, Boolean> lumberQuest = new HashMap<>();
+    private Map<String, Integer> lumberCounter = new HashMap<>();
+    private Map<String, Boolean> Quest = new HashMap<>();
     private Map<Object, Object> Island = new HashMap<>();
 
     public Island(String IslandName, List<Integer> islandCoordinates, Location islandSpawn){
@@ -28,6 +38,10 @@ public class Island {
         Date = LocalDateTime.now();
         aujourdhui = new Date();
         this.createSettings();
+        this.createQuest();
+        this.initCropsCounter();
+        this.initMineralCounter();
+        this.initLumberCounter();
     }
 
     public String getIslandName() {
@@ -132,6 +146,26 @@ public class Island {
         this.level = level;
     }
 
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public boolean hasCraftedTalisman(){
+        return this.talisman;
+    }
+
     public LocalDateTime getDate(){
         return Date;
     }
@@ -211,6 +245,26 @@ public class Island {
         }
     }
 
+    public void BroadcastMessage(String message) {
+        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        if (playerOwner != null && playerOwner.isOnline()) {
+            playerOwner.sendMessage(message);
+        }
+
+        for (String modo : Moderator) {
+            Player playerModo = Bukkit.getPlayerExact(modo);
+            if (playerModo != null && playerModo.isOnline()) {
+                playerModo.sendMessage(message);
+            }
+        }
+        for (String member : Member) {
+            Player playerMember = Bukkit.getPlayerExact(member);
+            if (playerMember != null && playerMember.isOnline()) {
+                playerMember.sendMessage(message);
+            }
+        }
+    }
+
     public Map<Object, Object> IStoMap(){
         Island.put("Name", IslandName);
         Island.put("Owner", Owner);
@@ -252,5 +306,102 @@ public class Island {
         this.allSettings.put("BREWING_STAND", true);
         this.allSettings.put("BELL", true);//25
         this.allSettings.put("HOPPER", true);//25
+    }
+
+    public void createQuest(){
+        List<String> listFarm = List.of("Wheat", "Carrot", "Potato", "Sugar_Cane", "Cactus");
+        for (String s:listFarm) {
+            for (int i = 1; i <= 9; i++) {
+                this.farmingQuest.put(s + i, false);
+
+            }
+        }
+
+        List<String> listMine = List.of("Stone", "Coal", "Iron", "Copper", "Lapis_lazuli", "Gold", "Redstone", "Diamond", "Emerald", "Obsidian");
+        for (String s:listMine) {
+            for (int i = 1; i <= 9; i++) {
+                this.miningQuest.put(s + i, false);
+
+            }
+        }
+
+        List<String> listLumber = List.of("Oak", "Birch", "Spruce", "Jungle", "Acacia", "Dark_Oak", "Mangrove", "Cherry", "Crimson", "Warped");
+        for (String s:listLumber) {
+            for (int i = 1; i <= 9; i++) {
+                this.lumberQuest.put(s + i, false);
+
+            }
+        }
+    }
+
+    private void initCropsCounter(){
+        List<String> listFarm = List.of("Wheat", "Carrot", "Potato", "Sugar_Cane", "Cactus");
+        for (String s:listFarm) {
+            cropsCounter.put(s, 0);
+        }
+    }
+
+    private void initMineralCounter(){
+        List<String> listMinerals = List.of("Stone", "Coal", "Iron", "Copper", "Lapis_lazuli", "Gold", "Redstone", "Diamond", "Emerald", "Obsidian");
+        for (String s: listMinerals) {
+            mineralCounter.put(s, 0);
+        }
+    }
+
+    private void initLumberCounter(){
+        List<String> listWood = List.of("Oak", "Birch", "Spruce", "Jungle", "Acacia", "Dark_Oak", "Mangrove", "Cherry", "Crimson", "Warped");
+        for (String s: listWood) {
+            lumberCounter.put(s, 0);
+        }
+    }
+    //FARM
+    public Map<String, Boolean> getFarmingQuest(){
+        return farmingQuest;
+    }
+
+    public void setFarmingQuest(String s, Boolean b){
+        this.farmingQuest.put(s, b);
+    }
+
+    public Map<String, Integer> getCropsCounter(){
+        return cropsCounter;
+    }
+
+    public void setCropsCounter(String s, Integer i){
+        cropsCounter.put(s, i);
+    }
+
+    //Mining
+    public Map<String, Boolean> getMiningQuest(){
+        return miningQuest;
+    }
+
+    public void setMiningQuest(String s, Boolean b){
+        this.miningQuest.put(s, b);
+    }
+
+    public Map<String, Integer> getMineralCounter(){
+        return mineralCounter;
+    }
+
+    public void setMineralCounter(String s, Integer i){
+        mineralCounter.put(s, i);
+    }
+
+    //Lumber /  Wood
+    public Map<String, Boolean> getLumberQuest(){
+        return lumberQuest;
+    }
+
+    public void setLumberQuest(String s, Boolean b){
+        this.lumberQuest.put(s, b);
+    }
+
+    public Map<String, Integer> getLumberCounter(){
+        return lumberCounter;
+    }
+
+    public void setLumberCounter(String s, Integer i){
+        lumberCounter.put(s, i);
     }
 }

@@ -4,15 +4,19 @@ import com.github.yannicklamprecht.worldborder.api.WorldBorderApi;
 import fr.ht06.justskyblock.Commands.IsAdminCommand;
 import fr.ht06.justskyblock.Commands.IslandCommand;
 import fr.ht06.justskyblock.Commands.skyblockpluginCommand;
+import fr.ht06.justskyblock.Config.BlockPlacedByPlayerConfig;
 import fr.ht06.justskyblock.Config.DataConfig;
 import fr.ht06.justskyblock.Config.IslandLevel;
+import fr.ht06.justskyblock.Events.CobbleGenEvent;
 import fr.ht06.justskyblock.Events.InventoryEvents;
 import fr.ht06.justskyblock.Events.PlayerListeners;
+import fr.ht06.justskyblock.Inventory.Quest.*;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.TabCompleter.IsadminCommandTab;
 import fr.ht06.justskyblock.TabCompleter.IslandCommandTab;
 import fr.ht06.justskyblock.placeholder.IslandLevelPlaceholder;
+import fr.ht06.justskyblock.recipe.ChainMailArmorRecipe;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -40,6 +44,7 @@ public final class JustSkyblock extends JavaPlugin {
     public static IslandListByYAML islandList;
     public static IslandManager islandManager;
     public static YamlConfiguration customConfig;
+    public static List<Location> placeByPlayer;
 
 
     @Override
@@ -47,6 +52,8 @@ public final class JustSkyblock extends JavaPlugin {
         instance =this;
 
         islandManager = new IslandManager();
+        placeByPlayer = new ArrayList<>();
+
 
         //Creation du world_skyblock si il existe pas et le loader sinon
         String settings = "{\"structures\":{\"structures\":{}},\"layers\":[{\"height\":9,\"block\":\"air\"},{\"height\":1,\"block\":\"air\"}],\"lakes\":false,\"features\":false,\"biome\":\"plains\"}";
@@ -64,18 +71,26 @@ public final class JustSkyblock extends JavaPlugin {
         }
         worldBorderApi = worldBorderApiRegisteredServiceProvider.getProvider();
 
-        //Toute les commandes , event et TabCompleter
+        //All the commands (not the subCommand like /is visit)
         getCommand("is").setExecutor(new IslandCommand(this));
         getCommand("test").setExecutor(new Test(this));
         getCommand("justskyblock").setExecutor(new skyblockpluginCommand(this));
         getCommand("isadmin").setExecutor(new IsAdminCommand());
+
+        //All the tabCompleter
         getCommand("is").setTabCompleter(new IslandCommandTab(this));
         getCommand("isadmin").setTabCompleter(new IsadminCommandTab());
-        getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
-        getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
-        saveDefaultConfig();
 
+        //for all the events
+        registerEvents();
+
+        //For the config.yml
+        saveDefaultConfig();
         registerPlaceholder();
+
+        //CustomCraft
+        ChainMailArmorRecipe chainMailArmorRecipe = new ChainMailArmorRecipe();
+        chainMailArmorRecipe.createCraft();
 
         //Les iles depuis la config
         List<String> IS = new ArrayList<>(getConfig().getConfigurationSection("IS.").getKeys(false));
@@ -155,6 +170,9 @@ public final class JustSkyblock extends JavaPlugin {
                 //le level de l'île
                 island.setLevel(dataconfig.getDouble("Island."+ v +".Level"));
 
+                //le rank de l'ile
+                island.setRank(dataconfig.getInt("Island."+ v +".Rank"));
+
                 //date
                 LocalDateTime Date = LocalDateTime.of(dataconfig.getInt("Island." + v + ".CreationDate.Year"),
                         dataconfig.getInt("Island." + v + ".CreationDate.Month"),
@@ -163,10 +181,36 @@ public final class JustSkyblock extends JavaPlugin {
                         dataconfig.getInt("Island." + v + ".CreationDate.Minute"));
                 island.setDate(Date);
 
+                @NotNull Map<String, Object> FarmingQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Farming").getValues(true);
+                for (Map.Entry<String, Object> m : FarmingQuest.entrySet()){
+                    island.setCropsCounter(m.getKey(), (int)m.getValue());
+                }
+
+                @NotNull Map<String, Object> MiningQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Mining").getValues(true);
+                for (Map.Entry<String, Object> m : MiningQuest.entrySet()){
+                    island.setMineralCounter(m.getKey(), (int)m.getValue());
+                }
+
+                @NotNull Map<String, Object> LumberQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Lumbering").getValues(true);
+                for (Map.Entry<String, Object> m : LumberQuest.entrySet()){
+                    island.setLumberCounter(m.getKey(), (int)m.getValue());
+                }
+
                 //ajout de l'île a l'island manager
                 islandManager.addIsland(island);
             }
         }
+
+        //Pour les block placé par les joueur (block spécifique)
+        BlockPlacedByPlayerConfig.setup();
+        if (BlockPlacedByPlayerConfig.get().contains("placed")){
+            placeByPlayer.addAll((List<Location>) BlockPlacedByPlayerConfig.get().getList("placed"));
+        }
+        else{
+            BlockPlacedByPlayerConfig.get().createSection("placed");
+        }
+
+
 
         //On dégage la data.yml
         File dataYML = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "data.yml");
@@ -198,7 +242,10 @@ public final class JustSkyblock extends JavaPlugin {
             DataConfig.get().getConfigurationSection("Island").createSection(v.getIslandName());
 
             //le Level
-            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Level", v.getLevel()); //le chef
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Level", v.getLevel());
+
+            //Ranks
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Rank", v.getRank());
 
 
             //les joueur de l'île
@@ -224,9 +271,21 @@ public final class JustSkyblock extends JavaPlugin {
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Day", v.getDate().getDayOfMonth());
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Hour", v.getDate().getHour());
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".CreationDate").set("Minute", v.getDate().getMinute());
+
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Quests");
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".Quests").set("Farming", v.getCropsCounter());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".Quests").set("Mining", v.getMineralCounter());
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName() + ".Quests").set("Lumbering", v.getLumberCounter());
+
         }
 
         DataConfig.save();
+
+        BlockPlacedByPlayerConfig.setup();
+        BlockPlacedByPlayerConfig.get().createSection("placed");
+        BlockPlacedByPlayerConfig.get().set("placed", placeByPlayer);
+
+        BlockPlacedByPlayerConfig.save();
     }
 
     public static JustSkyblock getInstance(){
@@ -312,4 +371,17 @@ public final class JustSkyblock extends JavaPlugin {
         new IslandLevelPlaceholder().register();
     }
 
+    private void registerEvents(){
+        getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
+        getServer().getPluginManager().registerEvents(new CobbleGenEvent(), this);
+        getServer().getPluginManager().registerEvents(new MainQuestInventory(), this);
+        getServer().getPluginManager().registerEvents(new RankQuestInventory(), this);
+        getServer().getPluginManager().registerEvents(new FarmingQuest(), this);
+        getServer().getPluginManager().registerEvents(new FarmingQuest2(), this);
+        getServer().getPluginManager().registerEvents(new MiningQuest(), this);
+        getServer().getPluginManager().registerEvents(new MiningQuest2(), this);
+        getServer().getPluginManager().registerEvents(new LumberQuest(), this);
+        getServer().getPluginManager().registerEvents(new LumberQuest2(), this);
+    }
 }

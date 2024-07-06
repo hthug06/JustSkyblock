@@ -21,7 +21,7 @@ Material:
     TUFF: 1
     DRIPSTONE_BLOCK: 1
     GRASS_BLOCK: 1
-    DIRT: 1
+    DIRT: 1.2
     COARSE_DIRT: 1
     PODZOL: 1
     ROOTED_DIRT: 1

@@ -48,6 +48,8 @@ public class IslandCommandTab implements TabCompleter {
                     //listearg0.add("leave");
                     listearg0.add("level");
                     listearg0.add("promote");
+                    listearg0.add("quest");
+                    listearg0.add("rankup");
                     listearg0.add("setname");
                     listearg0.add("setspawn");
                     listearg0.add("settings");
@@ -67,6 +69,8 @@ public class IslandCommandTab implements TabCompleter {
                     listearg0.add("leave");
                     listearg0.add("level");
                     listearg0.add("promote");
+                    listearg0.add("quest");
+                    listearg0.add("rankup");
                     listearg0.add("setspawn");
                     listearg0.add("settings");
                     listearg0.add("team");
@@ -84,6 +88,8 @@ public class IslandCommandTab implements TabCompleter {
                     //listearg0.add("kick");
                     listearg0.add("leave");
                     //listearg0.add("promote");
+                    listearg0.add("quest");
+                    listearg0.add("rankup");
                     //listearg0.add("setspawn");
                     //listearg0.add("settings");
                     listearg0.add("team");

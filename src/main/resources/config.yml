@@ -6,3 +6,7 @@ IS:
     Lore: WHYYY
     Schematic: IslandPlain.schem
     Slot: 0
+
+CustomGenerator:
+  Enable: true   #true or false
+  #For now you can obtain all basic ore (not the deepslate and the nether one)

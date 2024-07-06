@@ -1,0 +1,2 @@
+Color of the plugin : Green ->#52BE80   Blue -> #5499C7
+Pour les admin -> bleu :#1F618D  , vertt -> #1E8449

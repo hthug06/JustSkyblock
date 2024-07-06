@@ -50,7 +50,7 @@ public class IslandInfoInventory implements InventoryHolder {
                 case 11 -> {
                     ItemStack itemStack = new ItemStack(Material.EXPERIENCE_BOTTLE, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
-                    itemMeta.displayName(Component.text("island Level", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.displayName(Component.text("Island Level", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                     itemMeta.lore(List.of(Component.text(String.valueOf(island.getLevel()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
@@ -86,7 +86,7 @@ public class IslandInfoInventory implements InventoryHolder {
                         ItemStack itemStack = new ItemStack(Material.IRON_SWORD, 1);
                         ItemMeta itemMeta = itemStack.getItemMeta();
                         itemMeta.displayName(Component.text("Member of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
-                        itemMeta.lore(List.of(Component.text("No Member on this island :(", TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                        itemMeta.lore(List.of(Component.text("No member on this island :(", TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                         itemStack.setItemMeta(itemMeta);
                         inv.setItem(i, itemStack);
                     }
@@ -138,6 +138,14 @@ public class IslandInfoInventory implements InventoryHolder {
                         itemStack.setItemMeta(itemMeta);
                         inv.setItem(i, itemStack);
                     }
+                }
+                case 16 -> {
+                    ItemStack itemStack = new ItemStack(Material.DIAMOND_BLOCK, 1);
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    itemMeta.displayName(Component.text("Island Rank", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getRank()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemStack.setItemMeta(itemMeta);
+                    inv.setItem(i, itemStack);
                 }
             }
 

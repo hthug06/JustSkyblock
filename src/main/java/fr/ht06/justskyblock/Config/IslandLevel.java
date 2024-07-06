@@ -1,7 +1,6 @@
 package fr.ht06.justskyblock.Config;
 
 import fr.ht06.justskyblock.IslandManager.Island;
-import fr.ht06.justskyblock.JustSkyblock;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -25,7 +24,7 @@ public class IslandLevel {
         if (!file.exists()){
             try{
                 file.createNewFile();
-            }catch (IOException e){
+            }catch (IOException ignored){
 
             }
         }
@@ -104,7 +103,7 @@ public class IslandLevel {
                             if (IslandLevel.get().getConfigurationSection("Material." +  path).getKeys(false).contains(itemName)){
                                 //SkyblockPlugin.getInstance().getLogger().info(String.valueOf(x + y + z));
                                 //SkyblockPlugin.getInstance().getLogger().info(itemName);
-                                level += (int) IslandLevel.get().get("Material." + path + "." + itemName);
+                                level += IslandLevel.get().getDouble("Material." + path + "." + itemName);
                             }
                         }
                     }
@@ -112,9 +111,7 @@ public class IslandLevel {
                 }
             }
         }
-        JustSkyblock.getInstance().getLogger().info(itemList.toString());
+        //JustSkyblock.getInstance().getLogger().info(itemList.toString());
         return level;
     }
-
-
 }
