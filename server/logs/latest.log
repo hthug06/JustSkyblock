@@ -1,99 +1,157 @@
-[00:00:03] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[00:00:04] [ServerMain/INFO]: Loaded 1175 recipes
-[00:00:04] [ServerMain/INFO]: Loaded 1276 advancements
-[00:00:04] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[00:00:04] [Server thread/INFO]: Loading properties
-[00:00:04] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
-[00:00:05] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[00:00:05] [Server thread/INFO]: Using 4 threads for Netty based IO
-[00:00:05] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[19:44:39] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.5.2.jar'...
+[19:44:40] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.5.2.jar' in 497ms.
+[19:44:43] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:44:45] [ServerMain/INFO]: Loaded 1175 recipes
+[19:44:45] [ServerMain/INFO]: Loaded 1276 advancements
+[19:44:45] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[19:44:45] [Server thread/INFO]: Loading properties
+[19:44:45] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[19:44:46] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:44:46] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:44:47] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[00:00:05] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[00:00:05] [Server thread/INFO]: Default game type: SURVIVAL
-[00:00:05] [Server thread/INFO]: Generating keypair
-[00:00:05] [Server thread/INFO]: Starting Minecraft server on *:25565
-[00:00:05] [Server thread/INFO]: Using default channel type
-[00:00:05] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[00:00:05] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[00:00:06] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[00:00:06] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
-[00:00:06] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
-[00:00:07] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7e7ad08c]
-[00:00:07] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.4
-[00:00:07] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[00:00:07] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[00:00:07] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[00:00:07] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
-[00:00:07] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
-[00:00:07] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[00:00:07] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[00:00:07] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
-[00:00:08] [Server thread/INFO]: Preparing level "world"
-[00:00:09] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[00:00:09] [Server thread/INFO]: Time elapsed: 701 ms
-[00:00:09] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[00:00:10] [Server thread/INFO]: Time elapsed: 410 ms
-[00:00:10] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[00:00:10] [Server thread/INFO]: Time elapsed: 189 ms
-[00:00:10] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[00:00:10] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[00:00:10] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.4
-[00:00:10] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[00:00:10] [Server thread/INFO]: Time elapsed: 134 ms
-[00:00:11] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[00:00:11] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
-[00:00:11] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[00:00:11] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[00:00:11] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[00:00:11] [Server thread/INFO]: Running delayed init tasks
-[00:00:11] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[00:00:11] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[00:00:11] [Server thread/INFO]: Done (6.601s)! For help, type "help"
-[00:00:11] [Server thread/INFO]: Timings Reset
-[00:00:17] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[00:00:17] [Server thread/INFO]: [+] ht06 join the server
-[00:00:17] [Server thread/INFO]: ht06[/127.0.0.1:57512] logged in with entity id 91 at ([world_Skyblock]0.3432684110458504, 70.0, 2.862331771675234)
-[00:00:19] [Server thread/INFO]: ht06 issued server command: /is quest
-[00:00:23] [Server thread/INFO]: ht06 issued server command: /stop
-[00:00:23] [Server thread/INFO]: [ht06: Stopping the server]
-[00:00:23] [Server thread/INFO]: Stopping server
-[00:00:23] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[00:00:23] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[00:00:23] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.4
-[00:00:23] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
-[00:00:23] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[00:00:23] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
-[00:00:23] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[00:00:23] [Server thread/INFO]: Saving players
-[00:00:23] [Server thread/INFO]: ht06 lost connection: Server closed
-[00:00:23] [Server thread/INFO]: ht06 left the game
-[00:00:23] [Server thread/INFO]: Saving worlds
-[00:00:23] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[00:00:23] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[00:00:23] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[00:00:23] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world' in 0,79s
-[00:00:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[00:00:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,51s
-[00:00:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[00:00:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,09s
-[00:00:24] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[00:00:24] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[00:00:24] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[00:00:25] [Server thread/INFO]: [ChunkHolderManager] Saved 625 block chunks, 625 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,11s
-[00:00:25] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[00:00:25] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[00:00:25] [Server thread/INFO]: Flushing Chunk IO
-[00:00:25] [Server thread/INFO]: Closing Thread Pool
-[00:00:25] [Server thread/INFO]: Closing Server
+[19:44:47] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[19:44:47] [Server thread/INFO]: Default game type: SURVIVAL
+[19:44:47] [Server thread/INFO]: Generating keypair
+[19:44:47] [Server thread/INFO]: Starting Minecraft server on *:25565
+[19:44:47] [Server thread/INFO]: Using default channel type
+[19:44:47] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[19:44:47] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:44:47] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:44:47] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[19:44:47] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[19:44:48] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@39f321fe]
+[19:44:48] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.5.2
+[19:44:48] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:44:48] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:44:48] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:44:48] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[19:44:48] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[19:44:48] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:44:49] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:44:49] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[19:44:50] [Server thread/INFO]: Preparing level "world"
+[19:44:51] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:44:52] [Server thread/INFO]: Time elapsed: 832 ms
+[19:44:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:44:52] [Server thread/INFO]: Time elapsed: 677 ms
+[19:44:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:44:53] [Server thread/INFO]: Time elapsed: 296 ms
+[19:44:53] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:44:53] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:44:53] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.5.2
+[19:44:53] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[19:44:53] [Server thread/INFO]: Time elapsed: 266 ms
+[19:44:53] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:44:53] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[19:44:53] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:44:53] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:44:54] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:44:54] [Server thread/INFO]: Running delayed init tasks
+[19:44:54] [Server thread/INFO]: Done (8.368s)! For help, type "help"
+[19:44:54] [Server thread/INFO]: Timings Reset
+[19:44:54] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:44:54] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:45:59] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[19:46:00] [Server thread/INFO]: [+] ht06 join the server
+[19:46:00] [Server thread/INFO]: ht06[/127.0.0.1:58017] logged in with entity id 92 at ([world_Skyblock]9.273882086444745, 70.0, -2.4260719999332547)
+[19:46:12] [Server thread/INFO]: ht06 issued server command: /is upgrade
+[20:00:53] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[20:00:53] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[20:00:53] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[20:00:53] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[20:00:53] [Server thread/INFO]: Using 4 threads for Netty based IO
+[20:00:54] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[20:00:54] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[20:00:54] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.5.2
+[20:00:54] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[20:00:54] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[20:00:54] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[20:00:54] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[20:00:54] [Server thread/INFO]: Loaded 1175 recipes
+[20:00:54] [Server thread/INFO]: Loaded 1276 advancements
+[20:00:54] [Paper Async Command Builder Thread Pool - 1/ERROR]: Caught previously unhandled exception :
+[20:00:54] [Paper Async Command Builder Thread Pool - 1/ERROR]: Paper Async Command Builder Thread Pool - 1
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[20:00:54] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.5.2.jar'...
+[20:00:55] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.5.2.jar' in 336ms.
+[20:00:55] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[20:00:55] [Server thread/INFO]: [WorldBorderAPI] Loading server plugin WorldBorderAPI v1.206.1
+[20:00:55] [Server thread/INFO]: [WorldEdit] Loading server plugin WorldEdit v7.3.3+6788-6359df8
+[20:00:56] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@4829247a]
+[20:00:56] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.5.2
+[20:00:56] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[20:00:56] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[20:00:56] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[20:00:56] [Server thread/INFO]: [WorldBorderAPI] Enabling WorldBorderAPI v1.206.1
+[20:00:56] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v7.3.3+6788-6359df8
+[20:00:56] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[20:00:56] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[20:00:56] [Server thread/WARN]: [WorldEdit] Server reload detected. This may cause various issues with WorldEdit and dependent plugins.
+[20:00:56] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.v1_20_R4.PaperweightAdapter as the Bukkit adapter
+[20:00:57] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[20:00:57] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[20:00:57] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.5.2
+[20:00:57] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[20:00:57] [Server thread/WARN]: [JustSkyblock] Could not save level.yml to plugins\JustSkyblock\level.yml because level.yml already exists.
+[20:00:57] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[20:00:57] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[20:00:57] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[20:00:57] [Server thread/INFO]: ht06: Reload complete.
+[20:00:57] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3493ms or 69 ticks behind
+[20:00:57] [Server thread/INFO]: Timings Reset
+[20:00:57] [Server thread/INFO]: ht06 issued server command: /is upgrade
+[20:00:57] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[20:00:57] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[20:01:14] [Server thread/INFO]: ht06 issued server command: /is upgrade
+[20:01:20] [Server thread/INFO]: ht06 issued server command: /stop
+[20:01:20] [Server thread/INFO]: [ht06: Stopping the server]
+[20:01:20] [Server thread/INFO]: Stopping server
+[20:01:20] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[20:01:20] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[20:01:20] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.5.2
+[20:01:20] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v7.3.3+6788-6359df8
+[20:01:20] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[20:01:20] [Server thread/INFO]: [WorldBorderAPI] Disabling WorldBorderAPI v1.206.1
+[20:01:20] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[20:01:20] [Server thread/INFO]: Saving players
+[20:01:20] [Server thread/INFO]: ht06 lost connection: Server closed
+[20:01:20] [Server thread/INFO]: ht06 left the game
+[20:01:20] [Server thread/INFO]: Saving worlds
+[20:01:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 43 entity chunks, 0 poi chunks in world 'world' in 0,01s
+[20:01:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[20:01:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,01s
+[20:01:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[20:01:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
+[20:01:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[20:01:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[20:01:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,00s
+[20:01:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[20:01:20] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[20:01:20] [Server thread/INFO]: Flushing Chunk IO
+[20:01:20] [Server thread/INFO]: Closing Thread Pool
+[20:01:20] [Server thread/INFO]: Closing Server

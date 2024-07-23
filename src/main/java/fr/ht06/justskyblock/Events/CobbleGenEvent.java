@@ -1,14 +1,14 @@
 package fr.ht06.justskyblock.Events;
 
+import fr.ht06.justskyblock.IslandManager.Island;
+import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFromToEvent;
-import org.bukkit.event.entity.ItemMergeEvent;
 
 import java.util.List;
 import java.util.Random;
@@ -16,12 +16,14 @@ import java.util.Random;
 public class CobbleGenEvent implements Listener {
 
     Random random = new Random();
+    IslandManager islandManager=JustSkyblock.islandManager;
 
     @EventHandler
     public void onGenCobble(BlockFromToEvent event){
 
         Block source = event.getBlock();
         Block generatedBlock = event.getToBlock();
+        Island island = islandManager.getIslandbyLocation(event.getBlock().getLocation());
 
         if (!JustSkyblock.getInstance().getConfig().getConfigurationSection("CustomGenerator").getBoolean("Enable")) return;
 
@@ -34,7 +36,7 @@ public class CobbleGenEvent implements Listener {
         }
 
         event.setCancelled(true);
-        generatedBlock.setType(chooseBlock());
+        generatedBlock.setType(chooseBlock(island));
 
     }
 
@@ -52,33 +54,31 @@ public class CobbleGenEvent implements Listener {
         return false;
     }
 
-    private Material chooseBlock(){
-        List<Material> blocks = List.of(Material.STONE, Material.COAL_ORE, Material.IRON_ORE, Material.LAPIS_ORE,
-                Material.REDSTONE_ORE, Material.DIAMOND_ORE, Material.EMERALD_ORE);
-
+    private Material chooseBlock(Island island){
         int nbrRandom = random.nextInt(101);
-
-        if (nbrRandom<=40){
-            return blocks.get(0);
+        if (island.getCobbleGenLevel() == 0){
+            List<Material> blocksLVL1 = List.of(Material.STONE, Material.GRANITE, Material.DIORITE, Material.ANDESITE,
+                    Material.COAL_ORE, Material.IRON_ORE, Material.EMERALD_ORE);
+            if (nbrRandom<=50){
+                return blocksLVL1.get(0);
+            }
+            else if (nbrRandom<=65){
+                return blocksLVL1.get(1);
+            }
+            else if (nbrRandom<=80){
+                return blocksLVL1.get(2);
+            }
+            else if (nbrRandom<=95){
+                return blocksLVL1.get(3);
+            }
+            else if (nbrRandom<=99){
+                return blocksLVL1.get(4);
+            }
+            else {
+                return blocksLVL1.get(5);
+            }
         }
-        else if (nbrRandom<=65){
-            return blocks.get(1);
-        }
-        else if (nbrRandom<=85){
-            return blocks.get(2);
-        }
-        else if (nbrRandom<=91){
-            return blocks.get(3);
-        }
-        else if (nbrRandom<=97){
-            return blocks.get(4);
-        }
-        else if (nbrRandom<=99){
-            return blocks.get(5);
-        }
-        else {
-            return blocks.get(6);
-        }
+        return null;
     }
 
 }

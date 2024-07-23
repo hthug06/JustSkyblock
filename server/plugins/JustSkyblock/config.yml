@@ -32,5 +32,5 @@ IS:
     Slot: 4
 
 CustomGenerator:
-  Enable: false  #true or false
+  Enable: true  #true or false
   #For now you can obtain all basic ore (not the deepslate and the nether one)

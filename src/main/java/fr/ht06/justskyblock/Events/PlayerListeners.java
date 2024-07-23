@@ -47,7 +47,7 @@ public class PlayerListeners implements Listener {
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
-        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.0 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.5 created by me (ht06)"));
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>NO MORE RESET! you can now play witouth fear!"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
@@ -197,7 +197,6 @@ public class PlayerListeners implements Listener {
 
                 //For Wood Cutting
                 name = capitalizeFirstAndAfterUnderscore(event.getBlockState().getType().name().replace("_LOG", "").replace("_STEM", ""));
-                player.sendMessage(name);
                 if (island.getLumberCounter().containsKey(name)){
                     if (JustSkyblock.placeByPlayer.contains(event.getBlockState().getLocation())){
                         JustSkyblock.placeByPlayer.remove(event.getBlockState().getLocation());
@@ -283,7 +282,6 @@ public class PlayerListeners implements Listener {
 
                 //For Wood Cutting
                 name = capitalizeFirstAndAfterUnderscore(event.getBlockState().getType().name().replace("_LOG", "").replace("_STEM", ""));
-                player.sendMessage(name);
                 if (island.getLumberCounter().containsKey(name)){
                     if (JustSkyblock.placeByPlayer.contains(event.getBlockState().getLocation())){
                         JustSkyblock.placeByPlayer.remove(event.getBlockState().getLocation());
@@ -479,7 +477,7 @@ public class PlayerListeners implements Listener {
         item = new ItemStack(Material.BEACON, 1);
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.displayName(Component.text("Tier 1 Talisman"));
-        itemMeta.lore(List.of(Component.text("This is a talisman to upgrade your island to tier 1 to tier 2"),
+        itemMeta.lore(List.of(Component.text("This is a talisman to rankup your island to tier 1 to tier 2"),
                 Component.text("DON'T LOSE THIS TALISMAN")));
 
         itemMeta.setRarity(ItemRarity.RARE);

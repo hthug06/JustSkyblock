@@ -11,6 +11,7 @@ import fr.ht06.justskyblock.Events.CobbleGenEvent;
 import fr.ht06.justskyblock.Events.InventoryEvents;
 import fr.ht06.justskyblock.Events.PlayerListeners;
 import fr.ht06.justskyblock.Inventory.Quest.*;
+import fr.ht06.justskyblock.Inventory.upgrade.UpgradeMain;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.TabCompleter.IsadminCommandTab;
@@ -383,5 +384,34 @@ public final class JustSkyblock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MiningQuest2(), this);
         getServer().getPluginManager().registerEvents(new LumberQuest(), this);
         getServer().getPluginManager().registerEvents(new LumberQuest2(), this);
+        getServer().getPluginManager().registerEvents(new UpgradeMain(), this);
+    }
+
+    public static ItemStack createItem(Component name, Integer amount, Material material){
+        ItemStack itemStack = new ItemStack(material, amount);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.displayName(name);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+    public static ItemStack createItem(Component name, Integer amount, Material material, List<Component> lore){
+        ItemStack itemStack = new ItemStack(material, amount);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.displayName(name);
+        itemMeta.lore(lore);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
+    }
+
+    public static ItemStack createItem(Component name, Integer amount, Material material, List<Component> lore, Boolean hideToolTips){
+        ItemStack itemStack = new ItemStack(material, amount);
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        itemMeta.displayName(name);
+        itemMeta.lore(lore);
+        itemMeta.setHideTooltip(hideToolTips);
+        itemStack.setItemMeta(itemMeta);
+        return itemStack;
     }
 }
+

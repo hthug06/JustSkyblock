@@ -1,5 +1,9 @@
 package fr.ht06.justskyblock.IslandManager;
 
+import fr.ht06.justskyblock.Events.PlayerListeners;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+
 import java.util.*;
 
 public class IslandManager {
@@ -53,6 +57,17 @@ public class IslandManager {
         for (Island v: allIsland){
             if (v.isOnThisIsland(playerName)){
                 return v.getIsland();
+            }
+        }
+        return null;
+    }
+
+    public Island getIslandbyLocation(Location location){
+        Location loc;
+        for (Island is : getAllIsland()) {
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
+            if (PlayerListeners.contains(location, loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
+                return is;
             }
         }
         return null;
@@ -133,10 +148,6 @@ public class IslandManager {
                 this.invitation.remove(playerName);
             }
         }
-
     }
-
-
-
 
 }

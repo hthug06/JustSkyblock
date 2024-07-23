@@ -29,10 +29,10 @@ public class IslandInfoInventory implements InventoryHolder {
 
     private void init(Island island, Player player) {
 
-        for (int i = 0; i<= 26; i++){
+        for (int i = 0; i<= 35; i++){
 
             switch (i){
-                case 0, 1, 2, 3,4, 5, 6, 7, 8, 9, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26->{
+                case 0, 1, 2, 3,4, 5, 6, 7, 8, 9, 17, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35->{
                     ItemStack itemStack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.setHideTooltip(true);

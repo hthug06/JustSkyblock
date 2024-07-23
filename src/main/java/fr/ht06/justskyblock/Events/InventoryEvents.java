@@ -1,7 +1,7 @@
 package fr.ht06.justskyblock.Events;
 
 import fr.ht06.justskyblock.Inventory.*;
-import fr.ht06.justskyblock.Inventory.RankupInventory;
+import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.LoadSchematic;

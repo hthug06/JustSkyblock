@@ -1,4 +1,4 @@
-package fr.ht06.justskyblock.Inventory;
+package fr.ht06.justskyblock.Inventory.rankup;
 
 import fr.ht06.justskyblock.IslandManager.Island;
 import net.kyori.adventure.text.Component;
@@ -149,12 +149,16 @@ public class RankupInventory implements InventoryHolder {
         ItemMeta itemMeta = item.getItemMeta();
         if (nbrItems.get() >= itemsToCheck.get(item.getType())) {
             itemMeta.lore(List.of(Component.text(nbrItems.get() + "/" + itemsToCheck.get(item.getType())).decoration(TextDecoration.ITALIC, false),
-                    Component.text("You have enough "+ Component.translatable(item.translationKey()) +" to rankup", TextColor.color(0x27AE60 )).decoration(TextDecoration.ITALIC, false)));
+                    Component.text("You have enough ", TextColor.color(0x27AE60 )).decoration(TextDecoration.ITALIC, false)
+                            .append(Component.translatable(item.translationKey(), TextColor.color(0x27AE60 )).decoration(TextDecoration.ITALIC, false))
+                            .append(text(" to rankup", TextColor.color(0x27AE60 ))).decoration(TextDecoration.ITALIC, false).decoration(TextDecoration.ITALIC, false)));
         }
         else{
             if (item.getAmount() == 0) item.setAmount(1);
             List<Component> lore = new java.util.ArrayList<>(List.of(Component.text(nbrItems.get() + "/" + itemsToCheck.get(item.getType())).decoration(TextDecoration.ITALIC, false),
-                    Component.text("You don't have enough " + Component.translatable(item.translationKey()) + " to rankup", TextColor.color(0xCB4335)).decoration(TextDecoration.ITALIC, false),
+                    Component.text("You don't have enough ", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)
+                            .append(Component.translatable(item.translationKey(), TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false))
+                            .append(text(" to rankup", TextColor.color(0xE74C3C))).decoration(TextDecoration.ITALIC, false),
                     Component.text(" ")));
 
             switch (item.getType()){

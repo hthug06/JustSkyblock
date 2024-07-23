@@ -21,6 +21,8 @@ public class Island {
     private boolean talisman = false;
     private LocalDateTime Date;
     private Date aujourdhui;
+    private Integer cobbleGenLevel = 0;
+    private Integer cobbleGenLevelUnlock = 0;
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<String, Boolean> farmingQuest = new HashMap<>();
     private Map<String, Integer> cropsCounter = new HashMap<>();
@@ -403,5 +405,21 @@ public class Island {
 
     public void setLumberCounter(String s, Integer i){
         lumberCounter.put(s, i);
+    }
+
+    public Integer getCobbleGenLevel() {
+        return cobbleGenLevel;
+    }
+
+    public void setCobbleGenLevel(Integer cobbleGenLevel) {
+        this.cobbleGenLevel = cobbleGenLevel;
+    }
+
+    public Integer getCobbleGenLevelUnlock() {
+        return cobbleGenLevelUnlock;
+    }
+
+    public void setCobbleGenLevelUnlock(Integer cobbleGenLevelUnlock) {
+        this.cobbleGenLevelUnlock = cobbleGenLevelUnlock;
     }
 }

@@ -4,7 +4,7 @@ WARNING 3: If you delete this file, every player data will be reset
 Island:
   ht06's Island:
     Level: 8.92
-    Rank: 1
+    Rank: 0
     Players:
       Owner: ht06
     LocationSpawn:
@@ -67,7 +67,7 @@ Island:
         Iron: 0
         Diamond: 0
         Copper: 0
-        Stone: 0
+        Stone: 1
         Lapis_lazuli: 0
       Lumbering:
         Spruce: 0

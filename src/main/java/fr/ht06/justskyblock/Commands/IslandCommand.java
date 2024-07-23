@@ -3,7 +3,8 @@ package fr.ht06.justskyblock.Commands;
 import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.Inventory.*;
 import fr.ht06.justskyblock.Inventory.Quest.MainQuestInventory;
-import fr.ht06.justskyblock.Inventory.RankupInventory;
+import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
+import fr.ht06.justskyblock.Inventory.upgrade.UpgradeMain;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
@@ -251,6 +252,17 @@ public class IslandCommand implements CommandExecutor {
                     MainQuestInventory mainQuestInventory = new MainQuestInventory(player, island);
                     player.openInventory(mainQuestInventory.getInventory());
                 }
+            }
+
+            if (args[0].equalsIgnoreCase("upgrade")){
+                if (!islandManager.playerHasIsland(player.getName())) {
+                    IslandInventory gui = new IslandInventory();
+                    player.openInventory(gui.getInventory());
+                    return true;
+                }
+
+                UpgradeMain upgradeMain = new UpgradeMain(player, island);
+                player.openInventory(upgradeMain.getInventory());
             }
 
         }
