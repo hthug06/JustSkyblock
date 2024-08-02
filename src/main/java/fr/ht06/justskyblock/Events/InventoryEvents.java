@@ -7,8 +7,13 @@ import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.LoadSchematic;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -20,6 +25,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -33,6 +39,7 @@ public class InventoryEvents implements Listener {
     private JustSkyblock main;
     private Integer[] coords = {1000, -1000};
     IslandManager islandManager = JustSkyblock.islandManager;
+    MiniMessage miniMessage = MiniMessage.miniMessage();
 
 
     public InventoryEvents(JustSkyblock main) {
@@ -64,33 +71,6 @@ public class InventoryEvents implements Listener {
                     //Si quelqu'un a déjà une ile
                     if (!islandManager.getAllIsland().isEmpty()) {
                         player.sendMessage("§aCreation of the Island");
-                        //Pour que les joueur ai pas ls meme coordonnées (temporaire)
-                        boolean find = false;
-                        int x = 0;
-                        int z = 0;
-                        List<Integer> finale = new ArrayList<>();
-
-
-                        /*while (!find) {
-                            x = x + coords[random.nextInt(0, 2)];
-                            z = z + coords[random.nextInt(0, 2)];
-                            finale.add(x);
-                            finale.add(z);
-                            if (!islandManager.getAllCoordinate().containsValue(finale)) {
-                                loc = new Location(Bukkit.getWorld("world_Skyblock"), x, 70, z);
-                                Island island = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
-                                islandManager.addIsland(island);
-                                //SkyblockPlugin.islandCoordinates.addCoordinates(islandManager.getIslandbyplayer(player.getName()).getIslandName(), finale);
-
-                                find = true;
-                            } else {
-                                finale = new ArrayList<>();
-                            }
-
-                            Island newIsland = new Island(player.getName()+"'s Island",player.getName(), finale, loc);
-                            SkyblockPlugin.islandManager.addIsland(newIsland);
-
-                        }*/
                         List<Integer> coord = getIslandCoordinate(player);
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"),coord.get(0), 70, coord.get(1));
 
@@ -98,9 +78,6 @@ public class InventoryEvents implements Listener {
                         newIsland.setOwner(player.getName());
                         JustSkyblock.islandManager.addIsland(newIsland);
 
-                        //new LoadSchematic(loc,"world_Skyblock", "islandPlain");
-
-                        //a régler
                         new LoadSchematic(loc, "world_Skyblock", islandlist.get("Schematic"));
 
                         player.closeInventory();
@@ -109,6 +86,13 @@ public class InventoryEvents implements Listener {
                         JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
                                 islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
                                 islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
+
+                        Component title = miniMessage.deserialize("<gradient:#52BE80:#5499C7:#52BE80><u><b>Welcome to Skyblock");
+                        Component subtitle = Component.text("If you are lost, use /is help", TextColor.color(0xccd1d1));
+
+                        Title mainTitle = Title.title(title, subtitle, Title.Times.times(Duration.ofSeconds(1), Duration.ofSeconds(5), Duration.ofSeconds(1)));
+
+                        player.showTitle(mainTitle);
 
                     }
 
@@ -138,6 +122,13 @@ public class InventoryEvents implements Listener {
                         JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
                                 islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
                                 islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
+
+                        Component title = miniMessage.deserialize("<gradient:#52BE80:#5499C7:#52BE80><u><b>Welcome to Skyblock");
+                        Component subtitle = Component.text("If you are lost, use /is help", TextColor.color(0xccd1d1));
+
+                        Title mainTitle = Title.title(title, subtitle, Title.Times.times(Duration.ofSeconds(1), Duration.ofSeconds(5), Duration.ofSeconds(1)));
+
+                        player.showTitle(mainTitle);
 
                     }
 

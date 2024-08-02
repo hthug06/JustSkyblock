@@ -590,7 +590,7 @@ public class IslandCommand implements CommandExecutor {
                 if (target != null && target.isOnline()) {
                     target.sendMessage(player.getName() + " kick you from the island");
                 }
-                player.sendMessage("You kick " + args[1] + "from the island");
+                player.sendMessage("You kick " + args[1] + " from the island");
             }
         }
         else if (island.isModerator(player.getName())) {

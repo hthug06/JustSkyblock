@@ -29,10 +29,10 @@ public class IslandInfoInventory implements InventoryHolder {
 
     private void init(Island island, Player player) {
 
-        for (int i = 0; i<= 35; i++){
+        for (int i = 0; i<= 26; i++){
 
             switch (i){
-                case 0, 1, 2, 3,4, 5, 6, 7, 8, 9, 17, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35->{
+                case 0, 1, 2, 3,4, 5, 6, 7, 8, 9, 17,18, 19, 20, 21, 22, 23, 24, 25, 26 /*for the future update ,27, 28, 29, 30, 31, 32, 33, 34, 35*/->{
                     ItemStack itemStack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.setHideTooltip(true);
@@ -114,15 +114,15 @@ public class IslandInfoInventory implements InventoryHolder {
                     if (island.getAllModerators().isEmpty()){
                         ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD, 1);
                         ItemMeta itemMeta = itemStack.getItemMeta();
-                        itemMeta.displayName(Component.text("Member of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                        itemMeta.displayName(Component.text("Moderator of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                         itemMeta.lore(List.of(Component.text("No moderator on this island :(", TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                         itemStack.setItemMeta(itemMeta);
                         inv.setItem(i, itemStack);
                     }
                     else{
-                        ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD, island.getAllMembers().size());
+                        ItemStack itemStack = new ItemStack(Material.DIAMOND_SWORD, island.getAllModerators().size());
                         ItemMeta itemMeta = itemStack.getItemMeta();
-                        itemMeta.displayName(Component.text("Member of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                        itemMeta.displayName(Component.text("Moderator of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                         List<Component> liste = new ArrayList<>();
                         for (String moderator : island.getAllModerators()){
                             Player target = Bukkit.getPlayerExact(moderator);
@@ -130,7 +130,7 @@ public class IslandInfoInventory implements InventoryHolder {
                                 liste.add(Component.text("- "+ moderator, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
 
                             } else {
-                                liste.add(Component.text("- "+moderator, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ moderator, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
 
                             }
                         }

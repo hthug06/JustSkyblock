@@ -140,65 +140,8 @@ public final class JustSkyblock extends JavaPlugin {
         //rajout des gens dans la hashmap
         DataConfig.setup();
         if (DataConfig.get().contains("Island")) {
-            Island island;
             for (String v : DataConfig.get().getConfigurationSection("Island").getKeys(false)) {
-                FileConfiguration dataconfig = DataConfig.get();
-                Location loc = new Location(Bukkit.getWorld("world_Skyblock"),
-                        dataconfig.getDouble("Island."+ v +".LocationSpawn.x"),
-                        dataconfig.getDouble("Island."+ v +".LocationSpawn.y"),
-                        dataconfig.getDouble("Island."+ v +".LocationSpawn.z"),
-                        dataconfig.getInt("Island."+ v +".LocationSpawn.pitch"),
-                        dataconfig.getInt("Island."+ v +".LocationSpawn.yaw"));
-
-                //création de l'ile
-                island = new Island(v, (List<Integer>) dataconfig.get("Island."+v+".Coordinates"), loc);
-
-                //les joueurs
-                island.setOwner((String) DataConfig.get().get("Island."+ v +".Players.Owner"));
-                if (DataConfig.get().contains("Island."+ v +".Players.Moderators")){
-                    island.setModerator((List<String>) DataConfig.get().getList("Island."+ v +".Players.Moderators"));
-                }
-                if (DataConfig.get().contains("Island."+ v +".Players.Members")){
-                    island.setMember((List<String>) DataConfig.get().getList("Island."+ v +".Players.Members"));
-                }
-
-                //les settings
-                @NotNull Map<String, Object> maps =  DataConfig.get().getConfigurationSection("Island."+v+".Settings").getValues(true);
-                for (Map.Entry<String, Object> m : maps.entrySet()){
-                    island.setSettings(m.getKey(), (Boolean) m.getValue());
-                }
-
-                //le level de l'île
-                island.setLevel(dataconfig.getDouble("Island."+ v +".Level"));
-
-                //le rank de l'ile
-                island.setRank(dataconfig.getInt("Island."+ v +".Rank"));
-
-                //date
-                LocalDateTime Date = LocalDateTime.of(dataconfig.getInt("Island." + v + ".CreationDate.Year"),
-                        dataconfig.getInt("Island." + v + ".CreationDate.Month"),
-                        dataconfig.getInt("Island." + v + ".CreationDate.Day"),
-                        dataconfig.getInt("Island." + v + ".CreationDate.Hour"),
-                        dataconfig.getInt("Island." + v + ".CreationDate.Minute"));
-                island.setDate(Date);
-
-                @NotNull Map<String, Object> FarmingQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Farming").getValues(true);
-                for (Map.Entry<String, Object> m : FarmingQuest.entrySet()){
-                    island.setCropsCounter(m.getKey(), (int)m.getValue());
-                }
-
-                @NotNull Map<String, Object> MiningQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Mining").getValues(true);
-                for (Map.Entry<String, Object> m : MiningQuest.entrySet()){
-                    island.setMineralCounter(m.getKey(), (int)m.getValue());
-                }
-
-                @NotNull Map<String, Object> LumberQuest =  DataConfig.get().getConfigurationSection("Island."+v+".Quests.Lumbering").getValues(true);
-                for (Map.Entry<String, Object> m : LumberQuest.entrySet()){
-                    island.setLumberCounter(m.getKey(), (int)m.getValue());
-                }
-
-                //ajout de l'île a l'island manager
-                islandManager.addIsland(island);
+                createAllIsland(v);
             }
         }
 
@@ -412,6 +355,97 @@ public final class JustSkyblock extends JavaPlugin {
         itemMeta.setHideTooltip(hideToolTips);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
+    }
+
+    private void createAllIsland(String v){
+        Island island;
+        FileConfiguration dataconfig = DataConfig.get();
+        //if we don't have the coordinates, we don't create the island
+        if (!DataConfig.get().contains("Island."+ v +".LocationSpawn")) return;
+
+        Location loc = new Location(Bukkit.getWorld("world_Skyblock"),
+                dataconfig.getDouble("Island."+ v +".LocationSpawn.x"),
+                dataconfig.getDouble("Island."+ v +".LocationSpawn.y"),
+                dataconfig.getDouble("Island."+ v +".LocationSpawn.z"),
+                dataconfig.getInt("Island."+ v +".LocationSpawn.pitch"),
+                dataconfig.getInt("Island."+ v +".LocationSpawn.yaw"));
+
+        //creation of the island
+        island = new Island(v, (List<Integer>) dataconfig.get("Island."+v+".Coordinates"), loc);
+
+        //Players
+        if (!DataConfig.get().contains("Island."+ v +".Players.Owner")){
+            return;  //No owner = no island
+        }
+        else{
+            island.setOwner((String) DataConfig.get().get("Island."+ v +".Players.Owner"));
+        }
+
+        if (DataConfig.get().contains("Island."+ v +".Players.Moderators")){
+            island.setModerator((List<String>) DataConfig.get().getList("Island."+ v +".Players.Moderators"));
+        }
+        if (DataConfig.get().contains("Island."+ v +".Players.Members")){
+            island.setMember((List<String>) DataConfig.get().getList("Island."+ v +".Players.Members"));
+        }
+
+        //les settings
+        if (!DataConfig.get().contains("Island."+v+".Settings")) {
+            //If the yml don't contain settings, it's okay
+            @NotNull Map<String, Object> maps =  DataConfig.get().getConfigurationSection("Island."+v+".Settings").getValues(true);
+            for (Map.Entry<String, Object> m : maps.entrySet()){
+                island.setSettings(m.getKey(), (Boolean) m.getValue());
+            }
+        }
+
+
+
+        //le level de l'île
+        if (DataConfig.get().contains("Island."+ v +".Level")) {
+            island.setLevel(dataconfig.getDouble("Island." + v + ".Level"));
+        }
+        else island.setLevel(0);
+
+        //le rank de l'ile
+        if (DataConfig.get().contains("Island."+ v +".Rank")) {
+            island.setLevel(dataconfig.getDouble("Island." + v + ".Rank"));
+        }
+        else island.setRank(0);
+
+        //date
+        if (DataConfig.get().contains("Island." + v + ".CreationDate")) {
+            LocalDateTime Date = LocalDateTime.of(dataconfig.getInt("Island." + v + ".CreationDate.Year"),
+                    dataconfig.getInt("Island." + v + ".CreationDate.Month"),
+                    dataconfig.getInt("Island." + v + ".CreationDate.Day"),
+                    dataconfig.getInt("Island." + v + ".CreationDate.Hour"),
+                    dataconfig.getInt("Island." + v + ".CreationDate.Minute"));
+            island.setDate(Date);
+        }
+        //Else date is set in the island constructor
+
+
+        if (DataConfig.get().contains("Island."+v+".Quests.Farming")) {
+            @NotNull Map<String, Object> FarmingQuest = DataConfig.get().getConfigurationSection("Island." + v + ".Quests.Farming").getValues(true);
+            for (Map.Entry<String, Object> m : FarmingQuest.entrySet()) {
+                island.setCropsCounter(m.getKey(), (int) m.getValue());
+            }
+        }//else set in the constructor
+
+        if (DataConfig.get().contains("Island."+v+".Quests.Mining")) {
+            @NotNull Map<String, Object> MiningQuest = DataConfig.get().getConfigurationSection("Island." + v + ".Quests.Mining").getValues(true);
+            for (Map.Entry<String, Object> m : MiningQuest.entrySet()) {
+                island.setMineralCounter(m.getKey(), (int) m.getValue());
+            }
+        }//else set in the constructor
+
+        if (DataConfig.get().contains("Island."+v+".Quests.Mining")) {
+            @NotNull Map<String, Object> LumberQuest = DataConfig.get().getConfigurationSection("Island." + v + ".Quests.Lumbering").getValues(true);
+            for (Map.Entry<String, Object> m : LumberQuest.entrySet()) {
+                island.setLumberCounter(m.getKey(), (int) m.getValue());
+            }
+        }//else set in the constructor
+
+        //ajout de l'île a l'island manager
+        islandManager.addIsland(island);
     }
 }
 

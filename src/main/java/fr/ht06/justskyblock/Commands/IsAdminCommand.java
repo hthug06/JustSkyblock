@@ -56,7 +56,13 @@ public class IsAdminCommand implements CommandExecutor {
                                                 .clickEvent(ClickEvent.copyToClipboard(isName)));
                                 player.sendMessage(msg);
                             }
-                            player.sendMessage("----------------------------");
+
+                            Component msgBarre = Component.text("---------------------")
+                                    .append(Component.text(">")
+                                            .hoverEvent(HoverEvent.showText(Component.text("Go to the next Page")))
+                                            .clickEvent(ClickEvent.runCommand("/isa allisland 2")))
+                                    .append(Component.text("-------"));
+                            player.sendMessage(msgBarre);
                         }
                         else{
                             player.sendMessage("--- list of island page 1 ---");
@@ -80,9 +86,23 @@ public class IsAdminCommand implements CommandExecutor {
 
                         for (int i = (page - 1) * 10; i < page * 10; i++) {
                             if (i >= islandManager.getAllIsland().size()) break;
-                            player.sendMessage(islandManager.getAllIsland().get(i).getOwner() + ": " + islandManager.getAllIsland().get(i).getIslandName());
+                            String isName = islandManager.getAllIsland().get(i).getIslandName();
+                            String ownerName =  islandManager.getAllIsland().get(i).getOwner();
+                            Component msg = Component.text(ownerName + ": ")
+                                    .append(Component.text(isName)
+                                            .hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
+                                            .clickEvent(ClickEvent.copyToClipboard(isName)));
+                            player.sendMessage(msg);
                         }
-                        player.sendMessage("----------------------------");
+
+                        Component msgBarre = Component.text("---------------------")
+                                .append(Component.text(">")
+                                        .hoverEvent(HoverEvent.showText(Component.text("Go to the next Page")))
+                                        .clickEvent(ClickEvent.runCommand("/isa allisland "+(page+1)))
+                                .append(Component.text("-------")));
+                        player.sendMessage(msgBarre);
+
+                        player.sendMessage(msgBarre);
                         player.sendMessage("");
 
                     }
@@ -155,22 +175,22 @@ public class IsAdminCommand implements CommandExecutor {
                 .append(Component.text(" -----", TextColor.color(0x1E8449))));  // --- Help Island ---
 
         player.sendMessage(Component.text("/islandAdmin allIsland: ", TextColor.color(0x1F618D))
-                .clickEvent(ClickEvent.suggestCommand("/islandAdmin allisland"))
+                .clickEvent(ClickEvent.suggestCommand("/islandadmin allisland"))
                 .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x1F618D))))
                 .append(Component.text("List every island with the name of the owner ", TextColor.color(0x1E8449))));
 
         player.sendMessage(Component.text("/islandAdmin help: ", TextColor.color(0x1F618D))
-                .clickEvent(ClickEvent.suggestCommand("/islandAdmin help"))
+                .clickEvent(ClickEvent.suggestCommand("/islandadmin help"))
                 .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x1F618D))))
                 .append(Component.text("All the command related to the /islandAdmin ", TextColor.color(0x1E8449))));
 
         player.sendMessage(Component.text("/islandAdmin info player <playername>: ", TextColor.color(0x1F618D))
-                .clickEvent(ClickEvent.suggestCommand("/islandAdmin info player "))
+                .clickEvent(ClickEvent.suggestCommand("/islandadmin info player "))
                 .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x1F618D))))
                 .append(Component.text("See the info of an island by having the name of a player ", TextColor.color(0x1E8449))));
 
         player.sendMessage(Component.text("/islandAdmin info island <islandname>: ", TextColor.color(0x1F618D))
-                .clickEvent(ClickEvent.suggestCommand("/islandAdmin info island "))
+                .clickEvent(ClickEvent.suggestCommand("/islandadmin info island "))
                 .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x1F618D))))
                 .append(Component.text("See the info of an island by having the name of an island", TextColor.color(0x1E8449))));
 
