@@ -20,6 +20,7 @@ public class IsadminCommandTab implements TabCompleter {
             listearg0.add("allisland");
             listearg0.add("help");
             listearg0.add("info");
+            listearg0.add("reload");
             return listearg0;
         }
         if (strings.length == 2){

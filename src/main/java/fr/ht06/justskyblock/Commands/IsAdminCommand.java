@@ -1,10 +1,10 @@
 package fr.ht06.justskyblock.Commands;
 
+import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.Inventory.IslandInfoInventory;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
-import io.papermc.paper.event.player.PlayerPickItemEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.event.ClickCallback;
@@ -14,12 +14,15 @@ import net.kyori.adventure.text.event.HoverEventSource;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
 
 public class IsAdminCommand implements CommandExecutor {
 
@@ -31,7 +34,89 @@ public class IsAdminCommand implements CommandExecutor {
         //Tout pour si la commande est utlisé en console
         if (!(sender instanceof Player)){
             if (args.length == 0){
-                sender.sendMessage("help menu (not finish LOL)");
+                sender.sendMessage("--- Island Admin Help (Console version) ---");
+                sender.sendMessage("IslandAdmin help: All subcommand and some indication about the IslandAdmin command");
+                sender.sendMessage("IslandAdmin info player <player>: See info of the player's island");
+                sender.sendMessage("IslandAdmin info island <island>: See info about this island");
+            }
+            if (args.length >= 1){
+                if (args.length == 1) {
+                    sender.sendMessage("IslandAdmin info player <player>");
+                    sender.sendMessage("IslandAdmin info island <island>");
+                    return true;
+                }
+
+                if(args[0].equalsIgnoreCase("info")){
+
+                    if (args.length == 2) {
+                        sender.sendMessage("IslandAdmin info player <player>");
+                        sender.sendMessage("IslandAdmin info island <island>");
+                        return true;
+                    }
+
+
+                    if (!(args[1].equalsIgnoreCase("player") || args[1].equalsIgnoreCase("island"))){
+                        sender.sendMessage("IslandAdmin info player <player>");
+                        sender.sendMessage("IslandAdmin info island <island>");
+                        return true;
+                    }
+
+
+
+                    if (args[1].equalsIgnoreCase("player")){
+
+                        if (islandManager.playerHasIsland(args[2])){
+                            Island island = islandManager.getIslandbyplayer(args[2]);
+                            sender.sendMessage("Island name : " + island.getIslandName());
+                            sender.sendMessage("Island level  : " + island.getLevel());
+                            sender.sendMessage("Island rank : " +island.getRank());
+                            sender.sendMessage("Island size : " + island.getSize());
+                            sender.sendMessage("Owner : " + island.getOwner());
+                            sender.sendMessage("Moderator : " + island.getAllModerators());
+                            sender.sendMessage("Member : " + island.getAllMembers());
+                            sender.sendMessage("Creation Date : " + island.getDate());
+                        }
+                        else{
+                            sender.sendMessage("This player didn't has an island");
+                        }
+                    }
+
+                    if (args[1].equalsIgnoreCase("island")){
+
+                        StringBuilder stringBuilder = new StringBuilder();
+                        for (int i = 2; i < args.length; i++) {
+                            stringBuilder.append(args[i]).append(" ");
+                        }
+                        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                        sender.sendMessage(stringBuilder.toString());
+                        if (islandManager.IslandExist(stringBuilder.toString())){
+                            Island island = islandManager.getIslandbyName(stringBuilder.toString());
+                            sender.sendMessage("Island name : " + island.getIslandName());
+                            sender.sendMessage("Island level  : " + island.getLevel());
+                            sender.sendMessage("Island rank : " +island.getRank());
+                            sender.sendMessage("Island size : " + island.getSize());
+                            sender.sendMessage("Owner : " + island.getOwner());
+                            sender.sendMessage("Moderator : " + island.getAllModerators());
+                            sender.sendMessage("Member : " + island.getAllMembers());
+                            sender.sendMessage("Creation Date : " + island.getDate());
+                        }
+                        else{
+                            sender.sendMessage("This island didn't exist");
+                        }
+                    }
+                }
+
+                if (args[0].equalsIgnoreCase("reload")){
+                    JustSkyblock.getInstance().reloadConfig();
+                    if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
+                        IslandLevel.reload();
+                    }
+                    else{
+                        JustSkyblock.getInstance().createLevelConfig();
+                    }
+                    sender.sendMessage("§cConfig reload");
+                    return true;
+                }
             }
         }
         else{
@@ -45,7 +130,7 @@ public class IsAdminCommand implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("allisland")) {
                     if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
                         if (islandManager.getAllIsland().size()>10) {
-                            player.sendMessage("--- list of island page 1 ---");
+                            player.sendMessage("--- list of island page 1 (total of "+ islandManager.getAllIsland().size()+ ") ---");
                             for (int i = 0; i < 10; i++) {
                                 String isName = islandManager.getAllIsland().get(i).getIslandName();
                                 String ownerName =  islandManager.getAllIsland().get(i).getOwner();
@@ -100,8 +185,6 @@ public class IsAdminCommand implements CommandExecutor {
                                         .hoverEvent(HoverEvent.showText(Component.text("Go to the next Page")))
                                         .clickEvent(ClickEvent.runCommand("/isa allisland "+(page+1)))
                                 .append(Component.text("-------")));
-                        player.sendMessage(msgBarre);
-
                         player.sendMessage(msgBarre);
                         player.sendMessage("");
 
@@ -161,6 +244,18 @@ public class IsAdminCommand implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("help")){
                     commandHelp(args, player);
+                }
+
+                if (args[0].equalsIgnoreCase("reload")){
+                    JustSkyblock.getInstance().reloadConfig();
+                    if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
+                        IslandLevel.reload();
+                    }
+                    else{
+                        JustSkyblock.getInstance().createLevelConfig();
+                    }
+                    sender.sendMessage("§cConfig reload");
+                    return true;
                 }
             }
         }

@@ -11,6 +11,8 @@ import fr.ht06.justskyblock.Events.CobbleGenEvent;
 import fr.ht06.justskyblock.Events.InventoryEvents;
 import fr.ht06.justskyblock.Events.PlayerListeners;
 import fr.ht06.justskyblock.Inventory.Quest.*;
+import fr.ht06.justskyblock.Inventory.upgrade.CustomCobbleGenUpgrade;
+import fr.ht06.justskyblock.Inventory.upgrade.UpgradeGenLvl;
 import fr.ht06.justskyblock.Inventory.upgrade.UpgradeMain;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
@@ -31,6 +33,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.time.LocalDateTime;
@@ -72,10 +75,12 @@ public final class JustSkyblock extends JavaPlugin {
         }
         worldBorderApi = worldBorderApiRegisteredServiceProvider.getProvider();
 
+        //metrics /Bstats
+        Metrics metrics = new Metrics(this, 22941);
+
         //All the commands (not the subCommand like /is visit)
         getCommand("is").setExecutor(new IslandCommand(this));
-        getCommand("test").setExecutor(new Test(this));
-        getCommand("justskyblock").setExecutor(new skyblockpluginCommand(this));
+        //getCommand("test").setExecutor(new Test(this));
         getCommand("isadmin").setExecutor(new IsAdminCommand());
 
         //All the tabCompleter
@@ -163,6 +168,7 @@ public final class JustSkyblock extends JavaPlugin {
         //Pour les level
         createLevelConfig();
         IslandLevel.save();
+
     }
 
     @Override
@@ -191,6 +197,8 @@ public final class JustSkyblock extends JavaPlugin {
             //Ranks
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Rank", v.getRank());
 
+            //CustomgenLevel
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Generator", v.getCobbleGenLevelUnlock());
 
             //les joueur de l'île
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Players").set("Owner", v.getOwner()); //le chef
@@ -328,20 +336,22 @@ public final class JustSkyblock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LumberQuest(), this);
         getServer().getPluginManager().registerEvents(new LumberQuest2(), this);
         getServer().getPluginManager().registerEvents(new UpgradeMain(), this);
+        getServer().getPluginManager().registerEvents(new CustomCobbleGenUpgrade(), this);
+        getServer().getPluginManager().registerEvents(new UpgradeGenLvl(), this);
     }
 
-    public static ItemStack createItem(Component name, Integer amount, Material material){
+    public static ItemStack createItem(@Nullable Component name, Integer amount, Material material){
         ItemStack itemStack = new ItemStack(material, amount);
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.displayName(name);
+        if (name!=null) itemMeta.displayName(name);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
 
-    public static ItemStack createItem(Component name, Integer amount, Material material, List<Component> lore){
+    public static ItemStack createItem(@Nullable Component name, Integer amount, Material material, List<Component> lore){
         ItemStack itemStack = new ItemStack(material, amount);
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.displayName(name);
+        if (name!=null) itemMeta.displayName(name);
         itemMeta.lore(lore);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
@@ -356,6 +366,8 @@ public final class JustSkyblock extends JavaPlugin {
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
+
+
 
     private void createAllIsland(String v){
         Island island;
@@ -410,6 +422,16 @@ public final class JustSkyblock extends JavaPlugin {
             island.setLevel(dataconfig.getDouble("Island." + v + ".Rank"));
         }
         else island.setRank(0);
+
+        //le Generator de l'ile
+        if (DataConfig.get().contains("Island."+ v +".Generator")) {
+            island.setCobbleGenLevel(dataconfig.getInt("Island." + v + ".Generator"));
+            island.setCobbleGenLevelUnlock(dataconfig.getInt("Island." + v + ".Generator"));
+        }
+        else{
+            island.setCobbleGenLevelUnlock(1);
+            island.setCobbleGenLevel(1);
+        }
 
         //date
         if (DataConfig.get().contains("Island." + v + ".CreationDate")) {

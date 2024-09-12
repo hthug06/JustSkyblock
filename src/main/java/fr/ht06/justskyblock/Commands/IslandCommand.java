@@ -207,7 +207,7 @@ public class IslandCommand implements CommandExecutor {
                 commandSetName(args, island, player);
             }
 
-            if (args[0].equalsIgnoreCase("level")){
+            if (args[0].equalsIgnoreCase("level") || args[0].equalsIgnoreCase("lvl")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());

@@ -10,8 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFromToEvent;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class CobbleGenEvent implements Listener {
 
@@ -56,29 +55,20 @@ public class CobbleGenEvent implements Listener {
 
     private Material chooseBlock(Island island){
         int nbrRandom = random.nextInt(101);
-        if (island.getCobbleGenLevel() == 0){
-            List<Material> blocksLVL1 = List.of(Material.STONE, Material.GRANITE, Material.DIORITE, Material.ANDESITE,
-                    Material.COAL_ORE, Material.IRON_ORE, Material.EMERALD_ORE);
-            if (nbrRandom<=50){
-                return blocksLVL1.get(0);
-            }
-            else if (nbrRandom<=65){
-                return blocksLVL1.get(1);
-            }
-            else if (nbrRandom<=80){
-                return blocksLVL1.get(2);
-            }
-            else if (nbrRandom<=95){
-                return blocksLVL1.get(3);
-            }
-            else if (nbrRandom<=99){
-                return blocksLVL1.get(4);
-            }
-            else {
-                return blocksLVL1.get(5);
+//        int nbrRandom = 100;
+        float luck = 0; //the chance the block appear
+
+        for (Object s : JustSkyblock.instance.getConfig().getList("CustomGenerator.level."+island.getCobbleGenLevel())){ //loop for every block
+            float chance = Float.parseFloat(s.toString().split(":")[1]);  //get the chance the block appear
+            luck+= chance; //add to the luck
+            if (nbrRandom<=luck){
+                String block = s.toString().split(":")[0];
+//                JustSkyblock.getInstance().getLogger().info(String.valueOf(luck));
+//                JustSkyblock.getInstance().getLogger().info(String.valueOf(nbrRandom));
+                return Material.getMaterial(block.toUpperCase());
             }
         }
-        return null;
+        return Material.COBBLESTONE;
     }
 
 }

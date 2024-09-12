@@ -23,22 +23,22 @@ public class IslandInfoInventory implements InventoryHolder {
     Inventory inv;
 
     public IslandInfoInventory(Island island, Player player){
-        inv = Bukkit.createInventory(this, 27, island.getIslandName());
+        inv = Bukkit.createInventory(this, 36, island.getIslandName());
         init(island, player);
     }
 
     private void init(Island island, Player player) {
+        for (int slot = 0; slot <=35; slot++) {
+            ItemStack itemStack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
+            ItemMeta itemMeta = itemStack.getItemMeta();
+            itemMeta.setHideTooltip(true);
+            itemStack.setItemMeta(itemMeta);
+            inv.setItem(slot, itemStack);
+        }
 
         for (int i = 0; i<= 26; i++){
 
             switch (i){
-                case 0, 1, 2, 3,4, 5, 6, 7, 8, 9, 17,18, 19, 20, 21, 22, 23, 24, 25, 26 /*for the future update ,27, 28, 29, 30, 31, 32, 33, 34, 35*/->{
-                    ItemStack itemStack = new ItemStack(Material.GRAY_STAINED_GLASS_PANE, 1);
-                    ItemMeta itemMeta = itemStack.getItemMeta();
-                    itemMeta.setHideTooltip(true);
-                    itemStack.setItemMeta(itemMeta);
-                    inv.setItem(i, itemStack);
-                }
                 case 10->{
                     ItemStack itemStack = new ItemStack(Material.CLOCK, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
@@ -144,6 +144,14 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Island Rank", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                     itemMeta.lore(List.of(Component.text(String.valueOf(island.getRank()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemStack.setItemMeta(itemMeta);
+                    inv.setItem(i, itemStack);
+                }
+                case 25 ->{
+                    ItemStack itemStack = new ItemStack(Material.GRASS_BLOCK, 1);
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    itemMeta.displayName(Component.text("Island Size", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getSize()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }

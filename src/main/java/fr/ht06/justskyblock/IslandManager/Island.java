@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.IslandManager;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -18,11 +19,10 @@ public class Island {
     private double level = 0;
     private int size = 20;
     private int rank = 0;
-    private boolean talisman = false;
     private LocalDateTime Date;
     private Date aujourdhui;
-    private Integer cobbleGenLevel = 0;
-    private Integer cobbleGenLevelUnlock = 0;
+    private Integer cobbleGenLevel = 1;
+    private Integer cobbleGenLevelUnlock = 1;
     private Map<String , Boolean> allSettings = new LinkedHashMap<>();  //Pour ne pas ranger par ordre alphbétique
     private Map<String, Boolean> farmingQuest = new HashMap<>();
     private Map<String, Integer> cropsCounter = new HashMap<>();
@@ -30,7 +30,6 @@ public class Island {
     private Map<String, Integer> mineralCounter = new HashMap<>();
     private Map<String, Boolean> lumberQuest = new HashMap<>();
     private Map<String, Integer> lumberCounter = new HashMap<>();
-    private Map<String, Boolean> Quest = new HashMap<>();
     private Map<Object, Object> Island = new HashMap<>();
 
     public Island(String IslandName, List<Integer> islandCoordinates, Location islandSpawn){
@@ -164,10 +163,6 @@ public class Island {
         this.rank = rank;
     }
 
-    public boolean hasCraftedTalisman(){
-        return this.talisman;
-    }
-
     public LocalDateTime getDate(){
         return Date;
     }
@@ -248,6 +243,26 @@ public class Island {
     }
 
     public void BroadcastMessage(String message) {
+        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        if (playerOwner != null && playerOwner.isOnline()) {
+            playerOwner.sendMessage(message);
+        }
+
+        for (String modo : Moderator) {
+            Player playerModo = Bukkit.getPlayerExact(modo);
+            if (playerModo != null && playerModo.isOnline()) {
+                playerModo.sendMessage(message);
+            }
+        }
+        for (String member : Member) {
+            Player playerMember = Bukkit.getPlayerExact(member);
+            if (playerMember != null && playerMember.isOnline()) {
+                playerMember.sendMessage(message);
+            }
+        }
+    }
+
+    public void BroadcastMessage(Component message) {
         Player playerOwner = Bukkit.getPlayerExact(Owner);
         if (playerOwner != null && playerOwner.isOnline()) {
             playerOwner.sendMessage(message);

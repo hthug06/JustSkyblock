@@ -1,6 +1,7 @@
 package fr.ht06.justskyblock;
 
 import fr.ht06.justskyblock.Config.IslandLevel;
+import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -8,13 +9,19 @@ import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+
+import java.text.Format;
+import java.util.Arrays;
 
 public class Test implements CommandExecutor {
 
@@ -35,18 +42,23 @@ public class Test implements CommandExecutor {
             //SkyblockPlugin.customConfig.
             //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
             //player.sendMessage(String.valueOf(IslandLevel.get().getConfigurationSection("Material.Special").getKeys(false)));
-            for (String path : IslandLevel.get().getConfigurationSection("Material").getKeys(false)){
-                player.sendMessage(path);
-            }
-            player.sendMessage(String.valueOf(IslandLevel.get().getConfigurationSection("Material." +  "Special").getKeys(false).contains(player.getInventory().getItemInMainHand().getType().name())));
-            //player.sendMessage(String.valueOf(IslandLevel.get().getList("Material.Special").contains(player.getInventory().getItemInMainHand().getType().name())));
-            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
+//            for (String path : IslandLevel.get().getConfigurationSection("Material").getKeys(false)){
+//                player.sendMessage(path);
+//            }
+//            player.sendMessage(String.valueOf(IslandLevel.get().getConfigurationSection("Material." +  "Special").getKeys(false).contains(player.getInventory().getItemInMainHand().getType().name())));
+//            //player.sendMessage(String.valueOf(IslandLevel.get().getList("Material.Special").contains(player.getInventory().getItemInMainHand().getType().name())));
+//            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
+            Island island=islandManager.getIslandbyplayer(player.getName());
 
+            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
+            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
         }
 
 
         if (strings.length >= 1){
-            player.sendMessage(String.valueOf(JustSkyblock.placeByPlayer));
+//            Island island=islandManager.getIslandbyplayer(player.getName());
+//            island.setCobbleGenLevelUnlock(6);
+            player.sendMessage(Arrays.toString(player.getInventory().getContents()));
             //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));

@@ -1,5 +1,5 @@
 name: JustSkyblock
-version: 'alpha-1.5.2'
+version: 'alpha-1.6'
 main: fr.ht06.justskyblock.JustSkyblock
 api-version: '1.20'
 author: ht06
@@ -20,12 +20,6 @@ commands:
     aliases:
       - islandadmin
       - isa
-
-  justskyblock:
-    aliases:
-      - js
-    description: reload the config
-    permission: justskyblock.reload
 
   test:
     description: fait chioer

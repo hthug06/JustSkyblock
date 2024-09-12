@@ -47,7 +47,7 @@ public class PlayerListeners implements Listener {
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
-        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.5 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.6 created by me (ht06)"));
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>NO MORE RESET! you can now play witouth fear!"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
@@ -471,20 +471,4 @@ public class PlayerListeners implements Listener {
         }
         return null;
     }
-
-    public ItemStack getTier1() {
-        ItemStack item;
-        item = new ItemStack(Material.BEACON, 1);
-        ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.displayName(Component.text("Tier 1 Talisman"));
-        itemMeta.lore(List.of(Component.text("This is a talisman to rankup your island to tier 1 to tier 2"),
-                Component.text("DON'T LOSE THIS TALISMAN")));
-
-        itemMeta.setRarity(ItemRarity.RARE);
-        itemMeta.setEnchantmentGlintOverride(true);
-        item.setItemMeta(itemMeta);
-
-        return item;
-    }
-
 }

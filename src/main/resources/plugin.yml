@@ -21,15 +21,9 @@ commands:
       - islandadmin
       - isa
 
-  justskyblock:
-    aliases:
-      - js
-    description: reload the config
-    permission: justskyblock.reload
-
-  test:
-    description: fait chioer
-    permission: justskyblock.test
+  #test:
+    #description: fait chioer
+    #permission: justskyblock.test
 
 
 
