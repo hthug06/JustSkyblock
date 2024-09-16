@@ -58,14 +58,6 @@ public class IslandLevelPlaceholder extends PlaceholderExpansion {
                     return "";
                 }
             }
-
-            if (params.equalsIgnoreCase("test")){
-                return "hello";
-            }
-
-            if (params.equalsIgnoreCase("test2")){
-                return "hello world mdr";
-            }
         }
         return null;
     }

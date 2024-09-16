@@ -1,5 +1,5 @@
 name: JustSkyblock
-version: 'alpha-1.6'
+version: 'alpha-1.6.1'
 main: fr.ht06.justskyblock.JustSkyblock
 api-version: '1.20'
 author: ht06
@@ -21,9 +21,9 @@ commands:
       - islandadmin
       - isa
 
-  test:
-    description: fait chioer
-    permission: justskyblock.test
+  #test:
+    #description: fait chioer
+    #permission: justskyblock.test
 
 
 

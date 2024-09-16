@@ -3,7 +3,6 @@ package fr.ht06.justskyblock;
 import com.github.yannicklamprecht.worldborder.api.WorldBorderApi;
 import fr.ht06.justskyblock.Commands.IsAdminCommand;
 import fr.ht06.justskyblock.Commands.IslandCommand;
-import fr.ht06.justskyblock.Commands.skyblockpluginCommand;
 import fr.ht06.justskyblock.Config.BlockPlacedByPlayerConfig;
 import fr.ht06.justskyblock.Config.DataConfig;
 import fr.ht06.justskyblock.Config.IslandLevel;
@@ -311,8 +310,10 @@ public final class JustSkyblock extends JavaPlugin {
     }
 
     public void createLevelConfig(){
+        if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "level.yml").exists()){
+            super.saveResource("level.yml", false /* don't replace the file on disk if it exists */);
+        }
         //recup le dossier .yml dans les ressources
-        super.saveResource("level.yml", false /* don't replace the file on disk if it exists */);
         //Pourvoir l'utiliser
         customConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "level.yml"));
         //Utiliser cette class pour simplifier

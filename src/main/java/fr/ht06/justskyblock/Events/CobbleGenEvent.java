@@ -33,6 +33,9 @@ public class CobbleGenEvent implements Listener {
         if (!this.isCobbleGenerator(generatedBlock)) {
             return;
         }
+        if (!source.getWorld().getName().equalsIgnoreCase("world_Skyblock")){
+            return;
+        }
 
         event.setCancelled(true);
         generatedBlock.setType(chooseBlock(island));
