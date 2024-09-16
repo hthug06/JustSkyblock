@@ -777,6 +777,11 @@ public class IslandCommand implements CommandExecutor {
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
                             .append(Component.text("See your island team", TextColor.color(0x52BE80))));
 
+                    player.sendMessage(Component.text("/island upgrade: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island upgrade"))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Upgrade your island generator", TextColor.color(0x52BE80))));
+
                     player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island visit "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
@@ -881,6 +886,11 @@ public class IslandCommand implements CommandExecutor {
                             .clickEvent(ClickEvent.suggestCommand("/island team "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
                             .append(Component.text("See your island team", TextColor.color(0x52BE80))));
+
+                    player.sendMessage(Component.text("/island upgrade: ", TextColor.color(0x5499C7))
+                            .clickEvent(ClickEvent.suggestCommand("/island upgrade"))
+                            .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                            .append(Component.text("Upgrade your island generator", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island visit: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island visit "))
