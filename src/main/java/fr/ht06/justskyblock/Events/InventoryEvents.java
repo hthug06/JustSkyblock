@@ -2,8 +2,10 @@ package fr.ht06.justskyblock.Events;
 
 import fr.ht06.justskyblock.Inventory.*;
 import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
+import fr.ht06.justskyblock.IslandManager.DeleteIsland;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
+import fr.ht06.justskyblock.IslandManager.IslandWorldBorder;
 import fr.ht06.justskyblock.LoadSchematic;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
@@ -17,12 +19,14 @@ import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.WorldBorder;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.io.File;
 import java.time.Duration;
@@ -68,14 +72,19 @@ public class InventoryEvents implements Listener {
 
                 //Si le joueur n'a pas d'île
                 if (!islandManager.playerHasIsland(player.getName())) {
+                    Island island = islandManager.getIslandbyplayer(player.getName());
                     //Si quelqu'un a déjà une ile
                     if (!islandManager.getAllIsland().isEmpty()) {
                         player.sendMessage("§aCreation of the Island");
                         List<Integer> coord = getIslandCoordinate(player);
+                        Location islandCoord = new Location(Bukkit.getWorld("world_Skyblock")
+                                ,coord.get(0)
+                                ,Bukkit.getWorld("world_Skyblock").getHighestBlockYAt(getIslandCoordinate(player).get(0), getIslandCoordinate(player).get(1)),
+                                coord.get(1));
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"),coord.get(0), 70, coord.get(1));
 
-                        Island newIsland = new Island(player.getName()+"'s Island", coord, loc);
-                        newIsland.setOwner(player.getName());
+                        Island newIsland = new Island(player.getName()+"'s Island", islandCoord, loc);
+                        newIsland.setOwner(player.getUniqueId());
                         JustSkyblock.islandManager.addIsland(newIsland);
 
                         new LoadSchematic(loc, "world_Skyblock", islandlist.get("Schematic"));
@@ -83,9 +92,12 @@ public class InventoryEvents implements Listener {
                         player.closeInventory();
                         player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
 
-                        JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
-                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
-                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
+                        // Set the worldBorder
+                        player.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
+
+//                        JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
+//                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().getBlockX(), 0,
+//                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().getBlockZ()));
 
                         Component title = miniMessage.deserialize("<gradient:#52BE80:#5499C7:#52BE80><u><b>Welcome to Skyblock");
                         Component subtitle = Component.text("If you are lost, use /is help", TextColor.color(0xccd1d1));
@@ -106,22 +118,23 @@ public class InventoryEvents implements Listener {
                         new LoadSchematic(loc, loc.getWorld().getName(), islandlist.get("Schematic"));
                         player.sendMessage("§aCreation of the Island");
 
-                        player.teleport(new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0));
-                        int x = 0;
-                        int z = 0;
-                        List<Integer> finale = new ArrayList<>();
-                        finale.add(x);
-                        finale.add(z);
+                        Location location = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
 
-                        Island island = new Island(player.getName()+"'s Island", finale, loc);
-                        island.setOwner(player.getName());
+                        player.teleport(location);
+
+                        island = new Island(player.getName()+"'s Island", location, loc);
+                        island.setOwner(player.getUniqueId());
                         islandManager.addIsland(island);
                         //SkyblockPlugin.islandCoordinates.addCoordinates(island.getIslandName(), island.getIslandCoordinates());
 
+                        WorldBorder worldBorder = Bukkit.createWorldBorder();
+                        worldBorder.setCenter(island.getIslandCoordinates());
+                        worldBorder.setSize(island.getSize());
+                        player.setWorldBorder(worldBorder);
 
-                        JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
-                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(0), 0,
-                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().get(1)));
+//                        JustSkyblock.worldBorderApi.setBorder(player, 100,new Location(Bukkit.getWorld("world_Skyblock"),
+//                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().getBlockX(), 0,
+//                                islandManager.getIslandbyplayer(player.getName()).getIslandCoordinates().getBlockZ()));
 
                         Component title = miniMessage.deserialize("<gradient:#52BE80:#5499C7:#52BE80><u><b>Welcome to Skyblock");
                         Component subtitle = Component.text("If you are lost, use /is help", TextColor.color(0xccd1d1));
@@ -150,11 +163,11 @@ public class InventoryEvents implements Listener {
 
             //if (event.getCurrentItem().isEmpty()) return;
             if (islandManager.getIslandbyplayer(player.getName()).getAllSettings().get(event.getCurrentItem().getType().name())){
-                    JustSkyblock.setFalse(event.getCurrentItem());
+                    setFalse(event.getCurrentItem());
                     islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), false);
             }
             else{
-                JustSkyblock.setTrue(event.getCurrentItem());
+                setTrue(event.getCurrentItem());
                 islandManager.getIslandbyplayer(player.getName()).setSettings(event.getCurrentItem().getType().name(), true);
 
             }
@@ -166,7 +179,7 @@ public class InventoryEvents implements Listener {
         if (event.getClickedInventory().getHolder() instanceof DeleteIslandInventory){
             event.setCancelled(true);
             if (event.getSlot() ==  13){
-                JustSkyblock.deleteIsland(player);
+                DeleteIsland.deleteIsland(player);
                 player.closeInventory();
             }
         }
@@ -176,13 +189,13 @@ public class InventoryEvents implements Listener {
             if (event.getSlot() ==  13){
                 Island island = islandManager.getIslandbyplayer(player.getName());
                 //si il est membre
-                if (islandManager.getIslandbyplayer(player.getName()).isMember(player.getName())){
+                if (islandManager.getIslandbyplayer(player.getName()).isMember(player.getUniqueId())){
                     player.closeInventory();
                     player.sendMessage("You leave " +  island.getIslandName());
                     //On le dégage
-                    islandManager.getIslandbyplayer(player.getName()).removeMember(player.getName());
+                    islandManager.getIslandbyplayer(player.getName()).removeMember(player.getUniqueId());
                     //On broadcast que le joueur à quitté l'île
-                    island.BroadcastLeave(player);
+                    island.BroadcastMessage(Component.text(player.getName()+" leave the island (maybe forever...)"));
 
 
                 }
@@ -190,9 +203,9 @@ public class InventoryEvents implements Listener {
                     player.closeInventory();
                     player.sendMessage("You leave " + islandManager.getIslandbyplayer(player.getName()).getIslandName());
                     //On le dégage
-                    islandManager.getIslandbyplayer(player.getName()).removeModerator(player.getName());
+                    islandManager.getIslandbyplayer(player.getName()).removeModerator(player.getUniqueId());
                     //On broadcast qu'il a quitté
-                    island.BroadcastLeave(player);
+                    island.BroadcastMessage(Component.text(player.getName()+" leave the island"));
 
                 }
             }
@@ -325,6 +338,26 @@ public class InventoryEvents implements Listener {
             aGauche += 1;
 
         }
+    }
+
+    private ItemStack setTrue(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x2FCC33)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        liste.add(Component.text("DENY").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
+    }
+
+    private ItemStack setFalse(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
+        liste.add(Component.text("DENY").color(TextColor.color(0xCC322A)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
     }
 
 }

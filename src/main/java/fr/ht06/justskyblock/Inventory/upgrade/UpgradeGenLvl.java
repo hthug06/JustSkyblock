@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.Inventory.upgrade;
 
+import fr.ht06.justskyblock.CreateItem;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
@@ -146,7 +147,7 @@ public class UpgradeGenLvl implements InventoryHolder, Listener {
         int i = 0;
         for (String str:JustSkyblock.getInstance().getConfig().getStringList("CustomGenerator.ForUpgrade."+level)){
             splited = str.split(":");
-            item = JustSkyblock.createItem(null,Integer.parseInt(splited[1]), Material.getMaterial(splited[0].toUpperCase()));
+            item = CreateItem.createItem(null,Integer.parseInt(splited[1]), Material.getMaterial(splited[0].toUpperCase()));
             ItemMeta itemMeta = item.getItemMeta();
             AtomicInteger nbrItems = new AtomicInteger(item.getAmount());
             //player.sendMessage(String.valueOf(getNumberofItemInInv(player, item.getType()) >= Integer.parseInt(splited[1])));

@@ -7,6 +7,17 @@ IS:
     Schematic: IslandPlain.schem
     Slot: 0
 
+#When the player delete his island, all the person who where on the island execute this command
+#Basically, all the player are gonna use /spawn (just don't put the "/")
+IslandDeleteCommand: spawn
+
+
+#Size is cap to 950 for the moment
+#if you put more than 950, the max size will be 950
+#Border size is based on the Island Level, and is updated EveryTime a player execute the /is level command
+IslandWorldBorderMaxSize: 950
+
+
 CustomGenerator:
   Enable: true   #true or false
   name:

@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,10 +40,10 @@ public class IslandSettingsInv implements InventoryHolder {
             item = createItem(getSettingsname(v.getKey()).decoration(TextDecoration.ITALIC, false).color(TextColor.color(0xBFC9CA)), Material.getMaterial(v.getKey()),null);
 
             if (v.getValue()){
-                JustSkyblock.setTrue(item);
+                setTrue(item);
             }
             else{
-                JustSkyblock.setFalse(item);
+                setFalse(item);
             }
             inv.setItem(i, item);
             i++;
@@ -64,6 +65,8 @@ public class IslandSettingsInv implements InventoryHolder {
 
         return item;
     }
+
+
 
     @Override
     public @NotNull Inventory getInventory() {
@@ -111,6 +114,26 @@ public class IslandSettingsInv implements InventoryHolder {
             }
         }
         return null;
+    }
+
+    private  ItemStack setTrue(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x2FCC33)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        liste.add(Component.text("DENY").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
+    }
+
+    private ItemStack setFalse(ItemStack item) {
+        ItemMeta itemMeta = item.getItemMeta();
+        List<Component> liste = new ArrayList<>();
+        liste.add(Component.text("ALLOW").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
+        liste.add(Component.text("DENY").color(TextColor.color(0xCC322A)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
+        itemMeta.lore(liste);
+        item.setItemMeta(itemMeta);
+        return item;
     }
 
 }

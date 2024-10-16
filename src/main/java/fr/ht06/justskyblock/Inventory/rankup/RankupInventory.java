@@ -32,7 +32,7 @@ public class RankupInventory implements InventoryHolder {
     }
 
     private void init(Player player, Island island){
-        if (!island.isOwner(player.getName())) return;
+        if (!island.isOwner(player.getUniqueId())) return;
 
         List<Integer> GlassPaneSlots = List.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 17, 18 ,26 ,27, 35, 36, 37, 38, 39, 41, 42, 43, 44);
         ItemStack itemGlassgreen = new ItemStack(Material.GREEN_STAINED_GLASS_PANE, 1);

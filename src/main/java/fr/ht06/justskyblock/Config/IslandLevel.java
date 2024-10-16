@@ -55,11 +55,11 @@ public class IslandLevel {
                 "SUNFLOWER", "LILAC", "ROSE", "PEONY");
 
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().get(0), 70, island.getIslandCoordinates().get(1)).clone().add(-50, -200, -50);;
+            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates().getBlockZ()).clone().add(-50, -200, -50);;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().get(0), 70, island.getIslandCoordinates().get(1)).clone().add(50, 300, 50);;
+            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates().getBlockZ()).clone().add(50, 300, 50);;
             int x2 = isLoc2.getBlockX();
             int z2 = isLoc2.getBlockZ();
             //x

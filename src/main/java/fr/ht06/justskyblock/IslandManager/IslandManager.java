@@ -9,10 +9,10 @@ import java.util.*;
 public class IslandManager {
 
     private List<Island> allIsland = new ArrayList<>();
-    private Map<String, List<Integer>> allCoordinate = new HashMap<>();
+    private Map<String, Location> allCoordinate = new HashMap<>();
     private Map<String, List<String>> invitation = new HashMap<>();
 
-    public Map<String, List<Integer>> getAllCoordinate() {
+    public Map<String, Location> getAllCoordinate() {
         return allCoordinate;
     }
 
@@ -37,7 +37,7 @@ public class IslandManager {
 
     public Boolean playerHasIsland(String playerName){
         for (Island v: allIsland){
-            if (v.isOnThisIsland(playerName)){
+            if (v.isOnThisIsland(Bukkit.getPlayerUniqueId(playerName))){
                 return true;
             }
         }
@@ -55,7 +55,7 @@ public class IslandManager {
 
     public Island getIslandbyplayer(String playerName){
         for (Island v: allIsland){
-            if (v.isOnThisIsland(playerName)){
+            if (v.isOnThisIsland(Bukkit.getPlayerUniqueId(playerName))){
                 return v.getIsland();
             }
         }
@@ -65,7 +65,7 @@ public class IslandManager {
     public Island getIslandbyLocation(Location location){
         Location loc;
         for (Island is : getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
             if (PlayerListeners.contains(location, loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
                 return is;
             }

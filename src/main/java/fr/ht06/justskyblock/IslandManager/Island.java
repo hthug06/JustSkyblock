@@ -3,7 +3,9 @@ package fr.ht06.justskyblock.IslandManager;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -11,13 +13,13 @@ import java.util.*;
 
 public class Island {
     private String IslandName;
-    private List<Integer> islandCoordinates;
+    private Location islandCoordinates;
     private Location islandSpawn;
-    private String Owner;
-    private List<String> Moderator = new ArrayList<>();
-    private List<String> Member = new ArrayList<>();
+    private UUID Owner;
+    private List<UUID> Moderator = new ArrayList<>();
+    private List<UUID> Member = new ArrayList<>();
     private double level = 0;
-    private int size = 20;
+    private double size = 50;
     private int rank = 0;
     private LocalDateTime Date;
     private Date aujourdhui;
@@ -32,7 +34,7 @@ public class Island {
     private Map<String, Integer> lumberCounter = new HashMap<>();
     private Map<Object, Object> Island = new HashMap<>();
 
-    public Island(String IslandName, List<Integer> islandCoordinates, Location islandSpawn){
+    public Island(String IslandName, Location islandCoordinates, Location islandSpawn){
         this.IslandName = IslandName;
         this.islandCoordinates = islandCoordinates;
         this.islandSpawn = islandSpawn;
@@ -78,64 +80,65 @@ public class Island {
         this.islandSpawn = islandSpawn;
     }
 
-    public List<Integer> getIslandCoordinates() {
+    public Location getIslandCoordinates() {
         return islandCoordinates;
     }
 
-    public void setIslandCoordinates(List<Integer> islandCoordinates) {
+    public void setIslandCoordinates(Location islandCoordinates) {
         this.islandCoordinates = islandCoordinates;
     }
 
-    public String getOwner() {
+    public UUID getOwner() {
         //il ne peut y avoir qu'un seul Owner
         return Owner;
     }
 
-    public Boolean isOwner(String player){
-        return Owner.equalsIgnoreCase(player);
+
+    public Boolean isOwner(UUID playerUUID){
+        return Owner.equals(playerUUID);
     }
 
-    public void setOwner(String playerOwnerName) {
+    public void setOwner(UUID playerOwnerName) {
         this.Owner = playerOwnerName;
     }
 
-    public List<String> getAllModerators(){
+    public List<UUID> getAllModerators(){
         return this.Moderator;
     }
 
-    public void setModerator(List<String> list){
+    public void setModerator(List<UUID> list){
         this.Moderator = list;
     }
 
-    public void addModerator(String playerName) {
+    public void addModerator(UUID playerName) {
         this.Moderator.add(playerName);
     }
 
-    public void removeModerator(String playerName){
+    public void removeModerator(UUID playerName){
         this.Moderator.remove(playerName);
     }
 
-    public Boolean isModerator(String playerName){
+    public Boolean isModerator(UUID playerName){
         return this.Moderator.contains(playerName);
     }
 
-    public List<String> getAllMembers(){
+    public List<UUID> getAllMembers(){
         return this.Member;
     }
 
-    public void setMember(List<String> list){
+    public void setMember(List<UUID> list){
         this.Member = list;
     }
 
-    public void addMember(String playerName) {
+    public void addMember(UUID playerName) {
         this.Member.add(playerName);
     }
 
-    public void removeMember(String playerName){
+    public void removeMember(UUID playerName){
         this.Member.remove(playerName);
     }
 
-    public Boolean isMember(String playerName){
+    public Boolean isMember(UUID playerName){
         return this.Member.contains(playerName);
     }
 
@@ -147,11 +150,11 @@ public class Island {
         this.level = level;
     }
 
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(double size) {
         this.size = size;
     }
 
@@ -175,87 +178,24 @@ public class Island {
         Date = date;
     }
 
-    public Boolean isOnThisIsland(String playerName){
-        return this.Owner.equalsIgnoreCase(playerName) || this.Moderator.contains(playerName) || this.Member.contains(playerName);
-    }
-
-    public void BroadcastLeave(Player player){
-        Player playerOwner = Bukkit.getPlayerExact(Owner);
-        if (playerOwner != null && playerOwner.isOnline()) {
-            playerOwner.sendMessage(player.getName() + " leave the island");
-        }
-        for (String modo : Moderator){
-            Player playerModo = Bukkit.getPlayerExact(modo);
-            if (playerModo != null && playerModo.isOnline()) {
-                playerModo.sendMessage(player.getName() + " leave the island");
-            }
-        }
-        for (String member : Member){
-            Player playerMember = Bukkit.getPlayerExact(member);
-            if (playerMember != null && playerMember.isOnline()) {
-                playerMember.sendMessage(player.getName() + " leave the island");
-            }
-        }
-    }
-
-    public void BroadcastJoin(Player player) {
-        if (player != null && player.isOnline()) {
-            player.sendMessage("You join " + this.getIslandName());
-        }
-
-        Player playerOwner = Bukkit.getPlayerExact(Owner);
-        if (playerOwner != null && playerOwner.isOnline()) {
-            playerOwner.sendMessage(player.getName() + " join the island");
-        }
-
-        for (String modo : Moderator){
-            Player playerModo = Bukkit.getPlayerExact(modo);
-            if (playerModo != null && playerModo.isOnline()) {
-                playerModo.sendMessage(player.getName() + " join the island");
-            }
-        }
-        for (String member : Member){
-            Player playerMember = Bukkit.getPlayerExact(member);
-            if (playerMember != null && playerMember.isOnline()) {
-                playerMember.sendMessage(player.getName() + " join the island");
-            }
-        }
-    }
-
-    public void BroadcastVisit(Player player) {
-        Player playerOwner = Bukkit.getPlayerExact(Owner);
-        if (playerOwner != null && playerOwner.isOnline()) {
-            playerOwner.sendMessage(player.getName() + " visit the island");
-        }
-
-        for (String modo : Moderator) {
-            Player playerModo = Bukkit.getPlayerExact(modo);
-            if (playerModo != null && playerModo.isOnline()) {
-                playerModo.sendMessage(player.getName() + " visit the island");
-            }
-        }
-        for (String member : Member) {
-            Player playerMember = Bukkit.getPlayerExact(member);
-            if (playerMember != null && playerMember.isOnline()) {
-                playerMember.sendMessage(player.getName() + " visit the island");
-            }
-        }
+    public Boolean isOnThisIsland(UUID playerName){
+        return this.Owner.equals(playerName) || this.Moderator.contains(playerName) || this.Member.contains(playerName);
     }
 
     public void BroadcastMessage(String message) {
-        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        Player playerOwner = Bukkit.getPlayer(Owner);
         if (playerOwner != null && playerOwner.isOnline()) {
             playerOwner.sendMessage(message);
         }
 
-        for (String modo : Moderator) {
-            Player playerModo = Bukkit.getPlayerExact(modo);
+        for (UUID modo : Moderator) {
+            Player playerModo = Bukkit.getPlayer(modo);
             if (playerModo != null && playerModo.isOnline()) {
                 playerModo.sendMessage(message);
             }
         }
-        for (String member : Member) {
-            Player playerMember = Bukkit.getPlayerExact(member);
+        for (UUID member : Member) {
+            Player playerMember = Bukkit.getPlayer(member);
             if (playerMember != null && playerMember.isOnline()) {
                 playerMember.sendMessage(message);
             }
@@ -263,19 +203,19 @@ public class Island {
     }
 
     public void BroadcastMessage(Component message) {
-        Player playerOwner = Bukkit.getPlayerExact(Owner);
+        Player playerOwner = Bukkit.getPlayer(Owner);
         if (playerOwner != null && playerOwner.isOnline()) {
             playerOwner.sendMessage(message);
         }
 
-        for (String modo : Moderator) {
-            Player playerModo = Bukkit.getPlayerExact(modo);
+        for (UUID modo : Moderator) {
+            Player playerModo = Bukkit.getPlayer(modo);
             if (playerModo != null && playerModo.isOnline()) {
                 playerModo.sendMessage(message);
             }
         }
-        for (String member : Member) {
-            Player playerMember = Bukkit.getPlayerExact(member);
+        for (UUID member : Member) {
+            Player playerMember = Bukkit.getPlayer(member);
             if (playerMember != null && playerMember.isOnline()) {
                 playerMember.sendMessage(message);
             }
@@ -436,5 +376,18 @@ public class Island {
 
     public void setCobbleGenLevelUnlock(Integer cobbleGenLevelUnlock) {
         this.cobbleGenLevelUnlock = cobbleGenLevelUnlock;
+    }
+
+    public List<Player> getAllPlayerOnIsland(){
+        @NotNull Collection<Entity> livingEntity = this.getIslandCoordinates().getNearbyEntities(( this.getSize() / 2), 70, (this.getSize() / 2));
+        List<Player> PlayerList = new ArrayList<>();
+        Player playertarget;
+        for (Entity e : livingEntity) {
+            if (e instanceof Player) {
+                playertarget = ((Player) e).getPlayer();
+                PlayerList.add(playertarget);
+            }
+        }
+        return PlayerList;
     }
 }

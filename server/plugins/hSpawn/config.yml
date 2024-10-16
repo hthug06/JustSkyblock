@@ -6,11 +6,11 @@
 # Spawn coordinate
 spawn:
   world: world
-  x: 0.0
-  y: 63.0
-  z: 0.0
-  Yaw: 0.0
-  Pitch: 0.0
+  x: -13.966968926252465
+  y: 131.0
+  z: 2.3254693812121743
+  Yaw: 6.259791
+  Pitch: 0.193651
 
 # For the player first join
 on_first_join:

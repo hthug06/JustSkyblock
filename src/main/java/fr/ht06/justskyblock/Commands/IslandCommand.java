@@ -7,15 +7,18 @@ import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
 import fr.ht06.justskyblock.Inventory.upgrade.UpgradeMain;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
+import fr.ht06.justskyblock.IslandManager.IslandWorldBorder;
 import fr.ht06.justskyblock.JustSkyblock;
 import fr.ht06.justskyblock.timerTask;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.WorldBorder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -24,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.UUID;
 
 public class IslandCommand implements CommandExecutor {
     JustSkyblock main;
@@ -38,8 +42,6 @@ public class IslandCommand implements CommandExecutor {
         if (!(commandSender instanceof Player)) return false;
         Player player = (Player) commandSender;
 
-
-
         Island island = islandManager.getIslandbyplayer(player.getName());
         if (args.length == 0) {
             if (!islandManager.playerHasIsland(player.getName())) {
@@ -50,10 +52,8 @@ public class IslandCommand implements CommandExecutor {
             else {
                 island = islandManager.getIslandbyplayer(player.getName()).getIsland();
                 player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
-                JustSkyblock.worldBorderApi.setBorder(player, 100, new Location(Bukkit.getWorld("world_Skyblock"),
-                        island.getIslandSpawn().getBlockX(),
-                        island.getIslandSpawn().getBlockY(),
-                        island.getIslandSpawn().getBlockZ()));
+                player.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
+
                 player.sendMessage("§aTeleportation to your Island");
             }
         }
@@ -70,26 +70,26 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("setspawn")) {
+            else if (args[0].equalsIgnoreCase("setspawn")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandSetspawn(island, player);
                 }
                 else{
                     player.sendMessage("You don't have the permission to do this");
                 }
             }
-            if (args[0].equalsIgnoreCase("delete")) {
+            else if (args[0].equalsIgnoreCase("delete")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (island.isOwner(player.getName())) {
+                if (island.isOwner(player.getUniqueId())) {
                     commandDelete(player);
                 }
                 else{
@@ -97,25 +97,25 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage("If you wan't to leave the island, do /island leave");
                 }
             }
-            if (args[0].equalsIgnoreCase("visit")) {
+            else if (args[0].equalsIgnoreCase("visit")) {
                 commandVisit(args, player);
             }
 
-            if (args[0].equalsIgnoreCase("settings")) {
+            else if (args[0].equalsIgnoreCase("settings")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
 
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandSettings(player);
                 }
                 else{
                     player.sendMessage("You don't have the permission to do this");
                 }
             }
-            if (args[0].equalsIgnoreCase("team")) {
+            else if (args[0].equalsIgnoreCase("team")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -123,13 +123,13 @@ public class IslandCommand implements CommandExecutor {
                 }
                 commandTeam(args, player, island);
             }
-            if (args[0].equalsIgnoreCase("invite")) {
+            else if (args[0].equalsIgnoreCase("invite")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandInvite(args, island, player);
                 }
                 else{
@@ -137,15 +137,15 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("join")) {
+            else if (args[0].equalsIgnoreCase("join")) {
                 commandJoin(args, player);
             }
 
-            if (args[0].equalsIgnoreCase("decline")) {
+            else if (args[0].equalsIgnoreCase("decline")) {
                 commandDecline(args, player);
             }
 
-            if (args[0].equalsIgnoreCase("leave")) {
+            else if (args[0].equalsIgnoreCase("leave")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -155,13 +155,13 @@ public class IslandCommand implements CommandExecutor {
                 commandLeave(args, player, island);
             }
 
-            if (args[0].equalsIgnoreCase("promote")){
+            else if (args[0].equalsIgnoreCase("promote")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandPromote(args, player, island);
                 }
                 else{
@@ -170,13 +170,13 @@ public class IslandCommand implements CommandExecutor {
 
             }
 
-            if (args[0].equalsIgnoreCase("demote")){
+            else if (args[0].equalsIgnoreCase("demote")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandDemote(args, player, island);
                 }
                 else{
@@ -184,13 +184,13 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("Kick")){
+            else if (args[0].equalsIgnoreCase("Kick")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
-                if (!island.isMember(player.getName())) {
+                if (!island.isMember(player.getUniqueId())) {
                     commandKick(args, player, island);
                 }
                 else{
@@ -198,7 +198,7 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("setName")){
+            else if (args[0].equalsIgnoreCase("setName")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -207,28 +207,37 @@ public class IslandCommand implements CommandExecutor {
                 commandSetName(args, island, player);
             }
 
-            if (args[0].equalsIgnoreCase("level") || args[0].equalsIgnoreCase("lvl")){
+            else if (args[0].equalsIgnoreCase("level") || args[0].equalsIgnoreCase("lvl")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
 
-                if (!island.isMember(player.getName())){
+                if (!island.isMember(player.getUniqueId())){
                     double level = IslandLevel.calculateIslandLevel(island) / 100;
                     BigDecimal bd = new BigDecimal(level).setScale(2, RoundingMode.HALF_UP);
                     level = bd.doubleValue();
                     island.setLevel(level);
                     player.sendMessage("Your island is level " + level);
+                    double size = level/10;
+                    if (size<50){
+                        size = 50;
+                    }
+                    island.setSize(size);
+                    for (Player p: islandManager.getIslandbyplayer(player.getName()).getAllPlayerOnIsland()){
+                        p.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
+                    }
+                    player.sendMessage(Component.text("Your Island WorldBorder size is now: " + (int)island.getSize()+"x"+(int) island.getSize(), TextColor.color(0x99a3a4)).decoration(TextDecoration.ITALIC, true));
                 }
             }
 
-            if (args[0].equalsIgnoreCase("help")){
+            else if (args[0].equalsIgnoreCase("help")){
                 //pas d'île
                 commandHelp(args, island, player);
             }
 
-            if (args[0].equalsIgnoreCase("rankup")){
+            else if (args[0].equalsIgnoreCase("rankup")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -239,7 +248,7 @@ public class IslandCommand implements CommandExecutor {
                 player.openInventory(rankupInventory.getInventory());
             }
 
-            if (args[0].equalsIgnoreCase("quest")){
+            else if (args[0].equalsIgnoreCase("quest")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -254,7 +263,7 @@ public class IslandCommand implements CommandExecutor {
                 }
             }
 
-            if (args[0].equalsIgnoreCase("upgrade")){
+            else if (args[0].equalsIgnoreCase("upgrade")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     IslandInventory gui = new IslandInventory();
                     player.openInventory(gui.getInventory());
@@ -265,6 +274,9 @@ public class IslandCommand implements CommandExecutor {
                 player.openInventory(upgradeMain.getInventory());
             }
 
+            else{
+                Bukkit.dispatchCommand(player, "island help");
+            }
         }
         return true;
 
@@ -275,7 +287,7 @@ public class IslandCommand implements CommandExecutor {
             player.sendMessage("/is leave");
         }
         else {
-            if (island.isOwner(player.getName())) {
+            if (island.isOwner(player.getUniqueId())) {
                 player.sendMessage("§cYou can't leave your island because your are the owner");
                 player.sendMessage("§cPromote someone else to Owner and leave (/island promote <player>");
                 player.sendMessage("§cOr delete the island (/island delete)");
@@ -307,10 +319,13 @@ public class IslandCommand implements CommandExecutor {
     private void commandVisit(String[] args, Player player){
         if (args.length == 2) {
             if (islandManager.playerHasIsland(args[1])) {
+                Island island = islandManager.getIslandbyplayer(args[1]);
                 player.teleport(islandManager.getIslandbyplayer(args[1]).getIslandSpawn());
                 player.sendMessage("§aTeleportation to " + args[1] + "'s Island");
-                islandManager.getIslandbyplayer(args[1]).BroadcastVisit(player);
-                JustSkyblock.worldBorderApi.setBorder(player, 100, islandManager.getIslandbyplayer(args[1]).getIslandSpawn());
+                islandManager.getIslandbyplayer(args[1]).BroadcastMessage(Component.text(player.getName()+" is visiting your island"));
+
+                player.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
+
             } else {
                 player.sendMessage("§cThis player doesn't have an island or doesn't exist.");
             }
@@ -328,33 +343,33 @@ public class IslandCommand implements CommandExecutor {
         if (args.length == 1) {
             player.sendMessage("--- " + islandManager.getIslandbyplayer(player.getName()).getIslandName() + " ---");
             player.sendMessage("Players :");
-            Player target1 = Bukkit.getPlayerExact(island.getOwner());
+            Player target1 = Bukkit.getPlayer(island.getOwner());
             if (target1 == null || !target1.isOnline()){
-                player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §c●");
+                player.sendMessage(" - Owner " + Bukkit.getPlayer(islandManager.getIslandbyplayer(player.getName()).getOwner()).getName()  + " §c●");
             }
             else{
-                player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §a●");
+                player.sendMessage(" - Owner " + Bukkit.getPlayer(islandManager.getIslandbyplayer(player.getName()).getOwner()).getName() + " §a●");
             }
 
-            for (String moderator : island.getAllModerators()) {
+            for (UUID moderator : island.getAllModerators()) {
 
-                Player target = Bukkit.getPlayerExact(moderator);
+                Player target = Bukkit.getPlayer(moderator);
                 if (target == null || !target.isOnline()){
-                    player.sendMessage(" - Moderator " + moderator + " §c●");
+                    player.sendMessage(" - Moderator " + Bukkit.getPlayer(moderator).getName() + " §c●");
                 }
                 else{
-                    player.sendMessage(" - Moderator " + moderator + " §a●");
+                    player.sendMessage(" - Moderator " + Bukkit.getPlayer(moderator).getName() + " §a●");
                 }
 
             }
-            for (String member : island.getAllMembers()) {
+            for (UUID member : island.getAllMembers()) {
 
-                Player target = Bukkit.getPlayerExact(member);
+                Player target = Bukkit.getPlayer(member);
                 if (target == null || !target.isOnline()){
-                    player.sendMessage(" - Member " + member + " §c●");
+                    player.sendMessage(" - Member " + Bukkit.getPlayer(member).getName() + " §c●");
                 }
                 else{
-                    player.sendMessage(" - Member " + member + " §a●");
+                    player.sendMessage(" - Member " + Bukkit.getPlayer(member).getName() + " §a●");
                 }
             }
         }
@@ -368,7 +383,7 @@ public class IslandCommand implements CommandExecutor {
             island = islandManager.getIslandbyplayer(args[2]);
             player.sendMessage("--- " + islandManager.getIslandbyplayer(player.getName()).getIslandName() + " ---");
             player.sendMessage("Players :");
-            Player target1 = Bukkit.getPlayerExact(island.getOwner());
+            Player target1 = Bukkit.getPlayer(island.getOwner());
             if (target1 == null || !target1.isOnline()){
                 player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §c●");
             }
@@ -376,9 +391,9 @@ public class IslandCommand implements CommandExecutor {
                 player.sendMessage(" - Owner " + islandManager.getIslandbyplayer(player.getName()).getOwner() + " §a●");
             }
 
-            for (String moderator : island.getAllModerators()) {
+            for (UUID moderator : island.getAllModerators()) {
 
-                Player target = Bukkit.getPlayerExact(moderator);
+                Player target = Bukkit.getPlayer(moderator);
                 if (target == null || !target.isOnline()){
                     player.sendMessage(" - Moderator " + moderator + " §c●");
                 }
@@ -387,9 +402,9 @@ public class IslandCommand implements CommandExecutor {
                 }
 
             }
-            for (String member : island.getAllMembers()) {
+            for (UUID member : island.getAllMembers()) {
 
-                Player target = Bukkit.getPlayerExact(member);
+                Player target = Bukkit.getPlayer(member);
                 if (target == null || !target.isOnline()){
                     player.sendMessage(" - Member " + member + " §c●");
                 }
@@ -402,11 +417,11 @@ public class IslandCommand implements CommandExecutor {
 
     private void commandInvite(String[] args, Island island, Player player){
         if (args.length == 2) {
-            if (island.isMember(player.getName())) {
+            if (island.isMember(player.getUniqueId())) {
                 player.sendMessage("§cYou cannot invite a player");
                 return ;
             }
-            if (island.isOnThisIsland(args[1])) {
+            if (island.isOnThisIsland(Bukkit.getPlayerUniqueId(args[1]))) {
                 player.sendMessage("§cThis player is already on your island");
                 return ;
             }
@@ -437,9 +452,9 @@ public class IslandCommand implements CommandExecutor {
             //à pas d'île
             else {
                 if (islandManager.isInvitedByPlayer(player.getName(), args[1])) {
-                    islandManager.getIslandbyplayer(args[1]).addMember(player.getName());
+                    islandManager.getIslandbyplayer(args[1]).addMember(player.getUniqueId());
                     //player.sendMessage("You join " + islandManager.getIslandbyplayer(player.getName()).getIslandName());
-                    islandManager.getIslandbyplayer(player.getName()).BroadcastJoin(player);
+                    islandManager.getIslandbyplayer(player.getName()).BroadcastMessage(Component.text(player.getName()+" Join the Island"));
                 } else {
                     player.sendMessage("You didn't have any pending invite of this player");
                 }
@@ -476,32 +491,32 @@ public class IslandCommand implements CommandExecutor {
         }
         else {
             //SI Le joueur est le Owner
-            if (island.isOwner(player.getName())) {
+            if (island.isOwner(player.getUniqueId())) {
                 //Si le joueur qu'on veut promote est sur l'ile
-                if (island.isOnThisIsland(args[1])) {
+                if (island.isOnThisIsland(Bukkit.getPlayerUniqueId(args[1]))) {
                     //S'il est membre
-                    if (island.isMember(args[1])) {
+                    if (island.isMember(Bukkit.getPlayerUniqueId(args[1]))) {
                         player.sendMessage(args[1] + " is now moderator");
                         Player target = Bukkit.getPlayerExact(args[1]);
                         if (target != null && target.isOnline()) {
                             target.sendMessage("You've been promoted to moderator on this island");
                         }
-                        island.addModerator(args[1]);
-                        island.removeMember(args[1]);
+                        island.addModerator(Bukkit.getPlayerUniqueId(args[1]));
+                        island.removeMember(Bukkit.getPlayerUniqueId(args[1]));
                     }
                     //S'il est modo
-                    else if (island.isModerator(args[1])) {
+                    else if (island.isModerator(Bukkit.getPlayerUniqueId(args[1]))) {
                         player.sendMessage(args[1]+" is now the owner of the island");
                         Player target = Bukkit.getPlayerExact(args[1]);
                         if (target != null && target.isOnline()) {
                             target.sendMessage("you are now the Owner of this island");
                         }
-                        island.setOwner(args[1]);
-                        island.addModerator(player.getName());
-                        island.removeModerator(args[1]);
+                        island.setOwner(Bukkit.getPlayerUniqueId(args[1]));
+                        island.addModerator(player.getUniqueId());
+                        island.removeModerator(Bukkit.getPlayerUniqueId(args[1]));
                     }
                     //S'il est Owner
-                    else if (island.isOwner(args[1])){
+                    else if (island.isOwner(Bukkit.getPlayerUniqueId(args[1]))){
                         player.sendMessage("§cYou can't promote yourself");
                     }
                 }
@@ -510,18 +525,18 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage("§cThis player isn't on your island");
                 }
             }
-            else if (island.isModerator(player.getName())) {
+            else if (island.isModerator(player.getUniqueId())) {
                 if (args[1].equalsIgnoreCase(player.getName())){
                     player.sendMessage("You can't promote yourself");
                 }
-                else if (island.isMember(args[1])) {
-                    island.addModerator(args[1]);
+                else if (island.isMember(Bukkit.getPlayerUniqueId(args[1]))) {
+                    island.addModerator(Bukkit.getPlayerUniqueId(args[1]));
                 }
-                else if (island.isModerator(args[1])) {
+                else if (island.isModerator(Bukkit.getPlayerUniqueId(args[1]))) {
                     player.sendMessage("You can't promote " + args[1] + ": this player is already moderator");
 
                 }
-                else if (island.isOwner(args[1])){
+                else if (island.isOwner(Bukkit.getPlayerUniqueId(args[1]))){
                     player.sendMessage("this is the owner");
                 }
             }
@@ -537,25 +552,25 @@ public class IslandCommand implements CommandExecutor {
         }
         else {
             //SI Le joueur est le Owner
-            if (island.isOwner(player.getName())) {
+            if (island.isOwner(player.getUniqueId())) {
                 //Si le joueur qu'on veut promote est sur l'ile
-                if (island.isOnThisIsland(args[1])) {
+                if (island.isOnThisIsland(Bukkit.getPlayerUniqueId(args[1]))) {
                     //S'il est membre
-                    if (island.isMember(args[1])) {
-                        player.sendMessage(args[1] + " is member, he cannot be demoted");
+                    if (island.isMember(Bukkit.getPlayerUniqueId(args[1]))) {
+                        player.sendMessage(Bukkit.getPlayerUniqueId(args[1]) + " is member, he cannot be demoted");
                     }
                     //S'il est modo
-                    else if (island.isModerator(args[1])) {
-                        player.sendMessage(args[1]+" is now a member");
+                    else if (island.isModerator(Bukkit.getPlayerUniqueId(args[1]))) {
+                        player.sendMessage(Bukkit.getPlayerUniqueId(args[1])+" is now a member");
                         Player target = Bukkit.getPlayerExact(args[1]);
                         if (target != null && target.isOnline()) {
                             target.sendMessage("you are demoted by the owner to a member");
                         }
-                        island.addMember(args[1]);
-                        island.removeModerator(args[1]);
+                        island.addMember(Bukkit.getPlayerUniqueId(args[1]));
+                        island.removeModerator(Bukkit.getPlayerUniqueId(args[1]));
                     }
                     //S'il est Owner
-                    else if (island.isOwner(args[1])){
+                    else if (island.isOwner(Bukkit.getPlayerUniqueId(args[1]))){
                         player.sendMessage("§cYou can't demote yourself");
                     }
                 }
@@ -575,17 +590,17 @@ public class IslandCommand implements CommandExecutor {
             player.sendMessage("§c/island kick <player>");
         }
 
-        else if (island.isOwner(player.getName())){
-            if (island.isMember(args[1])){
-                island.removeMember(args[1]);
+        else if (island.isOwner(player.getUniqueId())){
+            if (island.isMember(Bukkit.getPlayerUniqueId(args[1]))){
+                island.removeMember(Bukkit.getPlayerUniqueId(args[1]));
                 Player target = Bukkit.getPlayerExact(args[1]);
                 if (target != null && target.isOnline()) {
                     target.sendMessage(player.getName() + " kick you from the island");
                 }
                 player.sendMessage("You kick " + args[1] + " from the island");
             }
-            else if (island.isModerator(args[1])){
-                island.removeModerator(args[1]);
+            else if (island.isModerator(Bukkit.getPlayerUniqueId(args[1]))){
+                island.removeModerator(Bukkit.getPlayerUniqueId(args[1]));
                 Player target = Bukkit.getPlayerExact(args[1]);
                 if (target != null && target.isOnline()) {
                     target.sendMessage(player.getName() + " kick you from the island");
@@ -593,9 +608,9 @@ public class IslandCommand implements CommandExecutor {
                 player.sendMessage("You kick " + args[1] + " from the island");
             }
         }
-        else if (island.isModerator(player.getName())) {
-            if (island.isMember(args[1])){
-                island.removeMember(args[1]);
+        else if (island.isModerator(player.getUniqueId())) {
+            if (island.isMember(Bukkit.getPlayerUniqueId(args[1]))){
+                island.removeMember(Bukkit.getPlayerUniqueId(args[1]));
                 Player target = Bukkit.getPlayerExact(args[1]);
                 if (target != null && target.isOnline()) {
                     target.sendMessage(player.getName() + " kick you from the island");
@@ -609,7 +624,7 @@ public class IslandCommand implements CommandExecutor {
     }
 
     private void commandSetName(String[] args, Island island, Player player){
-        if (island.isOwner(player.getName())) {
+        if (island.isOwner(player.getUniqueId())) {
             StringBuilder stringBuilder = new StringBuilder();
             int nbr = 0;
             for (int i = 1; i<args.length; i++){
@@ -668,7 +683,7 @@ public class IslandCommand implements CommandExecutor {
         //à une ile
         else{
             //est membre
-            if (island.isMember(player.getName())){
+            if (island.isMember(player.getUniqueId())){
                 player.sendMessage(Component.text("     ----- ", TextColor.color(0x52BE80))
                         .append(Component.text("Island Help (Page 1)", TextColor.color(0x5499C7)))
                         .append(Component.text(" -----", TextColor.color(0x52BE80))));  // --- Help Island ---
@@ -705,7 +720,7 @@ public class IslandCommand implements CommandExecutor {
                         .append(Component.text("-------", TextColor.color(0x52BE80))));
             }
             //MOD
-            else if (island.isModerator(player.getName())) {
+            else if (island.isModerator(player.getUniqueId())) {
 
                 if (args.length == 1 || args[1].equalsIgnoreCase("1")){
 
@@ -801,7 +816,7 @@ public class IslandCommand implements CommandExecutor {
 
 
             }
-            else if (island.isOwner(player.getName())){
+            else if (island.isOwner(player.getUniqueId())){
                 //PAGE 1
                 if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
 

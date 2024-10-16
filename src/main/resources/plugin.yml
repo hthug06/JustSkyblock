@@ -4,8 +4,7 @@ main: fr.ht06.justskyblock.JustSkyblock
 api-version: '1.20'
 author: ht06
 depend:
-  - WorldEdit
-  - WorldBorderAPI
+  - FastAsyncWorldEdit
 softdepend: [PlaceholderAPI]
 
 commands:
@@ -21,7 +20,7 @@ commands:
       - islandadmin
       - isa
 
-  #test:
+  test:
     #description: fait chioer
     #permission: justskyblock.test
 

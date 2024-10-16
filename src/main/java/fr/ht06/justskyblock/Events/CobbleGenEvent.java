@@ -61,7 +61,7 @@ public class CobbleGenEvent implements Listener {
 //        int nbrRandom = 100;
         float luck = 0; //the chance the block appear
 
-        for (Object s : JustSkyblock.instance.getConfig().getList("CustomGenerator.level."+island.getCobbleGenLevel())){ //loop for every block
+        for (Object s : JustSkyblock.getInstance().getConfig().getList("CustomGenerator.level."+island.getCobbleGenLevel())){ //loop for every block
             float chance = Float.parseFloat(s.toString().split(":")[1]);  //get the chance the block appear
             luck+= chance; //add to the luck
             if (nbrRandom<=luck){

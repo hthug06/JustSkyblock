@@ -49,9 +49,10 @@ public class Test implements CommandExecutor {
 //            //player.sendMessage(String.valueOf(IslandLevel.get().getList("Material.Special").contains(player.getInventory().getItemInMainHand().getType().name())));
 //            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
             Island island=islandManager.getIslandbyplayer(player.getName());
+            player.sendMessage(String.valueOf(island.getSize()));
 
-            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
-            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
+//            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
+//            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
         }
 
 
@@ -59,6 +60,8 @@ public class Test implements CommandExecutor {
 //            Island island=islandManager.getIslandbyplayer(player.getName());
 //            island.setCobbleGenLevelUnlock(6);
             player.sendMessage(Arrays.toString(player.getInventory().getContents()));
+            Island island=islandManager.getIslandbyplayer(player.getName());
+            island.setSize(Integer.parseInt(strings[0]));
             //SkyblockPlugin.customConfig.set("Material.Block.DIRT", (Integer) SkyblockPlugin.customConfig.get("Material.Block.DIRT")+1);
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllMembers()));
             //player.sendMessage(String.valueOf(islandManager.getIslandbyplayer(player.getName()).getAllModerators()));

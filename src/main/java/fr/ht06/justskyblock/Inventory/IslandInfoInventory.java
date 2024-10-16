@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class IslandInfoInventory implements InventoryHolder {
 
@@ -69,12 +70,12 @@ public class IslandInfoInventory implements InventoryHolder {
                     skullMeta.setOwningPlayer(offlinePlayer);
                     skullMeta.displayName(Component.text("Owner of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
 
-                    Player target = Bukkit.getPlayerExact(island.getOwner());
+                    Player target = Bukkit.getPlayer(island.getOwner());
                     if (target != null && target.isOnline()) {
-                        skullMeta.lore(List.of(Component.text(island.getOwner(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false))));
+                        skullMeta.lore(List.of(Component.text(Bukkit.getPlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false))));
 
                     } else {
-                        skullMeta.lore(List.of(Component.text(island.getOwner(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false))));
+                        skullMeta.lore(List.of(Component.text(Bukkit.getPlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false))));
                     }
                     //skullMeta.lore(List.of(Component.text(String.valueOf(island.getOwner()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(skullMeta);
@@ -95,13 +96,13 @@ public class IslandInfoInventory implements InventoryHolder {
                         ItemMeta itemMeta = itemStack.getItemMeta();
                         itemMeta.displayName(Component.text("Member of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                         List<Component> liste = new ArrayList<>();
-                        for (String member : island.getAllMembers()){
-                            Player target = Bukkit.getPlayerExact(member);
+                        for (UUID member : island.getAllMembers()){
+                            Player target = Bukkit.getPlayer(member);
                             if (target != null && target.isOnline()) {
-                                liste.add(Component.text("- "+member, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getPlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
 
                             } else {
-                                liste.add(Component.text("- "+member, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+Bukkit.getPlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
 
                             }
                         }
@@ -124,13 +125,13 @@ public class IslandInfoInventory implements InventoryHolder {
                         ItemMeta itemMeta = itemStack.getItemMeta();
                         itemMeta.displayName(Component.text("Moderator of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
                         List<Component> liste = new ArrayList<>();
-                        for (String moderator : island.getAllModerators()){
-                            Player target = Bukkit.getPlayerExact(moderator);
+                        for (UUID moderator : island.getAllModerators()){
+                            Player target = Bukkit.getPlayer(moderator);
                             if (target != null && target.isOnline()) {
-                                liste.add(Component.text("- "+ moderator, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getPlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
 
                             } else {
-                                liste.add(Component.text("- "+ moderator, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getPlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
 
                             }
                         }

@@ -9,8 +9,10 @@ import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.WorldBorder;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
+import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -29,6 +31,8 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemRarity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.scheduler.BukkitScheduler;
 
 import java.util.*;
 
@@ -46,11 +50,34 @@ public class PlayerListeners implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event){
         Player player = event.getPlayer();
+        Island playerIsland = null;
+        if (islandManager.playerHasIsland(player.getName())){
+            playerIsland = islandManager.getIslandbyplayer(player.getName());
+        }
+
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.6 created by me (ht06)"));
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>NO MORE RESET! you can now play witouth fear!"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
+        //WorldBorder Gestion
+        if (player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) {
+            if (onHisIsland(player)) {
+                //Because the worldBorder need to be delayed
+                new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        Island playerIsland = islandManager.getIslandbyplayer(player.getName());
+                        WorldBorder worldBorder = Bukkit.createWorldBorder();
+                        worldBorder.setSize(playerIsland.getSize());
+                        worldBorder.setCenter(playerIsland.getIslandCoordinates());
+                        player.setWorldBorder(worldBorder);
+                    }
+                }.runTaskLater(JustSkyblock.getInstance(), 1);
+            } else {
+                Bukkit.dispatchCommand(player, JustSkyblock.getInstance().getConfig().getString("IslandDeleteCommand"));
+            }
+        }
         //if (islandManager.playerHasIsland(player.getName())) island = islandManager.getIslandbyplayer(player.getName()).getIsland();
     }
 
@@ -80,7 +107,6 @@ public class PlayerListeners implements Listener {
                 return;
             }
 
-            Island island = islandManager.getIslandbyplayer(player.getName());
 
             if (!onHisIsland(player)){
                 event.setCancelled(true);
@@ -131,7 +157,7 @@ public class PlayerListeners implements Listener {
 
                 //For Farming
                 if (island.getCropsCounter().containsKey(capitalizeFirstAndAfterUnderscore(item.getItemStack().getType().name()))) {
-                    org.bukkit.block.data.Ageable ageable = (org.bukkit.block.data.Ageable) event.getBlockState().getBlockData();
+                    Ageable ageable = (Ageable) event.getBlockState().getBlockData();
                     //Check for block like sugar can and cactus
                     if (age15.contains(event.getBlockState().getType()) ){
                         Location location = event.getBlockState().getLocation();
@@ -216,7 +242,7 @@ public class PlayerListeners implements Listener {
 
                 //For Farming
                 if (island.getCropsCounter().containsKey(capitalizeFirstAndAfterUnderscore(item.getItemStack().getType().name()))) {
-                    org.bukkit.block.data.Ageable ageable = (org.bukkit.block.data.Ageable) event.getBlockState().getBlockData();
+                    Ageable ageable = (Ageable) event.getBlockState().getBlockData();
                     //Check for block like sugar can and cactus
                     if (age15.contains(event.getBlockState().getType()) ){
                         Location location = event.getBlockState().getLocation();
@@ -440,9 +466,10 @@ public class PlayerListeners implements Listener {
     public static boolean onHisIsland(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
-            if (contains(player.getLocation(), loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
-                if (is.isOnThisIsland(player.getName())) {
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            if (contains(player.getLocation(),
+                    loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
+                if (is.isOnThisIsland(player.getUniqueId())) {
                     return true;
                 }
             }
@@ -453,8 +480,8 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIslandName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
-            if (contains(player.getLocation(), loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 return is.getIslandName();
             }
         }
@@ -464,9 +491,9 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIsland_PlayerName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().get(0), 70, is.getIslandCoordinates().get(1));
-            if (contains(player.getLocation(), loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
-                return is.getOwner();
+            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
+                return Bukkit.getPlayer(is.getOwner()).getName();
             }
         }
         return null;

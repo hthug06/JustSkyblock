@@ -37,7 +37,7 @@ public class IslandCommandTab implements TabCompleter {
             }
             else{
                 Island island = islandManager.getIslandbyplayer(player.getName());
-                if (island.isOwner(player.getName())){
+                if (island.isOwner(player.getUniqueId())){
                     //listearg0.add("decline");
                     listearg0.add("delete");
                     listearg0.add("demote");
@@ -59,7 +59,7 @@ public class IslandCommandTab implements TabCompleter {
 
                     return listearg0;
                 }
-                else if (island.isModerator(player.getName())){
+                else if (island.isModerator(player.getUniqueId())){
                     //listearg0.add("decline");
                     //listearg0.add("delete");
                     listearg0.add("demote");
@@ -80,7 +80,7 @@ public class IslandCommandTab implements TabCompleter {
 
                     return listearg0;
                 }
-                else if (island.isMember(player.getName())) {
+                else if (island.isMember(player.getUniqueId())) {
                     //listearg0.add("decline");
                     //listearg0.add("delete");
                     //listearg0.add("demote");

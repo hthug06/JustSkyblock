@@ -6,12 +6,8 @@ import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
-import net.kyori.adventure.text.event.ClickCallback;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
-import net.kyori.adventure.text.event.HoverEventSource;
-import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
@@ -19,7 +15,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerDropItemEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -132,13 +127,13 @@ public class IsAdminCommand implements CommandExecutor {
                         if (islandManager.getAllIsland().size()>10) {
                             player.sendMessage("--- list of island page 1 (total of "+ islandManager.getAllIsland().size()+ ") ---");
                             for (int i = 0; i < 10; i++) {
-                                String isName = islandManager.getAllIsland().get(i).getIslandName();
-                                String ownerName =  islandManager.getAllIsland().get(i).getOwner();
+                                String islandName = islandManager.getAllIsland().get(i).getIslandName();
+                                String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
 
                                 Component msg = Component.text(ownerName + ": ")
-                                        .append(Component.text(isName).
+                                        .append(Component.text(islandName).
                                                 hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
-                                                .clickEvent(ClickEvent.copyToClipboard(isName)));
+                                                .clickEvent(ClickEvent.copyToClipboard(islandName)));
                                 player.sendMessage(msg);
                             }
 
@@ -153,7 +148,7 @@ public class IsAdminCommand implements CommandExecutor {
                             player.sendMessage("--- list of island page 1 ---");
                             for (int i = 0; i < islandManager.getAllIsland().size(); i++) {
                                 String isName = islandManager.getAllIsland().get(i).getIslandName();
-                                String ownerName =  islandManager.getAllIsland().get(i).getOwner();
+                                String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
 
                                 Component msg = Component.text(ownerName + ": ")
                                         .append(Component.text(isName)
@@ -172,7 +167,7 @@ public class IsAdminCommand implements CommandExecutor {
                         for (int i = (page - 1) * 10; i < page * 10; i++) {
                             if (i >= islandManager.getAllIsland().size()) break;
                             String isName = islandManager.getAllIsland().get(i).getIslandName();
-                            String ownerName =  islandManager.getAllIsland().get(i).getOwner();
+                            String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
                             Component msg = Component.text(ownerName + ": ")
                                     .append(Component.text(isName)
                                             .hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))

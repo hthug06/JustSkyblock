@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.Inventory.upgrade;
 
+import fr.ht06.justskyblock.CreateItem;
 import fr.ht06.justskyblock.Events.PlayerListeners;
 import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.JustSkyblock;
@@ -43,7 +44,7 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
 
         // for the 2nd row of the inv
         for (int nbr = 0; nbr < 7 ;nbr++){
-            itemStack = JustSkyblock.createItem(
+            itemStack = CreateItem.createItem(
                     Component.text("Tier " + (nbr+1) + " Generator", TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false),
                     i,
                     materialList.get(nbr),
@@ -56,7 +57,7 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
         for (int lvl = 1; lvl <= 7; lvl++) {
             List<Component> lore = new ArrayList<>();
             Component component;
-            for (Object s : JustSkyblock.instance.getConfig().getList("CustomGenerator.level." + lvl)) {
+            for (Object s : JustSkyblock.getInstance().getConfig().getList("CustomGenerator.level." + lvl)) {
                 String block = s.toString().split(":")[0];
                 if (s.toString().contains(".")) {
                     float chance = Float.parseFloat(s.toString().split(":")[1]);
@@ -68,7 +69,7 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
                     component = miniMessage.deserialize(getBlockColor(PlayerListeners.capitalizeFirstAndAfterUnderscore(block))+ msg);                }
                 lore.add(component);
             }
-            ItemStack tier = JustSkyblock.createItem(Component.text("Tier "+lvl,TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.CHEST, lore);
+            ItemStack tier = CreateItem.createItem(Component.text("Tier "+lvl,TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.CHEST, lore);
 
             inv.setItem(18 + lvl, tier);
         }
@@ -78,9 +79,9 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
         for (int lvl = 1; lvl < 8; lvl++) {
             List<Component> lore = new ArrayList<>();
             Component component;
-            ItemStack selectTier = JustSkyblock.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.GREEN_STAINED_GLASS_PANE, lore);
-            ItemStack unlockedTier = JustSkyblock.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.YELLOW_STAINED_GLASS_PANE, lore);
-            ItemStack lockedTier = JustSkyblock.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.RED_STAINED_GLASS_PANE, lore);
+            ItemStack selectTier = CreateItem.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.GREEN_STAINED_GLASS_PANE, lore);
+            ItemStack unlockedTier = CreateItem.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.YELLOW_STAINED_GLASS_PANE, lore);
+            ItemStack lockedTier = CreateItem.createItem(Component.text("Tier "+(lvl),TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false), 1, Material.RED_STAINED_GLASS_PANE, lore);
 
             if (island.getCobbleGenLevelUnlock() >= lvl){
                 unlockedTier.lore(List.of(Component.text("Click Here to select level "+ lvl, TextColor.color(0xf4d03f))));
