@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'fr.ht06'
-version = 'alpha-1.6.2'
+version = 'alpha-1.7.1'
 
 repositories {
     mavenCentral()

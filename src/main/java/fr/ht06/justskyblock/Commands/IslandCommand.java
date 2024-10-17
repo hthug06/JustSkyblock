@@ -9,7 +9,7 @@ import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.IslandManager.IslandWorldBorder;
 import fr.ht06.justskyblock.JustSkyblock;
-import fr.ht06.justskyblock.timerTask;
+import fr.ht06.justskyblock.IslandManager.TimerForInvitedPlayer;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.event.ClickEvent;
 import net.kyori.adventure.text.event.HoverEvent;
@@ -18,7 +18,6 @@ import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.WorldBorder;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -45,7 +44,7 @@ public class IslandCommand implements CommandExecutor {
         Island island = islandManager.getIslandbyplayer(player.getName());
         if (args.length == 0) {
             if (!islandManager.playerHasIsland(player.getName())) {
-                IslandInventory gui = new IslandInventory();
+                CreateIslandInventory gui = new CreateIslandInventory();
                 player.openInventory(gui.getInventory());
             }
 
@@ -61,7 +60,7 @@ public class IslandCommand implements CommandExecutor {
 
             if (args[0].equalsIgnoreCase("create")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -72,7 +71,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("setspawn")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -85,7 +84,7 @@ public class IslandCommand implements CommandExecutor {
             }
             else if (args[0].equalsIgnoreCase("delete")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -103,7 +102,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("settings")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -117,7 +116,7 @@ public class IslandCommand implements CommandExecutor {
             }
             else if (args[0].equalsIgnoreCase("team")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -125,7 +124,7 @@ public class IslandCommand implements CommandExecutor {
             }
             else if (args[0].equalsIgnoreCase("invite")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -147,7 +146,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("leave")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -157,7 +156,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("promote")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -172,7 +171,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("demote")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -186,7 +185,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("Kick")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -200,7 +199,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("setName")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -209,7 +208,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("level") || args[0].equalsIgnoreCase("lvl")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -239,7 +238,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("rankup")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -250,7 +249,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("quest")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -265,7 +264,7 @@ public class IslandCommand implements CommandExecutor {
 
             else if (args[0].equalsIgnoreCase("upgrade")){
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    IslandInventory gui = new IslandInventory();
+                    CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
                     return true;
                 }
@@ -430,7 +429,7 @@ public class IslandCommand implements CommandExecutor {
                 player.sendMessage("§cThis player is offline or didn't exist");
             }
             else {
-                timerTask timerTask = new timerTask(target, player.getName(), 60);
+                TimerForInvitedPlayer timerTask = new TimerForInvitedPlayer(target, player.getName(), 60);
                 timerTask.runTaskTimer(JustSkyblock.getInstance(), 0, 20);
                 player.sendMessage("invite send to " + args[1]);
                 target.sendMessage(player.getName()+" invite you on his island");

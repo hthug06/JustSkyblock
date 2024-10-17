@@ -72,10 +72,10 @@ public class IslandInfoInventory implements InventoryHolder {
 
                     Player target = Bukkit.getPlayer(island.getOwner());
                     if (target != null && target.isOnline()) {
-                        skullMeta.lore(List.of(Component.text(Bukkit.getPlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false))));
+                        skullMeta.lore(List.of(Component.text(Bukkit.getOfflinePlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false))));
 
                     } else {
-                        skullMeta.lore(List.of(Component.text(Bukkit.getPlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false))));
+                        skullMeta.lore(List.of(Component.text(Bukkit.getOfflinePlayer(island.getOwner()).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false))));
                     }
                     //skullMeta.lore(List.of(Component.text(String.valueOf(island.getOwner()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(skullMeta);
@@ -148,11 +148,19 @@ public class IslandInfoInventory implements InventoryHolder {
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }
+                case 19-> {
+                    ItemStack itemStack = new ItemStack(Material.TNT, 1);
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    itemMeta.displayName(Component.text("Delete the Island", TextColor.color(0xF73331)).decoration(TextDecoration.ITALIC, false));
+                    itemStack.setItemMeta(itemMeta);
+                    inv.setItem(i, itemStack);
+                }
+
                 case 25 ->{
                     ItemStack itemStack = new ItemStack(Material.GRASS_BLOCK, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Island Size", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
-                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getSize()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getSize()+"x"+island.getSize()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }

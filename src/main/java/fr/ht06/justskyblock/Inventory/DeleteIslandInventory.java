@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.Inventory;
 
+import fr.ht06.justskyblock.CreateItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -20,7 +21,7 @@ public class DeleteIslandInventory implements InventoryHolder {
     private Inventory inv;
     private ItemStack item;
     public DeleteIslandInventory(){
-        inv = Bukkit.createInventory(this, 27, Component.text("Delete your island").color(TextColor.color(0xB03A2E)));  //création de l'inventaire
+        inv = Bukkit.createInventory(this, 27, Component.text("Delete The island").color(TextColor.color(0xB03A2E)));  //création de l'inventaire
         init();//Pour mettre les item
 
     }
@@ -34,8 +35,8 @@ public class DeleteIslandInventory implements InventoryHolder {
                 liste.add(Component.text(" - Your island will be deleted").color(TextColor.color(0xB23324)).decoration(TextDecoration.ITALIC, false));
                 liste.add(Component.text("").color(TextColor.color(0xB23324)).decoration(TextDecoration.ITALIC, false));
                 liste.add(Component.text("Click if you really want to delete it").color(TextColor.color(0x5B0D00)).decoration(TextDecoration.ITALIC, false));
-                item = createItem(Component.text("Click here if you want to delete your Island").color(TextColor.color(0x922B21)).decoration(TextDecoration.ITALIC, false),
-                        Material.RED_WOOL, liste);
+                item = CreateItem.createItem(Component.text("Click here if you want to delete your Island").color(TextColor.color(0x922B21)).decoration(TextDecoration.ITALIC, false),
+                        1,Material.RED_WOOL, liste);
                 inv.setItem(i, item);
             }
             else{
@@ -49,18 +50,6 @@ public class DeleteIslandInventory implements InventoryHolder {
         }
     }
 
-
-
-    private ItemStack createItem(Component name, Material material, List<Component> lore){
-
-        ItemStack item = new ItemStack(material, 1);
-        ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.displayName(name);
-        itemMeta.lore(lore);
-        item.setItemMeta(itemMeta);
-
-        return item;
-    }
 
     @Override
     public @NotNull Inventory getInventory() {

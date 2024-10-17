@@ -1,6 +1,7 @@
 package fr.ht06.justskyblock.IslandManager;
 
 import fr.ht06.justskyblock.Events.PlayerListeners;
+import fr.ht06.justskyblock.JustSkyblock;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
@@ -9,6 +10,7 @@ import java.util.*;
 public class IslandManager {
 
     private List<Island> allIsland = new ArrayList<>();
+    private List<IslandByConfigYAML> allIslandByconfigYML = new ArrayList<>();
     private Map<String, Location> allCoordinate = new HashMap<>();
     private Map<String, List<String>> invitation = new HashMap<>();
 
@@ -150,4 +152,21 @@ public class IslandManager {
         }
     }
 
+    public void createAllIslandByConfigYAML(){
+        this.allIslandByconfigYML.clear();
+        for (String str: JustSkyblock.getInstance().getConfig().getConfigurationSection("IS.").getKeys(false)){
+            this.allIslandByconfigYML.add(new IslandByConfigYAML(str));
+        }
+    }
+
+    public List<IslandByConfigYAML> getAllIslandByconfigYML() {
+        return allIslandByconfigYML;
+    }
+
+    public IslandByConfigYAML getIslandByConfigYAMLBySlot(int slot){
+        for (IslandByConfigYAML island : this.allIslandByconfigYML){
+            if (island.slot ==  slot) return island;
+        }
+        return null;
+    }
 }

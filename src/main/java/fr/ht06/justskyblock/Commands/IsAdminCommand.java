@@ -28,20 +28,17 @@ public class IsAdminCommand implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
         //Tout pour si la commande est utlisé en console
         if (!(sender instanceof Player)){
-            if (args.length == 0){
+            if (args.length == 0 || args[0].equalsIgnoreCase("help")){
                 sender.sendMessage("--- Island Admin Help (Console version) ---");
                 sender.sendMessage("IslandAdmin help: All subcommand and some indication about the IslandAdmin command");
                 sender.sendMessage("IslandAdmin info player <player>: See info of the player's island");
                 sender.sendMessage("IslandAdmin info island <island>: See info about this island");
+                sender.sendMessage("IslandAdmin reload: reload configs ");
             }
             if (args.length >= 1){
-                if (args.length == 1) {
-                    sender.sendMessage("IslandAdmin info player <player>");
-                    sender.sendMessage("IslandAdmin info island <island>");
-                    return true;
-                }
 
                 if(args[0].equalsIgnoreCase("info")){
+
 
                     if (args.length == 2) {
                         sender.sendMessage("IslandAdmin info player <player>");
@@ -103,6 +100,7 @@ public class IsAdminCommand implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("reload")){
                     JustSkyblock.getInstance().reloadConfig();
+                    JustSkyblock.islandManager.createAllIslandByConfigYAML();
                     if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
                         IslandLevel.reload();
                     }
@@ -148,7 +146,7 @@ public class IsAdminCommand implements CommandExecutor {
                             player.sendMessage("--- list of island page 1 ---");
                             for (int i = 0; i < islandManager.getAllIsland().size(); i++) {
                                 String isName = islandManager.getAllIsland().get(i).getIslandName();
-                                String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+                                String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
 
                                 Component msg = Component.text(ownerName + ": ")
                                         .append(Component.text(isName)
@@ -167,7 +165,7 @@ public class IsAdminCommand implements CommandExecutor {
                         for (int i = (page - 1) * 10; i < page * 10; i++) {
                             if (i >= islandManager.getAllIsland().size()) break;
                             String isName = islandManager.getAllIsland().get(i).getIslandName();
-                            String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+                            String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
                             Component msg = Component.text(ownerName + ": ")
                                     .append(Component.text(isName)
                                             .hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
@@ -182,7 +180,6 @@ public class IsAdminCommand implements CommandExecutor {
                                 .append(Component.text("-------")));
                         player.sendMessage(msgBarre);
                         player.sendMessage("");
-
                     }
                 }
 
@@ -243,6 +240,7 @@ public class IsAdminCommand implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("reload")){
                     JustSkyblock.getInstance().reloadConfig();
+                    JustSkyblock.islandManager.createAllIslandByConfigYAML();
                     if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
                         IslandLevel.reload();
                     }
@@ -252,6 +250,7 @@ public class IsAdminCommand implements CommandExecutor {
                     sender.sendMessage("§cConfig reload");
                     return true;
                 }
+
             }
         }
         return true;

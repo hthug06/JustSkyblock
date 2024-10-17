@@ -3,47 +3,34 @@ package fr.ht06.justskyblock;
 import fr.ht06.justskyblock.Commands.IsAdminCommand;
 import fr.ht06.justskyblock.Commands.IslandCommand;
 import fr.ht06.justskyblock.Config.BlockPlacedByPlayerConfig;
-import fr.ht06.justskyblock.Config.DataConfig;
 import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.Events.CobbleGenEvent;
 import fr.ht06.justskyblock.Events.InventoryEvents;
 import fr.ht06.justskyblock.Events.PlayerListeners;
+import fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin;
 import fr.ht06.justskyblock.Inventory.Quest.*;
 import fr.ht06.justskyblock.Inventory.upgrade.CustomCobbleGenUpgrade;
 import fr.ht06.justskyblock.Inventory.upgrade.IslandSizeUpgrade;
 import fr.ht06.justskyblock.Inventory.upgrade.UpgradeGenLvl;
 import fr.ht06.justskyblock.Inventory.upgrade.UpgradeMain;
 import fr.ht06.justskyblock.IslandManager.CreateIsland;
-import fr.ht06.justskyblock.IslandManager.Island;
 import fr.ht06.justskyblock.IslandManager.IslandManager;
 import fr.ht06.justskyblock.IslandManager.SaveIsland;
 import fr.ht06.justskyblock.TabCompleter.IsadminCommandTab;
 import fr.ht06.justskyblock.TabCompleter.IslandCommandTab;
 import fr.ht06.justskyblock.placeholder.IslandLevelPlaceholder;
 import fr.ht06.justskyblock.recipe.ChainMailArmorRecipe;
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.*;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.time.LocalDateTime;
 import java.util.*;
 
 public final class JustSkyblock extends JavaPlugin {
 
     //Color of the plugin : Green ->#52BE80   Blue -> #5499C7
 
-    public static IslandListByYAML islandList;
     public static IslandManager islandManager;
     public static YamlConfiguration customConfig;
     public static List<Location> placeByPlayer;
@@ -88,41 +75,11 @@ public final class JustSkyblock extends JavaPlugin {
         chainMailArmorRecipe.createCraft();
 
         //Island From the config (maybe change for later)
-        List<String> IS = new ArrayList<>(getConfig().getConfigurationSection("IS.").getKeys(false));
-        List<String> verificationSlot = new ArrayList<>();
-        List<String> verificationName = new ArrayList<>();
-        islandList = new IslandListByYAML();
-        int i =0;
+        islandManager.createAllIslandByConfigYAML();
+
 
         //Import du schematic
         //saveResource("Schematic/IslandPlains.schem", false);
-
-
-        //verification si les îles sont valide (vérifiactions des slots)
-        for (String caractere: IS){
-            islandList.createIsland(caractere);
-            if (verificationSlot.contains(islandList.getIsland(caractere).get("Slot"))){
-                getLogger().warning("The config isn't valid (you can't have the same slot on 2 items)");
-                resetConfig();
-                break;
-            }
-            else{
-                verificationSlot.add(islandList.getIsland(caractere).get("Slot"));
-            }
-
-            //MArche pas ??
-            //verification si les îles sont valide (vérifiactions des id)
-
-            if (verificationName.contains(IS.get(i))){
-                getLogger().warning("The config isn't valid (you can't have 2 same id)");
-                resetConfig();
-                break;
-            }
-            else{
-                verificationName.add(IS.get(i));
-            }
-            i++;
-        };
 
         //Folder For the .schem
         File dossier = new File(getServer().getPluginsFolder(), "/JustSkyblock/Schematic/");
@@ -151,6 +108,26 @@ public final class JustSkyblock extends JavaPlugin {
         //Pour les level
         createLevelConfig();
         IslandLevel.save();
+
+        //for all the schematic
+        getAllBaseSchematic();
+
+    }
+
+    private void getAllBaseSchematic() {
+        List<String> schematicName = new ArrayList<>(List.of("BasicIsland", "IslandDesert", "IslandMesa", "IslandPlains", "IslandSnow"));
+
+        for (String name: schematicName){
+            if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/" + name + ".schem").exists()){
+                super.saveResource("Schematic/"+ name +".schem", false /* don't replace the file on disk if it exists */);
+            }
+
+
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem");
+            file.renameTo(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem"));
+        }
+
+
 
     }
 
@@ -193,7 +170,7 @@ public final class JustSkyblock extends JavaPlugin {
     }
 
     private void registerEvents(){
-        getServer().getPluginManager().registerEvents(new InventoryEvents(this), this);
+        getServer().getPluginManager().registerEvents(new InventoryEvents(), this);
         getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
         getServer().getPluginManager().registerEvents(new CobbleGenEvent(), this);
         getServer().getPluginManager().registerEvents(new MainQuestInventory(), this);
@@ -208,6 +185,7 @@ public final class JustSkyblock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CustomCobbleGenUpgrade(), this);
         getServer().getPluginManager().registerEvents(new UpgradeGenLvl(), this);
         getServer().getPluginManager().registerEvents(new IslandSizeUpgrade(), this);
+        getServer().getPluginManager().registerEvents(new DeleteIslandInventoryAdmin(), this);
     }
 }
 

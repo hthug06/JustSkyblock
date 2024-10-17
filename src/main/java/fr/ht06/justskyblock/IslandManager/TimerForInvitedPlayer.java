@@ -1,18 +1,18 @@
-package fr.ht06.justskyblock;
+package fr.ht06.justskyblock.IslandManager;
 
-import fr.ht06.justskyblock.IslandManager.IslandManager;
+import fr.ht06.justskyblock.JustSkyblock;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class timerTask extends BukkitRunnable {
+public class TimerForInvitedPlayer extends BukkitRunnable {
     IslandManager islandManager = JustSkyblock.islandManager;
     String islandInviter;
     Player invited;
     String invitedPlayer;
     Integer time;
 
-    public timerTask(Player invited, String inviter, Integer time){
+    public TimerForInvitedPlayer(Player invited, String inviter, Integer time){
         this.invitedPlayer = invited.getName();
         this.invited = invited;
         this.islandInviter = inviter;

@@ -16,12 +16,15 @@ import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.Format;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
 
 public class Test implements CommandExecutor {
 
@@ -49,8 +52,8 @@ public class Test implements CommandExecutor {
 //            //player.sendMessage(String.valueOf(IslandLevel.get().getList("Material.Special").contains(player.getInventory().getItemInMainHand().getType().name())));
 //            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
             Island island=islandManager.getIslandbyplayer(player.getName());
-            player.sendMessage(String.valueOf(island.getSize()));
-
+            //player.sendMessage(String.valueOf(island.getSize()));
+            islandManager.getAllIslandByconfigYML().stream().forEach(islandByConfigYAML -> player.sendMessage(String.valueOf(islandByConfigYAML.getLore())));
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
         }

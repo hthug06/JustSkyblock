@@ -2,15 +2,10 @@ package fr.ht06.justskyblock.Events;
 
 import fr.ht06.justskyblock.Inventory.*;
 import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
-import fr.ht06.justskyblock.IslandManager.DeleteIsland;
-import fr.ht06.justskyblock.IslandManager.Island;
-import fr.ht06.justskyblock.IslandManager.IslandManager;
-import fr.ht06.justskyblock.IslandManager.IslandWorldBorder;
+import fr.ht06.justskyblock.IslandManager.*;
 import fr.ht06.justskyblock.LoadSchematic;
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.event.ClickEvent;
-import net.kyori.adventure.text.event.HoverEvent;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -33,22 +28,14 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import static org.bukkit.Bukkit.getLogger;
 import static org.bukkit.Bukkit.getServer;
 
 public class InventoryEvents implements Listener {
-    private Random random = new Random();
-    private JustSkyblock main;
-    private Integer[] coords = {1000, -1000};
     IslandManager islandManager = JustSkyblock.islandManager;
     MiniMessage miniMessage = MiniMessage.miniMessage();
 
-
-    public InventoryEvents(JustSkyblock main) {
-        this.main = main;
-    }
 
     @EventHandler
     public void onClick(InventoryClickEvent event){
@@ -58,36 +45,36 @@ public class InventoryEvents implements Listener {
         //@NotNull List<HumanEntity> human = event.getViewers();
         if (event.getClickedInventory() == null) return;
 
-        if (event.getClickedInventory().getHolder() instanceof IslandInventory){//Vérification si c'estle bon inventaire
+        if (event.getClickedInventory().getHolder() instanceof CreateIslandInventory){//Vérification si c'estle bon inventaire
             event.setCancelled(true);
 
-            if (event.getSlot()< JustSkyblock.getInstance().getConfig().getConfigurationSection("IS.").getKeys(false).size()){
+            if (event.getSlot()< islandManager.getAllIslandByconfigYML().size()){
+                IslandByConfigYAML islandByConfigYAML = islandManager.getIslandByConfigYAMLBySlot(event.getSlot());
 
-                Map<String, String> islandlist = JustSkyblock.islandList.getIslandBySlot(event.getSlot());
-                if (!new File(getServer().getPluginsFolder().getAbsoluteFile() + "/JustSkyblock/Schematic/" + islandlist.get("Schematic")).exists()){
-                    getLogger().severe("The file :'" + islandlist.get("Schematic")+"' didn't exist");
+                if (!new File(getServer().getPluginsFolder().getAbsoluteFile() + "/JustSkyblock/Schematic/" +islandManager.getIslandByConfigYAMLBySlot(event.getSlot()).getSchematic()).exists()){
+                    getLogger().severe("The file schematic file of the island:"+ islandManager.getIslandByConfigYAMLBySlot(event.getSlot()).getSchematic()+ "didn't exist");
                     player.sendMessage("The schematic of the island didn't exist, please contact an administrator");
                     return;
                 }
 
                 //Si le joueur n'a pas d'île
                 if (!islandManager.playerHasIsland(player.getName())) {
-                    Island island = islandManager.getIslandbyplayer(player.getName());
+                    Island island;
                     //Si quelqu'un a déjà une ile
                     if (!islandManager.getAllIsland().isEmpty()) {
                         player.sendMessage("§aCreation of the Island");
                         List<Integer> coord = getIslandCoordinate(player);
                         Location islandCoord = new Location(Bukkit.getWorld("world_Skyblock")
                                 ,coord.get(0)
-                                ,Bukkit.getWorld("world_Skyblock").getHighestBlockYAt(getIslandCoordinate(player).get(0), getIslandCoordinate(player).get(1)),
-                                coord.get(1));
+                                ,Bukkit.getWorld("world_Skyblock").getHighestBlockYAt(getIslandCoordinate(player).get(0), getIslandCoordinate(player).get(1))
+                                ,coord.get(1));
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"),coord.get(0), 70, coord.get(1));
 
-                        Island newIsland = new Island(player.getName()+"'s Island", islandCoord, loc);
-                        newIsland.setOwner(player.getUniqueId());
-                        JustSkyblock.islandManager.addIsland(newIsland);
+                        island = new Island(player.getName()+"'s Island", islandCoord, loc);
+                        island.setOwner(player.getUniqueId());
+                        JustSkyblock.islandManager.addIsland(island);
 
-                        new LoadSchematic(loc, "world_Skyblock", islandlist.get("Schematic"));
+                        new LoadSchematic(loc, "world_Skyblock", islandByConfigYAML.getSchematic());
 
                         player.closeInventory();
                         player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
@@ -115,7 +102,7 @@ public class InventoryEvents implements Listener {
 
                         Location loc = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
                         //new LoadSchematic(loc,"world_Skyblock", "IslandPlain");
-                        new LoadSchematic(loc, loc.getWorld().getName(), islandlist.get("Schematic"));
+                        new LoadSchematic(loc, loc.getWorld().getName(), islandByConfigYAML.getSchematic());
                         player.sendMessage("§aCreation of the Island");
 
                         Location location = new Location(Bukkit.getWorld("world_Skyblock"), 0, 70, 0);
@@ -212,12 +199,14 @@ public class InventoryEvents implements Listener {
         }
 
         if (event.getClickedInventory().getHolder() instanceof IslandInfoInventory){//Vérification si c'estle bon inventaire
-            Inventory inv = event.getClickedInventory();
             String islandName = PlainTextComponentSerializer.plainText().serialize(event.getView().title());
             if (event.getSlot() == 12){
                 event.setCancelled(true);
                 player.teleport(islandManager.getIslandbyName(islandName).getIslandSpawn());
                 player.sendMessage(Component.text("Teleportation to " + islandManager.getIslandbyName(islandName).getIslandName(), TextColor.color(0x43D649)));
+            }
+            else if (event.getSlot() == 19){
+                player.openInventory(new DeleteIslandInventoryAdmin(islandManager.getIslandbyName(islandName).getIslandName()).getInventory());
             }
             else event.setCancelled(true);
         }
@@ -340,24 +329,22 @@ public class InventoryEvents implements Listener {
         }
     }
 
-    private ItemStack setTrue(ItemStack item) {
+    private void setTrue(ItemStack item) {
         ItemMeta itemMeta = item.getItemMeta();
         List<Component> liste = new ArrayList<>();
         liste.add(Component.text("ALLOW").color(TextColor.color(0x2FCC33)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
         liste.add(Component.text("DENY").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
         itemMeta.lore(liste);
         item.setItemMeta(itemMeta);
-        return item;
     }
 
-    private ItemStack setFalse(ItemStack item) {
+    private void setFalse(ItemStack item) {
         ItemMeta itemMeta = item.getItemMeta();
         List<Component> liste = new ArrayList<>();
         liste.add(Component.text("ALLOW").color(TextColor.color(0x898F86)).decoration(TextDecoration.ITALIC,true));
         liste.add(Component.text("DENY").color(TextColor.color(0xCC322A)).decoration(TextDecoration.ITALIC,false).decorate(TextDecoration.BOLD));
         itemMeta.lore(liste);
         item.setItemMeta(itemMeta);
-        return item;
     }
 
 }

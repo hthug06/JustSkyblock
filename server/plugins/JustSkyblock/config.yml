@@ -1,38 +1,49 @@
-#test
+#This plugin use the miniMessage API, so you can use it everywhere in the config
+#You can use this link to learn how to use it https://docs.advntr.dev/minimessage/format.html
 IS:
+  Basic:
+    Block: GRASS_BLOCK     #The name of the Material (you can see HERE : https://jd.papermc.io/paper/1.21.1/org/bukkit/Material.html)
+    Name: The basic Skyblock island   #The name of the block
+    Lore:   #the lore of the block
+      - This is the first line of the lore
+      - And the 2nd
+      - <color:red>And this is the 3rd, but in red
+      - <!i>And this last line isn't italic Oo
+    Schematic: BasicIsland.schem      #the name of the file located in the Schematic folder
+    Slot: 0                            #The number of the slot in creation menu (don't put 2 of the same slot)
   Plain:
-    Block: GRASS_BLOCK
-    Name: Base Island
-    Lore: A basic Plain Island with some basic ressources
+    Block: DIRT
+    Name: Basic Island
+    Lore:
+      - "<!i><gradient:blue:green>A basic plain island"
+      - ""
+      - "This lore have an <u>empty</u> line"
     Schematic: IslandPlains.schem
-    Slot: 0
+    Slot: 1
   Desert:
     Block: SAND
     Name: Desert Island
-    Lore: An island in the desert
+    Lore:
+      - <obf> ! </obf>An island in the desert<obf> ! </obf>
     Schematic: IslandDesert.schem
-    Slot: 1
+    Slot: 2
   Mesa:
     Block: TERRACOTTA
     Name: Mesa Island
-    Lore: An island in a "Mesa Biome like"
+    Lore:
+      - An island in a <b>"Mesa Biome"</b> like!"
     Schematic: IslandMesa.schem
-    Slot: 2
+    Slot: 3
   Snow:
     Block: SNOW_BLOCK
     Name: Snow Island
-    Lore: An island in the cold
+    Lore:
+      - This island is <st>Hot</st> cold!
     Schematic: IslandSnow.schem
-    Slot: 3
-  Basic:
-    Block: DIRT
-    Name: Basic Island
-    Lore: The basic skyblock Island
-    Schematic: BasicIsland.schem
     Slot: 4
 
 #When the player delete his island, all the person who where on the island execute this command
-#Basically, all the player are gonna use /spawn (just don't put the "/")
+#Basically, all the player are going to use /spawn (just don't put the "/")
 IslandDeleteCommand: spawn
 
 

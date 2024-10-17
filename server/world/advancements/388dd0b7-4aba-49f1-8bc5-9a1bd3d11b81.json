@@ -108,5 +108,11 @@
     },
     "done": true
   },
+  "minecraft:story/root": {
+    "criteria": {
+      "crafting_table": "2024-10-17 18:13:19 +0200"
+    },
+    "done": true
+  },
   "DataVersion": 3839
 }
