@@ -13,15 +13,16 @@ Actualy implement:
 - island team
 - quest
 - admin command (/ISA)
+- personnal World border system
+- implement basic thing when the plugin start for the first Time
+
 
 working on:
 - custom generator 
 
 to add:
 - better admin panel
-- implement basic thing when the plugin start for the first Time (like more island schematic)
 - made the plugin 100% custom (like custom quest, generator, custom permission,...)
-- personnal World border system (I currently use this : https://github.com/yannicklamprecht/WorldBorderAPI )
 - personnal island copy / paste from a schematic (currently using World edit)
 - no other plugin dependances at all 
 
