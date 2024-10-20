@@ -5,7 +5,7 @@
 #If you put nothing, the world name is going to be: "world_Skyblock"
 WorldName: "world_Skyblock"
 
-IS:
+Island:
   Basic:
     Block: GRASS_BLOCK     #The name of the Material (you can see HERE : https://jd.papermc.io/paper/1.21.1/org/bukkit/Material.html)  don't use deprecated item!!
     Name: The basic Skyblock island   #The name of the block

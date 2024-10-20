@@ -20,11 +20,11 @@ public class IslandManager {
 
 
     public void addAllCoordinate(Island island) {
-        this.allCoordinate.put(island.getIslandName(), island.getIslandCoordinates());
+        this.allCoordinate.put(island.getIslandName(), island.getCoordinates());
     }
 
     public void addIsland(Island island) {
-        this.allCoordinate.put(island.getIslandName(), island.getIslandCoordinates());
+        this.allCoordinate.put(island.getIslandName(), island.getCoordinates());
         this.allIsland.add(island);
     }
 
@@ -67,7 +67,7 @@ public class IslandManager {
     public Island getIslandbyLocation(Location location){
         Location loc;
         for (Island is : getAllIsland()) {
-            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getCoordinates().getBlockX(), 70, is.getCoordinates().getBlockZ());
             if (PlayerListeners.contains(location, loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
                 return is;
             }
@@ -117,7 +117,7 @@ public class IslandManager {
 
     public Boolean IslandCoordinateTaken(List<Integer> xz){
         for (Island i : this.allIsland){
-            if (i.getIslandCoordinates().equals(xz)){
+            if (i.getCoordinates().getBlockX() == xz.get(0) && i.getCoordinates().getBlockZ() == xz.get(1)){
                 return true;
             }
         }
@@ -154,7 +154,7 @@ public class IslandManager {
 
     public void createAllIslandByConfigYAML(){
         this.allIslandByconfigYML.clear();
-        for (String str: JustSkyblock.getInstance().getConfig().getConfigurationSection("IS.").getKeys(false)){
+        for (String str: JustSkyblock.getInstance().getConfig().getConfigurationSection("Island.").getKeys(false)){
             this.allIslandByconfigYML.add(new IslandByConfigYAML(str));
         }
     }

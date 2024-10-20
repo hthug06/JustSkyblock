@@ -123,7 +123,7 @@ public class IsAdminCommand implements CommandExecutor {
                 if (args[0].equalsIgnoreCase("allisland")) {
                     if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
                         if (islandManager.getAllIsland().size()>10) {
-                            player.sendMessage("--- list of island page 1 (total of "+ islandManager.getAllIsland().size()+ ") ---");
+                            player.sendMessage("--- list of island page 1 (total of "+ (islandManager.getAllIsland().size()%10)+ ") ---");
                             for (int i = 0; i < 10; i++) {
                                 String islandName = islandManager.getAllIsland().get(i).getIslandName();
                                 String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();

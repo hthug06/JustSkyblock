@@ -1,130 +1,361 @@
-[17:58:50] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar'...
-[17:58:50] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar' in 433ms.
-[17:58:53] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[17:58:55] [ServerMain/INFO]: Loaded 1175 recipes
-[17:58:55] [ServerMain/INFO]: Loaded 1276 advancements
-[17:58:55] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[17:58:55] [Server thread/INFO]: Loading properties
-[17:58:55] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
-[17:58:56] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[17:58:56] [Server thread/INFO]: Using 4 threads for Netty based IO
-[17:58:56] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[19:08:43] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:08:44] [ServerMain/INFO]: Loaded 1175 recipes
+[19:08:44] [ServerMain/INFO]: Loaded 1276 advancements
+[19:08:44] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[19:08:44] [Server thread/INFO]: Loading properties
+[19:08:44] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[19:08:45] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:08:45] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:08:46] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[17:58:56] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[17:58:56] [Server thread/INFO]: Default game type: SURVIVAL
-[17:58:56] [Server thread/INFO]: Generating keypair
-[17:58:56] [Server thread/INFO]: Starting Minecraft server on *:25565
-[17:58:56] [Server thread/INFO]: Using default channel type
-[17:58:56] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[17:58:56] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[17:58:57] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[17:58:57] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
-[17:58:58] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@49015d0a]
-[17:58:58] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.1
-[17:58:58] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[17:58:58] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[17:58:58] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[17:58:58] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
-[17:58:58] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[17:58:58] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[17:58:58] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[17:58:58] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[17:58:59] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
-[17:58:59] [Server thread/INFO]: Preparing level "world"
-[17:59:00] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[17:59:00] [Server thread/INFO]: Time elapsed: 495 ms
-[17:59:00] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[17:59:01] [Server thread/INFO]: Time elapsed: 436 ms
-[17:59:01] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[17:59:01] [Server thread/INFO]: Time elapsed: 132 ms
-[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[17:59:01] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.1
-[17:59:01] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[17:59:01] [Server thread/INFO]: Time elapsed: 49 ms
-[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[17:59:01] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[17:59:01] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[17:59:02] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[17:59:02] [Server thread/INFO]: Running delayed init tasks
-[17:59:02] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[17:59:02] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[17:59:02] [Server thread/INFO]: Done (6.580s)! For help, type "help"
-[17:59:02] [Server thread/INFO]: Timings Reset
-[17:59:08] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[17:59:09] [Server thread/INFO]: [+] ht06 join the server
-[17:59:09] [Server thread/INFO]: ht06[/127.0.0.1:64990] logged in with entity id 98 at ([world]-13.966968926252465, 131.0, 2.3254693812121743)
-[17:59:11] [Server thread/INFO]: ht06 issued server command: /isa allisland
-[17:59:11] [Server thread/ERROR]: Command exception: /isa allisland
-org.bukkit.command.CommandException: Unhandled exception executing command 'isa' in plugin JustSkyblock valpha-1.7.1
-	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:91) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:448) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:355) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:342) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.performCommand(Commands.java:337) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+[19:08:46] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[19:08:46] [Server thread/INFO]: Default game type: SURVIVAL
+[19:08:46] [Server thread/INFO]: Generating keypair
+[19:08:46] [Server thread/INFO]: Starting Minecraft server on *:25565
+[19:08:46] [Server thread/INFO]: Using default channel type
+[19:08:46] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[19:08:46] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[19:08:46] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:08:46] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:08:47] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@5bbc8175]
+[19:08:47] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:08:47] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:08:47] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:08:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:08:47] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:08:48] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:08:48] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:08:48] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:08:48] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:08:48] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:08:49] [Server thread/INFO]: Preparing level "world"
+[19:08:49] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:08:50] [Server thread/INFO]: Time elapsed: 551 ms
+[19:08:50] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[19:08:51] [Server thread/INFO]: Time elapsed: 719 ms
+[19:08:51] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[19:08:51] [Server thread/INFO]: Time elapsed: 296 ms
+[19:08:51] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:08:51] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:08:51] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:08:53] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[19:08:54] [Server thread/INFO]: Time elapsed: 46 ms
+[19:08:54] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:08:54] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:08:54] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:08:54] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:08:54] [Server thread/INFO]: Running delayed init tasks
+[19:08:54] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:08:54] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:08:54] [Server thread/INFO]: Done (9.531s)! For help, type "help"
+[19:08:54] [Server thread/INFO]: Timings Reset
+[19:09:41] [User Authenticator #0/INFO]: UUID of player fneris is 388dd0b7-4aba-49f1-8bc5-9a1bd3d11b81
+[19:09:41] [Server thread/INFO]: [+] fneris join the server
+[19:09:41] [Server thread/INFO]: fneris[/127.0.0.1:51321] logged in with entity id 100 at ([world]-1.5, 135.0, -8.5)
+[19:09:45] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[19:09:46] [Server thread/INFO]: [+] ht06 join the server
+[19:09:46] [Server thread/INFO]: ht06[/127.0.0.1:51328] logged in with entity id 141 at ([world]-4.5, 133.0, 3.5)
+[19:09:47] [Server thread/INFO]: ht06 issued server command: /test
+[19:09:49] [Server thread/INFO]: ht06 issued server command: /is
+[19:09:50] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightStarlightRelighterFactory as relighter factory.
+[19:09:57] [Server thread/INFO]: fneris issued server command: /is
+[19:10:04] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:10:07] [Server thread/INFO]: ht06 issued server command: /is
+[19:10:11] [Server thread/INFO]: ht06 issued server command: /test
+[19:17:42] [Server thread/INFO]: ht06 issued server command: /rl confirm
+[19:17:42] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
+[19:17:42] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
+[19:17:42] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:17:42] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:17:42] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:17:42] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:17:42] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:17:42] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:17:42] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:17:42] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:17:42] [Server thread/INFO]: Loaded 1175 recipes
+[19:17:42] [Server thread/INFO]: Loaded 1276 advancements
+[19:17:43] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar'...
+[19:17:43] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar' in 300ms.
+[19:17:43] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:17:43] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:17:44] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@402485a6]
+[19:17:44] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:17:44] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:17:44] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:17:44] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:17:44] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:17:44] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:17:44] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:17:44] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:17:45] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:17:45] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
+[19:17:45] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
+[19:17:45] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:17:45] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:17:45] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:17:45] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:17:45] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:17:45] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:17:45] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:17:46] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:17:46] [Server thread/INFO]: ht06: Reload complete.
+[19:17:46] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 4018ms or 80 ticks behind
+[19:17:46] [Server thread/INFO]: Timings Reset
+[19:17:46] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:17:46] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:17:46] [Server thread/INFO]: ht06 issued server command: /is de
+[19:17:47] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:17:51] [Server thread/INFO]: fneris issued server command: /isa info player fneris
+[19:17:51] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:17:55] [Server thread/INFO]: fneris issued server command: /is delete
+[19:18:00] [Server thread/INFO]: fneris issued server command: /test
+[19:18:01] [Server thread/INFO]: fneris issued server command: /is
+[19:18:03] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightStarlightRelighterFactory as relighter factory.
+[19:18:08] [Server thread/INFO]: ht06 issued server command: /is
+[19:18:13] [Server thread/INFO]: fneris issued server command: /is delete
+[19:18:16] [Server thread/INFO]: fneris issued server command: /is
+[19:21:31] [Server thread/INFO]: fneris issued server command: /rl confirm
+[19:21:31] [Server thread/INFO]: fneris: Please note that this command is not supported and may cause issues when using some plugins.
+[19:21:31] [Server thread/INFO]: fneris: If you encounter any issues please use the /stop command to restart your server.
+[19:21:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:21:31] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:21:31] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:21:31] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:21:31] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:21:31] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:21:31] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:21:31] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:21:31] [Server thread/INFO]: Loaded 1175 recipes
+[19:21:31] [Server thread/INFO]: Loaded 1276 advancements
+[19:21:32] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar'...
+[19:21:32] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar' in 219ms.
+[19:21:32] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:21:32] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:21:33] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@60e42a33]
+[19:21:33] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:21:33] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:21:33] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:21:33] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:21:33] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:21:33] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:21:33] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:21:33] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:21:33] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:21:33] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
+[19:21:33] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
+[19:21:33] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:21:34] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:21:34] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:21:34] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:21:34] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:21:34] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:21:34] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:21:35] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:21:35] [Server thread/INFO]: fneris: Reload complete.
+[19:21:35] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3776ms or 75 ticks behind
+[19:21:35] [Server thread/INFO]: Timings Reset
+[19:21:35] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:21:35] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:21:35] [Server thread/INFO]: fneris issued server command: /is delete
+[19:21:37] [Server thread/INFO]: fneris issued server command: /is
+[19:21:38] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightStarlightRelighterFactory as relighter factory.
+[19:21:45] [Server thread/INFO]: fneris issued server command: /is delete
+[19:21:48] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:21:52] [Server thread/INFO]: ht06 issued server command: /test
+[19:21:53] [Server thread/INFO]: ht06 issued server command: /is
+[19:21:59] [Server thread/INFO]: fneris issued server command: /is
+[19:22:02] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:22:04] [Server thread/INFO]: ht06 issued server command: /is
+[19:25:09] [Server thread/INFO]: fneris issued server command: /rl confirm
+[19:25:09] [Server thread/INFO]: fneris: Please note that this command is not supported and may cause issues when using some plugins.
+[19:25:09] [Server thread/INFO]: fneris: If you encounter any issues please use the /stop command to restart your server.
+[19:25:09] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:25:09] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:25:09] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:25:09] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:25:09] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:25:09] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:25:09] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:25:09] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:25:09] [Server thread/INFO]: Loaded 1175 recipes
+[19:25:09] [Server thread/INFO]: Loaded 1276 advancements
+[19:25:09] [Paper Async Command Builder Thread Pool - 3/ERROR]: Caught previously unhandled exception :
+[19:25:09] [Paper Async Command Builder Thread Pool - 3/ERROR]: Paper Async Command Builder Thread Pool - 3
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
+	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
+	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-Caused by: java.lang.NullPointerException: Cannot invoke "org.bukkit.entity.Player.getName()" because the return value of "org.bukkit.Bukkit.getPlayer(java.util.UUID)" is null
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Commands.IsAdminCommand.onCommand(IsAdminCommand.java:129) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	... 26 more
-[18:00:01] [Server thread/INFO]: Stopping server
-[18:00:01] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[18:00:01] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[18:00:01] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.1
-[18:00:01] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
-[18:00:01] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[18:00:01] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[18:00:01] [Server thread/INFO]: Saving players
-[18:00:01] [Server thread/INFO]: ht06 lost connection: Server closed
-[18:00:01] [Server thread/INFO]: ht06 left the game
-[18:00:01] [Server thread/INFO]: Saving worlds
-[18:00:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Saved 625 block chunks, 625 entity chunks, 0 poi chunks in world 'world' in 1,25s
-[18:00:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[18:00:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,46s
-[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[18:00:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,10s
-[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[18:00:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 49 block chunks, 49 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,01s
-[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[18:00:03] [Server thread/INFO]: Flushing Chunk IO
-[18:00:03] [Server thread/INFO]: Closing Thread Pool
-[18:00:03] [Server thread/INFO]: Closing Server
+[19:25:09] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar'...
+[19:25:09] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar' in 214ms.
+[19:25:10] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:25:10] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:25:11] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@2d76ef0b]
+[19:25:11] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:25:11] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:25:11] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:25:11] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:25:11] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:25:11] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:25:11] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:25:11] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:25:11] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:25:11] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
+[19:25:11] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
+[19:25:11] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:25:12] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:25:12] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:25:12] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:25:12] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:25:12] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:25:12] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:25:12] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:25:12] [Server thread/INFO]: fneris: Reload complete.
+[19:25:12] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3565ms or 71 ticks behind
+[19:25:12] [Server thread/INFO]: Timings Reset
+[19:25:12] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:25:12] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:25:14] [Server thread/INFO]: fneris issued server command: /is delete
+[19:25:16] [Server thread/INFO]: fneris issued server command: /is
+[19:25:17] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightStarlightRelighterFactory as relighter factory.
+[19:25:23] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:25:26] [Server thread/INFO]: ht06 issued server command: /is
+[19:25:35] [Server thread/INFO]: fneris issued server command: /is delete
+[19:25:37] [Server thread/INFO]: fneris issued server command: /is
+[19:25:41] [Server thread/INFO]: fneris issued server command: /is delete
+[19:25:43] [Server thread/INFO]: fneris issued server command: /is
+[19:25:47] [Server thread/INFO]: ht06 issued server command: /is delete
+[19:25:49] [Server thread/INFO]: ht06 issued server command: /is
+[19:35:56] [Server thread/INFO]: fneris issued server command: /rl confirm
+[19:35:56] [Server thread/INFO]: fneris: Please note that this command is not supported and may cause issues when using some plugins.
+[19:35:56] [Server thread/INFO]: fneris: If you encounter any issues please use the /stop command to restart your server.
+[19:35:56] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:35:56] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:35:56] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:35:56] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:35:56] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:35:56] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:35:56] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:35:56] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:35:56] [Server thread/INFO]: Loaded 1175 recipes
+[19:35:57] [Server thread/INFO]: Loaded 1276 advancements
+[19:35:57] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar'...
+[19:35:57] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar' in 173ms.
+[19:35:57] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:35:57] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:35:58] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@e428d3f]
+[19:35:59] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:35:59] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:35:59] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:35:59] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:35:59] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:35:59] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:35:59] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:35:59] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:35:59] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:35:59] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
+[19:35:59] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
+[19:35:59] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:35:59] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:36:00] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:36:00] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:36:00] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:36:00] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:36:00] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:36:00] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:36:00] [Server thread/INFO]: fneris: Reload complete.
+[19:36:00] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 4033ms or 80 ticks behind
+[19:36:00] [Server thread/INFO]: Timings Reset
+[19:36:00] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:36:00] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:36:01] [Server thread/INFO]: fneris issued server command: /isa info player fneris
+[19:37:03] [Server thread/INFO]: fneris issued server command: /rl confirm
+[19:37:03] [Server thread/INFO]: fneris: Please note that this command is not supported and may cause issues when using some plugins.
+[19:37:03] [Server thread/INFO]: fneris: If you encounter any issues please use the /stop command to restart your server.
+[19:37:03] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[19:37:03] [Server thread/INFO]: Using 4 threads for Netty based IO
+[19:37:03] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:37:03] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:37:03] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:37:03] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:37:03] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:37:03] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:37:04] [Server thread/INFO]: Loaded 1175 recipes
+[19:37:04] [Server thread/INFO]: Loaded 1276 advancements
+[19:37:04] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar'...
+[19:37:04] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.2.jar' in 91ms.
+[19:37:04] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[19:37:04] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[19:37:05] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@1cba3f15]
+[19:37:05] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.2
+[19:37:05] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[19:37:05] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[19:37:05] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[19:37:05] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[19:37:05] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[19:37:05] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[19:37:05] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[19:37:05] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[19:37:05] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
+[19:37:05] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
+[19:37:05] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[19:37:06] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[19:37:06] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[19:37:06] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.2
+[19:37:06] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[19:37:06] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[19:37:06] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[19:37:06] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[19:37:06] [Server thread/INFO]: fneris: Reload complete.
+[19:37:06] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2819ms or 56 ticks behind
+[19:37:06] [Server thread/INFO]: Timings Reset
+[19:37:06] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[19:37:06] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[19:37:07] [Server thread/INFO]: fneris issued server command: /isa info player fneris
+[19:37:19] [Server thread/INFO]: Stopping server
+[19:37:19] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[19:37:19] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[19:37:19] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.2
+[19:37:19] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[19:37:19] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[19:37:19] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[19:37:19] [Server thread/INFO]: Saving players
+[19:37:19] [Server thread/INFO]: fneris lost connection: Server closed
+[19:37:19] [Server thread/INFO]: fneris left the game
+[19:37:19] [Server thread/INFO]: ht06 lost connection: Server closed
+[19:37:19] [Server thread/INFO]: ht06 left the game
+[19:37:19] [Server thread/INFO]: Saving worlds
+[19:37:19] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:37:19] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[19:37:19] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[19:37:19] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[19:37:19] [Server thread/INFO]: [ChunkHolderManager] Saved 1 block chunks, 68 entity chunks, 0 poi chunks in world 'world' in 0,02s
+[19:37:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:37:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
+[19:37:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:37:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
+[19:37:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:37:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[19:37:20] [Server thread/INFO]: [ChunkHolderManager] Saved 336 block chunks, 0 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,06s
+[19:37:20] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[19:37:20] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[19:37:20] [Server thread/INFO]: Flushing Chunk IO
+[19:37:20] [Server thread/INFO]: Closing Thread Pool
+[19:37:20] [Server thread/INFO]: Closing Server

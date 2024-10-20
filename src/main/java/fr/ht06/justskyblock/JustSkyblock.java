@@ -40,7 +40,15 @@ public final class JustSkyblock extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        //Need to create config (for the first start) or get error
+        //For the config.yml
+        saveDefaultConfig();
+
+        //Island From the config
         islandManager = new IslandManager();
+        islandManager.createAllIslandByConfigYAML();
+
         placeByPlayer = new ArrayList<>();
 
 
@@ -66,19 +74,12 @@ public final class JustSkyblock extends JavaPlugin {
         //for all the events
         registerEvents();
 
-        //For the config.yml
-        saveDefaultConfig();
-
         //For the placeholder Like %justskyblock_level%
         registerPlaceholder();
 
         //CustomCraft
         ChainMailArmorRecipe chainMailArmorRecipe = new ChainMailArmorRecipe();
         chainMailArmorRecipe.createCraft();
-
-        //Island From the config (maybe change for later)
-        islandManager.createAllIslandByConfigYAML();
-
 
         //Import du schematic
         //saveResource("Schematic/IslandPlains.schem", false);

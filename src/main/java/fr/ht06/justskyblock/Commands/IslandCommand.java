@@ -214,13 +214,10 @@ public class IslandCommand implements CommandExecutor {
                 }
 
                 if (!island.isMember(player.getUniqueId())){
-                    double level = IslandLevel.calculateIslandLevel(island) / 100;
-                    BigDecimal bd = new BigDecimal(level).setScale(2, RoundingMode.HALF_UP);
-                    level = bd.doubleValue();
-                    island.setLevel(level);
-                    player.sendMessage("Your island is level " + level);
-                    double size = level/10;
+                    IslandLevel.calculateIslandLevel(island);
+                    player.sendMessage("Your island is level " + island.getLevel());
 
+                    double size = island.getLevel()/10;
                     //For the minimum size
                     if (size<25){
                         if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")<25){

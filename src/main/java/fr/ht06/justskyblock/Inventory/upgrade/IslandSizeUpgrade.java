@@ -42,19 +42,25 @@ public class IslandSizeUpgrade implements InventoryHolder, Listener {
     private void init(Player player) {
         double size = JustSkyblock.islandManager.getIslandbyplayer(player.getName()).getSize();
         List<Component> lore = new ArrayList<>();
-        if (size ==50.0){
+        int maxSize = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMaxSize");
+        int minSize = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
+        if (size == minSize){
             lore = Arrays.asList(Component.text("To increase your worldBorder,", TextColor.color(0x683735)),
                     Component.text("You need to upgrade your island size (/is level)", TextColor.color(0x683735)),
-                    Component.text("Your actual island size: "+ size +"x"+size+ " (this is the basic size)", TextColor.color(0x683735)),
+                    Component.text("Your actual island size: "+ size +"x"+size+ " (this is the minimum size)", TextColor.color(0x683735)),
                     Component.text("The calculation for the level is : level/100", TextColor.color(0x683735)),
+                    Component.text("The Maximum size is "+ maxSize + "x" + maxSize, TextColor.color(0x683735)),
+                    Component.text("The Minimum size is "+ minSize + "x" + minSize, TextColor.color(0x683735)),
                     Component.text(""),
                     Component.text("Yes, this is your island...", NamedTextColor.GRAY));
         }
-        else if (size == JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMaxSize")){
+        else if (size == maxSize){
             lore = Arrays.asList(Component.text("To increase your worldBorder,", TextColor.color(0x683735)),
                     Component.text("You need to upgrade your island size (/is level)", TextColor.color(0x683735)),
-                    Component.text("Your actual island size: "+ size +"x"+size+ " (this is the max size)", TextColor.color(0x683735)),
+                    Component.text("Your actual island size: "+ size +"x"+size+ " (this is the maximum size)", TextColor.color(0x683735)),
                     Component.text("The calculation for the level is : level/100", TextColor.color(0x683735)),
+                    Component.text("The Maximum size is "+ maxSize + "x" + maxSize, TextColor.color(0x683735)),
+                    Component.text("The Minimum size is "+ minSize + "x" + minSize, TextColor.color(0x683735)),
                     Component.text(""),
                     Component.text("Yes, this is your island...", NamedTextColor.GRAY));
         }
@@ -63,6 +69,8 @@ public class IslandSizeUpgrade implements InventoryHolder, Listener {
                     Component.text("You need to upgrade your island size (/is level)", TextColor.color(0x683735)),
                     Component.text("Your actual island size: "+size+"x"+size, TextColor.color(0x683735)),
                     Component.text("The calculation for the level is : level/100", TextColor.color(0x683735)),
+                    Component.text("The Maximum size is "+ maxSize + "x" + maxSize, TextColor.color(0x683735)),
+                    Component.text("The Minimum size is "+ minSize + "x" + minSize, TextColor.color(0x683735)),
                     Component.text(""),
                     Component.text("Yes, this is your island...", NamedTextColor.GRAY));
         }

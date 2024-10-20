@@ -44,7 +44,10 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.CLOCK, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Creation date", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
-                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getDateToString()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getDateToString()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false),
+                            Component.text(""),
+                            Component.text("(The creation date might be not accurate,", TextColor.color(0xAEB6BF)),
+                            Component.text("This is because the timezone is the server timezone).", TextColor.color(0xAEB6BF))));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }
@@ -52,14 +55,15 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.EXPERIENCE_BOTTLE, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Island Level", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
-                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getLevel()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemMeta.lore(List.of(Component.text(String.valueOf(island.getLevel()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false),
+                            Component.text("(Click to update the island level)" ,TextColor.color(0xAEB6BF))));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }
                 case 12 -> {
                     ItemStack itemStack = new ItemStack(Material.OAK_DOOR, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
-                    itemMeta.displayName(Component.text("Visit the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.lore(List.of(Component.text("Visit the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }
@@ -67,7 +71,9 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.PLAYER_HEAD, 1);
                     SkullMeta skullMeta = (SkullMeta) itemStack.getItemMeta();
                     OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(island.getOwner());
-                    skullMeta.setOwningPlayer(offlinePlayer);
+                    if (offlinePlayer.getPlayer() != null) {
+                        skullMeta.setOwningPlayer(offlinePlayer.getPlayer());
+                    }
                     skullMeta.displayName(Component.text("Owner of the island", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
 
                     Player target = Bukkit.getPlayer(island.getOwner());
@@ -152,6 +158,16 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.TNT, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Delete the Island", TextColor.color(0xF73331)).decoration(TextDecoration.ITALIC, false));
+                    itemStack.setItemMeta(itemMeta);
+                    inv.setItem(i, itemStack);
+                }
+
+                case 24 ->{
+                    String coordinates = String.valueOf(island.getCoordinates().getBlockX() + ", " + island.getCoordinates().getBlockY() + ", " + island.getCoordinates().getBlockZ());
+                    ItemStack itemStack = new ItemStack(Material.COMPASS, 1);
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    itemMeta.displayName(Component.text("Island Coordinates", TextColor.color(0xF7DC6F)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.lore(List.of(Component.text(coordinates, TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }

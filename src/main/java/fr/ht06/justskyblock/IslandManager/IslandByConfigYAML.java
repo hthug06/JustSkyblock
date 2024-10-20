@@ -19,15 +19,15 @@ public class IslandByConfigYAML {
 
     public IslandByConfigYAML(String type){
         this.type = type;
-        JustSkyblock.getInstance().getConfig().getConfigurationSection("IS."+ type).getKeys(false).stream().forEach(s -> {
+        JustSkyblock.getInstance().getConfig().getConfigurationSection("Island."+ type).getKeys(false).stream().forEach(s -> {
             switch (s){
-                case "Block" -> this.block = Material.getMaterial(JustSkyblock.getInstance().getConfig().getString("IS."+ type +".Block"));
-                case "Name" -> this.name = miniMessage.deserialize(JustSkyblock.getInstance().getConfig().getString("IS."+ type +".Name"));
-                case "Lore" -> JustSkyblock.getInstance().getConfig().getStringList("IS."+ type +".Lore").stream().forEach(str -> {
+                case "Block" -> this.block = Material.getMaterial(JustSkyblock.getInstance().getConfig().getString("Island."+ type +".Block"));
+                case "Name" -> this.name = miniMessage.deserialize(JustSkyblock.getInstance().getConfig().getString("Island."+ type +".Name"));
+                case "Lore" -> JustSkyblock.getInstance().getConfig().getStringList("Island."+ type +".Lore").stream().forEach(str -> {
                     lore.add(miniMessage.deserialize(str));
                 });
-                case "Schematic" ->  this.schematic = JustSkyblock.getInstance().getConfig().getString("IS."+ type +".Schematic");
-                case "Slot" ->  this.slot = JustSkyblock.getInstance().getConfig().getInt("IS."+ type +".Slot");
+                case "Schematic" ->  this.schematic = JustSkyblock.getInstance().getConfig().getString("Island."+ type +".Schematic");
+                case "Slot" ->  this.slot = JustSkyblock.getInstance().getConfig().getInt("Island."+ type +".Slot");
             }
         });
     }

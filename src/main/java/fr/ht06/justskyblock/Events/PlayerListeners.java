@@ -28,11 +28,7 @@ import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemFlag;
-import org.bukkit.inventory.ItemRarity;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitScheduler;
 
 import java.util.*;
 
@@ -56,7 +52,7 @@ public class PlayerListeners implements Listener {
         }
 
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
-        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>JustSkyblock is in version alpha-1.7.2 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>JustSkyblock is in version alpha-1.7.3 created by me (ht06)"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
         //WorldBorder Gestion
@@ -69,7 +65,7 @@ public class PlayerListeners implements Listener {
                         Island playerIsland = islandManager.getIslandbyplayer(player.getName());
                         WorldBorder worldBorder = Bukkit.createWorldBorder();
                         worldBorder.setSize(playerIsland.getSize());
-                        worldBorder.setCenter(playerIsland.getIslandCoordinates());
+                        worldBorder.setCenter(playerIsland.getCoordinates());
                         player.setWorldBorder(worldBorder);
                     }
                 }.runTaskLater(JustSkyblock.getInstance(), 1);
@@ -465,7 +461,7 @@ public class PlayerListeners implements Listener {
     public static boolean onHisIsland(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getCoordinates().getBlockX(), 70, is.getCoordinates().getBlockZ());
             if (contains(player.getLocation(),
                     loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 if (is.isOnThisIsland(player.getUniqueId())) {
@@ -479,7 +475,7 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIslandName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getCoordinates().getBlockX(), 70, is.getCoordinates().getBlockZ());
             if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 return is.getIslandName();
             }
@@ -490,7 +486,7 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIsland_PlayerName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getCoordinates().getBlockX(), 70, is.getCoordinates().getBlockZ());
             if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 return Bukkit.getPlayer(is.getOwner()).getName();
             }

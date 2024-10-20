@@ -7,7 +7,7 @@ public class IslandWorldBorder {
 
     public static WorldBorder setWorldBorder(Island island){
         WorldBorder worldBorder = Bukkit.createWorldBorder();
-        worldBorder.setCenter(island.getIslandCoordinates());
+        worldBorder.setCenter(island.getCoordinates());
         worldBorder.setSize(island.getSize());
         return worldBorder;
     }

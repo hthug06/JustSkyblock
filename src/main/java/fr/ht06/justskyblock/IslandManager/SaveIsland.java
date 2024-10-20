@@ -52,7 +52,7 @@ public class SaveIsland {
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Size", v.getSize());
 
             //les 2 coordonnée de l'île (en x et en z)
-            List<Integer> XandZ = Arrays.asList(v.getIslandCoordinates().getBlockX(), v.getIslandCoordinates().getBlockX());
+            List<Integer> XandZ = Arrays.asList(v.getCoordinates().getBlockX(), v.getCoordinates().getBlockX());
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).createSection("Coordinates");
             DataConfig.get().set("Island." + v.getIslandName() + ".Coordinates", XandZ);
 

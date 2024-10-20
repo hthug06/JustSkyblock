@@ -90,7 +90,7 @@ public class Island {
         this.islandSpawn = islandSpawn;
     }
 
-    public Location getIslandCoordinates() {
+    public Location getCoordinates() {
         return islandCoordinates;
     }
 
@@ -389,7 +389,7 @@ public class Island {
     }
 
     public List<Player> getAllPlayerOnIsland(){
-        @NotNull Collection<Entity> livingEntity = this.getIslandCoordinates().getNearbyEntities(( this.getSize() / 2), 70, (this.getSize() / 2));
+        @NotNull Collection<Entity> livingEntity = this.getCoordinates().getNearbyEntities(( this.getSize() / 2), 70, (this.getSize() / 2));
         List<Player> PlayerList = new ArrayList<>();
         Player playertarget;
         for (Entity e : livingEntity) {

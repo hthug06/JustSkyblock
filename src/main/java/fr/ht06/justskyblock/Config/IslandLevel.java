@@ -8,6 +8,8 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,18 +50,18 @@ public class IslandLevel {
         dataFile = YamlConfiguration.loadConfiguration(file);
     }
 
-    public static double calculateIslandLevel(Island island){
+    public static void calculateIslandLevel(Island island){
         double level = 0;
         Map<String, Integer> itemList = new HashMap<>();
         List<String > Flower = List.of("DANDELION","POPPY","BLUE_ORCHID","ALLIUM", "AZURE_BLUET", "TULIP"," OXEYE_DAISY", "CORNFLOWER", "LILY_OF_THE_VALLEY",
                 "SUNFLOWER", "LILAC", "ROSE", "PEONY");
 
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates().getBlockZ()).clone().add(-50, -200, -50);;
+            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getCoordinates().getBlockX(), 70, island.getCoordinates().getBlockZ()).clone().add(-50, -200, -50);;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates().getBlockZ()).clone().add(50, 300, 50);;
+            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getCoordinates().getBlockX(), 70, island.getCoordinates().getBlockZ()).clone().add(50, 300, 50);;
             int x2 = isLoc2.getBlockX();
             int z2 = isLoc2.getBlockZ();
             //x
@@ -111,7 +113,10 @@ public class IslandLevel {
                 }
             }
         }
+        level/=100;
+        BigDecimal bd = new BigDecimal(level).setScale(2, RoundingMode.HALF_UP);
+        level = bd.doubleValue();
+        island.setLevel(level);
         //JustSkyblock.getInstance().getLogger().info(itemList.toString());
-        return level;
     }
 }

@@ -21,14 +21,14 @@ public class DeleteIsland {
         //y
         List<Player> PlayerList = new ArrayList<>();
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getCoordinates().getBlockX(), 70, island.getCoordinates()
                     .getBlockZ())
                     .clone().add(-((double) island.getSize() / 2), -200, -((double) island.getSize() / 2));
             ;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getCoordinates().getBlockX(), 70, island.getCoordinates()
                     .getBlockZ())
                     .clone().add(((double) island.getSize() / 2), 300, ((double) island.getSize() / 2));
             ;
@@ -77,14 +77,14 @@ public class DeleteIsland {
         //y
         List<Player> PlayerList = null;
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getCoordinates().getBlockX(), 70, island.getCoordinates()
                     .getBlockZ())
                     .clone().add(-((double) island.getSize() / 2), -200, -((double) island.getSize() / 2));
             ;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getCoordinates().getBlockX(), 70, island.getCoordinates()
                     .getBlockZ())
                     .clone().add(((double) island.getSize() / 2), 300, ((double) island.getSize() / 2));
             ;

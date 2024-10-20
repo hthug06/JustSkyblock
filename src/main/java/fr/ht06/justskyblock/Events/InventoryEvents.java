@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.Events;
 
+import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.Inventory.*;
 import fr.ht06.justskyblock.Inventory.rankup.RankupInventory;
 import fr.ht06.justskyblock.IslandManager.*;
@@ -103,8 +104,11 @@ public class InventoryEvents implements Listener {
 
         if (event.getClickedInventory().getHolder() instanceof IslandInfoInventory){//Vérification si c'estle bon inventaire
             String islandName = PlainTextComponentSerializer.plainText().serialize(event.getView().title());
+            if (event.getSlot() == 11){
+                IslandLevel.calculateIslandLevel(islandManager.getIslandbyName(islandName));
+                player.sendMessage(Component.text(islandName + " level is " + islandManager.getIslandbyName(islandName).getLevel(), TextColor.color(0x43D649)));
+            }
             if (event.getSlot() == 12){
-                event.setCancelled(true);
                 player.teleport(islandManager.getIslandbyName(islandName).getIslandSpawn());
                 player.sendMessage(Component.text("Teleportation to " + islandManager.getIslandbyName(islandName).getIslandName(), TextColor.color(0x43D649)));
             }

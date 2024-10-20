@@ -53,7 +53,8 @@ public class Test implements CommandExecutor {
 //            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
             Island island=islandManager.getIslandbyplayer(player.getName());
             //player.sendMessage(String.valueOf(island.getSize()));
-            islandManager.getAllIslandByconfigYML().stream().forEach(islandByConfigYAML -> player.sendMessage(String.valueOf(islandByConfigYAML.getLore())));
+            JustSkyblock.islandManager.getAllIsland().stream().forEach(is -> player.sendMessage(is.getCoordinates().toString()));
+            player.sendMessage(String.valueOf(islandManager.getAllIsland()));
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
         }
