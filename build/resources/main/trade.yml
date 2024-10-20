@@ -1,0 +1,15 @@
+#Everything here is related to the /is trade command
+#You also need to use https://jd.papermc.io/paper/1.21.1/org/bukkit/Material.html
+
+Trade:   #Don't touch this line
+  EmeraldToOakSapling:     # Put anything, for now this is not important
+    Need: Emerald:1             #The item the player needs to have in his inv      (Item:Quantity)
+    Received: OAK_SAPLING:2     #The item the player received
+
+  EmeraldToBirchSapling:
+    Need: Emerald:1
+    Received: BIRCH_SAPLING:2
+
+  EmeraldToSPRUCESapling:
+    Need: Emerald:1
+    Received: SPRUCE_SAPLING:2

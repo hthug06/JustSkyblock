@@ -65,7 +65,9 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
     public void onClick(InventoryClickEvent event){
         Player player = (Player) event.getWhoClicked();
 
-        if (Objects.requireNonNull(event.getClickedInventory()).getHolder() instanceof CreateIslandInventory){//Vérification si c'estle bon inventaire
+        if (event.getClickedInventory() == null) return;  //NEEDED
+
+        if (event.getClickedInventory().getHolder() instanceof CreateIslandInventory){//Vérification si c'estle bon inventaire
             event.setCancelled(true);
 
             if (event.getSlot()< islandManager.getAllIslandByconfigYML().size()){
@@ -89,11 +91,14 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
                                 ,coord.get(1));
                         Location loc = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()),coord.get(0), 70, coord.get(1));
 
+                        new LoadSchematic(loc, JustSkyblock.getInstance().getWorldName(), islandByConfigYAML.getSchematic());
+
                         this.island = new Island(player.getName()+"'s Island", islandCoord, loc, islandByConfigYAML.getType());
                         this.island.setOwner(player.getUniqueId());
                         JustSkyblock.islandManager.addIsland(this.island);
 
-                        new LoadSchematic(loc, JustSkyblock.getInstance().getWorldName(), islandByConfigYAML.getSchematic());
+
+                        this.fillChest();
 
                         player.closeInventory();
                         player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
@@ -128,7 +133,7 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
                         this.island.setOwner(player.getUniqueId());
                         islandManager.addIsland(this.island);
 
-                        fillChest();
+                        this.fillChest();
 
                         player.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
 
@@ -168,6 +173,7 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
                 //z
                 for (int z = z1; z < z2; z++) {
                     if (Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).getType().equals(Material.CHEST)){
+                        System.out.println(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z));
                         return new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z);
                     }
 
@@ -179,9 +185,8 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
 
     private void fillChest(){
 
-        if (findChest() != null) {   //No chest on the island = n
+        if (findChest() != null) {   //No chest on the island = null
             Chest chest = (Chest) Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(findChest()).getState();
-
             for (String toChest: JustSkyblock.getInstance().getConfig().getStringList("Island."+island.getType()+".Chest")){
                 Material item = Material.getMaterial(toChest.split(":")[0].toUpperCase());
                 int amount = Integer.parseInt(toChest.split(":")[1]);

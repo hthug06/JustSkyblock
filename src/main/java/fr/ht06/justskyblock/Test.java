@@ -17,6 +17,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import java.text.Format;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 public class Test implements CommandExecutor {
@@ -53,8 +55,12 @@ public class Test implements CommandExecutor {
 //            player.sendMessage(String.valueOf(IslandLevel.get().get("Material.Block.STONE")));
             Island island=islandManager.getIslandbyplayer(player.getName());
             //player.sendMessage(String.valueOf(island.getSize()));
-            JustSkyblock.islandManager.getAllIsland().stream().forEach(is -> player.sendMessage(is.getCoordinates().toString()));
-            player.sendMessage(String.valueOf(islandManager.getAllIsland()));
+            YamlConfiguration tradeConfig = JustSkyblock.tradeConfig;
+            for (String base: tradeConfig.getConfigurationSection("Trade.").getKeys(false)){
+                for (String map : tradeConfig.getConfigurationSection("Trade."+base).getKeys(false)){
+                    player.sendMessage(tradeConfig.getString("Trade."+base+"."+map));
+                }
+            }
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevelUnlock()));
         }

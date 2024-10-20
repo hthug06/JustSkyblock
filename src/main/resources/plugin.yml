@@ -21,7 +21,7 @@ commands:
       - isa
 
   test:
-    #description: fait chioer
+    #description:
     #permission: justskyblock.test
 
 

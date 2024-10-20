@@ -49,7 +49,8 @@ public class IslandCommand implements CommandExecutor {
             }
 
             else {
-                island = islandManager.getIslandbyplayer(player.getName()).getIsland();
+                island = islandManager.getIslandbyplayer(player.getName());
+                player.sendMessage(island.getIslandName());
                 player.teleport(islandManager.getIslandbyplayer(player.getName()).getIslandSpawn());
                 player.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
 
@@ -82,7 +83,7 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage("You don't have the permission to do this");
                 }
             }
-            else if (args[0].equalsIgnoreCase("delete")) {
+            else if (args[0].equalsIgnoreCase("delete") && player.hasPermission("JustSkyblock.island.delete")) {
                 if (!islandManager.playerHasIsland(player.getName())) {
                     CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
@@ -213,36 +214,32 @@ public class IslandCommand implements CommandExecutor {
                     return true;
                 }
 
-                if (!island.isMember(player.getUniqueId())){
-                    IslandLevel.calculateIslandLevel(island);
-                    player.sendMessage("Your island is level " + island.getLevel());
-
-                    double size = island.getLevel()/10;
-                    //For the minimum size
-                    if (size<25){
-                        if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")<25){
-                            size = 25;
-                        }
-                        else{
-                            size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
-                        }
+                IslandLevel.calculateIslandLevel(island);
+                player.sendMessage("Your island is level " + island.getLevel());
+                double size = island.getLevel()/10;
+                //For the minimum size
+                if (size<25){
+                    if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")<25){
+                        size = 25;
                     }
-
-                    //For the maximum size
-                    if (size>950){
-                        if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")>950){
-                            size = 950;
-                        }
-                        else{
-                            size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
-                        }
+                    else{
+                        size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
                     }
-                    island.setSize(size);
-                    for (Player p: islandManager.getIslandbyplayer(player.getName()).getAllPlayerOnIsland()){
-                        p.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
-                    }
-                    player.sendMessage(Component.text("Your Island WorldBorder size is now: " + (int)island.getSize()+"x"+(int) island.getSize(), TextColor.color(0x99a3a4)).decoration(TextDecoration.ITALIC, true));
                 }
+                //For the maximum size
+                if (size>950){
+                    if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")>950){
+                        size = 950;
+                    }
+                    else{
+                        size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
+                    }
+                }
+                island.setSize(size);
+                for (Player p: islandManager.getIslandbyplayer(player.getName()).getAllPlayerOnIsland()){
+                    p.setWorldBorder(IslandWorldBorder.setWorldBorder(island));
+                }
+                player.sendMessage(Component.text("Your Island WorldBorder size is now: " + (int)island.getSize()+"x"+(int) island.getSize(), TextColor.color(0x99a3a4)).decoration(TextDecoration.ITALIC, true));
             }
 
             else if (args[0].equalsIgnoreCase("help")){
@@ -277,6 +274,17 @@ public class IslandCommand implements CommandExecutor {
             }
 
             else if (args[0].equalsIgnoreCase("upgrade")){
+                if (!islandManager.playerHasIsland(player.getName())) {
+                    CreateIslandInventory gui = new CreateIslandInventory();
+                    player.openInventory(gui.getInventory());
+                    return true;
+                }
+
+                UpgradeMain upgradeMain = new UpgradeMain(player, island);
+                player.openInventory(upgradeMain.getInventory());
+            }
+
+            else if (args[0].equalsIgnoreCase("trade")){
                 if (!islandManager.playerHasIsland(player.getName())) {
                     CreateIslandInventory gui = new CreateIslandInventory();
                     player.openInventory(gui.getInventory());
@@ -333,6 +341,7 @@ public class IslandCommand implements CommandExecutor {
         if (args.length == 2) {
             if (islandManager.playerHasIsland(args[1])) {
                 Island island = islandManager.getIslandbyplayer(args[1]);
+                player.sendMessage(island.getIslandName());
                 player.teleport(islandManager.getIslandbyplayer(args[1]).getIslandSpawn());
                 player.sendMessage("§aTeleportation to " + args[1] + "'s Island");
                 islandManager.getIslandbyplayer(args[1]).BroadcastMessage(Component.text(player.getName()+" is visiting your island"));
@@ -709,7 +718,12 @@ public class IslandCommand implements CommandExecutor {
                 player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
                         .clickEvent(ClickEvent.suggestCommand("/island leave "))
                         .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
-                        .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+                        .append(Component.text("Leave your island (Be careful)", TextColor.color(0x52BE80))));
+
+                player.sendMessage(Component.text("/island level: ", TextColor.color(0x5499C7))
+                        .clickEvent(ClickEvent.suggestCommand("/island level "))
+                        .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
+                        .append(Component.text("Update the level of your island", TextColor.color(0x52BE80))));
 
                 player.sendMessage(Component.text("/island quest: ", TextColor.color(0x5499C7))
                         .clickEvent(ClickEvent.suggestCommand("/island quest "))
@@ -765,7 +779,7 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island leave "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
-                            .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+                            .append(Component.text("Leave your island (Be careful)", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island level: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island level "))
@@ -840,7 +854,7 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage(Component.text("/island delete: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island delete "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
-                            .append(Component.text("Delete you island (Be careful)", TextColor.color(0x52BE80))));
+                            .append(Component.text("Delete your island (Be careful)", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island demote: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island demote "))
@@ -865,7 +879,7 @@ public class IslandCommand implements CommandExecutor {
                     player.sendMessage(Component.text("/island leave: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island leave "))
                             .hoverEvent(HoverEvent.showText(Component.text("Click to paste the command in the chat", TextColor.color(0x5499C7))))
-                            .append(Component.text("Leave you island (Be careful)", TextColor.color(0x52BE80))));
+                            .append(Component.text("Leave your island (Be careful)", TextColor.color(0x52BE80))));
 
                     player.sendMessage(Component.text("/island level: ", TextColor.color(0x5499C7))
                             .clickEvent(ClickEvent.suggestCommand("/island level "))

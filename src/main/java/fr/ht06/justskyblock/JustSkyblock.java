@@ -34,6 +34,7 @@ public final class JustSkyblock extends JavaPlugin {
 
     public static IslandManager islandManager;
     public static YamlConfiguration levelConfig;
+    public static YamlConfiguration tradeConfig;
     public static YamlConfiguration customGeneratorConfig;
     public static List<Location> placeByPlayer;
 
@@ -57,7 +58,8 @@ public final class JustSkyblock extends JavaPlugin {
         WorldCreator worldcreator = new WorldCreator(getWorldName());
         worldcreator.type(WorldType.FLAT).generatorSettings(settings).generateStructures(false);
         worldcreator.createWorld();
-        new WorldCreator(getWorldName()).createWorld();
+        World world = new WorldCreator(getWorldName()).createWorld();
+        world.setDifficulty(Difficulty.NORMAL);
 
         //metrics /Bstats
         Metrics metrics = new Metrics(this, 22941);
@@ -114,6 +116,9 @@ public final class JustSkyblock extends JavaPlugin {
 
         //For the customGenerator
         createCustomGeneratorConfig();
+
+        //for the trade
+        createTradeConfig();
 
         //for all the schematic
         getAllBaseSchematic();
@@ -176,6 +181,16 @@ public final class JustSkyblock extends JavaPlugin {
         //recup le dossier .yml dans les ressources
         //Pourvoir l'utiliser
         customGeneratorConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "customgenerator.yml"));
+        //Utiliser cette class pour simplifier
+    }
+
+    public void createTradeConfig(){
+        if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "trade.yml").exists()){
+            super.saveResource("trade.yml", false /* don't replace the file on disk if it exists */);
+        }
+        //recup le dossier .yml dans les ressources
+        //Pourvoir l'utiliser
+        tradeConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "trade.yml"));
         //Utiliser cette class pour simplifier
     }
 
