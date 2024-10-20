@@ -1,80 +1,77 @@
-[18:07:42] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar'...
-[18:07:42] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar' in 438ms.
-[18:07:46] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18:07:47] [ServerMain/INFO]: Loaded 1175 recipes
-[18:07:47] [ServerMain/INFO]: Loaded 1276 advancements
-[18:07:47] [Server thread/INFO]: Starting minecraft server version 1.20.6
-[18:07:47] [Server thread/INFO]: Loading properties
-[18:07:47] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
-[18:07:48] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[18:07:48] [Server thread/INFO]: Using 4 threads for Netty based IO
-[18:07:48] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
+[17:58:50] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar'...
+[17:58:50] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar' in 433ms.
+[17:58:53] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[17:58:55] [ServerMain/INFO]: Loaded 1175 recipes
+[17:58:55] [ServerMain/INFO]: Loaded 1276 advancements
+[17:58:55] [Server thread/INFO]: Starting minecraft server version 1.20.6
+[17:58:55] [Server thread/INFO]: Loading properties
+[17:58:55] [Server thread/INFO]: This server is running Paper version 1.20.6-147-ver/1.20.6@e41d44f (2024-06-17T19:24:35Z) (Implementing API version 1.20.6-R0.1-SNAPSHOT)
+[17:58:56] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[17:58:56] [Server thread/INFO]: Using 4 threads for Netty based IO
+[17:58:56] [Server thread/WARN]: [!] The timings profiler has been enabled but has been scheduled for removal from Paper in the future.
     We recommend installing the spark profiler as a replacement: https://spark.lucko.me/
     For more information please visit: https://github.com/PaperMC/Paper/issues/8948
-[18:07:48] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
-[18:07:48] [Server thread/INFO]: Default game type: SURVIVAL
-[18:07:48] [Server thread/INFO]: Generating keypair
-[18:07:48] [Server thread/INFO]: Starting Minecraft server on *:25565
-[18:07:49] [Server thread/INFO]: Using default channel type
-[18:07:49] [Server thread/INFO]: Paper: Using Java compression from Velocity.
-[18:07:49] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[18:07:49] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[18:07:49] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
-[18:07:50] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@4c4efd9c]
-[18:07:50] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.1
-[18:07:50] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[18:07:50] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[18:07:50] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[18:07:50] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
-[18:07:50] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[18:07:50] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[18:07:50] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[18:07:50] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[18:07:51] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
-[18:07:51] [Server thread/INFO]: Preparing level "world"
-[18:07:52] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[18:07:52] [Server thread/INFO]: Time elapsed: 482 ms
-[18:07:52] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[18:07:53] [Server thread/INFO]: Time elapsed: 453 ms
-[18:07:53] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[18:07:53] [Server thread/INFO]: Time elapsed: 273 ms
-[18:07:53] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[18:07:53] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[18:07:53] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.1
-[18:07:53] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
-[18:07:54] [Server thread/INFO]: Time elapsed: 67 ms
-[18:07:54] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[18:07:54] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[18:07:54] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[18:07:54] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[18:07:54] [Server thread/INFO]: Running delayed init tasks
-[18:07:54] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[18:07:54] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[18:07:54] [Server thread/INFO]: Done (6.899s)! For help, type "help"
-[18:07:54] [Server thread/INFO]: Timings Reset
-[18:07:59] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
-[18:08:00] [Server thread/INFO]: [+] ht06 join the server
-[18:08:00] [Server thread/INFO]: ht06[/127.0.0.1:55733] logged in with entity id 97 at ([world]-13.966968926252465, 131.0, 2.3254693812121743)
-[18:08:06] [Server thread/INFO]: ht06 issued server command: /isa info player fner
-[18:08:09] [Server thread/INFO]: ht06 issued server command: /isa info player fneris
-[18:08:10] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+[17:58:56] [Server thread/INFO]: [ChunkTaskScheduler] Chunk system is using 1 I/O threads, 3 worker threads, and gen parallelism of 3 threads
+[17:58:56] [Server thread/INFO]: Default game type: SURVIVAL
+[17:58:56] [Server thread/INFO]: Generating keypair
+[17:58:56] [Server thread/INFO]: Starting Minecraft server on *:25565
+[17:58:56] [Server thread/INFO]: Using default channel type
+[17:58:56] [Server thread/INFO]: Paper: Using Java compression from Velocity.
+[17:58:56] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[17:58:57] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
+[17:58:57] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
+[17:58:58] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@49015d0a]
+[17:58:58] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.1
+[17:58:58] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
+[17:58:58] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
+[17:58:58] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[17:58:58] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
+[17:58:58] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[17:58:58] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[17:58:58] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[17:58:58] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[17:58:59] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
+[17:58:59] [Server thread/INFO]: Preparing level "world"
+[17:59:00] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[17:59:00] [Server thread/INFO]: Time elapsed: 495 ms
+[17:59:00] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[17:59:01] [Server thread/INFO]: Time elapsed: 436 ms
+[17:59:01] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[17:59:01] [Server thread/INFO]: Time elapsed: 132 ms
+[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
+[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[17:59:01] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.1
+[17:59:01] [Server thread/INFO]: Preparing start region for dimension minecraft:world_skyblock
+[17:59:01] [Server thread/INFO]: Time elapsed: 49 ms
+[17:59:01] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
+[17:59:01] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
+[17:59:01] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
+[17:59:02] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[17:59:02] [Server thread/INFO]: Running delayed init tasks
+[17:59:02] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
+[17:59:02] [Server thread/INFO]: 0 placeholder hook(s) registered!
+[17:59:02] [Server thread/INFO]: Done (6.580s)! For help, type "help"
+[17:59:02] [Server thread/INFO]: Timings Reset
+[17:59:08] [User Authenticator #0/INFO]: UUID of player ht06 is 780ef5d5-d2d2-43e8-a536-267892770415
+[17:59:09] [Server thread/INFO]: [+] ht06 join the server
+[17:59:09] [Server thread/INFO]: ht06[/127.0.0.1:64990] logged in with entity id 98 at ([world]-13.966968926252465, 131.0, 2.3254693812121743)
+[17:59:11] [Server thread/INFO]: ht06 issued server command: /isa allisland
+[17:59:11] [Server thread/ERROR]: Command exception: /isa allisland
+org.bukkit.command.CommandException: Unhandled exception executing command 'isa' in plugin JustSkyblock valpha-1.7.1
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:47) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
+	at io.papermc.paper.command.brigadier.bukkit.BukkitCommandNode$BukkitBrigCommand.run(BukkitCommandNode.java:91) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73) ~[brigadier-1.2.9.jar:?]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:31) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:19) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:103) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:448) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:355) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:342) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.commands.Commands.performCommand(Commands.java:337) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2202) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$14(ServerGamePacketListenerImpl.java:2176) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
 	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
 	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
 	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
@@ -88,315 +85,46 @@ java.lang.IllegalArgumentException: message cannot be null
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
 	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:08:22] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:08:23] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:08:23] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:08:23] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:08:24] [Server thread/ERROR]: Could not pass event InventoryClickEvent to JustSkyblock valpha-1.7.1
-java.lang.IllegalArgumentException: message cannot be null
-	at com.google.common.base.Preconditions.checkArgument(Preconditions.java:143) ~[guava-32.1.2-jre.jar:?]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:383) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendRawMessage(CraftPlayer.java:378) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.craftbukkit.entity.CraftPlayer.sendMessage(CraftPlayer.java:395) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin.onClick(DeleteIslandInventoryAdmin.java:86) ~[JustSkyblock-alpha-1.7.1.jar:?]
-	at com.destroystokyo.paper.event.executor.asm.generated.GeneratedEventExecutor32.execute(Unknown Source) ~[?:?]
-	at org.bukkit.plugin.EventExecutor$2.execute(EventExecutor.java:77) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at co.aikar.timings.TimedEventExecutor.execute(TimedEventExecutor.java:81) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.RegisteredListener.callEvent(RegisteredListener.java:70) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at io.papermc.paper.plugin.manager.PaperEventManager.callEvent(PaperEventManager.java:54) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.callEvent(PaperPluginManagerImpl.java:131) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at org.bukkit.plugin.SimplePluginManager.callEvent(SimplePluginManager.java:628) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
-	at net.minecraft.server.network.ServerGamePacketListenerImpl.handleContainerClick(ServerGamePacketListenerImpl.java:3177) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:69) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.game.ServerboundContainerClickPacket.handle(ServerboundContainerClickPacket.java:33) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.network.protocol.PacketUtils.lambda$ensureRunningOnSameThread$0(PacketUtils.java:55) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.TickTask.run(TickTask.java:18) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:151) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1511) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:195) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:125) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1488) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1411) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.util.thread.BlockableEventLoop.managedBlock(BlockableEventLoop.java:135) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1377) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1238) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.server.MinecraftServer.lambda$spin$0(MinecraftServer.java:323) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:10:21] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[18:10:21] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[18:10:21] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[18:10:21] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[18:10:21] [Server thread/INFO]: Using 4 threads for Netty based IO
-[18:10:21] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[18:10:21] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[18:10:21] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.1
-[18:10:21] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
-[18:10:21] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[18:10:21] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[18:10:21] [Server thread/INFO]: Loaded 1175 recipes
-[18:10:21] [Server thread/INFO]: Loaded 1276 advancements
-[18:10:22] [Paper Async Command Builder Thread Pool - 1/ERROR]: Caught previously unhandled exception :
-[18:10:22] [Paper Async Command Builder Thread Pool - 1/ERROR]: Paper Async Command Builder Thread Pool - 1
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
-	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
-	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:10:22] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar'...
-[18:10:22] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar' in 264ms.
-[18:10:22] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[18:10:22] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
-[18:10:23] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@7a6e6874]
-[18:10:23] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.1
-[18:10:23] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[18:10:23] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[18:10:23] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[18:10:23] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
-[18:10:23] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[18:10:23] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[18:10:23] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[18:10:23] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[18:10:23] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
-[18:10:23] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
-[18:10:24] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
-[18:10:24] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[18:10:24] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[18:10:24] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.1
-[18:10:24] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[18:10:24] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[18:10:24] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[18:10:25] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[18:10:25] [Server thread/INFO]: ht06: Reload complete.
-[18:10:25] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3520ms or 70 ticks behind
-[18:10:25] [Server thread/INFO]: Timings Reset
-[18:10:25] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[18:10:25] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[18:10:30] [User Authenticator #1/INFO]: UUID of player fneris is 388dd0b7-4aba-49f1-8bc5-9a1bd3d11b81
-[18:10:30] [Server thread/INFO]: [+] fneris join the server
-[18:10:30] [Server thread/INFO]: fneris[/127.0.0.1:55820] logged in with entity id 328 at ([world_Skyblock]0.33288963263074617, 70.0, 0.4180139595607363)
-[18:10:35] [Server thread/INFO]: ht06 issued server command: /is visit fneris
-[18:10:41] [Server thread/INFO]: ht06 issued server command: /isa info player fneris
-[18:10:41] [Server thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
-[18:13:07] [Server thread/INFO]: fneris issued server command: /is
-[18:13:10] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightStarlightRelighterFactory as relighter factory.
-[18:13:26] [Server thread/INFO]: ht06 issued server command: /is visit fneris
-[18:13:31] [Server thread/INFO]: ht06 issued server command: /rl confirm
-[18:13:31] [Server thread/INFO]: ht06: Please note that this command is not supported and may cause issues when using some plugins.
-[18:13:31] [Server thread/INFO]: ht06: If you encounter any issues please use the /stop command to restart your server.
-[18:13:31] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[18:13:31] [Server thread/INFO]: Using 4 threads for Netty based IO
-[18:13:31] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[18:13:31] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[18:13:31] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.1
-[18:13:31] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
-[18:13:31] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[18:13:31] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[18:13:32] [Server thread/INFO]: Loaded 1175 recipes
-[18:13:32] [Server thread/INFO]: Loaded 1276 advancements
-[18:13:32] [Paper Async Command Builder Thread Pool - 3/ERROR]: Caught previously unhandled exception :
-[18:13:32] [Paper Async Command Builder Thread Pool - 3/ERROR]: Paper Async Command Builder Thread Pool - 3
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.LinkedHashMap$LinkedHashIterator.nextNode(LinkedHashMap.java:1023) ~[?:?]
-	at java.base/java.util.LinkedHashMap$LinkedValueIterator.next(LinkedHashMap.java:1052) ~[?:?]
-	at net.minecraft.commands.Commands.fillUsableCommands(Commands.java:542) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.sendAsync(Commands.java:501) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at net.minecraft.commands.Commands.lambda$sendCommands$6(Commands.java:480) ~[paper-1.20.6.jar:1.20.6-147-e41d44f]
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
-	at java.base/java.lang.Thread.run(Thread.java:1583) ~[?:?]
-[18:13:32] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar'...
-[18:13:32] [Paper Plugin Remapper Thread - 2/INFO]: [PluginRemapper] Done remapping plugin 'plugins\JustSkyblock-alpha-1.7.1.jar' in 289ms.
-[18:13:33] [Server thread/INFO]: [PlaceholderAPI] Loading server plugin PlaceholderAPI v2.11.6
-[18:13:33] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.11.2
-[18:13:34] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@192e4011]
-[18:13:34] [Server thread/INFO]: [JustSkyblock] Loading server plugin JustSkyblock valpha-1.7.1
-[18:13:34] [Server thread/INFO]: [JustChat] Loading server plugin JustChat v1.1
-[18:13:34] [Server thread/INFO]: [hSpawn] Loading server plugin hSpawn v1.5.2
-[18:13:34] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[18:13:34] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.11.2
-[18:13:34] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
-[18:13:34] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
-[18:13:34] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
-[18:13:34] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
-[18:13:34] [Server thread/WARN]: Server reload detected. This may cause various issues with FastAsyncWorldEdit and dependent plugins. Reloading the server is not advised.
-[18:13:34] [Server thread/WARN]: For more information why reloading is bad, see https://madelinemiller.dev/blog/problem-with-reload/
-[18:13:34] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_20_R4.PaperweightFaweAdapter as the Bukkit adapter
-[18:13:35] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.6
-[18:13:35] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
-[18:13:35] [Server thread/INFO]: [JustSkyblock] Enabling JustSkyblock valpha-1.7.1
-[18:13:35] [Server thread/INFO]: [PlaceholderAPI] Successfully registered internal expansion: justskyblock [1.0]
-[18:13:35] [Server thread/INFO]: [JustChat] Enabling JustChat v1.1
-[18:13:35] [Server thread/INFO]: [hSpawn] Enabling hSpawn v1.5.2
-[18:13:35] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
-[18:13:35] [Server thread/INFO]: ht06: Reload complete.
-[18:13:35] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3878ms or 77 ticks behind
-[18:13:35] [Server thread/INFO]: Timings Reset
-[18:13:35] [Server thread/WARN]: [PlaceholderAPI] Cannot load expansion luckperms due to a missing plugin: LuckPerms
-[18:13:35] [Server thread/INFO]: 0 placeholder hook(s) registered!
-[18:13:45] [Server thread/INFO]: ht06 issued server command: /isa info player fneris
-[18:14:15] [Server thread/INFO]: Stopping server
-[18:14:15] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
-[18:14:15] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
-[18:14:15] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.1
-[18:14:15] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
-[18:14:15] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
-[18:14:15] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
-[18:14:15] [Server thread/INFO]: Saving players
-[18:14:15] [Server thread/INFO]: fneris lost connection: Server closed
-[18:14:15] [Server thread/INFO]: fneris left the game
-[18:14:15] [Server thread/INFO]: ht06 lost connection: Server closed
-[18:14:15] [Server thread/INFO]: ht06 left the game
-[18:14:15] [Server thread/INFO]: Saving worlds
-[18:14:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saved 4 block chunks, 95 entity chunks, 0 poi chunks in world 'world' in 0,02s
-[18:14:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[18:14:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 21 entity chunks, 0 poi chunks in world 'world_nether' in 0,00s
-[18:14:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[18:14:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'world_the_end' in 0,00s
-[18:14:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[18:14:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
-[18:14:15] [Server thread/INFO]: [ChunkHolderManager] Saved 641 block chunks, 626 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,12s
-[18:14:15] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
-[18:14:15] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[18:14:15] [Server thread/INFO]: Flushing Chunk IO
-[18:14:15] [Server thread/INFO]: Closing Thread Pool
-[18:14:15] [Server thread/INFO]: Closing Server
+Caused by: java.lang.NullPointerException: Cannot invoke "org.bukkit.entity.Player.getName()" because the return value of "org.bukkit.Bukkit.getPlayer(java.util.UUID)" is null
+	at JustSkyblock-alpha-1.7.1.jar/fr.ht06.justskyblock.Commands.IsAdminCommand.onCommand(IsAdminCommand.java:129) ~[JustSkyblock-alpha-1.7.1.jar:?]
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:45) ~[paper-api-1.20.6-R0.1-SNAPSHOT.jar:?]
+	... 26 more
+[18:00:01] [Server thread/INFO]: Stopping server
+[18:00:01] [Server thread/INFO]: [hSpawn] Disabling hSpawn v1.5.2
+[18:00:01] [Server thread/INFO]: [JustChat] Disabling JustChat v1.1
+[18:00:01] [Server thread/INFO]: [JustSkyblock] Disabling JustSkyblock valpha-1.7.1
+[18:00:01] [Server thread/INFO]: [FastAsyncWorldEdit] Disabling FastAsyncWorldEdit v2.11.2
+[18:00:01] [Server thread/INFO]: Unregistering com.sk89q.worldedit.bukkit.BukkitServerInterface from WorldEdit
+[18:00:01] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.6
+[18:00:01] [Server thread/INFO]: Saving players
+[18:00:01] [Server thread/INFO]: ht06 lost connection: Server closed
+[18:00:01] [Server thread/INFO]: ht06 left the game
+[18:00:01] [Server thread/INFO]: Saving worlds
+[18:00:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world'
+[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world'
+[18:00:01] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world'
+[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Saved 625 block chunks, 625 entity chunks, 0 poi chunks in world 'world' in 1,25s
+[18:00:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:00:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_nether'
+[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_nether'
+[18:00:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_nether'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_nether' in 0,46s
+[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:00:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_the_end'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_the_end'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_the_end'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 529 block chunks, 529 entity chunks, 0 poi chunks in world 'world_the_end' in 0,10s
+[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:00:03] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_Skyblock]'/minecraft:world_skyblock
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'world_Skyblock'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'world_Skyblock'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'world_Skyblock'
+[18:00:03] [Server thread/INFO]: [ChunkHolderManager] Saved 49 block chunks, 49 entity chunks, 0 poi chunks in world 'world_Skyblock' in 0,01s
+[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage (world_Skyblock): All chunks are saved
+[18:00:03] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[18:00:03] [Server thread/INFO]: Flushing Chunk IO
+[18:00:03] [Server thread/INFO]: Closing Thread Pool
+[18:00:03] [Server thread/INFO]: Closing Server

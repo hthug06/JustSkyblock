@@ -25,7 +25,7 @@ public class CreateIsland {
                 //if we don't have the coordinates, we don't create the island
                 if (!DataConfig.get().contains("Island."+ v +".LocationSpawn")) return;
 
-                Location spawnLoc = new Location(Bukkit.getWorld("world_Skyblock"),
+                Location spawnLoc = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()),
                         dataconfig.getDouble("Island."+ v +".LocationSpawn.x"),
                         dataconfig.getDouble("Island."+ v +".LocationSpawn.y"),
                         dataconfig.getDouble("Island."+ v +".LocationSpawn.z"),
@@ -33,8 +33,8 @@ public class CreateIsland {
                         dataconfig.getInt("Island."+ v +".LocationSpawn.yaw"));
 
                 //creation of the island
-                Location islandLoc = new Location(Bukkit.getWorld("world_Skyblock"), (int)dataconfig.getList("Island."+v+".Coordinates").get(0), 70, (int)dataconfig.getList("Island."+v+".Coordinates").get(1));
-                island = new Island(v, islandLoc, spawnLoc);
+                Location islandLoc = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), (int)dataconfig.getList("Island."+v+".Coordinates").get(0), 70, (int)dataconfig.getList("Island."+v+".Coordinates").get(1));
+                island = new Island(v, islandLoc, spawnLoc, dataconfig.getString("Island."+ v +"Type"));
 
                 //Players
                 if (!DataConfig.get().contains("Island."+ v +".Players.Owner")){

@@ -24,7 +24,7 @@ public class CobbleGenEvent implements Listener {
         Block generatedBlock = event.getToBlock();
         Island island = islandManager.getIslandbyLocation(event.getBlock().getLocation());
 
-        if (!JustSkyblock.getInstance().getConfig().getConfigurationSection("CustomGenerator").getBoolean("Enable")) return;
+        if (!JustSkyblock.customGeneratorConfig.getConfigurationSection("CustomGenerator").getBoolean("Enable")) return;
 
         if (source.getType() != Material.LAVA) {
             return;
@@ -33,7 +33,7 @@ public class CobbleGenEvent implements Listener {
         if (!this.isCobbleGenerator(generatedBlock)) {
             return;
         }
-        if (!source.getWorld().getName().equalsIgnoreCase("world_Skyblock")){
+        if (!source.getWorld().getName().equalsIgnoreCase(JustSkyblock.getInstance().getWorldName())){
             return;
         }
 
@@ -58,16 +58,13 @@ public class CobbleGenEvent implements Listener {
 
     private Material chooseBlock(Island island){
         int nbrRandom = random.nextInt(101);
-//        int nbrRandom = 100;
         float luck = 0; //the chance the block appear
 
-        for (Object s : JustSkyblock.getInstance().getConfig().getList("CustomGenerator.level."+island.getCobbleGenLevel())){ //loop for every block
+        for (Object s : JustSkyblock.customGeneratorConfig.getList("CustomGenerator.level."+island.getCobbleGenLevel())){ //loop for every block
             float chance = Float.parseFloat(s.toString().split(":")[1]);  //get the chance the block appear
             luck+= chance; //add to the luck
             if (nbrRandom<=luck){
                 String block = s.toString().split(":")[0];
-//                JustSkyblock.getInstance().getLogger().info(String.valueOf(luck));
-//                JustSkyblock.getInstance().getLogger().info(String.valueOf(nbrRandom));
                 return Material.getMaterial(block.toUpperCase());
             }
         }

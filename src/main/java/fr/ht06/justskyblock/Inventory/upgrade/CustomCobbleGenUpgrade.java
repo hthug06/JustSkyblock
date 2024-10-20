@@ -48,7 +48,7 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
                     Component.text("Tier " + (nbr+1) + " Generator", TextColor.color(0xAAB7B8)).decoration(TextDecoration.ITALIC, false),
                     i,
                     materialList.get(nbr),
-                    List.of(miniMessage.deserialize(JustSkyblock.getInstance().getConfig().getString("CustomGenerator.name."+(nbr+1)))));
+                    List.of(miniMessage.deserialize(JustSkyblock.customGeneratorConfig.getString("CustomGenerator.name."+(nbr+1)))));
             inv.setItem(place, itemStack);
             place++;
         }
@@ -57,7 +57,7 @@ public class CustomCobbleGenUpgrade implements InventoryHolder, Listener {
         for (int lvl = 1; lvl <= 7; lvl++) {
             List<Component> lore = new ArrayList<>();
             Component component;
-            for (Object s : JustSkyblock.getInstance().getConfig().getList("CustomGenerator.level." + lvl)) {
+            for (Object s : JustSkyblock.customGeneratorConfig.getList("CustomGenerator.level." + lvl)) {
                 String block = s.toString().split(":")[0];
                 if (s.toString().contains(".")) {
                     float chance = Float.parseFloat(s.toString().split(":")[1]);

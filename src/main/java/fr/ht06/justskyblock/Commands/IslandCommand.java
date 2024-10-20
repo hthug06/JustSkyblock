@@ -220,8 +220,25 @@ public class IslandCommand implements CommandExecutor {
                     island.setLevel(level);
                     player.sendMessage("Your island is level " + level);
                     double size = level/10;
-                    if (size<50){
-                        size = 50;
+
+                    //For the minimum size
+                    if (size<25){
+                        if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")<25){
+                            size = 25;
+                        }
+                        else{
+                            size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
+                        }
+                    }
+
+                    //For the maximum size
+                    if (size>950){
+                        if (JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize")>950){
+                            size = 950;
+                        }
+                        else{
+                            size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
+                        }
                     }
                     island.setSize(size);
                     for (Player p: islandManager.getIslandbyplayer(player.getName()).getAllPlayerOnIsland()){

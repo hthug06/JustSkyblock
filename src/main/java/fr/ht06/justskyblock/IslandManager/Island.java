@@ -1,5 +1,6 @@
 package fr.ht06.justskyblock.IslandManager;
 
+import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -13,13 +14,14 @@ import java.util.*;
 
 public class Island {
     private String IslandName;
+    private String type;
     private Location islandCoordinates;
     private Location islandSpawn;
     private UUID Owner;
     private List<UUID> Moderator = new ArrayList<>();
     private List<UUID> Member = new ArrayList<>();
     private double level = 0;
-    private double size = 50;
+    private double size = JustSkyblock.getInstance().getConfig().getInt("IslandWorldBorderMinSize");
     private int rank = 0;
     private LocalDateTime Date;
     private Date aujourdhui;
@@ -34,10 +36,11 @@ public class Island {
     private Map<String, Integer> lumberCounter = new HashMap<>();
     private Map<Object, Object> Island = new HashMap<>();
 
-    public Island(String IslandName, Location islandCoordinates, Location islandSpawn){
+    public Island(String IslandName, Location islandCoordinates, Location islandSpawn, String type){
         this.IslandName = IslandName;
         this.islandCoordinates = islandCoordinates;
         this.islandSpawn = islandSpawn;
+        this.type = type;
         Date = LocalDateTime.now();
         aujourdhui = new Date();
         this.createSettings();
@@ -59,9 +62,16 @@ public class Island {
         return this;
     }
 
-
     public Map<Object, Object> getIslandtoMap() {
         return Island;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Map<String, Boolean> getAllSettings() {
@@ -89,7 +99,7 @@ public class Island {
     }
 
     public UUID getOwner() {
-        //il ne peut y avoir qu'un seul Owner
+        //There can be only one !
         return Owner;
     }
 

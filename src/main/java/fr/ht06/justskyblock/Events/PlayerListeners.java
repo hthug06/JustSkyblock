@@ -56,11 +56,11 @@ public class PlayerListeners implements Listener {
         }
 
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
-        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>Skyblock is in version alpha-1.7.1 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>JustSkyblock is in version alpha-1.7.2 created by me (ht06)"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
         //WorldBorder Gestion
-        if (player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) {
+        if (player.getWorld().getName().equalsIgnoreCase(JustSkyblock.getInstance().getWorldName())) {
             if (onHisIsland(player)) {
                 //Because the worldBorder need to be delayed
                 new BukkitRunnable() {
@@ -362,7 +362,7 @@ public class PlayerListeners implements Listener {
         if (player.getInventory().getItemInMainHand().getType().equals(Material.FIRE_CHARGE)) event.setCancelled(true);
 
         //Si le joueur n'est pas dans le monde des îles
-        if (!player.getWorld().getName().equalsIgnoreCase("world_Skyblock")) return;
+        if (!player.getWorld().getName().equalsIgnoreCase(JustSkyblock.getInstance().getWorldName())) return;
 
 
         List<Material> listMat = new ArrayList<Material>();
@@ -465,7 +465,7 @@ public class PlayerListeners implements Listener {
     public static boolean onHisIsland(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
             if (contains(player.getLocation(),
                     loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 if (is.isOnThisIsland(player.getUniqueId())) {
@@ -479,7 +479,7 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIslandName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
             if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 return is.getIslandName();
             }
@@ -490,7 +490,7 @@ public class PlayerListeners implements Listener {
     public static String getAnotherPlayerIsland_PlayerName(Player player) {
         Location loc;
         for (Island is : islandManager.getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
             if (contains(player.getLocation(), loc.clone().add(-((double) is.getSize() /2), -200, -((double) is.getSize() /2)), loc.clone().add(((double) is.getSize() /2), 300, ((double) is.getSize() /2)))) {
                 return Bukkit.getPlayer(is.getOwner()).getName();
             }

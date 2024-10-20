@@ -126,7 +126,7 @@ public class IsAdminCommand implements CommandExecutor {
                             player.sendMessage("--- list of island page 1 (total of "+ islandManager.getAllIsland().size()+ ") ---");
                             for (int i = 0; i < 10; i++) {
                                 String islandName = islandManager.getAllIsland().get(i).getIslandName();
-                                String ownerName =  Bukkit.getPlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+                                String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
 
                                 Component msg = Component.text(ownerName + ": ")
                                         .append(Component.text(islandName).

@@ -21,14 +21,14 @@ public class DeleteIsland {
         //y
         List<Player> PlayerList = new ArrayList<>();
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
                     .getBlockZ())
                     .clone().add(-((double) island.getSize() / 2), -200, -((double) island.getSize() / 2));
             ;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
                     .getBlockZ())
                     .clone().add(((double) island.getSize() / 2), 300, ((double) island.getSize() / 2));
             ;
@@ -38,11 +38,11 @@ public class DeleteIsland {
             for (int x = x1; x < x2; x++) {
                 //z
                 for (int z = z1; z < z2; z++) {
-                    if (!Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).getType().isAir())
-                        Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).setType(Material.AIR);
+                    if (!Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).getType().isAir())
+                        Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).setType(Material.AIR);
 
                     if (x == 0 && y == 70 && z == 0) {
-                        @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld("world_Skyblock"), x, y, z).getNearbyEntities(((double) island.getSize() / 2), 70, ((double) island.getSize() / 2));
+                        @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z).getNearbyEntities(((double) island.getSize() / 2), 70, ((double) island.getSize() / 2));
                         PlayerList = new ArrayList<>();
                         Player playertarget;
                         for (Entity e : livingEntity) {
@@ -77,14 +77,14 @@ public class DeleteIsland {
         //y
         List<Player> PlayerList = null;
         for (int y = -64; y < 320/*couche max à couche min*/; y++) {
-            Location isLoc1 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc1 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
                     .getBlockZ())
                     .clone().add(-((double) island.getSize() / 2), -200, -((double) island.getSize() / 2));
             ;
             int x1 = isLoc1.getBlockX();
             int z1 = isLoc1.getBlockZ();
 
-            Location isLoc2 = new Location(Bukkit.getWorld("world_Skyblock"), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
+            Location isLoc2 = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), island.getIslandCoordinates().getBlockX(), 70, island.getIslandCoordinates()
                     .getBlockZ())
                     .clone().add(((double) island.getSize() / 2), 300, ((double) island.getSize() / 2));
             ;
@@ -94,11 +94,11 @@ public class DeleteIsland {
             for (int x = x1; x < x2; x++) {
                 //z
                 for (int z = z1; z < z2; z++) {
-                    if (!Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).getType().isAir())
-                        Bukkit.getWorld("world_Skyblock").getBlockAt(new Location(Bukkit.getWorld("world_Skyblock"), x, y, z)).setType(Material.AIR);
+                    if (!Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).getType().isAir())
+                        Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).setType(Material.AIR);
 
                     if (x == 0 && y == 70 && z == 0) {
-                        @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld("world_Skyblock"), x, y, z).getNearbyEntities(((double) island.getSize() / 2), 70, ((double) island.getSize() / 2));
+                        @NotNull Collection<Entity> livingEntity = new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z).getNearbyEntities(((double) island.getSize() / 2), 70, ((double) island.getSize() / 2));
                         PlayerList = new ArrayList<>();
                         Player playertarget;
                         for (Entity e : livingEntity) {

@@ -7,6 +7,7 @@ import fr.ht06.justskyblock.Config.IslandLevel;
 import fr.ht06.justskyblock.Events.CobbleGenEvent;
 import fr.ht06.justskyblock.Events.InventoryEvents;
 import fr.ht06.justskyblock.Events.PlayerListeners;
+import fr.ht06.justskyblock.Inventory.CreateIslandInventory;
 import fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin;
 import fr.ht06.justskyblock.Inventory.Quest.*;
 import fr.ht06.justskyblock.Inventory.upgrade.CustomCobbleGenUpgrade;
@@ -32,7 +33,8 @@ public final class JustSkyblock extends JavaPlugin {
     //Color of the plugin : Green ->#52BE80   Blue -> #5499C7
 
     public static IslandManager islandManager;
-    public static YamlConfiguration customConfig;
+    public static YamlConfiguration levelConfig;
+    public static YamlConfiguration customGeneratorConfig;
     public static List<Location> placeByPlayer;
 
 
@@ -44,10 +46,10 @@ public final class JustSkyblock extends JavaPlugin {
 
         //Creation du world_skyblock si il existe pas et le loader sinon
         String settings = "{\"structures\":{\"structures\":{}},\"layers\":[{\"height\":9,\"block\":\"air\"},{\"height\":1,\"block\":\"air\"}],\"lakes\":false,\"features\":false,\"biome\":\"plains\"}";
-        WorldCreator worldcreator = new WorldCreator("world_Skyblock");
+        WorldCreator worldcreator = new WorldCreator(getWorldName());
         worldcreator.type(WorldType.FLAT).generatorSettings(settings).generateStructures(false);
         worldcreator.createWorld();
-        new WorldCreator("world_Skyblock").createWorld();
+        new WorldCreator(getWorldName()).createWorld();
 
         //metrics /Bstats
         Metrics metrics = new Metrics(this, 22941);
@@ -109,25 +111,11 @@ public final class JustSkyblock extends JavaPlugin {
         createLevelConfig();
         IslandLevel.save();
 
+        //For the customGenerator
+        createCustomGeneratorConfig();
+
         //for all the schematic
         getAllBaseSchematic();
-
-    }
-
-    private void getAllBaseSchematic() {
-        List<String> schematicName = new ArrayList<>(List.of("BasicIsland", "IslandDesert", "IslandMesa", "IslandPlains", "IslandSnow"));
-
-        for (String name: schematicName){
-            if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/" + name + ".schem").exists()){
-                super.saveResource("Schematic/"+ name +".schem", false /* don't replace the file on disk if it exists */);
-            }
-
-
-            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem");
-            file.renameTo(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem"));
-        }
-
-
 
     }
 
@@ -147,6 +135,21 @@ public final class JustSkyblock extends JavaPlugin {
         return getPlugin(JustSkyblock.class);
     }
 
+    private void getAllBaseSchematic() {
+        List<String> schematicName = new ArrayList<>(List.of("BasicIsland", "IslandDesert", "IslandMesa", "IslandPlains", "IslandSnow"));
+
+        for (String name: schematicName){
+            if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/" + name + ".schem").exists()){
+                super.saveResource("Schematic/"+ name +".schem", false /* don't replace the file on disk if it exists */);
+            }
+
+
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem");
+            file.renameTo(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "Schematic/"+ name +".schem"));
+        }
+
+    }
+
     public void resetConfig(){
         File configFile = new File(getDataFolder(), "config.yml");
         configFile.delete();
@@ -160,9 +163,19 @@ public final class JustSkyblock extends JavaPlugin {
         }
         //recup le dossier .yml dans les ressources
         //Pourvoir l'utiliser
-        customConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "level.yml"));
+        levelConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "level.yml"));
         //Utiliser cette class pour simplifier
         IslandLevel.setup();
+    }
+
+    public void createCustomGeneratorConfig(){
+        if (!new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "customgenerator.yml").exists()){
+            super.saveResource("customgenerator.yml", false /* don't replace the file on disk if it exists */);
+        }
+        //recup le dossier .yml dans les ressources
+        //Pourvoir l'utiliser
+        customGeneratorConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "customgenerator.yml"));
+        //Utiliser cette class pour simplifier
     }
 
     private void registerPlaceholder(){
@@ -172,6 +185,7 @@ public final class JustSkyblock extends JavaPlugin {
     private void registerEvents(){
         getServer().getPluginManager().registerEvents(new InventoryEvents(), this);
         getServer().getPluginManager().registerEvents(new PlayerListeners(this), this);
+        getServer().getPluginManager().registerEvents(new CreateIslandInventory(), this);
         getServer().getPluginManager().registerEvents(new CobbleGenEvent(), this);
         getServer().getPluginManager().registerEvents(new MainQuestInventory(), this);
         getServer().getPluginManager().registerEvents(new RankQuestInventory(), this);
@@ -186,6 +200,15 @@ public final class JustSkyblock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new UpgradeGenLvl(), this);
         getServer().getPluginManager().registerEvents(new IslandSizeUpgrade(), this);
         getServer().getPluginManager().registerEvents(new DeleteIslandInventoryAdmin(), this);
+    }
+
+    public String getWorldName(){
+        if (JustSkyblock.getInstance().getConfig().getString("WorldName") != null) {
+            return JustSkyblock.getInstance().getConfig().getString("WorldName");
+        }
+        else{
+            return "world_Skyblock";
+        }
     }
 }
 

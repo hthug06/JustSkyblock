@@ -1,8 +1,13 @@
 #This plugin use the miniMessage API, so you can use it everywhere in the config
 #You can use this link to learn how to use it https://docs.advntr.dev/minimessage/format.html
+
+#First of all, you can choose a custom name for the skyblockWorld
+#If you put nothing, the world name is going to be: "world_Skyblock"
+WorldName: "world_Skyblock"
+
 IS:
   Basic:
-    Block: GRASS_BLOCK     #The name of the Material (you can see HERE : https://jd.papermc.io/paper/1.21.1/org/bukkit/Material.html)
+    Block: GRASS_BLOCK     #The name of the Material (you can see HERE : https://jd.papermc.io/paper/1.21.1/org/bukkit/Material.html)  don't use deprecated item!!
     Name: The basic Skyblock island   #The name of the block
     Lore:   #the lore of the block
       - This is the first line of the lore
@@ -10,7 +15,25 @@ IS:
       - <color:red> and this is the 3rd, but in red
       - <!i>And this last line isn't italic Oo
     Schematic: BasicIsland.schem      #the name of the file located in the Schematic folder
-    Slot: 0                            #The number of the slot in creation menu (don't put 2 of the same slot)
+    Slot: 0                           #The number of the slot in creation menu (don't put 2 of the same slot)
+
+    #Everything that are going to be in the chest.
+    #Follow the patern, otherwise it might not work
+    #Also the item are material, so use the link below to have the right material name (don't use deprecated item !!!)
+    Chest:
+      - leather_helmet:1
+      - leather_chestplate:1
+      - leather_leggings:1
+      - leather_boots:1
+      - dirt:64
+      - wheat_seeds:3
+      - carrot:3
+      - potato:3
+      - Sugar_cAne:2
+      - cactus:2
+      - LavA_BuckEt:1
+      - Ice:2
+
   Plain:
     Block: DIRT
     Name: Basic Island
@@ -20,13 +43,41 @@ IS:
       - "This lore have an <u>empty</u> line"
     Schematic: IslandPlains.schem
     Slot: 1
+    Chest:
+      - leather_helmet:1
+      - leather_chestplate:1
+      - leather_leggings:1
+      - leather_boots:1
+      - dirt:64
+      - wheat_seeds:3
+      - carrot:3
+      - potato:3
+      - Sugar_cAne:2
+      - cactus:2
+      - LavA_BuckEt:1
+      - Ice:2
+
   Desert:
     Block: SAND
     Name: Desert Island
     Lore:
-      -<o> ! </o>An island in the desert<o> ! </o>
+      - <o> ! </o>An island in the desert<o> ! </o>
     Schematic: IslandDesert.schem
     Slot: 2
+    Chest:
+      - leather_helmet:1
+      - leather_chestplate:1
+      - leather_leggings:1
+      - leather_boots:1
+      - dirt:64
+      - wheat_seeds:3
+      - carrot:3
+      - potato:3
+      - Sugar_cAne:2
+      - cactus:2
+      - LavA_BuckEt:1
+      - Ice:2
+
   Mesa:
     Block: TERRACOTTA
     Name: Mesa Island
@@ -34,6 +85,20 @@ IS:
       - An island in a <b>"Mesa Biome like</b>!"
     Schematic: IslandMesa.schem
     Slot: 3
+    Chest:
+      - leather_helmet:1
+      - leather_chestplate:1
+      - leather_leggings:1
+      - leather_boots:1
+      - dirt:64
+      - wheat_seeds:3
+      - carrot:3
+      - potato:3
+      - Sugar_cAne:2
+      - cactus:2
+      - LavA_BuckEt:1
+      - Ice:2
+
   Snow:
     Block: SNOW_BLOCK
     Name: Snow Island
@@ -41,120 +106,31 @@ IS:
       - This island is <st>Hot</st> cold!
     Schematic: IslandSnow.schem
     Slot: 4
+    Chest:
+      - leather_helmet:1
+      - leather_chestplate:1
+      - leather_leggings:1
+      - leather_boots:1
+      - dirt:64
+      - wheat_seeds:3
+      - carrot:3
+      - potato:3
+      - Sugar_cAne:2
+      - cactus:2
+      - LavA_BuckEt:1
+      - Ice:2
 
 #When the player delete his island, all the person who where on the island execute this command
 #Basically, all the player are going to use /spawn (just don't put the "/")
 IslandDeleteCommand: spawn
 
 
-#Size is cap to 950 for the moment
+#Maximum Size is cap at 950 for the moment (otherwise, player can have the same worldborder)
 #if you put more than 950, the max size will be 950
 #Border size is based on the Island Level, and is updated EveryTime a player execute the /is level command
-IslandWorldBorderMaxSize: 950
+IslandWorldBorderMaxSize: 500
 
-
-CustomGenerator:
-  Enable: true   #true or false
-  name:
-    1: <color:gray>The beginning
-    2: <color:#383D45>Time for an upgrade
-    3: <color:#D5D5D5>The iron age
-    4: <color:yellow>The gold age
-    5: <gradient:#FC0000:#5f1313>Automation time !
-    6: <color:#9FF8E5>DIAMOND!
-    7: <color:#40F082>The final generator <color:#002C00>(GG!)
-  level:
-    1:
-      - Stone:54.5
-      - granite:10
-      - diorite:10
-      - andesite:10
-      - gravel:10
-      - coal_ore:4
-      - iron_ore:1
-      - emerald_ore:0.5
-    2:
-      - Stone:50
-      - granite:7
-      - diorite:7
-      - andesite:7
-      - gravel:7
-      - coal_ore:10.5
-      - DEEPSLATE_COAL_ORE:6.5
-      - iron_ore:4
-      - DEEPSLATE:1
-    3:
-      - Stone:40
-      - granite:5
-      - diorite:5
-      - andesite:5
-      - gravel:5
-      - coal_ore:10.5
-      - DEEPSLATE_COAL_ORE:7.5
-      - iron_ore:10
-      - deepslate_iron_ore:8
-      - DEEPSLATE:3
-      - gold_ore:1
-    4:
-      - Stone:35
-      - granite:2.5
-      - diorite:2.5
-      - andesite:2.5
-      - gravel:2.5
-      - coal_ore:3
-      - DEEPSLATE_COAL_ORE:2.5
-      - iron_ore:7
-      - deepslate_iron_ore:8
-      - gold_ore:12.5
-      - deepslate_gold_ore:10.5
-      - redstone_ore:3
-      - DEEPSLATE:5.5
-    5:
-      - Stone:25
-      - granite:2.5
-      - diorite:2.5
-      - andesite:2.5
-      - gravel:2.5
-      - DEEPSLATE_COAL_ORE:1
-      - deepslate_iron_ore:13
-      - gold_ore:3
-      - deepslate_gold_ore:12.5
-      - redstone_ore:5
-      - deepslate_redstone_ore:15
-      - DEEPSLATE:14
-      - diamond_ore:1
-      - deepslate_diamond_ore:0.5
-    6:
-      - deepslate:31.5
-      - granite:2.5
-      - diorite:2.5
-      - andesite:2.5
-      - gravel:2.5
-      - DEEPSLATE_COAL_ORE:1
-      - deepslate_iron_ore:10
-      - deepslate_gold_ore:12.5
-      - deepslate_redstone_ore:15
-      - deepslate_diamond_ore:15
-    7:
-      - deepslate:30
-      - granite:2.5
-      - diorite:2.5
-      - andesite:2.5
-      - gravel:2.5
-      - DEEPSLATE_COAL_ORE:1
-      - deepslate_iron_ore:7.5
-      - deepslate_gold_ore:10
-      - deepslate_redstone_ore:12.5
-      - deepslate_diamond_ore:12.5
-      - deepslate_emerald_ore:11.5
-
-  ForUpgrade: #Max 8 item & 7 level
-    1:
-      - Cobblestone:64
-      - Iron_ingot:10
-      - coal:10
-      - granite:10
-      - diorite:10
-      - andesite:10
-      - gravel:10
-      - emerald:1
+#Minimum Size is cap at 25 for the moment (to little for the island otherwise)
+#if you put more than 25, the max size will be 25
+#Border size is based on the Island Level, and is updated EveryTime a player execute the /is level command
+IslandWorldBorderMinSize: 50

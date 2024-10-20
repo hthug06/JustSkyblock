@@ -16,6 +16,9 @@ public class SaveIsland {
 
             DataConfig.get().getConfigurationSection("Island").createSection(v.getIslandName());
 
+            //Island Type
+            DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Type", v.getType());
+
             //le Level
             DataConfig.get().getConfigurationSection("Island." + v.getIslandName()).set("Level", v.getLevel());
 

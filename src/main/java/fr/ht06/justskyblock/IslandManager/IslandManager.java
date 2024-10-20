@@ -67,7 +67,7 @@ public class IslandManager {
     public Island getIslandbyLocation(Location location){
         Location loc;
         for (Island is : getAllIsland()) {
-            loc= new Location(Bukkit.getWorld("world_Skyblock"), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
+            loc= new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), is.getIslandCoordinates().getBlockX(), 70, is.getIslandCoordinates().getBlockZ());
             if (PlayerListeners.contains(location, loc.clone().add(-50, -200, -50), loc.clone().add(50, 300, 50))) {
                 return is;
             }

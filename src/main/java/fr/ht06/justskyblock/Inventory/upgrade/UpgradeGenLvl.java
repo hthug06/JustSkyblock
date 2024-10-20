@@ -62,7 +62,7 @@ public class UpgradeGenLvl implements InventoryHolder, Listener {
         reloadItem.setItemMeta(reloadMeta);
 
         placeItemToSlot(island.getCobbleGenLevel(), player);
-        Map<Material, Integer> itemMap = ListIntoMap(JustSkyblock.getInstance().getConfig().getStringList("CustomGenerator.ForUpgrade."+lvl));
+        Map<Material, Integer> itemMap = ListIntoMap(JustSkyblock.customGeneratorConfig .getStringList("CustomGenerator.ForUpgrade."+lvl));
         putGlassPane(playerHasItems(player, itemMap), GlassPaneSlots);
         if (playerHasItems(player, itemMap)){
             inv.setItem(22, itemRankup);
@@ -145,7 +145,7 @@ public class UpgradeGenLvl implements InventoryHolder, Listener {
         String[] splited;
         ItemStack item;
         int i = 0;
-        for (String str:JustSkyblock.getInstance().getConfig().getStringList("CustomGenerator.ForUpgrade."+level)){
+        for (String str:JustSkyblock.customGeneratorConfig.getStringList("CustomGenerator.ForUpgrade."+level)){
             splited = str.split(":");
             item = CreateItem.createItem(null,Integer.parseInt(splited[1]), Material.getMaterial(splited[0].toUpperCase()));
             ItemMeta itemMeta = item.getItemMeta();
@@ -184,7 +184,7 @@ public class UpgradeGenLvl implements InventoryHolder, Listener {
     public void removeItemForUpgrade(Player player, Integer level){
         int i = 0;
 //        player.sendMessage(String.valueOf(JustSkyblock.getInstance().getConfig().getStringList("CustomGenerator.ForUpgrade."+level)));
-        Map<Material, Integer>itemFromTier = ListIntoMap(JustSkyblock.getInstance().getConfig().getStringList("CustomGenerator.ForUpgrade."+level));
+        Map<Material, Integer>itemFromTier = ListIntoMap(JustSkyblock.customGeneratorConfig.getStringList("CustomGenerator.ForUpgrade."+level));
 //        player.sendMessage(String.valueOf(itemFromTier));
         for (ItemStack item: player.getInventory().getStorageContents()){
             //player.sendMessage(itemFromTier.toString());

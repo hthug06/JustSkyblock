@@ -43,7 +43,7 @@ public class LoadSchematic {
         try {
             assert format != null;
             try (ClipboardReader reader = format.getReader(new FileInputStream(new File(getServer().getPluginsFolder().getAbsoluteFile() + "/JustSkyblock/Schematic/"+fileName)));
-                     EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(BukkitAdapter.adapt(Objects.requireNonNull(Bukkit.getWorld("world_Skyblock"))), -1)
+                     EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(BukkitAdapter.adapt(Objects.requireNonNull(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()))), -1)
             ) {
                 Clipboard clipboard = reader.read();
 

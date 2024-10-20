@@ -1,5 +1,5 @@
 [20:11:05 INFO] [+] erinbrawn join the server
-[20:11:05 INFO] erinbrawn[/***.***.***.***:*****] logged in with entity id 2530 at ([world]0.5, -60.0, 0.5)
+[20:11:05 INFO] erinbrawn[/***.***.***.***:*****] logged in with entity type 2530 at ([world]0.5, -60.0, 0.5)
 [20:11:05 INFO] You whisper to erinbrawn: WELCOME, if you have question, dm me on discord: ht06 or ask them if i am online :D
 [20:11:20 INFO] erinbrawn issued server command: /island create
 [20:11:51 INFO] erinbrawn has made the advancement [Hot Stuff]

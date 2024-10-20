@@ -1,5 +1,3 @@
-# use ctrl + f to find the block you want
-
 # This is the file for everything related to island level
 Material:
   Block:
@@ -21,7 +19,7 @@ Material:
     TUFF: 1
     DRIPSTONE_BLOCK: 1
     GRASS_BLOCK: 1
-    DIRT: 1.2
+    DIRT: 1
     COARSE_DIRT: 1
     PODZOL: 1
     ROOTED_DIRT: 1
