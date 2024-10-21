@@ -10,6 +10,7 @@ import fr.ht06.justskyblock.Events.PlayerListeners;
 import fr.ht06.justskyblock.Inventory.CreateIslandInventory;
 import fr.ht06.justskyblock.Inventory.DeleteIslandInventoryAdmin;
 import fr.ht06.justskyblock.Inventory.Quest.*;
+import fr.ht06.justskyblock.Inventory.TradeInventory;
 import fr.ht06.justskyblock.Inventory.upgrade.CustomCobbleGenUpgrade;
 import fr.ht06.justskyblock.Inventory.upgrade.IslandSizeUpgrade;
 import fr.ht06.justskyblock.Inventory.upgrade.UpgradeGenLvl;
@@ -216,6 +217,7 @@ public final class JustSkyblock extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new UpgradeGenLvl(), this);
         getServer().getPluginManager().registerEvents(new IslandSizeUpgrade(), this);
         getServer().getPluginManager().registerEvents(new DeleteIslandInventoryAdmin(), this);
+        getServer().getPluginManager().registerEvents(new TradeInventory(), this);
     }
 
     public String getWorldName(){
@@ -225,6 +227,13 @@ public final class JustSkyblock extends JavaPlugin {
         else{
             return "world_Skyblock";
         }
+    }
+
+    public static void  reloadAllConfig(){
+        JustSkyblock.getInstance().reloadConfig();
+        JustSkyblock.islandManager.createAllIslandByConfigYAML();
+        tradeConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "trade.yml"));
+        customGeneratorConfig = YamlConfiguration.loadConfiguration(new File(Bukkit.getServer().getPluginManager().getPlugin("JustSkyblock").getDataFolder(), "customgenerator.yml"));
     }
 }
 

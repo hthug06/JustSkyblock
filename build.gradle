@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'fr.ht06'
-version = 'alpha-1.7.4'
+version = 'alpha-1.8'
 
 repositories {
     mavenCentral()
@@ -34,7 +34,6 @@ dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.6-R0.1-SNAPSHOT"
     implementation 'com.sk89q.worldedit:worldedit-core:7.2.0'
     implementation 'com.sk89q.worldedit:worldedit-bukkit:7.2.0'
-    compileOnly("com.github.yannicklamprecht.worldborderapi:api:1.170.0")
     compileOnly 'me.clip:placeholderapi:2.11.6'
 
 

@@ -107,6 +107,7 @@ public class InventoryEvents implements Listener {
             if (event.getSlot() == 11){
                 IslandLevel.calculateIslandLevel(islandManager.getIslandbyName(islandName));
                 player.sendMessage(Component.text(islandName + " level is " + islandManager.getIslandbyName(islandName).getLevel(), TextColor.color(0x43D649)));
+                player.updateInventory();
             }
             if (event.getSlot() == 12){
                 player.teleport(islandManager.getIslandbyName(islandName).getIslandSpawn());

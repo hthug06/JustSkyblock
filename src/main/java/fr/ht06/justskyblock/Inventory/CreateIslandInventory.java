@@ -173,7 +173,6 @@ public class CreateIslandInventory implements InventoryHolder, Listener {
                 //z
                 for (int z = z1; z < z2; z++) {
                     if (Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()).getBlockAt(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z)).getType().equals(Material.CHEST)){
-                        System.out.println(new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z));
                         return new Location(Bukkit.getWorld(JustSkyblock.getInstance().getWorldName()), x, y, z);
                     }
 

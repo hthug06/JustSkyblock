@@ -1,8 +1,1 @@
-placed:
-- ==: org.bukkit.Location
-  world: world_Skyblock
-  x: -1000.0
-  y: 70.0
-  z: -1002.0
-  pitch: 0.0
-  yaw: 0.0
+placed: []

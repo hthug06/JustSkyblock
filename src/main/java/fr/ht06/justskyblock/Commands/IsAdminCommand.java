@@ -30,6 +30,7 @@ public class IsAdminCommand implements CommandExecutor {
         if (!(sender instanceof Player)){
             if (args.length == 0 || args[0].equalsIgnoreCase("help")){
                 sender.sendMessage("--- Island Admin Help (Console version) ---");
+                sender.sendMessage("IslandAdmin allIsland: Display all the island (10 by 10)");
                 sender.sendMessage("IslandAdmin help: All subcommand and some indication about the IslandAdmin command");
                 sender.sendMessage("IslandAdmin info player <player>: See info of the player's island");
                 sender.sendMessage("IslandAdmin info island <island>: See info about this island");
@@ -62,11 +63,12 @@ public class IsAdminCommand implements CommandExecutor {
                             sender.sendMessage("Island name : " + island.getIslandName());
                             sender.sendMessage("Island level  : " + island.getLevel());
                             sender.sendMessage("Island rank : " +island.getRank());
-                            sender.sendMessage("Island size : " + island.getSize());
+                            sender.sendMessage("Island size : " + island.getSize()+"x"+island.getSize());
                             sender.sendMessage("Owner : " + island.getOwner());
                             sender.sendMessage("Moderator : " + island.getAllModerators());
                             sender.sendMessage("Member : " + island.getAllMembers());
                             sender.sendMessage("Creation Date : " + island.getDate());
+                            sender.sendMessage("Island Coordinates : " + island.getCoordinates());
                         }
                         else{
                             sender.sendMessage("This player didn't has an island");
@@ -86,11 +88,12 @@ public class IsAdminCommand implements CommandExecutor {
                             sender.sendMessage("Island name : " + island.getIslandName());
                             sender.sendMessage("Island level  : " + island.getLevel());
                             sender.sendMessage("Island rank : " +island.getRank());
-                            sender.sendMessage("Island size : " + island.getSize());
+                            sender.sendMessage("Island size : " + island.getSize()+"x"+island.getSize());
                             sender.sendMessage("Owner : " + island.getOwner());
                             sender.sendMessage("Moderator : " + island.getAllModerators());
                             sender.sendMessage("Member : " + island.getAllMembers());
                             sender.sendMessage("Creation Date : " + island.getDate());
+                            sender.sendMessage("Island Coordinates : " + island.getCoordinates());
                         }
                         else{
                             sender.sendMessage("This island didn't exist");
@@ -100,7 +103,6 @@ public class IsAdminCommand implements CommandExecutor {
 
                 if (args[0].equalsIgnoreCase("reload")){
                     JustSkyblock.getInstance().reloadConfig();
-                    JustSkyblock.islandManager.createAllIslandByConfigYAML();
                     if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
                         IslandLevel.reload();
                     }
@@ -109,6 +111,69 @@ public class IsAdminCommand implements CommandExecutor {
                     }
                     sender.sendMessage("§cConfig reload");
                     return true;
+                }
+
+                if (args[0].equalsIgnoreCase("allisland")) {
+                    if (args.length == 1 || args[1].equalsIgnoreCase("1")) {
+                        if (islandManager.getAllIsland().size()>10) {
+                            sender.sendMessage("--- list of island page 1 (total of "+ (islandManager.getAllIsland().size()%10)+ ") ---");
+                            for (int i = 0; i < 10; i++) {
+                                String islandName = islandManager.getAllIsland().get(i).getIslandName();
+                                String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+
+                                Component msg = Component.text(ownerName + ": ")
+                                        .append(Component.text(islandName).
+                                                hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
+                                                .clickEvent(ClickEvent.copyToClipboard(islandName)));
+                                sender.sendMessage(msg);
+                            }
+
+                            Component msgBarre = Component.text("---------------------")
+                                    .append(Component.text(">")
+                                            .hoverEvent(HoverEvent.showText(Component.text("Go to the next Page")))
+                                            .clickEvent(ClickEvent.runCommand("/isa allisland 2")))
+                                    .append(Component.text("-------"));
+                            sender.sendMessage(msgBarre);
+                        }
+                        else{
+                            sender.sendMessage("--- list of island page 1 ---");
+                            for (int i = 0; i < islandManager.getAllIsland().size(); i++) {
+                                String isName = islandManager.getAllIsland().get(i).getIslandName();
+                                String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+
+                                Component msg = Component.text(ownerName + ": ")
+                                        .append(Component.text(isName)
+                                                .hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
+                                                .clickEvent(ClickEvent.copyToClipboard(isName)));
+
+                                sender.sendMessage(msg);
+                            }
+                            sender.sendMessage("----------------------------");
+                        }
+                    } else if (args.length == 2) {
+                        int page = Integer.parseInt(args[1]);
+                        sender.sendMessage("--- list of island page " + page + " ---");
+
+
+                        for (int i = (page - 1) * 10; i < page * 10; i++) {
+                            if (i >= islandManager.getAllIsland().size()) break;
+                            String isName = islandManager.getAllIsland().get(i).getIslandName();
+                            String ownerName =  Bukkit.getOfflinePlayer(islandManager.getAllIsland().get(i).getOwner()).getName();
+                            Component msg = Component.text(ownerName + ": ")
+                                    .append(Component.text(isName)
+                                            .hoverEvent(HoverEvent.showText(Component.text("Click to copy island name to clickboard")))
+                                            .clickEvent(ClickEvent.copyToClipboard(isName)));
+                            sender.sendMessage(msg);
+                        }
+
+                        Component msgBarre = Component.text("---------------------")
+                                .append(Component.text(">")
+                                        .hoverEvent(HoverEvent.showText(Component.text("Go to the next Page")))
+                                        .clickEvent(ClickEvent.runCommand("/isa allisland "+(page+1)))
+                                        .append(Component.text("-------")));
+                        sender.sendMessage(msgBarre);
+                        sender.sendMessage("");
+                    }
                 }
             }
         }
@@ -239,8 +304,7 @@ public class IsAdminCommand implements CommandExecutor {
                 }
 
                 if (args[0].equalsIgnoreCase("reload")){
-                    JustSkyblock.getInstance().reloadConfig();
-                    JustSkyblock.islandManager.createAllIslandByConfigYAML();
+                    JustSkyblock.reloadAllConfig();
                     if (new File(Bukkit.getServer().getPluginManager().getPlugin("justSkyblock").getDataFolder(), "level.yml").exists()) {
                         IslandLevel.reload();
                     }

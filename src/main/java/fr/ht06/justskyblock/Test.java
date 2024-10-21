@@ -57,8 +57,8 @@ public class Test implements CommandExecutor {
             //player.sendMessage(String.valueOf(island.getSize()));
             YamlConfiguration tradeConfig = JustSkyblock.tradeConfig;
             for (String base: tradeConfig.getConfigurationSection("Trade.").getKeys(false)){
-                for (String map : tradeConfig.getConfigurationSection("Trade."+base).getKeys(false)){
-                    player.sendMessage(tradeConfig.getString("Trade."+base+"."+map));
+                for (String map : tradeConfig.getConfigurationSection("Trade."+base+".mainItem.").getKeys(true)){
+                    player.sendMessage(tradeConfig.getString("Trade."+base+".mainItem."+map));
                 }
             }
 //            player.sendMessage(String.valueOf(island.getCobbleGenLevel()));

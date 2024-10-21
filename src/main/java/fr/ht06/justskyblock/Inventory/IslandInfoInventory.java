@@ -105,10 +105,10 @@ public class IslandInfoInventory implements InventoryHolder {
                         for (UUID member : island.getAllMembers()){
                             Player target = Bukkit.getPlayer(member);
                             if (target != null && target.isOnline()) {
-                                liste.add(Component.text("- "+ Bukkit.getPlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getOfflinePlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
 
                             } else {
-                                liste.add(Component.text("- "+Bukkit.getPlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+Bukkit.getOfflinePlayer(member).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
 
                             }
                         }
@@ -134,10 +134,10 @@ public class IslandInfoInventory implements InventoryHolder {
                         for (UUID moderator : island.getAllModerators()){
                             Player target = Bukkit.getPlayer(moderator);
                             if (target != null && target.isOnline()) {
-                                liste.add(Component.text("- "+ Bukkit.getPlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getOfflinePlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0x58D68D)).decoration(TextDecoration.ITALIC, false)));
 
                             } else {
-                                liste.add(Component.text("- "+ Bukkit.getPlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
+                                liste.add(Component.text("- "+ Bukkit.getOfflinePlayer(moderator).getName(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false).append(Component.text(" ●", TextColor.color(0xE74C3C)).decoration(TextDecoration.ITALIC, false)));
 
                             }
                         }
@@ -158,6 +158,14 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.TNT, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Delete the Island", TextColor.color(0xF73331)).decoration(TextDecoration.ITALIC, false));
+                    itemStack.setItemMeta(itemMeta);
+                    inv.setItem(i, itemStack);
+                }
+                case 20-> {
+                    ItemStack itemStack = new ItemStack(Material.DIAMOND_PICKAXE, 1);
+                    ItemMeta itemMeta = itemStack.getItemMeta();
+                    itemMeta.displayName(Component.text("Custom Generator Level", TextColor.color(0x4A9AF7)).decoration(TextDecoration.ITALIC, false));
+                    itemMeta.lore(List.of(Component.text(String.valueOf("Level "+island.getCobbleGenLevelUnlock()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }
