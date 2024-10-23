@@ -9,11 +9,14 @@ Trade:   #Don't touch this line
       Name: "<!i>Emerald to Oak Sapling"    #Don't put 2 time the same name
       Lore:
         - "<color:gray>This is a basic trade"
-        - "<color:gray>For this trade, you need 1 Emerald"
-        - "<color:gray>And You received 2 Oak Saplings"
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#ad6c2f>2 Oak Saplings"
     mainItemName:
-    Need: Emerald:3             #The item the player needs to have in his inv      (Item:Quantity)
-    Received: OAK_SAPLING:2     #The item the player received
+    Need:
+    - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+    - Dirt:1
+    Received:
+      - OAK_SAPLING:2     #The item the player received
 
   EmeraldToBirchSapling:
     mainItem: #The displayed item in the menu
@@ -21,10 +24,13 @@ Trade:   #Don't touch this line
       Name: "<!i>Emerald to Birch Sapling"
       Lore:
         - "<color:gray>This is a basic trade"
-        - "<color:gray>For this trade, you need 1 Emerald"
-        - "<color:gray>And You received 2 Spruce Saplings"
-    Need: Emerald:3
-    Received: BIRCH_SAPLING:2
+        - "<color:gray>For this trade, you need 1 <color:#56d018>Emerald"
+        - "<color:gray>And You received <color:#9fe88d>2 Birch Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - BIRCH_SAPLING:2
 
   EmeraldToSPRUCESapling:
     mainItem: #The displayed item in the menu
@@ -32,7 +38,66 @@ Trade:   #Don't touch this line
       Name: "<!i>Emerald to Spruce Sapling"
       Lore:
         - "<color:gray>This is a basic trade"
-        - "<color:gray>For this trade, you need 1 Emerald"
-        - "<color:gray>And You received 2 Birch Saplings"
-    Need: Emerald:1
-    Received: SPRUCE_SAPLING:2
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#804f21>2 Spruce Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - SPRUCE_SAPLING:2
+
+  EmeraldToACACIA_sapling:
+    mainItem: #The displayed item in the menu
+      Block: ACACIA_SAPLING
+      Name: "<!i>Emerald to Acacia Sapling"
+      Lore:
+        - "<color:gray>This is a basic trade"
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#a55236>2 Acacia Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - ACACIA_SAPLING:2
+
+  EmeraldToDARK_OAK_Sapling:
+    mainItem: #The displayed item in the menu
+      Block: DARK_OAK_Sapling
+      Name: "<!i>Emerald to Dark Oak Sapling"
+      Lore:
+        - "<color:gray>This is a basic trade"
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#462418>2 Dark Oak Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - DARK_OAK_SAPLING:2
+
+  EmeraldToJUNGLE_Sapling:
+    mainItem: #The displayed item in the menu
+      Block: JUNGLE_Sapling
+      Name: "<!i>Emerald to Jungle Sapling"
+      Lore:
+        - "<color:gray>This is a basic trade"
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#235c18>2 Jungle Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - JUNGLE_SAPLING:2
+
+  EmeraldToCherry_Sapling:
+    mainItem: #The displayed item in the menu
+      Block: Cherry_Sapling
+      Name: "<!i>Emerald to Cherry Sapling"
+      Lore:
+        - "<color:gray>This is a basic trade"
+        - "<color:gray>For this trade, you need <color:#56d018>1 Emerald"
+        - "<color:gray>And You received <color:#e88dc4>2 Cherry Saplings"
+    Need:
+      - Emerald:1           #The item the player needs to have in his inv      (Item:Quantity)
+      - OAK_SAPLING:1
+    Received:
+      - Cherry_SAPLING:2

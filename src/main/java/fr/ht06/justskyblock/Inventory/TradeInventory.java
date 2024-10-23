@@ -2,13 +2,11 @@ package fr.ht06.justskyblock.Inventory;
 
 import fr.ht06.justskyblock.JustSkyblock;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -90,31 +88,37 @@ public class TradeInventory implements InventoryHolder, Listener {
 
             YamlConfiguration tradeConfig = JustSkyblock.tradeConfig;
 
-            String need = null;
-            String received = null;
+            List<String> needList = new ArrayList<>();
+            List<String> receivedList = new ArrayList<>();
             //put the item in the inv
             for (String bas2: tradeConfig.getConfigurationSection("Trade.").getKeys(false)){
                 if (itemMeta.getPersistentDataContainer().has(new NamespacedKey(JustSkyblock.getInstance(), bas2))){
-                    need = tradeConfig.getString("Trade."+bas2+".Need");
-                    received = tradeConfig.getString("Trade."+bas2+".Received");
+                    needList = tradeConfig.getStringList("Trade."+bas2+".Need");
+                    receivedList = tradeConfig.getStringList("Trade."+bas2+".Received");
                 }
             }
 
             //Check if the player has the right item
-            Material material = Material.getMaterial(need.split(":")[0].toUpperCase());
-            int amount = Integer.parseInt(need.split(":")[1]);
-            ItemStack itemStack = new ItemStack(material, amount);
-
-            //if no send a message
-            if (!player.getInventory().containsAtLeast(new ItemStack(material),amount)){
-                player.sendMessage("you don't have the required item for this trade");
+            List<ItemStack> itemList = new ArrayList<>();
+            for (String need: needList) {
+                Material material = Material.getMaterial(need.split(":")[0].toUpperCase());
+                int amount = Integer.parseInt(need.split(":")[1]);
+                ItemStack itemStack = new ItemStack(material, amount);
+                itemList.add(itemStack);
+                //if no send a message and cancel everything
+                if (!player.getInventory().containsAtLeast(new ItemStack(material),amount)){
+                    player.sendMessage("you don't have the required item for this trade");
+                    return;
+                }
             }
+
+            itemList.forEach(itemStack->player.getInventory().removeItemAnySlot(itemStack));
+
             //if yes take the item and give the other item
-            else{
+            for (String received: receivedList) {
                 Material receivedMaterial = Material.getMaterial(received.split(":")[0].toUpperCase());
                 int receivedAmount = Integer.parseInt(received.split(":")[1]);
                 ItemStack receivedItemStack = new ItemStack(receivedMaterial, receivedAmount);
-                player.getInventory().removeItemAnySlot(itemStack);
                 player.getInventory().addItem(receivedItemStack);
             }
 

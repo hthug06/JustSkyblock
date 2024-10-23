@@ -54,7 +54,7 @@ public class IslandCommandTab implements TabCompleter {
                     listearg0.add("setspawn");
                     listearg0.add("settings");
                     listearg0.add("team");
-
+                    listearg0.add("trade");
                     listearg0.add("upgrade");
                     listearg0.add("visit");
 

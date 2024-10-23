@@ -165,7 +165,8 @@ public class IslandInfoInventory implements InventoryHolder {
                     ItemStack itemStack = new ItemStack(Material.DIAMOND_PICKAXE, 1);
                     ItemMeta itemMeta = itemStack.getItemMeta();
                     itemMeta.displayName(Component.text("Custom Generator Level", TextColor.color(0x4A9AF7)).decoration(TextDecoration.ITALIC, false));
-                    itemMeta.lore(List.of(Component.text(String.valueOf("Level "+island.getCobbleGenLevelUnlock()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
+                    itemMeta.lore(List.of(Component.text(String.valueOf("Level Unlocked: "+island.getCobbleGenLevelUnlock()), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false),
+                            Component.text("Level currently in use : "+island.getCobbleGenLevel(), TextColor.color(0xAEB6BF)).decoration(TextDecoration.ITALIC, false)));
                     itemStack.setItemMeta(itemMeta);
                     inv.setItem(i, itemStack);
                 }

@@ -52,7 +52,7 @@ public class PlayerListeners implements Listener {
         }
 
         player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>This server is in developpement (mainly the skyblock) "));
-        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>JustSkyblock is in version alpha-1.8 created by me (ht06)"));
+        player.sendMessage(miniMessage.deserialize("<gradient:#2E86C1:#229954:#2E86C1>JustSkyblock is in version alpha-1.8.1 created by me (ht06)"));
         player.sendMessage(Component.text("If you find a bug, contact ht06 on discord").color(TextColor.color(0xE74C3C)));
 
         //WorldBorder Gestion
@@ -107,21 +107,6 @@ public class PlayerListeners implements Listener {
                 event.setCancelled(true);
             }
         }
-
-        //Delete block in placebyPlayer
-       /* if (JustSkyblock.placeByPlayer.contains(event.getBlock().getLocation())){
-            JustSkyblock.placeByPlayer.remove(event.getBlock().getLocation());
-
-            Block eventBlock = event.getBlock();
-            Block block = event.getBlock();
-            while (block.getType().equals(eventBlock.getType())){
-                block = block.getRelative(BlockFace.UP).getState().getBlock();
-                JustSkyblock.placeByPlayer.remove(block.getLocation());
-                if (!block.getType().equals(eventBlock.getType())){
-                    break;
-                }
-            }
-        }*/
     }
 
     @EventHandler (priority = EventPriority.HIGH)
